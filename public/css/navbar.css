@@ -1,0 +1,57 @@
+/* CORPORATE NAVBAR */
+.navbar-corporate {
+    background-color: #1f2328;
+    padding: 18px 0;
+    transition: all 0.3s ease;
+}
+
+/* Brand */
+.navbar-brand img {
+    height: 48px;
+    margin-right: 10px;
+}
+
+.navbar-brand span {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Nav Links */
+.navbar-corporate .nav-link {
+    color: #e5e5e5;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px 0;
+}
+
+.navbar-corporate .nav-link:hover,
+.navbar-corporate .nav-link:focus {
+    color: #ffc107;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    border-radius: 6px;
+    border: none;
+    padding: 10px 0;
+}
+
+.dropdown-item {
+    font-size: 14px;
+    padding: 8px 20px;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #000;
+}
+
+/* Scroll Effect */
+.navbar-scrolled {
+    background-color: rgba(31, 35, 40, 0.95);
+    backdrop-filter: blur(6px);
+    padding: 12px 0;
+}

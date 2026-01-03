@@ -1,0 +1,309 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f8; /* abu industrial, bukan putih polos */
+    color: #212529;
+    line-height: 1.6;
+}
+
+/* Heading lebih tegas */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+#home,
+#about,
+#services,
+#projects,
+#footer {
+    scroll-margin-top: 60px;
+}
+
+/* Paragraf lebih readable */
+/* p {
+    font-size: 15px;
+    color: #495057;
+} */
+/* FIX GAP NAVBAR */
+
+
+/* ======================
+   HERO SECTION 16:9
+====================== */
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;              /* 🔑 KUNCI UTAMA */
+    background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+        url('/images/landscape.jpg') center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Supaya konten di dalam tetap rapi */
+.hero-content {
+    width: 100%;
+    padding: 0 15px;
+}
+
+/* ======================
+   DESKTOP LIMIT (biar gak kegedean)
+====================== */
+@media (min-width: 1200px) {
+    .hero-section {
+        max-height: 90vh;
+    }
+}
+
+/* ======================
+   MOBILE
+====================== */
+@media (max-width: 768px) {
+    .hero-section {
+        aspect-ratio: 16 / 9;   /* tetap landscape */
+        background-position: center top;
+    }
+}
+
+
+#services {
+    padding-top: 40px; /* default 80px terlalu besar */
+    padding-bottom: 40px;
+}
+
+#services h1 {
+    margin-top: 0; /* hilangkan margin bawaan h1 */
+}
+
+.section-gray {
+    background-color: #f4f6f8;
+    padding: 80px 0;
+}
+
+.service-box {
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e9ecef;
+    transition: 0.3s ease;
+}
+
+/* ======================
+   Content
+====================== */
+.text-justify {
+    text-align: justify;
+}
+
+
+
+/* ======================
+   FOOTER STYLE
+====================== */
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title */
+.footer-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+/* Text */
+.footer-text {
+    font-size: 14px;
+    color: #adb5bd;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Links */
+.footer-link {
+    font-size: 14px;
+    color: #adb5bd;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* List reset */
+.footer-col ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+/* Biar Quick Links gak “terbang” */
+.footer-col ul li {
+    line-height: 1.7;
+}
+
+/* Service */
+
+.service-box {
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.service-box h5 {
+    margin-bottom: 12px;
+}
+
+.service-box p {
+    font-size: 14px;
+    color: #6c757d;
+    line-height: 1.6;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Footer Form */
+.footer .form-control {
+    background-color: #212529;
+    border: 1px solid #495057;
+    color: #ffffff;
+}
+
+.footer .form-control::placeholder {
+    color: #adb5bd;
+}
+
+.footer .form-control:focus {
+    background-color: #212529;
+    border-color: #ffc107;
+    box-shadow: none;
+    color: #ffffff;
+}
+
+/* Google Maps */
+.footer-map iframe {
+    border-radius: 6px;
+}
+
+/* CTA */
+.footer .btn-outline-warning {
+    border-width: 1.5px;
+}
+
+
+
+/* ======================
+   PROJECT SLIDER
+====================== */
+
+.project-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;     /* 🔑 FIX UTAMA */
+    object-fit: contain;      /* DESKTOP: foto utuh */
+    background-color: #000;   /* Frame cinematic */
+}
+
+/* Caption */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 6px;
+    padding: 16px 22px;
+}
+
+.carousel-caption h5 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.carousel-caption p {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+/* ======================
+   MOBILE
+====================== */
+@media (max-width: 768px) {
+    .project-img {
+        aspect-ratio: 16 / 9;
+        object-fit: contain;
+    }
+
+    .carousel-caption {
+        padding: 10px 14px;
+    }
+
+    .carousel-caption h5 {
+        font-size: 15px;
+    }
+
+    .carousel-caption p {
+        font-size: 12px;
+    }
+}
+
+
+/* ALERT ANIMATION */
+.alert-animate {
+    animation: slideFade 0.6s ease-out forwards;
+}
+
+@keyframes slideFade {
+    from {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.alert-animate {
+    animation: slideFade 0.6s ease-out forwards,
+               fadeOut 0.5s ease-in 4s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* ======================
+   CLIENT LOGO SECTION
+====================== */
+
+.client-section {
+    background-color: #f8f9fa;
+}
+
+.client-logo {
+    width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.75;
+    transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .client-logo {
+        max-height: 60px;
+    }
+}
