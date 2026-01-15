@@ -1,10 +1,58 @@
-body {
-    padding-top: 90px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
+
 
 section {
     padding: 60px 0;
 }
 
+/* ======================
+   VIDEO SHOWCASE
+====================== */
+
+.video-section {
+    padding: 90px 0;
+    background-color: #ffffff;
+}
+
+.video-wrapper {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Landscape Ratio */
+.video-landscape {
+    aspect-ratio: 16 / 9;
+}
+
+/* Overlay Text */
+.video-overlay {
+    position: absolute;
+    bottom: 18px;
+    left: 20px;
+    padding: 8px 14px;
+    font-size: 13px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .video-section {
+        padding: 60px 0;
+    }
+
+    .video-overlay {
+        font-size: 12px;
+        bottom: 12px;
+        left: 12px;
+    }
+}

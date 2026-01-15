@@ -1,104 +1,70 @@
-<footer id="footer" class="bg-dark text-light pt-5 pb-4 footer">
+<footer id="footer" class="footer">
     <div class="container">
-        <div class="row g-4">
+        <div class="footer-grid">
 
-            <!-- 1. CONTACT FORM -->
-            <div class="col-lg-3 col-md-6 footer-col">
-                <h6 class="footer-title">Contact Us</h6>
-
-                <form action="{{ route('contact.send') }}" method="POST">
-                    @csrf
-                    <input type="text" name="name" class="form-control form-control-sm mb-2" placeholder="Your Name"
-                        required>
-                    <input type="email" name="email" class="form-control form-control-sm mb-2"
-                        placeholder="Email Address" required>
-                    <input type="text" name="phone" class="form-control form-control-sm mb-2"
-                        placeholder="Phone Number">
-                    <textarea name="message" rows="3" class="form-control form-control-sm mb-3" placeholder="Message" required></textarea>
-                    <button type="submit" class="btn btn-warning btn-sm w-100 fw-semibold">
-                        Send Message
-                    </button>
-                </form>
-
-            </div>
-
-            <!-- 2. COMPANY INFO -->
-            <div class="col-lg-3 col-md-6 footer-col">
-                <h6 class="footer-title">Company Info</h6>
-
-                <ul class="list-unstyled footer-text">
-                    <!-- Alamat -->
-                    <li class="d-flex mb-3">
-                        <span class="me-2">📍</span>
-                        <span>
-                            Gedung AKA Lt.9, Jl. Bangka Raya,<br>
-                            Mampang Prapatan, Jakarta Selatan
-                        </span>
-                    </li>
-
-                    <!-- Mr. Han -->
-                    <li class="mb-3">
-                        <strong>Mr. Han</strong>
-                        <div class="d-flex mt-1">
-                            <span class="me-2">📞</span>
-                            <span>+62 811-1966-903</span>
-                        </div>
-                        <div class="d-flex">
-                            <span class="me-2">📧</span>
-                            <span>kpcidhan@gmail.com</span>
-                        </div>
-                    </li>
-
-                    <!-- Adinda -->
-                    <li>
-                        <strong>Adinda (Marketing)</strong>
-                        <div class="d-flex mt-1">
-                            <span class="me-2">📞</span>
-                            <span>+62 813-7070-4904</span>
-                        </div>
-                        <div class="d-flex">
-                            <span class="me-2">📧</span>
-                            <span>adinda.kpcm@gmail.com</span>
-                        </div>
-                    </li>
+            <!-- QUICK LINKS -->
+            <div class="footer-col">
+                <h6 class="footer-title">Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="/about">About Company</a></li>
+                    <li><a href="/services">Our Services</a></li>
+                    <li><a href="/projects">Project Portfolio</a></li>
+                    <li><a href="/organization">Organization</a></li>
+                    <li><a href="/contact">Contact Page</a></li>
                 </ul>
             </div>
 
+            <!-- COMPANY INFO -->
+            <div class="footer-col">
+                <h6 class="footer-title">Company Info</h6>
 
+                <div class="footer-info">
+                    <p class="mb-3">
+                        📍 Gedung AKA Lt.9, Jl. Bangka Raya,<br>
+                        Mampang Prapatan, Jakarta Selatan
+                    </p>
 
+                    <div class="footer-person">
+                        <strong>Mr. Han</strong>
+                        <p>📞 +62 811-1966-903</p>
+                        <p>📧 kpcidhan@gmail.com</p>
+                    </div>
 
-            <!-- GOOGLE MAPS -->
-            <div class="col-lg-3 col-md-6 footer-col">
+                    <div class="footer-person mt-3">
+                        <strong>Adinda (Marketing)</strong>
+                        <p>📞 +62 813-7070-4904</p>
+                        <p>📧 adinda.kpcm@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LOCATION -->
+            <div class="footer-col">
                 <h6 class="footer-title">Our Location</h6>
-
                 <div class="footer-map">
                     <iframe
                         src="https://www.google.com/maps?q=PT+KPCM+Industrial+Estate+-6.2404597,106.8175674&output=embed"
-                        width="100%" height="180" style="border:0;" allowfullscreen loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
+                        loading="lazy">
                     </iframe>
                 </div>
             </div>
 
-            <!-- 4. CTA -->
-            <div class="col-lg-3 col-md-6 footer-col">
-                <h6 class="footer-title">Let’s Work Together</h6>
-
-                <p class="footer-text mb-3">
-                    Let’s Build Your Industrial Project Together with a trusted
-                    and experienced construction partner.
+            <!-- CTA -->
+            <div class="footer-col footer-cta">
+                <h6 class="footer-title">Siap Membangun Proyek Anda?</h6>
+                <p class="footer-text">
+                    Apabila tertarik membangun proyek Anda, silakan hubungi kami
+                    untuk informasi lebih lanjut.
                 </p>
 
-                <a href="https://wa.me/628111966903" class="btn btn-outline-warning btn-sm fw-semibold px-4">
-                    Get Free Consultation
+                <a href="https://wa.me/628111966903" class="btn btn-footer">
+                    Konsultasi Gratis
                 </a>
             </div>
 
         </div>
 
-        <hr class="border-secondary my-4">
-
-        <div class="text-center footer-text">
+        <div class="footer-bottom">
             © {{ date('Y') }} PT KPCM Industrial Estate. All Rights Reserved.
         </div>
     </div>

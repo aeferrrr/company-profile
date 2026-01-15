@@ -11,12 +11,12 @@ class PageController extends Controller
 
     public function about()
     {
-        return view('pages.about');
+        return view('pages.perusahaan.about');
     }
 
     public function services()
     {
-        return view('pages.services');
+        return view('pages.services.services');
     }
 
     public function projects()
@@ -28,4 +28,9 @@ class PageController extends Controller
     {
         return view('pages.contact');
     }
+    public function organization()
+    {
+    return view('pages.perusahaan.organization');
+    }
+
 }

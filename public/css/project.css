@@ -1,0 +1,50 @@
+/* ======================
+   PROJECT HERO
+====================== */
+
+.project-hero {
+    position: relative;
+    height: 340px;
+    background: url('/images/ourproject.jpg') center center / cover no-repeat;
+}
+
+
+.project-hero-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+}
+
+.project-hero-content {
+    color: #ffffff;
+    max-width: 600px;
+}
+
+.project-hero-content h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.project-hero-content p {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .project-hero {
+        height: 260px;
+    }
+
+    .project-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .project-hero-content p {
+        font-size: 14px;
+    }
+}

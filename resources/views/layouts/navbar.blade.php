@@ -2,7 +2,7 @@
     <div class="container">
 
         <!-- BRAND -->
-        <a class="navbar-brand d-flex align-items-center" href="#home">
+        <a class="navbar-brand d-flex align-items-center" href="/">
             <img src="{{ asset('images/logo-company.png') }}" alt="KPCM Logo">
             <span class="ms-2 fw-semibold text-uppercase">
                 KPCM Industrial Estate
@@ -17,21 +17,37 @@
             <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 text-uppercase fw-semibold small">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#home">Home</a>
+                    <a class="nav-link" href="/">{{ __('general.home') }}</a>
+                </li>
+                {{-- Perusahaan --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        {{ __('general.perusahaan') }}
+                    </a>
+
+                    <ul class="dropdown-menu shadow-sm">
+                        <li>
+                            <a class="dropdown-item" href="/about">
+                                {{ __('general.about') }}
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="/organization">
+                                {{ __('general.organisasi') }}
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About Us</a>
-                </li>
-
+                {{-- Services --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#services" data-bs-toggle="dropdown">
-                        Services
+                        {{ __('general.services') }}
                     </a>
                     <ul class="dropdown-menu shadow-sm">
-                        <li><a class="dropdown-item" href="#services">All Services</a></li>
+                        <li><a class="dropdown-item" href="/services">{{ __('general.allservices') }}</a></li>
 
-                        <li><a class="dropdown-item" href="#services">Construction & Management</a></li>
+                        <li><a class="dropdown-item" href="/services/construction">Construction & Management</a></li>
                         <li><a class="dropdown-item" href="#services">Warehouse</a></li>
                         <li><a class="dropdown-item" href="#services">Mechanical & Piping</a></li>
                         <li><a class="dropdown-item" href="#services">Walling & APC</a></li>
@@ -50,21 +66,33 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
+                    <a class="nav-link" href="/projects">{{ __('general.projects') }}</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#footer">Contact</a>
+                    <a class="nav-link" href="/contact">{{ __('general.contact') }}</a>
                 </li>
 
-                <li class="nav-item ms-lg-3">
-                    <a href="#footer" class="btn btn-warning btn-sm px-4 fw-semibold">
-                        Get Quote
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                        🌐 {{ strtoupper(app()->getLocale()) }}
                     </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('lang.switch', 'en') }}">
+                                English
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{{ route('lang.switch', 'id') }}">
+                                Bahasa Indonesia
+                            </a>
+                        </li>
+                    </ul>
                 </li>
+
 
             </ul>
         </div>
     </div>
 </nav>
-

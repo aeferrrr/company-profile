@@ -1,0 +1,289 @@
+/* =====================================================
+   1. ORGANIZATION SECTION (CONTAINER & HEADER)
+===================================================== */
+
+.organization-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.section-header h2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* =====================================================
+   2. HTML CHART STYLES (GRID / MOBILE VIEW)
+   (Ini untuk tampilan Grid/Card HTML biasa, jika masih dipakai)
+===================================================== */
+
+/* Chart Wrapper */
+.org-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+/* Level */
+.org-level {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.center-level {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Grid Level */
+.org-level.org-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 22px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Box (HTML Version) */
+.org-box {
+    background-color: #f4f6f8;
+    border-radius: 10px;
+    padding: 18px 22px;
+    text-align: center;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+/* Top Leader (HTML Version) */
+.org-box.main {
+    background-color: #1f2328;
+    color: #ffffff;
+}
+
+/* Text (HTML Version) */
+.org-title {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.org-name {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6c757d;
+}
+
+.org-box.main .org-name {
+    color: #e9ecef;
+}
+
+/* Responsive Grid */
+@media (max-width: 992px) {
+    .org-level.org-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .org-level.org-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =====================================================
+   3. ORGANIZATION TOGGLE (SWITCH BUTTONS)
+===================================================== */
+
+.org-toggle {
+    display: inline-flex;
+    gap: 14px;
+}
+
+.org-btn {
+    padding: 10px 26px;
+    border-radius: 8px;
+    border: 1.5px solid #1f2328;
+    background: transparent;
+    color: #1f2328;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.org-btn:hover {
+    background-color: #1f2328;
+    color: #ffffff;
+}
+
+.org-btn.active {
+    background-color: #1f2328;
+    color: #ffffff;
+}
+
+/* =====================================================
+   4. ORGANIZATION WRAPPER (ANIMATION)
+===================================================== */
+
+.org-wrapper {
+    display: none;
+}
+
+.org-wrapper.active {
+    display: block;
+    animation: orgFadeUp 0.45s ease;
+}
+
+@keyframes orgFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =====================================================
+   5. SVG CHART STYLES (CENTER HOVER POPUP 3x4)
+   Prefix: .chart- (Anti-Conflict)
+===================================================== */
+
+/* Global SVG Text Reset */
+svg text {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    pointer-events: none;
+}
+
+/* --- TEXT STYLES --- */
+.chart-title {
+    font-size: 12px;
+    fill: #0c4da2;
+    font-weight: 700;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+.chart-name {
+    font-size: 15px;
+    fill: #2c3e50;
+    font-weight: 800;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* --- BOX STYLES --- */
+.chart-box {
+    fill: #ffffff;
+    stroke: #2c3e50;
+    stroke-width: 2px;
+    rx: 6px;
+    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.1));
+    transition: all 0.3s ease;
+}
+
+/* --- LINES --- */
+.chart-line {
+    stroke: #34495e;
+    stroke-width: 2px;
+    fill: none;
+}
+
+/* --- INTERACTION --- */
+.chart-person {
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    /* Reset z-index agar tumpukan kembali normal saat tidak di-hover */
+    transition: z-index 0s linear 0.3s; 
+}
+
+.chart-person:hover {
+    z-index: 100; /* Bawa ke paling depan saat hover */
+    transition-delay: 0s;
+}
+
+/* Warna Box saat Hover */
+.chart-person:hover .chart-box {
+    stroke: #3498db;
+    stroke-width: 3px;
+    fill: #f0f8ff;
+}
+
+/* =====================================================
+   6. PHOTO HOVER STYLES (HIDDEN -> POPUP 3x4)
+===================================================== */
+
+/* 1. Hilangkan Frame/Garis Lingkaran selamanya */
+.chart-photo-frame {
+    display: none;
+}
+
+/* 2. State Awal Foto: Tersembunyi (Invisible) */
+.chart-photo-wrapper {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    
+    /* Posisi awal: Di tengah box tapi agak turun sedikit */
+    /* Box Width 320px -> Tengah = 160px. */
+    /* Karena kordinat awal wrapper di kiri, kita geser ke 115px (160 - setengah lebar foto) */
+    transform: translate(115px, 0px) scale(0.8);
+    transform-origin: center bottom;
+    
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 3. State Hover: Muncul & Naik ke Atas */
+.chart-person:hover .chart-photo-wrapper {
+    opacity: 1;
+    visibility: visible;
+    
+    /* Geser ke tengah (115px) dan Naik ke atas (-130px) */
+    transform: translate(115px, -130px) scale(1);
+}
+
+/* 4. Bentuk Foto: Persegi Panjang 3x4 */
+.chart-photo-wrapper image {
+    /* Matikan potongan lingkaran */
+    clip-path: none;
+    
+    /* Ukuran 3x4 (Contoh: 90px x 120px) */
+    width: 90px;
+    height: 120px;
+    
+    /* Reset posisi x/y gambar di dalam wrapper */
+    x: 0;
+    y: 0;
+    
+    /* Style tambahan: Bayangan & Sudut Tumpul */
+    filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.3));
+    rx: 6px; 
+}
+
+/* UNTUK HAN GYU SEONG */
+/* =========================================
+   SPECIAL OVERRIDE: POPUP DI KANAN
+   ========================================= */
+
+/* Atur posisi saat hover khusus untuk yang punya class 'pop-right' */
+.chart-person:hover .chart-photo-wrapper.pop-right {
+    /* PENJELASAN KOORDINAT:
+       X = 330px -> Geser ke kanan (Lebar Box 320px + Jarak 10px)
+       Y = -30px -> Geser ke atas sedikit agar pas di tengah vertikal box
+                    (Tinggi Box 60px - Tinggi Foto 120px) / 2 = -30px
+    */
+    transform: translate(330px, -30px) scale(1) !important;
+}
+
+/* Opsional: Atur posisi start animasinya dari kanan juga supaya halus */
+.chart-photo-wrapper.pop-right {
+    transform: translate(300px, 0px) scale(0.8);
+}

@@ -1,0 +1,86 @@
+/* ======================
+   SERVICES HERO
+====================== */
+
+.services-hero {
+    position: relative;
+    height: 340px;
+    background: url('/images/services.jpg') center center / cover no-repeat;
+}
+
+.services-hero-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+}
+
+.services-hero-content {
+    color: #ffffff;
+    max-width: 600px;
+}
+
+.services-hero-content h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.services-hero-content p {
+    font-size: 16px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .services-hero {
+        height: 260px;
+    }
+
+    .services-hero-content h1 {
+        font-size: 32px;
+    }
+
+    .services-hero-content p {
+        font-size: 14px;
+    }
+}
+/* SERVICE */
+.hero-content {
+    max-width: 720px;
+    text-align: left; /* 🔥 ini kuncinya */
+}
+
+.hero-title,
+.hero-subtitle {
+    text-align: left;
+}
+
+/* ======================
+   SERVICE VISUAL FULL
+====================== */
+.service-visual {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #f4f6f8;
+    display: flex;
+    justify-content: center;
+}
+
+.service-visual img {
+    width: 100%;
+    max-width: 1200px; /* 🔥 gede tapi tetap rapi */
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.service-visual img {
+    transition: transform 0.6s ease;
+}
+
+.service-visual img:hover {
+    transform: scale(1.02);
+}
