@@ -16,6 +16,9 @@ Route::get('/organization', [PageController::class, 'organization'])
     ->name('organization');
 
 Route::get('/services/construction', [ServiceController::class, 'construction'])->name('construction');
+Route::get('/services/warehouse', [ServiceController::class, 'warehouse'])->name('warehouse');
+Route::get('/services/piping', [ServiceController::class, 'piping'])->name('piping');
+Route::get('/services/walling', [ServiceController::class, 'walling'])->name('walling');
 
 // Send Email
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');

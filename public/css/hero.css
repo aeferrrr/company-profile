@@ -1,19 +1,29 @@
-/* ======================
-   HERO FULL WIDTH VIDEO
-====================== */
+/* =========================================================
+   VARIABLES (Sesuaikan dengan Brand Color Anda)
+========================================================= */
+:root {
+    --const-primary: #2742d6; /* Warna Kuning Konstruksi / Emas */
+    --const-dark: #1a1a1a;
+    --const-white: #ffffff;
+}
+
+/* =========================================================
+   HERO SECTION – STRUCTURE
+========================================================= */
 
 .hero-section {
     position: relative;
-    width: 100vw; /* full layar */
-    height: 380px; /* tinggi hero */
-    margin-left: calc(-50vw + 50%); /* kabur dari body padding */
+    width: 100%;
+    height: 85vh; /* Menggunakan Viewport Height agar masif */
+    min-height: 600px; /* Batas minimum agar tidak gepeng di laptop kecil */
     overflow: hidden;
     display: flex;
     align-items: center;
+    border-bottom: 5px solid var(--const-primary); /* Aksen garis bawah */
 }
 
-/* Background Video */
-.hero-video {
+/* Video Background */
+.hero-video, .hero-bg {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -22,288 +32,652 @@
     z-index: 1;
 }
 
-/* Overlay gelap */
+/* Overlay - Dibuat lebih dramatis */
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.55);
+    /* Gradient: Gelap di kiri (baca teks), terang di kanan */
+    background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.2) 100%);
     z-index: 2;
 }
 
-/* Content di atas video */
-.hero-content {
+.container {
     position: relative;
     z-index: 3;
-    max-width: 720px;
-    color: #ffffff;
 }
 
-/* Judul */
-.hero-title {
-    font-size: 2.6rem;
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+    padding-left: 15px;
+    border-left: 5px solid var(--const-primary); /* Garis vertikal ciri khas industri */
+    padding-left: 30px; /* Jarak dari garis */
+}
+
+/* Badge kecil di atas judul */
+.hero-badge {
+    display: inline-block;
+    font-size: 0.9rem;
     font-weight: 700;
-    margin-bottom: 14px;
-    animation: fadeUp 0.9s ease forwards;
+    letter-spacing: 2px;
+    color: var(--const-primary);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    animation: fadeUp 0.8s ease forwards;
+}
+
+/* Judul Utama */
+.hero-title {
+    font-size: 3.5rem; /* Lebih besar */
+    font-weight: 800;
+    color: var(--const-white);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Huruf besar semua agar tegas */
+    animation: fadeUp 0.8s ease forwards 0.2s;
+    opacity: 0; /* Init state for animation */
+}
+
+.text-highlight {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--const-white); /* Efek outline modern */
+    /* Atau gunakan warna solid: color: var(--const-primary); */
 }
 
 /* Subtitle */
 .hero-subtitle {
-    font-size: 1rem;
+    font-size: 1.15rem;
+    color: #e0e0e0;
+    max-width: 600px;
+    margin-bottom: 40px;
+    font-weight: 300;
     line-height: 1.6;
-    margin-bottom: 26px;
-    animation: fadeUp 0.9s ease forwards;
-    animation-delay: 0.2s;
+    animation: fadeUp 0.8s ease forwards 0.4s;
+    opacity: 0;
 }
 
-/* Buttons */
+/* =========================================================
+   BUTTONS (INDUSTRIAL STYLE)
+========================================================= */
+
 .hero-buttons {
-    animation: fadeUp 0.9s ease forwards;
-    animation-delay: 0.4s;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+    opacity: 0;
 }
 
-/* Animasi */
+.custom-btn {
+    border-radius: 2px; /* Sudut lebih tajam/kotak */
+    padding: 12px 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary.custom-btn {
+    background-color: var(--const-primary);
+    border-color: var(--const-primary);
+    color: var(--const-dark);
+}
+
+.btn-primary.custom-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+.btn-outline-light.custom-btn:hover {
+    background-color: var(--const-white);
+    color: var(--const-dark);
+}
+
+/* =========================================================
+   STATS BAR (NEW FEATURE)
+========================================================= */
+
+.hero-stats-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0; /* Full width */
+    z-index: 4;
+    background: rgba(0, 0, 0, 0.7); /* Semi transparant hitam */
+    border-top: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.stat-item {
+    padding: 25px 15px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    color: var(--const-white);
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--const-primary);
+    margin-bottom: 5px;
+}
+
+.stat-desc {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* =========================================================
+   ANIMATIONS & RESPONSIVE
+========================================================= */
+
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(18px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
-/* Supaya video tidak ganggu klik */
-.hero-video,
-.hero-overlay {
-    pointer-events: none;
-}
-
-/* ======================
-   OUR SERVICES HIGHLIGHT
-====================== */
-
-.services-highlight {
-    background-color: #f8f9fb;
-}
-
-/* Left Tabs */
-.service-tabs {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.service-btn {
-    width: 100%;
-    padding: 14px 18px;
-    text-align: left;
-    font-weight: 600;
-    border-radius: 6px;
-    border: 1px solid #dee2e6;
-    background-color: #ffffff;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.service-btn:hover {
-    background-color: #e9f2ff;
-}
-
-.service-btn.active {
-    background-color: #0d6efd;
-    color: #ffffff;
-    border-color: #0d6efd;
-}
-
-/* Right Content */
-.service-content {
-    background-color: #eaf3ff;
-    padding: 40px;
-    border-radius: 8px;
-    height: 100%;
-}
-
-.service-item {
-    display: none;
-    animation: fadeService 0.4s ease;
-}
-
-.service-item.active {
-    display: block;
-}
-
-.service-item h4 {
-    font-weight: 700;
-    margin-bottom: 12px;
-}
-
-.service-item p {
-    line-height: 1.7;
-    margin-bottom: 0;
-}
-
-/* Animation */
-@keyframes fadeService {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* ======================
-   RESPONSIVE
-====================== */
 
 @media (max-width: 992px) {
-    .hero-section {
-        height: 320px;
-    }
-
-    .hero-title {
-        font-size: 2.1rem;
-    }
+    .hero-title { font-size: 2.8rem; }
+    .hero-stats-wrapper { position: relative; background: #111; } /* Di mobile stats jadi block biasa */
+    .hero-section { height: auto; padding-bottom: 0; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
 }
 
 @media (max-width: 576px) {
-    .hero-section {
-        height: 280px;
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
-    }
-
-    .hero-content {
-        max-width: 100%;
-    }
+    .hero-title { font-size: 2.2rem; }
+    .hero-content { border-left: 3px solid var(--const-primary); padding-left: 20px; }
+    .custom-btn { width: 100%; margin-bottom: 10px; margin-left: 0 !important; }
 }
 
-/* ======================
-   HERO ABOUT (IMAGE)
-====================== */
+/* =========================================================
+   SERVICES HIGHLIGHT (BACKGROUND DISAMAKAN NUANSANYA)
+========================================================= */
 
-.hero-section {
+.services-highlight {
+    /* Menggunakan Off-White yang bersih, bukan abu kotor */
+    background-color: var(--white-off); 
+    padding: 60px 0;
+}
+
+
+/* =========================================================
+   SERVICE BUTTON (LEFT NAV) - CLEAN WHITE LOOK
+========================================================= */
+
+.service-btn {
+    /* Ubah background transparan menjadi PUTIH BERSIH */
+    background: var(--white-pure); 
+    /* Hapus border abu-abu agar terlihat clean */
+    border: none; 
+    border-radius: 12px;
+    padding: 18px 24px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
     position: relative;
-    width: 100vw;
-    height: 380px;
-    margin-left: calc(-50vw + 50%);
     overflow: hidden;
+    margin-bottom: 10px;
+    
+    /* Tambahkan shadow halus sebagai pengganti border */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02); 
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
-/* Background Image */
-.hero-bg {
+.service-btn:hover {
+    background-color: var(--white-pure);
+    transform: translateY(-3px); /* Naik sedikit saat hover */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* Shadow menebal */
+}
+
+/* Active State */
+.service-btn.active {
+    background-color: var(--white-pure);
+    /* Tidak perlu border color, gunakan shadow biru glow */
+    box-shadow: 0 8px 25px rgba(13, 110, 253, 0.15);
+    z-index: 2;
+}
+
+.service-btn.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: var(--primary-blue);
+    border-radius: 4px 0 0 4px;
+}
+
+/* Icon Box */
+.service-btn .icon-box {
+    width: 42px;
+    height: 42px;
+    /* Ganti abu gelap (#e9ecef) ke off-white (#f3f6f9) agar blend */
+    background: var(--white-off); 
+    border-radius: 10px; /* Sedikit kotak (modern) */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6c757d;
+    transition: all 0.3s;
+}
+
+.service-btn.active .icon-box {
+    background: var(--primary-blue);
+    color: var(--white-pure);
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+}
+
+/* Text Styling (Optional untuk memastikan font match) */
+.service-btn span {
+    font-weight: 600;
+    color: var(--text-dark);
+}
+.service-btn.active span {
+    color: var(--primary-blue);
+}
+
+
+/* =========================================================
+   SERVICE CONTENT (RIGHT SIDE)
+========================================================= */
+
+.service-content {
+    display: none;
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
+    min-height: 420px; /* Samakan tinggi */
+    border-radius: 16px;
+    overflow: hidden;
+    /* Shadow untuk konten kanan */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+.service-content.active {
+    display: block;
+    animation: fadeInScale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Background Image */
+.service-bg-img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    z-index: 1;
+    position: absolute;
+    z-index: 0;
+    transition: transform 5s ease;
+}
+
+.service-content.active .service-bg-img {
+    transform: scale(1.05); /* Zoom effect perlahan */
 }
 
 /* Overlay */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-    z-index: 2;
-}
-
-/* Content */
-.hero-content {
+.service-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.9) 0%,
+        rgba(0,0,0,0.5) 60%,
+        rgba(0,0,0,0.1) 100%
+    );
     position: relative;
-    z-index: 3;
-    max-width: 720px;
-    color: #ffffff;
+    z-index: 1;
+    height: 100%;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--white-pure);
 }
 
-/* ======================
-   VIDEO SHOWCASE – FIX BACKGROUND
-====================== */
+/* Animation */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .service-content {
+        position: relative;
+        height: 350px;
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================================================
+   VIDEO SHOWCASE PRO
+========================================================= */
 
 .video-section {
-    background: transparent !important;
+    position: relative;
+    padding: 80px 0;
+    background-color: var(--white-pure);
 }
 
-/* container aman, tapi kita pastikan */
-.video-section .container {
-    background: transparent !important;
-}
-
-/* wrapper video */
+/* Wrapper Styling */
 .video-wrapper {
-    background: transparent !important;
-    box-shadow: none !important;
-    padding: 0;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #000;
+    transform: translateZ(0);
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* paksa matikan shadow bootstrap */
-.video-wrapper.shadow {
-    box-shadow: none !important;
+.video-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px rgba(13, 110, 253, 0.2) !important; /* Glow Biru Tipis */
 }
 
-/* video full & clean */
 .video-wrapper video {
     display: block;
     width: 100%;
-    border-radius: 16px;
+    height: auto;
+    object-fit: cover;
 }
 
-/* overlay tetap */
-.video-overlay {
-    background: rgba(0,0,0,0.45);
-    border-radius: 0 0 16px 16px;
-}
+/* =========================================================
+   CONTROLS & OVERLAYS
+========================================================= */
 
-/* ======================
-   CLIENT LOGO (TRANSPARENT)
-====================== */
-.client-section {
-    background: transparent;
-}
-
-.client-logos {
-    backdrop-filter: blur(2px);
-}
-
-.client-section::before {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 3px;
-    background: var(--primary-blue);
-    margin: 0 auto 40px;
-    opacity: 0.6;
-}
-
-/* AUDIO U/VIDIO */
-
-/* ======================
-   VIDEO AUDIO TOGGLE
-====================== */
-
-.audio-toggle {
+/* Center Play Button Overlay */
+.play-overlay {
     position: absolute;
-    bottom: 20px;
-    right: 20px;
-    background: rgba(0, 0, 0, 0.6);
-    border: none;
-    color: #fff;
-    font-size: 18px;
-    padding: 10px 12px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Glass Effect White */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
     border-radius: 50%;
+    padding: 25px;
+    pointer-events: none;
+}
+
+.video-wrapper.paused .play-overlay {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Bottom Gradient Area */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    pointer-events: none;
+}
+
+.video-caption {
+    color: var(--white-pure);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+            
+/* Mengatur tinggi playlist agar sejajar dengan video player */
+.playlist-container {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;
+    max-height: 500px;
+    /* Sesuaikan dengan tinggi video */
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-header {
+
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+.playlist-items {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+/* Styling item video */
+.video-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
     cursor: pointer;
     transition: all 0.3s ease;
-    z-index: 5;
+    border-bottom: 1px solid #f0f0f0;
+    gap: 15px;
 }
 
-.audio-toggle:hover {
-    background: rgba(0, 0, 0, 0.85);
+.video-item:hover {
+    background-color: #f1f5f9;
+}
+
+/* Item yang sedang aktif/diputar */
+.video-item.active {
+    background-color: #eef2ff;
+    /* Warna highlight biru muda */
+    border-left: 4px solid #0d6efd;
+    /* Aksen biru bootstrap */
+}
+
+/* Thumbnail kecil di playlist */
+.item-thumb {
+    width: 80px;
+    height: 55px;
+    border-radius: 6px;
+    object-fit: cover;
+    background-color: #ddd;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ikon play kecil di thumbnail */
+.item-thumb::after {
+    content: '▶';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    
+.item-info h6 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.item-info p {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+/* Scrollbar cantik */
+.playlist-items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.playlist-items::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+/* Responsif untuk Mobile: Playlist pindah ke bawah */
+@media (max-width: 991px) {
+    .playlist-container {
+        margin-top: 20px;
+        max-height: 300px;
+    }
+}
+
+/* ======================
+VIDEO TRANSITION
+====================== */
+.video-wrapper {
+    position: relative;
+}
+
+#companyVideo {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.video-fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+}
+
+.video-fade-in {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* Glassmorphism Button */
+.btn-glass {
+    pointer-events: auto;
+    /* Samakan glass effect dengan play button */
+    background: var(--glass-white);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white-pure);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+    background: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: var(--white-pure);
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .video-controls { padding: 20px; }
+    .video-caption h5 { font-size: 1rem; }
+}
+
+/* =========================================================
+   CLIENT LOGO (PERFORMANCE OPTIMIZED)
+========================================================= */
+
+.client-logo-wrapper {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    /* GPU friendly */
+    transform: translateZ(0);
+}
+
+.client-logo {
+    max-width: 160px;
+    max-height: 100%;
+    object-fit: contain;
+
+    /* Default state */
+    opacity: 0.6;
+    transform: scale(1);
+
+    /* ONLY animate what we need */
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+/* Grayscale di wrapper → lebih ringan */
+.client-logo-wrapper {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.client-logo-wrapper:hover {
+    filter: grayscale(0%);
+}
+
+.client-logo-wrapper:hover .client-logo {
+    opacity: 1;
+    transform: scale(1.08);
+
+    /* Aktifkan hanya saat hover */
+    will-change: transform;
+}
+
+@media (max-width: 768px) {
+    .client-logo-wrapper { height: 90px; }
+    .client-logo { max-width: 120px; }
+}
+
+/* =========================================================
+   CLIENT GRID (5 LOGO PER BARIS - RESPONSIVE)
+========================================================= */
+
+/* Mobile: 2 kolom */
+.client-grid > .col {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .client-grid > .col {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
+}
+
+/* Desktop besar: 5 kolom 🔥 */
+@media (min-width: 1200px) {
+    .client-grid > .col {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
 }

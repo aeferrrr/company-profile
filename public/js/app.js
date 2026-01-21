@@ -46,18 +46,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ==========================
-       VIDEO AUDIO TOGGLE
-    ========================== */
-    const video = document.getElementById('companyVideo');
-    const toggleBtn = document.getElementById('audioToggle');
+/* ==========================
+   VIDEO AUDIO TOGGLE
+========================== */
+const video = document.getElementById('companyVideo');
+const toggleBtn = document.getElementById('audioToggle');
+const iconMuted = document.getElementById('iconMuted');
+const iconSound = document.getElementById('iconSound');
 
-    if (video && toggleBtn) {
-        toggleBtn.addEventListener('click', function () {
-            video.muted = !video.muted;
-            toggleBtn.textContent = video.muted ? '🔇' : '🔊';
-        });
-    }
+if (video && toggleBtn && iconMuted && iconSound) {
+
+    // default state (karena autoplay muted)
+    video.muted = true;
+    iconMuted.classList.remove('d-none');
+    iconSound.classList.add('d-none');
+
+    toggleBtn.addEventListener('click', function () {
+        video.muted = !video.muted;
+
+        if (video.muted) {
+            iconMuted.classList.remove('d-none');
+            iconSound.classList.add('d-none');
+        } else {
+            iconMuted.classList.add('d-none');
+            iconSound.classList.remove('d-none');
+        }
+    });
+}
 
     /* ==========================
        ORGANIZATION TOGGLE

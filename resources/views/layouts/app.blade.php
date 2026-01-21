@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset('css/project.css') }}">
     <link rel="stylesheet" href="{{ asset('css/services.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hero.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/organization.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/organization.css') }}">
     <link rel="icon" type="image/x-icon" href="{{ asset('images/kpcm.ico') }}">
 
 
@@ -50,7 +50,32 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/vidio.js') }}"></script>
+    <script>
+        function openService(evt, serviceName) {
+            // 1. Sembunyikan semua konten
+            var content = document.getElementsByClassName("service-content");
+            for (var i = 0; i < content.length; i++) {
+                content[i].style.display = "none";
+                content[i].classList.remove("active");
+            }
 
+            // 2. Matikan semua tombol aktif
+            var buttons = document.getElementsByClassName("service-btn");
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove("active");
+            }
+
+            // 3. Nyalakan yang dipilih
+            document.getElementById(serviceName).style.display = "block";
+            // Timeout kecil agar animasi CSS sempat berjalan
+            setTimeout(function() {
+                document.getElementById(serviceName).classList.add("active");
+            }, 10);
+
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 
 </html>

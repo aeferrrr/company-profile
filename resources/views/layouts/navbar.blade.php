@@ -48,9 +48,9 @@
                         <li><a class="dropdown-item" href="/services">{{ __('general.allservices') }}</a></li>
 
                         <li><a class="dropdown-item" href="/services/construction">Construction & Management</a></li>
-                        <li><a class="dropdown-item" href="#services">Warehouse</a></li>
-                        <li><a class="dropdown-item" href="#services">Mechanical & Piping</a></li>
-                        <li><a class="dropdown-item" href="#services">Walling & APC</a></li>
+                        <li><a class="dropdown-item" href="/services/warehouse">Warehouse</a></li>
+                        <li><a class="dropdown-item" href="/services/piping">Mechanical & Piping</a></li>
+                        <li><a class="dropdown-item" href="/services/walling">Walling & APC</a></li>
                         <li><a class="dropdown-item" href="#services">Epoxy & Concrete Polishing</a></li>
                         <li><a class="dropdown-item" href="#services">Roofing</a></li>
 
@@ -62,13 +62,11 @@
                         <li><a class="dropdown-item" href="#services">Temporary Office & Speed Door</a></li>
                         <li><a class="dropdown-item" href="#services">Electrical</a></li>
                     </ul>
-
                 </li>
-
+                
                 <li class="nav-item">
                     <a class="nav-link" href="/projects">{{ __('general.projects') }}</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="/contact">{{ __('general.contact') }}</a>
                 </li>

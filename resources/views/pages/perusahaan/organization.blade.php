@@ -5,14 +5,17 @@
 @section('content')
 
     {{-- ======================
-       ORGANIZATION HERO (FULL WIDTH)
-    ====================== --}}
+   ORGANIZATION HERO (FULL WIDTH)
+====================== --}}
     <section class="hero-section hero-organization">
-        {{-- Background Image --}}
+
+        {{-- Background Image (DO NOT CHANGE) --}}
         <img src="{{ asset('images/organization.jpg') }}" class="hero-bg" alt="Organization Structure KPCM">
+
         {{-- Overlay --}}
         <div class="hero-overlay"></div>
-        <div class="container-fluid">
+
+        <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Organization Structure</h1>
                 <p class="hero-subtitle">
@@ -20,7 +23,9 @@
                 </p>
             </div>
         </div>
+
     </section>
+
 
     {{-- ======================
        ORGANIZATION SECTION
@@ -91,14 +96,15 @@
                     // 3. Sembunyikan semua chart
                     orgWrappers.forEach(wrapper => {
                         wrapper.classList.remove('active');
-                        wrapper.style.display = 'none'; // Paksa display none agar animasi ulang
+                        wrapper.style.display =
+                        'none'; // Paksa display none agar animasi ulang
                     });
 
                     // 4. Munculkan chart yang sesuai target
                     const targetId = button.getAttribute('data-target');
                     const targetWrapper = document.getElementById(targetId);
-                    
-                    if(targetWrapper) {
+
+                    if (targetWrapper) {
                         targetWrapper.style.display = 'block'; // Reset display
                         // Sedikit delay agar animasi CSS transition bisa jalan (jika ada fade effect)
                         setTimeout(() => {

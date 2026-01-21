@@ -10,4 +10,19 @@ class ServiceController extends Controller
     {
         return view('pages.services.construction');
     }
+    
+    public function warehouse()
+    {
+        return view('pages.services.warehouse');
+    }
+
+    public function piping()
+    {
+        return view('pages.services.piping');
+    }
+
+     public function walling()
+    {
+        return view('pages.services.walling');
+    }
 }
