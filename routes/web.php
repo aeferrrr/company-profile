@@ -19,6 +19,15 @@ Route::get('/services/construction', [ServiceController::class, 'construction'])
 Route::get('/services/warehouse', [ServiceController::class, 'warehouse'])->name('warehouse');
 Route::get('/services/piping', [ServiceController::class, 'piping'])->name('piping');
 Route::get('/services/walling', [ServiceController::class, 'walling'])->name('walling');
+Route::get('/services/epoxy', [ServiceController::class, 'epoxy'])->name('epoxy');
+Route::get('/services/roofing', [ServiceController::class, 'roofing'])->name('roofing');
+Route::get('/services/panel', [ServiceController::class, 'panel'])->name('panel');
+Route::get('/services/road', [ServiceController::class, 'road'])->name('road');
+Route::get('/services/landscape', [ServiceController::class, 'landscape'])->name('landscape');
+Route::get('/services/interior', [ServiceController::class, 'interior'])->name('interior');
+Route::get('/services/temporary', [ServiceController::class, 'temporary'])->name('temporary');
+Route::get('/services/electrical', [ServiceController::class, 'electrical'])->name('electrical');
+Route::get('/services/door', [ServiceController::class, 'door'])->name('door');
 
 // Send Email
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
@@ -26,12 +35,14 @@ Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.
 
 // LANGUAGE
 Route::get('/lang/{locale}', function ($locale) {
-    if (! in_array($locale, ['en', 'id'])) {
+    // Tambahkan 'ko' ke dalam array
+    if (! in_array($locale, ['en', 'id', 'ko'])) {
         abort(400);
     }
 
-    Session::put('locale', $locale);
-    App::setLocale($locale);
+    session()->put('locale', $locale);
+    // App::setLocale di sini hanya bertahan satu request, 
+    // pastikan Anda punya Middleware untuk setLocale dari session secara global.
 
     return redirect()->back();
 })->name('lang.switch');

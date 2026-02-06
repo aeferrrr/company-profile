@@ -1,71 +1,92 @@
 <footer id="footer" class="footer">
     <div class="container">
         <div class="footer-grid">
-
-            <!-- QUICK LINKS -->
-            <div class="footer-col">
-                <h6 class="footer-title">Quick Links</h6>
-                <ul class="footer-links">
-                    <li><a href="/about">About Company</a></li>
-                    <li><a href="/services">Our Services</a></li>
-                    <li><a href="/projects">Project Portfolio</a></li>
-                    <li><a href="/organization">Organization</a></li>
-                    <li><a href="/contact">Contact Page</a></li>
-                </ul>
-            </div>
-
-            <!-- COMPANY INFO -->
             <div class="footer-col">
                 <h6 class="footer-title">Company Info</h6>
-
                 <div class="footer-info">
-                    <p class="mb-3">
-                        📍 Gedung AKA Lt.9, Jl. Bangka Raya,<br>
-                        Mampang Prapatan, Jakarta Selatan
-                    </p>
-
-                    <div class="footer-person">
-                        <strong>Mr. Han</strong>
-                        <p>📞 +62 811-1966-903</p>
-                        <p>📧 kpcidhan@gmail.com</p>
+                    <div class="address-box">
+                        <i class="fa-solid fa-location-dot icon-accent"></i>
+                        <span>
+                            Gedung AKA Lt.9, Jl. Bangka Raya,<br>
+                            Mampang Prapatan, Jakarta Selatan
+                        </span>
                     </div>
 
-                    <div class="footer-person mt-3">
-                        <strong>Adinda (Marketing)</strong>
-                        <p>📞 +62 813-7070-4904</p>
-                        <p>📧 adinda.kpcm@gmail.com</p>
+                    <div class="contact-group">
+                        <div class="contact-person">
+                            <strong class="text-white">Mr. Han</strong>
+                            <a href="tel:+628111966903">
+                                <i class="fa-solid fa-phone icon-accent"></i> +62 811-1966-903
+                            </a>
+                            <a href="mailto:kpcidhan@gmail.com">
+                                <i class="fa-solid fa-envelope icon-accent"></i> kpcidhan@gmail.com
+                            </a>
+                        </div>
+
+                        <div class="contact-person mt-3">
+                            <strong class="text-white">Adinda (Marketing)</strong>
+                            <a href="tel:+6281370704904">
+                                <i class="fa-solid fa-phone icon-accent"></i> +62 813-7070-4904
+                            </a>
+                            <a href="mailto:adinda.kpcm@gmail.com">
+                                <i class="fa-solid fa-envelope icon-accent"></i> adinda.kpcm@gmail.com
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- LOCATION -->
+            <div class="footer-col">
+                <h6 class="footer-title">Quick Links</h6>
+                <ul class="footer-links">
+                    <li><a href="{{ route('about') }}">About Company</a></li>
+                    <li><a href="{{ route('services') }}">Our Services</a></li>
+                    <li><a href="{{ route('projects') }}">Project Portfolio</a></li>
+                    <li><a href="{{ route('organization') }}">Organization</a></li>
+                    <li><a href="{{ route('contact') }}">Contact Page</a></li>
+                </ul>
+            </div>
+
             <div class="footer-col">
                 <h6 class="footer-title">Our Location</h6>
-                <div class="footer-map">
+                <div class="footer-map-wrapper">
                     <iframe
                         src="https://www.google.com/maps?q=PT+KPCM+Industrial+Estate+-6.2404597,106.8175674&output=embed"
-                        loading="lazy">
+                        allowfullscreen="" loading="lazy">
                     </iframe>
                 </div>
             </div>
 
-            <!-- CTA -->
-            <div class="footer-col footer-cta">
-                <h6 class="footer-title">Siap Membangun Proyek Anda?</h6>
+            <div class="footer-col footer-cta-col">
+                <h6 class="footer-title">Siap Membangun?</h6>
                 <p class="footer-text">
-                    Apabila tertarik membangun proyek Anda, silakan hubungi kami
-                    untuk informasi lebih lanjut.
+                    Hubungi kami untuk konsultasi gratis mengenai proyek Anda.
                 </p>
 
-                <a href="https://wa.me/628111966903" class="btn btn-footer">
-                    Konsultasi Gratis
+                <a href="https://wa.me/628111966903" class="btn btn-footer" target="_blank">
+                    <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis
                 </a>
+
+                <div class="social-section">
+                    <span class="social-label">Follow Us</span>
+                    <div class="social-icons">
+                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
         </div>
 
         <div class="footer-bottom">
-            © {{ date('Y') }} PT KPCM Industrial Estate. All Rights Reserved.
+            <p>© {{ date('Y') }} <strong>PT KPCM Industrial Estate</strong>. All Rights Reserved.</p>
         </div>
     </div>
 </footer>

@@ -1,0 +1,160 @@
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.services-highlight {
+  background-color: var(--white-off);
+  padding: 60px 0;
+}
+
+/* Service Button (Left Nav) */
+.service-btn {
+  background: var(--white-pure);
+  border: none;
+  border-radius: 12px;
+  padding: 18px 24px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.service-btn:hover {
+  background-color: var(--white-pure);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-btn.active {
+  background-color: var(--white-pure);
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.15);
+  z-index: 2;
+}
+
+.service-btn.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background-color: var(--primary-blue);
+  border-radius: 4px 0 0 4px;
+}
+
+.service-btn .icon-box {
+  width: 42px;
+  height: 42px;
+  background: var(--white-off); /* Warna background agak gelap dikit dari putih murni */
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Warna Icon Hitam */
+  color: #000000; 
+
+  /* --- HAPUS BORDER YANG LAMA --- */
+  /* border: 2px solid #000000;  <- Hapus ini */
+  
+  /* --- GANTI DENGAN BAYANGAN LEMBUT --- */
+  /* Ini memberikan efek 'mengambang' yang halus */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  transition: all 0.3s ease; /* Transisi halus untuk warna dan bayangan */
+}
+
+.service-btn.active .icon-box {
+  background: var(--primary-blue);
+  color: #ffffff !important; 
+  
+  /* --- BAYANGAN SAAT AKTIF (Berwarna Biru) --- */
+  /* Bayangan abu di atas akan berubah menjadi bayangan biru ini */
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
+  
+  /* Hapus override border karena sudah tidak pakai border */
+  /* border-color: ... <- Hapus ini */
+}
+
+.service-btn .icon-box i {
+    color: inherit; 
+}
+
+.service-btn span {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.service-btn.active span {
+  color: var(--primary-blue);
+}
+
+/* Service Content (Right Side) */
+.service-content {
+  display: none;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-content.active {
+  display: block;
+  animation: fadeInScale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.service-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 0;
+  transition: transform 5s ease;
+}
+
+.service-content.active .service-bg-img {
+  transform: scale(1.05);
+}
+
+.service-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.5) 60%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: var(--white-pure);
+}
+
+/* Service Animation */
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Service Responsive */
+@media (max-width: 991px) {
+  .service-content {
+    position: relative;
+    height: 350px;
+    margin-top: 20px;
+  }
+}

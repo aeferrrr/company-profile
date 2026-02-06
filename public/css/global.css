@@ -1,0 +1,176 @@
+/* =========================================================
+   GLOBAL CSS VARIABLES
+   KPCM Industrial Estate - Corporate Light Theme
+========================================================= */
+
+:root {
+
+  /* ======================================================
+     PRIMARY / BRAND COLORS
+  ====================================================== */
+
+  /* Samsung / Corporate */
+  --samsung-blue: #1428A0;
+  --samsung-blue-light: #2f4bff;
+  --samsung-hover: #0f1e7a;
+  --samsung-blue-glow: rgba(20, 40, 160, 0.15); /* Disesuaikan untuk bg putih */
+
+  /* Standardized Alias */
+  --primary: var(--samsung-blue);
+  --primary-light: var(--samsung-blue-light);
+  --primary-hover: var(--samsung-hover);
+
+  /* Legacy Blue */
+  --primary-blue: #1e4fd8;
+  --primary-blue-light: #4f6dff;
+
+  /* ======================================================
+     BACKGROUND COLORS (BROKEN WHITE THEME)
+  ====================================================== */
+
+  /* Broken White / Off-White (Tidak Putih Murni) */
+  --bg-broken-white: #f9fafb; 
+  --bg-surface: #ffffff; /* Untuk Card/Kotak konten */
+
+  /* Navbar tetap gelap agar kontras (Corporate Style) */
+  --dark-navbar: #0a111a;
+  --dark-navbar-solid: rgba(10, 17, 26, 0.98);
+
+  /* ======================================================
+     TEXT COLORS (OPTIMIZED FOR LIGHT BG)
+  ====================================================== */
+
+  --text-dark: #212529; /* Warna utama teks paragraf */
+  --text-grey: #5e6c7e;
+  --text-muted: #8892b0;
+  --text-light: #ffffff; /* Hanya untuk teks di dalam elemen gelap (seperti navbar/tombol) */
+
+  /* ======================================================
+     BORDER & UI
+  ====================================================== */
+
+  --border-soft: #e2e8f0; /* Border abu halus */
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important; /* Matikan CSS native biar JS yang handle */
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* ======================
+    GLOBAL
+====================== */
+body {
+    font-family: 'Poppins', sans-serif;
+    
+    /* BACKGROUND BROKEN WHITE */
+    background-color: var(--bg-broken-white);
+    
+    /* Warna Teks Utama menjadi Gelap */
+    color: var(--text-dark);
+    
+    line-height: 1.6;
+    padding: 0; /* Padding dihandle per section atau top-padding navbar */
+    position: relative;
+    min-height: 100vh;
+}
+
+/* Background Industrial Overlay (Versi Light Mode) */
+/* Memberikan nuansa teknis yang sangat halus di belakang */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: 
+        /* Sentuhan biru Samsung sangat tipis di pojok kanan atas */
+        radial-gradient(
+            circle at 85% 15%, 
+            rgba(20, 40, 160, 0.04), 
+            transparent 40%
+        ),
+        /* Sentuhan abu hangat di kiri bawah */
+        radial-gradient(
+            circle at 10% 85%, 
+            rgba(0, 0, 0, 0.03), 
+            transparent 50%
+        );
+    z-index: -1;
+    pointer-events: none;
+}
+
+section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Headings menggunakan Warna Brand (Samsung Blue) agar tegas */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--samsung-blue);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* Utility: Link Style */
+a {
+    color: var(--samsung-blue);
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+a:hover {
+    color: var(--samsung-blue-light);
+    text-decoration: underline;
+}
+
+/* Utility tambahan untuk memastikan Section transparan */
+section, .container-fluid, .hero-section {
+    background-color: transparent;
+}
+
+/* ======================================================
+   RESPONSIVE SPACING & SAFE AREA (MOBILE FIX)
+====================================================== */
+
+@media (max-width: 576px) {
+    
+    /* 1. Memberikan Jarak (Padding) Aman Kiri-Kanan */
+    /* Ini memastikan teks tidak pernah menempel ke bezel HP */
+    .container, 
+    .container-fluid {
+        padding-left: 25px !important;  /* Lebih lega dari default 15px */
+        padding-right: 25px !important;
+    }
+
+    /* 2. Mencegah Scroll Samping Tidak Sengaja */
+    /* Sering terjadi di HP jika ada elemen yang kelebaran */
+    body, html {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    
+    /* 3. Penyesuaian Heading di HP agar tidak terlalu raksasa */
+    h1 { font-size: 2.2rem !important; }
+    h2 { font-size: 1.75rem !important; }
+    h3 { font-size: 1.5rem !important; }
+}

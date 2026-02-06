@@ -1,0 +1,320 @@
+/* =========================================================
+   HERO SECTION – STRUCTURE & CONTENT
+========================================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Gunakan tinggi layar, JANGAN 360px */
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-bottom: 5px solid var(--const-primary);
+  /* Padding disesuaikan agar pas di tengah */
+  padding-top: 0; 
+  padding-bottom: 0;
+  margin-top: 75px;
+}
+
+/* Backgrounds */
+.hero-video,
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* Overlay gelap merata agar tulisan putih terbaca jelas */
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+}
+
+/* Hero Content Styling */
+.hero-content {
+  /* Hapus border kiri dan padding kiri bawaan */
+  border-left: none; 
+  padding-left: 0;
+  
+  /* Pastikan text align center */
+  text-align: center; 
+  margin: 0 auto; 
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--const-primary);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Ukuran font besar */
+  font-weight: 800;
+  color: var(--const-white); /* Pastikan variabel ini ada, atau ganti #ffffff */
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  animation: fadeUp 0.8s ease forwards 0.2s;
+  opacity: 0;
+}
+
+.text-highlight {
+  color: transparent;
+  -webkit-text-stroke: 1px #ffffff; /* Ganti var(--const-white) ke hex kalau ragu */
+  /* Jika ingin tulisan putih SOLID (bukan garis tepi), hapus 2 baris di atas dan beri: color: #ffffff; */
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: #e0e0e0;
+  max-width: 700px;
+  
+  /* Margin auto agar paragraf di tengah */
+  margin-left: auto;
+  margin-right: auto;
+  
+  margin-bottom: 40px;
+  font-weight: 300;
+  line-height: 1.6;
+  animation: fadeUp 0.8s ease forwards 0.4s;
+  opacity: 0;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Jarak konsisten antar tombol */
+    flex-wrap: wrap;
+    animation: fadeUp 0.8s ease forwards 0.6s;
+    opacity: 0;
+}
+
+.custom-btn {
+    border-radius: 50px;
+    padding: 14px 30px; 
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s ease;
+    
+    /* Kunci Keserasian: */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px; /* Lebar minimum ditingkatkan agar seragam */
+    height: 55px;     /* Tinggi tetap agar identik */
+    margin: 0 !important; /* Paksa hapus margin dari class bootstrap */
+}
+
+
+.btn-primary.custom-btn {
+    background: rgba(var(--const-primary-rgb), 0.9); /* Gunakan var warna anda */
+    /* Jika var rgb tidak ada, gunakan kode hex langsung misal: background: #e0a800; */
+    background-color: var(--const-primary); 
+    border-color: var(--const-primary);
+    color: var(--const-dark);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.custom-btn:hover {
+    background-color: var(--const-primary);
+    border-color: var(--const-primary);
+    color: #000; /* Ganti ke warna gelap saat hover agar teks terbaca */
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary.custom-btn:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: var(--const-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Penyesuaian Ikon agar tidak merusak alignment teks */
+.custom-btn i {
+    font-size: 1.2rem;
+    line-height: 0;
+}
+
+.btn-outline-light.custom-btn {
+    /* Background semi-transparan agar tulisan lebih terbaca */
+    background: rgba(255, 255, 255, 0.1); 
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+    backdrop-filter: blur(5px); /* Efek blur kaca */
+}
+
+.btn-outline-light.custom-btn:hover {
+    background-color: var(--const-primary);
+    border-color: var(--const-primary);
+    color: var(--const-dark);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(117, 204, 255, 0.4);
+}
+
+/* Stats Bar */
+.hero-stats-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.7);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.stat-item {
+  padding: 25px 15px;
+  text-align: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--const-white);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--const-primary);
+  margin-bottom: 5px;
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Hero Animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+  
+  .custom-btn {
+    /* Kembalikan margin agar tombol di mobile rapi */
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Agar tombol "Company Profile" punya jarak di mobile jika stack ke bawah */
+  .hero-buttons .btn:last-child {
+      margin-top: 10px;
+      margin-left: 0 !important; /* Reset margin ms-3 bootstrap */
+  }
+
+/* --- OVERRIDES (Style Hero Alternatif dari kode bagian bawah) --- */
+/* Style ini menimpa .hero-section di atas jika dimuat bersamaan */
+.hero-section {
+  position: relative;
+  height: 360px; /* Tinggi override */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+/* Override spesifik konten untuk hero tipe ini */
+.hero-section .hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-section .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 720px;
+}
+
+.hero-section .hero-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero-section .hero-subtitle {
+  font-size: 1rem;
+  margin-bottom: 26px;
+}
+
+/* =========================================
+   RESPONSIF KHUSUS MOBILE (Rata Kiri)
+========================================= */
+@media (max-width: 576px) {
+    
+    /* 1. Paksa Container Hero Content ke Kiri */
+    .hero-content {
+        /* Penting: !important digunakan untuk menimpa class text-center dari Bootstrap/Desktop */
+        text-align: left !important; 
+        
+        /* Kembalikan garis kuning di kiri agar manis */
+        border-left: 5px solid var(--const-primary); 
+        padding-left: 20px; 
+        
+        /* Reset margin agar tidak di tengah layar */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    /* 2. Judul Utama */
+    .hero-title {
+        font-size: 2.2rem; /* Ukuran font disesuaikan untuk HP */
+        margin-bottom: 15px;
+    }
+
+    /* 3. Subtitle / Deskripsi */
+    .hero-subtitle {
+        /* Pastikan paragraf rata kiri & margin reset */
+        text-align: left !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    /* 4. Area Tombol */
+  .hero-buttons {
+        flex-direction: column;
+        align-items: stretch; /* Tombol melebar penuh mengikuti container */
+        width: 100%;
+        max-width: 300px; /* Batasi lebar maksimal di mobile agar tidak terlalu lebar */
+        margin: 0 auto;
+    }
+
+    /* 5. Style Tombol di HP */
+    .custom-btn {
+        width: 100%;
+        min-width: unset;
+    }
+    
+    /* Reset khusus untuk tombol kedua (Profile) jika ada margin kiri */
+    .hero-buttons .btn.ms-3 {
+        margin-left: 0 !important;
+    }
+}

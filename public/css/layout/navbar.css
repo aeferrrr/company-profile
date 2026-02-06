@@ -1,37 +1,40 @@
 /* ======================
-   COLOR VARIABLES
-====================== */
-
-:root {
-    /* Samsung Blue Palette */
-    --samsung-blue: #1428A0;
-    --samsung-blue-light: #2f4bff;
-    --samsung-blue-glow: rgba(47, 75, 255, 0.45);
-
-    /* Neutral Dark */
-    --dark-navbar: #0f1115;
-    --dark-navbar-solid: rgba(15, 17, 21, 0.96);
-
-    --text-light: #e8eaf0;
-}
-
-/* ======================
    CORPORATE NAVBAR
 ====================== */
 
+/* ======================
+    CORPORATE NAVBAR (MODIFIED)
+====================== */
+
 .navbar-corporate {
-    background-color: var(--dark-navbar);
-    padding: 16px 0;
-    transition: all 0.3s ease;
-    z-index: 999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* Menggunakan semi-transparan agar menyatu dengan hero */
+    background-color: rgba(10, 17, 26, 0.95) !important; 
+    backdrop-filter: blur(10px); /* Efek blur kaca premium */
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    
+    /* Padding lebih besar agar terlihat megah */
+    padding: 20px 0; 
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+/* State: Hilang saat scroll ke bawah */
+.navbar-hidden {
+    transform: translateY(-100%);
+    box-shadow: none;
 }
 
 /* Scroll state */
 .navbar-scrolled {
-    background-color: var(--dark-navbar-solid);
-    backdrop-filter: blur(8px);
-    padding: 10px 0;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    padding: 12px 0;
+    background-color: var(--dark-navbar-solid) !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 /* ======================
@@ -45,7 +48,12 @@
 }
 
 .navbar-brand img {
-    height: 46px;
+    height: 55px; /* Sedikit lebih besar agar impresif */
+    transition: height 0.3s ease;
+}
+
+.navbar-scrolled .navbar-brand img {
+    height: 45px; /* Mengecil saat scroll */
 }
 
 .navbar-brand span {
@@ -204,6 +212,50 @@
     .dropdown-menu .dropdown-item:nth-child(4) { transition-delay: 0.14s; }
 }
 
+/* ======================
+   NAV LINKS (WARNA TEKS PUTIH)
+====================== */
+
+/* Paksa text link jadi Putih Terang */
+.navbar-corporate .navbar-nav .nav-link {
+    color: var(--text-light) !important; /* Warna Putih/Abu terang */
+    font-size: 13.5px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    opacity: 0.9;
+    position: relative;
+    transition: all 0.25s ease;
+}
+
+/* Warna saat Hover / Aktif */
+.navbar-corporate .navbar-nav .nav-link:hover,
+.navbar-corporate .navbar-nav .nav-link.active {
+    color: var(--samsung-blue-light) !important;
+    opacity: 1;
+}
+
+/* Garis bawah biru saat hover */
+.navbar-corporate .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--samsung-blue), var(--samsung-blue-light));
+    transition: width 0.25s ease;
+}
+
+.navbar-corporate .nav-link:hover::after,
+.navbar-corporate .nav-link.active::after {
+    width: 100%;
+}
+
+/* Fix warna panah dropdown dan globe bahasa */
+.navbar-corporate .dropdown-toggle::after,
+.navbar-corporate i {
+    color: var(--text-light) !important;
+}
 
 /* ===== MOBILE RESET ===== */
 @media (max-width: 991px) {

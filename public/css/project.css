@@ -1,50 +1,151 @@
-/* ======================
-   PROJECT HERO
-====================== */
+/* =====================================================
+   1. HERO SECTION (Global & Specific)
+===================================================== */
 
-.project-hero {
+/* Base Hero Style (Shared) */
+.hero-section {
     position: relative;
-    height: 340px;
-    background: url('/images/ourproject.jpg') center center / cover no-repeat;
-}
-
-
-.project-hero-overlay {
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.55);
-    display: flex;
+    height: 320px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex; /* Untuk centering content vertikal */
     align-items: center;
 }
 
-.project-hero-content {
-    color: #ffffff;
-    max-width: 600px;
+/* Specific Backgrounds */
+.hero-about {
+    background-image: url('/images/background-senja.png');
 }
 
-.project-hero-content h1 {
-    font-size: 42px;
+/* =============================================
+   2. CAROUSEL PROYEK (Rasio 16:9)
+   ============================================= */
+
+.projects-section {
+    padding: 3rem 0;
+    background-color: #f9f9f9;
+}
+
+/* KUNCI: Memaksa rasio 16:9 pada container slide */
+.carousel-item {
+    width: 100%;
+    aspect-ratio: 16 / 9; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px; /* Sudut melengkung sedikit */
+}
+
+/* Gambar Slide */
+.project-slide-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop otomatis agar gambar penuh */
+    object-position: center;
+    transition: transform 0.5s ease; /* Efek zoom halus (opsional) */
+}
+
+/* Efek Zoom Sedikit saat Hover (Opsional, hapus jika tidak suka) */
+.carousel:hover .project-slide-img {
+    transform: scale(1.02);
+}
+
+/* Gradient Gelap di Bawah Slide (Agar teks terbaca) */
+.slide-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75%; /* Area gradasi */
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none; /* Klik tembus ke gambar */
+}
+
+/* Teks Caption di Slide */
+.carousel-caption {
+    bottom: 8%;
+    left: 8%;
+    right: 8%;
+    text-align: left;
+    z-index: 10;
+}
+
+.carousel-caption h3 {
     font-weight: 700;
-    margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-.project-hero-content p {
-    font-size: 16px;
+.carousel-caption p {
+    font-size: 1rem;
     opacity: 0.9;
-    line-height: 1.6;
 }
 
-/* Mobile */
+/* Tombol Navigasi Kanan/Kiri */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.3); /* Lingkaran transparan */
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background-size: 50%;
+}
+
+
+/* =============================================
+   3. MOBILE RESPONSIVE (Tampilan HP)
+   ============================================= */
+
 @media (max-width: 768px) {
-    .project-hero {
-        height: 260px;
+    /* HERO: Perkecil teks dan tinggi hero di HP */
+    .hero-section.hero-project {
+        height: 300px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
-    .project-hero-content h1 {
-        font-size: 32px;
+    /* CAROUSEL: Ubah rasio jadi 4:3 di HP agar tidak terlalu pendek/gepeng */
+    .carousel-item {
+        aspect-ratio: 4 / 3;
     }
 
-    .project-hero-content p {
-        font-size: 14px;
+    /* CAPTION: Perkecil font caption */
+    .carousel-caption h3 {
+        font-size: 1.35rem;
     }
+    .carousel-caption p {
+        font-size: 0.9rem;
+        display: block !important; /* Paksa deskripsi tetap muncul jika muat */
+    }
+}
+
+/* ======================
+   PROJECT SLIDER
+====================== */
+.project-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background-color: #000;
+}
+
+.carousel-caption {
+    background: rgba(0,0,0,0.55);
+    border-radius: 8px;
+    padding: 16px 22px;
+}
+
+.carousel-caption h5 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.carousel-caption p {
+    font-size: 14px;
+    margin-bottom: 0;
 }

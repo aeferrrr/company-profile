@@ -1,145 +1,153 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us | KPCM Industrial Estate')
+@section('title', 'Galeri Proyek | KPCM Industrial Estate')
 
 @section('content')
 
     {{-- ======================
-   PROJECT HERO (FULL WIDTH)
-====================== --}}
+        PROJECT HERO
+    ====================== --}}
     <section class="hero-section hero-project">
 
         {{-- Background Image --}}
-        <img src="{{ asset('images/ourproject.jpg') }}" class="hero-bg" alt="Project Gallery KPCM Industrial Estate">
+        <img src="{{ asset('images/ourproject.jpg') }}" class="hero-bg" alt="Galeri Proyek KPCM Industrial Estate">
 
         {{-- Overlay --}}
         <div class="hero-overlay"></div>
 
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Project Gallery</h1>
+                <h1 class="hero-title">Galeri Proyek</h1>
                 <p class="hero-subtitle">
-                    Selected industrial construction projects delivered
-                    with precision, quality, and professionalism.
+                    Proyek konstruksi industri pilihan yang dikerjakan 
+                    dengan presisi, kualitas, dan profesionalisme.
                 </p>
             </div>
         </div>
 
     </section>
 
+    {{-- ======================
+        PROJECT CAROUSEL SECTION
+    ====================== --}}
+    <section id="projects" class="projects-section">
+        <div class="container">
 
-    <section id="projects" class="projects container ">
-        <div class="text-center mb-5">
-            <h1 class="fw-bold">Project Gallery</h1>
-            <p class="text-muted mt-2">
-                Our selected industrial construction projects showcasing quality,
-                capability, and professional execution.
-            </p>
-        </div>
-
-        <div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
-
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
-                {{-- <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
-                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button>
-                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="5"></button>
-                <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="6"></button> --}}
+            {{-- Section Title --}}
+            <div class="text-center mb-5 section-header">
+                <h2 class="fw-bold display-6">Proyek Unggulan</h2>
+                <p class="text-muted mt-2 mx-auto w-75">
+                    Pilihan proyek konstruksi industri kami yang menunjukkan kualitas, 
+                    kapabilitas, dan pelaksanaan profesional di lapangan.
+                </p>
+                <hr class="mx-auto my-3" style="width: 60px; border: 2px solid #0d6efd; opacity: 1;">
             </div>
 
-            <!-- Slides -->
-            <div class="carousel-inner rounded shadow">
+            {{-- Custom Styled Carousel --}}
+            <div id="projectCarousel" class="carousel slide carousel-fade shadow-lg rounded-3 overflow-hidden"
+                data-bs-ride="carousel">
 
-                <div class="carousel-item active">
-                    <img src="{{ asset('images/projects/project-1.jpg') }}" class="d-block w-100 project-img"
-                        alt="Warehouse Construction">
-                    <div class="carousel-caption">
-                        <h5>Concept Design</h5>
-                        <p>Kertas Nusantara, Berau, Kalimantan Timur</p>
-                    </div>
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button>
                 </div>
 
-                <div class="carousel-item">
-                    <img src="{{ asset('images/projects/project-2.jpg') }}" class="d-block w-100 project-img"
-                        alt="Factory Building">
-                    <div class="carousel-caption">
-                        <h5>Batching Plan & Cafetaria</h5>
-                        <p>Kertas Nusantara, Berau, Kalimantan Timur</p>
+                <div class="carousel-inner">
+
+                    {{-- Slide 1 --}}
+                    <div class="carousel-item active">
+                        <img src="{{ asset('images/projects/project-1.jpg') }}" class="d-block w-100 project-slide-img"
+                            alt="Desain Konsep">
+
+                        <div class="slide-overlay"></div> 
+
+                        <div class="carousel-caption">
+                            <span class="badge bg-primary mb-2">Desain Konsep</span>
+                            <h3 class="fw-bold">Masterplan Pabrik</h3>
+                            <p class="mb-0 d-none d-md-block">Kertas Nusantara, Berau, Kalimantan Timur</p>
+                        </div>
                     </div>
+
+                    {{-- Slide 2 --}}
+                    <div class="carousel-item">
+                        <img src="{{ asset('images/projects/project-2.jpg') }}" class="d-block w-100 project-slide-img"
+                            alt="Bangunan Pabrik">
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-caption">
+                            <span class="badge bg-success mb-2">Konstruksi</span>
+                            <h3 class="fw-bold">Batching Plant & Kafetaria</h3>
+                            <p class="mb-0 d-none d-md-block">Kertas Nusantara, Berau, Kalimantan Timur</p>
+                        </div>
+                    </div>
+
+                    {{-- Slide 3 --}}
+                    <div class="carousel-item">
+                        <img src="{{ asset('images/projects/project-3.jpg') }}" class="d-block w-100 project-slide-img"
+                            alt="Interior">
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-caption">
+                            <span class="badge bg-warning text-dark mb-2">Renovasi</span>
+                            <h3 class="fw-bold">Interior & Revamping</h3>
+                            <p class="mb-0 d-none d-md-block">Fasilitas Penunjang Area Pabrik</p>
+                        </div>
+                    </div>
+
+                    {{-- Slide 4 --}}
+                    <div class="carousel-item">
+                        <img src="{{ asset('images/projects/project-4.jpg') }}" class="d-block w-100 project-slide-img"
+                            alt="Atap Industri">
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-caption">
+                            <span class="badge bg-info text-dark mb-2">Atap</span>
+                            <h3 class="fw-bold">Pekerjaan Atap & Insulasi</h3>
+                            <p class="mb-0 d-none d-md-block">Pekerjaan Atap Industri - Subang</p>
+                        </div>
+                    </div>
+
+                    {{-- Slide 5 --}}
+                    <div class="carousel-item">
+                        <img src="{{ asset('images/projects/project-6.jpg') }}" class="d-block w-100 project-slide-img"
+                            alt="Minyak & Gas">
+                        <div class="slide-overlay"></div>
+                        <div class="carousel-caption">
+                            <span class="badge bg-danger mb-2">MECHANICAL AND PIPING SERVICES</span>
+                            <h3 class="fw-bold">Layanan Mekanikal</h3>
+                            <p class="mb-0 d-none d-md-block">RDMP RU-V Pertamina Balikpapan</p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="carousel-item">
-                    <img src="{{ asset('images/projects/project-3.jpg') }}" class="d-block w-100 project-img"
-                        alt="Road Work">
-                    <div class="carousel-caption">
-                        <h5>Interior & Revamping</h5>
-                        <p>Kertas Nusantara, Berau, Kalimantan Timur</p>
-                    </div>
-                </div>
-
-                {{-- <div class="carousel-item">
-                    <img src="{{ asset('images/projects/project-4.jpg') }}" class="d-block w-100 project-img"
-                        alt="Epoxy Flooring">
-                    <div class="carousel-caption">
-                        <h5>Roofing Panels</h5>
-                        <p>Roofing, Insullation & Panels. Roofing Work - Subang</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="{{ asset('images/projects/project-5.jpg') }}" class="d-block w-100 project-img"
-                        alt="Mechanical & Piping">
-                    <div class="carousel-caption">
-                        <h5>Interior & Revamping</h5>
-                        <p>KN, BERAU, KALIMANTAN TIMUR</p>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="{{ asset('images/projects/project-6.jpg') }}" class="d-block w-100 project-img"
-                        alt="Interior & Revamping">
-                    <div class="carousel-caption">
-                        <h5>Mechanical & Piping Services</h5>
-                        <p>RDMP RU-V PERTAMINA BALIKPAPAN PROJECT
-                            Partnership with PT. GEMILANG KARYA MANDIRI .</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{ asset('images/projects/project-7.jpg') }}" class="d-block w-100 project-img"
-                        alt="Interior & Revamping">
-                    <div class="carousel-caption">
-                        <h5>Road Work & Landscape Work</h5>
-                        <p>Asphalt, Concrete, and Paving Block - Paving Block Road – Jalan Sayuti - Landscape Building &
-                            Warehouse.</p>
-                    </div>
-                </div>
-
-            </div> --}}
-
-                <!-- Controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
+                    <span class="carousel-control-prev-icon bg-dark bg-opacity-25 rounded-circle p-3"
+                        aria-hidden="true"></span>
                 </button>
-
                 <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
+                    <span class="carousel-control-next-icon bg-dark bg-opacity-25 rounded-circle p-3"
+                        aria-hidden="true"></span>
                 </button>
 
             </div>
+        </div>
     </section>
-    <section class="container pb-5">
-        <div class="text-center p-5 rounded bg-white shadow-sm">
-            <h3 class="fw-bold mb-3">
-                Ready to Build Your Industrial Project?
+
+    {{-- ======================
+        CTA SECTION
+    ====================== --}}
+    <section class="container py-5 mb-4">
+        <div class="text-center p-5 rounded bg-white shadow-sm border border-light">
+            <h3 class="fw-bold mb-3 text-dark">
+                Siap Membangun Proyek Industri Anda?
             </h3>
             <p class="text-muted mb-4">
-                Contact us today to discuss your construction and project management needs.
+                Kami memastikan setiap proyek ditangani dengan standar keselamatan dan kualitas tertinggi.
             </p>
-            <a href="/contact" class="btn btn-primary px-4 py-2">
-                Contact Us
+            <a href="/contact" class="btn btn-primary px-5 py-2 fw-bold">
+                Hubungi Kami
             </a>
         </div>
-    @endsection
+    </section>
+@endsection

@@ -1,4 +1,4 @@
-<svg viewBox="0 0 1600 1400" width="100%" height="auto" preserveAspectRatio="xMidYMid meet"
+<svg viewBox="0 0 1600 1200" width="100%" height="auto" preserveAspectRatio="xMidYMid meet"
     xmlns="http://www.w3.org/2000/svg">
 
 

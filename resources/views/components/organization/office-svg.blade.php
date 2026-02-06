@@ -1,4 +1,9 @@
-<svg viewBox="0 0 1600 1000" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+<svg
+    viewBox="0 0 1600 700"
+    width="100%"
+    preserveAspectRatio="xMidYMid meet"
+    xmlns="http://www.w3.org/2000/svg">
+
 
     <defs>
         <clipPath id="chartCircleClipOld">
@@ -56,7 +61,7 @@
     <g class="chart-person" transform="translate(60, 430)">
         <rect width="320" height="60" class="chart-box" />
         <text x="160" y="22" class="chart-title">Staff</text>
-        <text x="160" y="42" class="chart-name">Rahmad</text>
+        <text x="160" y="42" class="chart-name">Hans</text>
         <g class="chart-photo-wrapper">
             <circle cx="45" cy="45" r="47" class="chart-photo-frame" />
             <image href="/images/team/president.jpg" x="0" y="0" width="90" height="90" clip-path="url(#chartCircleClipOld)" preserveAspectRatio="xMidYMid slice" />
@@ -105,8 +110,8 @@
 
     <g class="chart-person" transform="translate(640, 580)">
         <rect width="320" height="60" class="chart-box" />
-        <text x="160" y="22" class="chart-title">Purchasing</text>
-        <text x="160" y="42" class="chart-name">Tito</text>
+        <text x="160" y="22" class="chart-title">Architect</text>
+        <text x="160" y="42" class="chart-name">Ridho Hidayat</text>
         <g class="chart-photo-wrapper">
             <circle cx="45" cy="45" r="47" class="chart-photo-frame" />
             <image href="/images/team/president.jpg" x="0" y="0" width="90" height="90" clip-path="url(#chartCircleClipOld)" preserveAspectRatio="xMidYMid slice" />
@@ -115,8 +120,8 @@
 
     <g class="chart-person" transform="translate(1140, 580)">
         <rect width="320" height="60" class="chart-box" />
-        <text x="160" y="22" class="chart-title">Admin</text>
-        <text x="160" y="42" class="chart-name">-</text>
+        <text x="160" y="22" class="chart-title">Senior Admin</text>
+        <text x="160" y="42" class="chart-name">Rahmad</text>
         <g class="chart-photo-wrapper">
             <circle cx="45" cy="45" r="47" class="chart-photo-frame" />
             <image href="/images/team/president.jpg" x="0" y="0" width="90" height="90" clip-path="url(#chartCircleClipOld)" preserveAspectRatio="xMidYMid slice" />

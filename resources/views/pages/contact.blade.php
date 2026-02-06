@@ -83,7 +83,7 @@
                                     </div>
 
                                     <div class="col-12 text-center mt-4">
-                                        <button type="submit" class="btn btn-warning px-5 fw-semibold">
+                                        <button type="submit" class="btn btn-primary px-5 fw-semibold">
                                             Send Message
                                         </button>
                                     </div>

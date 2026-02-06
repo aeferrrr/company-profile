@@ -1,0 +1,106 @@
+/* =========================================================
+   CLIENT SECTION STYLING
+========================================================= */
+
+.client-section {
+    /* Optimasi performa background */
+    background-color: #ffffff; 
+    z-index: 1;
+}
+
+/* Container untuk Marquee (Slider) */
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    /* Mencegah scrollbar */
+    padding: 20px 0;
+}
+
+/* Jalur Animasi */
+.marquee-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 4rem; /* Jarak antar logo */
+    /* Animasi CSS murni (GPU Accelerated) */
+    animation: scrollLoop 40s linear infinite;
+    will-change: transform; /* Hint ke browser untuk optimasi GPU */
+}
+
+/* Item Logo */
+.logo-item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-item img {
+    height: 90px; /* Tinggi default mobile diperbesar dari 60px ke 90px */
+    width: auto;
+    object-fit: contain;
+    /* Perubahan: Menghapus grayscale dan meningkatkan opacity */
+    filter: grayscale(0%);
+    opacity: 1;
+    transition: transform 0.3s ease; /* Transisi hanya untuk efek scale */
+    cursor: pointer;
+    /* Mencegah gambar terdistorsi */
+    max-width: 240px; /* Max-width diperbesar dari 180px ke 240px */
+}
+
+/* Hover Effect - Hanya efek zoom */
+.logo-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Efek Fade Out Kiri-Kanan agar terlihat menyatu */
+.slider-fade-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Agar klik tembus ke logo */
+    background: linear-gradient(90deg, #ffffff 0%, transparent 10%, transparent 90%, #ffffff 100%);
+}
+
+/* Definisi Animasi */
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Geser sebesar -50% karena konten diduplikasi jadi 2 set */
+        transform: translateX(-50%);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* Desktop */
+@media (min-width: 992px) {
+    .logo-item img {
+        height: 130px; /* Lebih besar di desktop (dari 80px ke 130px) */
+    }
+    
+    .marquee-content {
+        gap: 6rem; /* Jarak lebih renggang di desktop */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .marquee-content {
+        animation-duration: 25s; /* Sedikit lebih cepat di mobile agar dinamis */
+        gap: 3rem;
+    }
+    
+    .slider-fade-mask {
+        /* Kurangi efek fade di layar kecil agar logo lebih terlihat */
+        background: linear-gradient(90deg, #ffffff 0%, transparent 5%, transparent 95%, #ffffff 100%);
+    }
+}

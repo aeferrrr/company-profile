@@ -101,3 +101,40 @@ if (video && toggleBtn && iconMuted && iconSound) {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector(".navbar-corporate");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add("navbar-scrolled");
+        } else {
+            navbar.classList.remove("navbar-scrolled");
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+        var swiper = new Swiper(".logoSwiper", {
+            slidesPerView: 2,
+            loop: true,
+            speed: 3500,
+            allowTouchMove: false,
+            autoplay: {
+                delay: 0,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                // --- PENGATURAN KHUSUS MOBILE ---
+                320: {
+                    slidesPerView: 2,  // Tetap muncul 2 logo
+                    spaceBetween: 15,  // Jarak dipersempit (15px) agar muat
+                },
+                // --- PENGATURAN DESKTOP ---
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 40,  // Jarak lebih lega
+                }
+            }
+        });
+    });

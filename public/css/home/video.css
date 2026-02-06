@@ -1,0 +1,232 @@
+/* =========================================================
+   VIDEO SECTION & CONTROLS
+========================================================= */
+
+.video-section {
+  position: relative;
+  padding: 80px 0;
+  background-color: var(--white-pure);
+}
+
+/* Video Wrapper */
+.video-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  transform: translateZ(0);
+  cursor: pointer;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-wrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(13, 110, 253, 0.2) !important;
+}
+
+.video-wrapper video {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Overlays & Controls */
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  padding: 25px;
+  pointer-events: none;
+}
+
+.video-wrapper.paused .play-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  pointer-events: none;
+}
+
+.video-caption {
+  color: var(--white-pure);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Playlist Styling */
+.playlist-container {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.playlist-header {
+  padding: 15px 20px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #eee;
+}
+
+.playlist-items {
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.playlist-items::-webkit-scrollbar { width: 6px; }
+.playlist-items::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 10px; }
+
+.video-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+  gap: 15px;
+}
+
+.video-item:hover { background-color: #f1f5f9; }
+
+.video-item.active {
+  background-color: #eef2ff;
+  border-left: 4px solid #0d6efd;
+}
+
+.item-thumb {
+  width: 80px;
+  height: 55px;
+  border-radius: 6px;
+  object-fit: cover;
+  background-color: #ddd;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.item-thumb::after {
+  content: '▶';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 10px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.item-info h6 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #333;
+  line-height: 1.2;
+}
+
+.item-info p {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+/* Transition & Buttons */
+#companyVideo { transition: opacity 0.4s ease, transform 0.4s ease; }
+.video-fade-out { opacity: 0; transform: scale(0.98); }
+.video-fade-in { opacity: 1; transform: scale(1); }
+
+.btn-glass {
+  pointer-events: auto;
+  /* Pastikan background transparan/glass */
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  
+  /* PENTING: Ini membuat icon SVG menjadi Putih */
+  color: #ffffff !important; 
+  
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10; /* Pastikan tombol di atas layer lain */
+}
+
+.btn-glass:hover {
+  background: var(--primary-blue); /* Atau warna biru anda: #0d6efd */
+  border-color: var(--primary-blue);
+  color: #ffffff !important;
+  transform: scale(1.1);
+}
+
+/* Custom Video Button (Link/Trigger) */
+.btn-video {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-glass svg {
+    stroke: currentColor;
+    fill: none;
+}
+
+.play-icon {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--primary-blue);
+  border-radius: 50%;
+  position: relative;
+}
+
+.play-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  border-left: 6px solid var(--primary-blue);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+
+.btn-video:hover .play-icon {
+  background-color: var(--primary-blue);
+}
+
+.btn-video:hover .play-icon::before {
+  border-left-color: #ffffff;
+}
+
+/* Video Responsive */
+@media (max-width: 991px) {
+  .playlist-container { margin-top: 20px; max-height: 300px; }
+}
+@media (max-width: 768px) {
+  .video-controls { padding: 20px; }
+  .video-caption h5 { font-size: 1rem; }
+}

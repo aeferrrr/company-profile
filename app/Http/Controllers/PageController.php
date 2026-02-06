@@ -16,7 +16,7 @@ class PageController extends Controller
 
     public function services()
     {
-        return view('pages.services.services');
+        return view('pages.services.index');
     }
 
     public function projects()
@@ -33,4 +33,5 @@ class PageController extends Controller
     return view('pages.perusahaan.organization');
     }
 
+    
 }

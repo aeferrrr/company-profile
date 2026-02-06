@@ -17,13 +17,17 @@
    (Ini untuk tampilan Grid/Card HTML biasa, jika masih dipakai)
 ===================================================== */
 
-/* Chart Wrapper */
 .org-chart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 28px;
+    width: 100%;
+    overflow-x: auto;
 }
+
+.org-chart svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 
 /* Level */
 .org-level {
