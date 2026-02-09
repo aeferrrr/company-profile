@@ -59,39 +59,39 @@
 
                     {{-- Slide 1 --}}
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/projects/project-1.jpg') }}" class="d-block w-100 project-slide-img"
-                            alt="Desain Konsep">
+                        <img src="{{ asset('images/projects/project-4.jpg') }}" class="d-block w-100 project-slide-img"
+                            alt="Roofing">
 
                         <div class="slide-overlay"></div> 
 
                         <div class="carousel-caption">
-                            <span class="badge bg-primary mb-2">Desain Konsep</span>
-                            <h3 class="fw-bold">Concept Design</h3>
-                            <p class="mb-0 d-none d-md-block">Kertas Nusantara, Berau, Kalimantan Timur</p>
+                            <span class="badge bg-primary mb-2">Roofing</span>
+                            <h3 class="fw-bold">Roofing, Insullation & Panels </h3>
+                            <p class="mb-0 d-none d-md-block">Subang, Jawa Barat</p>
                         </div>
                     </div>
 
                     {{-- Slide 2 --}}
                     <div class="carousel-item">
-                        <img src="{{ asset('images/projects/project-2.jpg') }}" class="d-block w-100 project-slide-img"
+                        <img src="{{ asset('images/projects/project-6.jpg') }}" class="d-block w-100 project-slide-img"
                             alt="Bangunan Pabrik">
                         <div class="slide-overlay"></div>
                         <div class="carousel-caption">
-                            <span class="badge bg-success mb-2">Konstruksi</span>
-                            <h3 class="fw-bold">Batching Plant & Kafetaria</h3>
-                            <p class="mb-0 d-none d-md-block">Kertas Nusantara, Berau, Kalimantan Timur</p>
+                            <span class="badge bg-success mb-2">Mechanical & Piping Services</span>
+                            <h3 class="fw-bold">Partnership with PT. GEMILANG KARYA MANDIRI </h3>
+                            <p class="mb-0 d-none d-md-block">Balikpapan, Kalimantan Timur</p>
                         </div>
                     </div>
 
                     {{-- Slide 3 --}}
                     <div class="carousel-item">
-                        <img src="{{ asset('images/projects/project-3.jpg') }}" class="d-block w-100 project-slide-img"
+                        <img src="{{ asset('images/projects/project-12.jpg') }}" class="d-block w-100 project-slide-img"
                             alt="Interior">
                         <div class="slide-overlay"></div>
                         <div class="carousel-caption">
-                            <span class="badge bg-warning text-dark mb-2">Renovasi</span>
-                            <h3 class="fw-bold">Interior Concept</h3>
-                            <p class="mb-0 d-none d-md-block">Kertas Nusantara, Berau, Kalimantan Timur</p>
+                            <span class="badge bg-warning text-dark mb-2">Temporary Office</span>
+                            <h3 class="fw-bold">Access Floor, Perforated (Air Grill), Data Center, and Server room</h3>
+                            <p class="mb-0 d-none d-md-block">Cikarang, Jawa Barat</p>
                         </div>
                     </div>
 

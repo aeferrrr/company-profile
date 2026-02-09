@@ -5,8 +5,8 @@
 @section('content')
 
     {{-- ======================
-    SERVICES HERO (FULL WIDTH)
-====================== --}}
+       SERVICES HERO (FULL WIDTH)
+    ====================== --}}
     <section class="hero-section hero-services">
 
         {{-- Background Image --}}
@@ -27,8 +27,8 @@
     </section>
 
     {{-- ======================
-    SERVICES GRID
-====================== --}}
+       SERVICES GRID
+    ====================== --}}
     <section id="services" class="section-padding bg-light">
         <div class="container">
 
@@ -239,10 +239,41 @@
                     </div>
                 </div>
 
+                {{-- 14. Utilities Work (NEW) --}}
+                <div class="col-md-6 col-lg-4"> 
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Utilities Work</h5>
+                            <p class="card-text">
+                                Instalasi dan pemeliharaan infrastruktur utilitas pendukung, termasuk sistem air bersih, sanitasi, dan jaringan teknis kawasan.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- 15. Interior Villa (NEW) --}}
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card h-100">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Interior Villa</h5>
+                            <p class="card-text">
+                                Perancangan dan pengerjaan interior villa yang eksklusif, memadukan estetika mewah dengan kenyamanan hunian premium.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
     </section>
+    
     {{-- ======================
         CALL TO ACTION (CTA)
     ====================== --}}

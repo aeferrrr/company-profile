@@ -1,0 +1,88 @@
+/* Hero Styling */
+.hero-trading {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 51, 102, 0.7);
+    /* Blue tint overlay */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Card Customization */
+.hover-top {
+    transition: all 0.3s ease;
+}
+
+.hover-top:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
+
+/* Icon Circles Colors */
+.icon-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+/* Soft Background Colors for Icons */
+.bg-pink-soft {
+    background-color: #fce4ec;
+    color: #d81b60;
+}
+
+.bg-dark-soft {
+    background-color: #e0e0e0;
+    color: #212529;
+}
+
+.bg-warning-soft {
+    background-color: #fff3e0;
+    color: #ff9800;
+}
+
+.bg-secondary-soft {
+background-color: #eceff1;
+color: #546e7a;
+}
+
+.bg-info-soft {
+    background-color: #e0f7fa;
+    color: #00bcd4;
+}
+
+.bg-success-soft {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}

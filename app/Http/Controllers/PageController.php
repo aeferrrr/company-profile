@@ -14,6 +14,11 @@ class PageController extends Controller
         return view('pages.perusahaan.about');
     }
 
+    public function anotherbiz()
+    {
+        return view('pages.perusahaan.anotherbiz');
+    }
+
     public function services()
     {
         return view('pages.services.index');

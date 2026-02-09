@@ -26,6 +26,7 @@
     {{-- PERUSAHAAN --}}
     <link rel="stylesheet" href="{{ asset('css/perusahaan/organization.css') }}">
     <link rel="stylesheet" href="{{ asset('css/perusahaan/perusahaan.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/perusahaan/anotherbiz.css') }}">
     {{-- PERUSAHAAN --}}
     <link rel="stylesheet" href="{{ asset('css/services/services.css') }}">
     {{-- Project --}}
