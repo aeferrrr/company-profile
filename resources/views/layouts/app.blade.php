@@ -24,14 +24,16 @@
     <link rel="stylesheet" href="{{ asset('css/home/service.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home/video.css') }}">
     {{-- PERUSAHAAN --}}
-    <link rel="stylesheet" href="{{ asset('css/page.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/perusahaan/organization.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/perusahaan/perusahaan.css') }}">
+    {{-- PERUSAHAAN --}}
+    <link rel="stylesheet" href="{{ asset('css/services/services.css') }}">
+    {{-- Project --}}
+    <link rel="stylesheet" href="{{ asset('css/projects/project.css') }}">
+    {{-- CONTACT --}}
+    <link rel="stylesheet" href="{{ asset('css//contact/contactus.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/contactus.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/perusahaan.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/project.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/services.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('css/hero.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('css/organization.css') }}">
+
     <link rel="icon" type="image/x-icon" href="{{ asset('images/kpcm.ico') }}">
     {{-- JavaScript --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />

@@ -51,8 +51,8 @@
                     <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
                     <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
-                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button>
+                    {{-- <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
+                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button> --}}
                 </div>
 
                 <div class="carousel-inner">
@@ -66,7 +66,7 @@
 
                         <div class="carousel-caption">
                             <span class="badge bg-primary mb-2">Desain Konsep</span>
-                            <h3 class="fw-bold">Masterplan Pabrik</h3>
+                            <h3 class="fw-bold">Concept Design</h3>
                             <p class="mb-0 d-none d-md-block">Kertas Nusantara, Berau, Kalimantan Timur</p>
                         </div>
                     </div>
@@ -90,13 +90,13 @@
                         <div class="slide-overlay"></div>
                         <div class="carousel-caption">
                             <span class="badge bg-warning text-dark mb-2">Renovasi</span>
-                            <h3 class="fw-bold">Interior & Revamping</h3>
-                            <p class="mb-0 d-none d-md-block">Fasilitas Penunjang Area Pabrik</p>
+                            <h3 class="fw-bold">Interior Concept</h3>
+                            <p class="mb-0 d-none d-md-block">Kertas Nusantara, Berau, Kalimantan Timur</p>
                         </div>
                     </div>
 
                     {{-- Slide 4 --}}
-                    <div class="carousel-item">
+                    {{-- <div class="carousel-item">
                         <img src="{{ asset('images/projects/project-4.jpg') }}" class="d-block w-100 project-slide-img"
                             alt="Atap Industri">
                         <div class="slide-overlay"></div>
@@ -105,10 +105,10 @@
                             <h3 class="fw-bold">Pekerjaan Atap & Insulasi</h3>
                             <p class="mb-0 d-none d-md-block">Pekerjaan Atap Industri - Subang</p>
                         </div>
-                    </div>
+                    </div> --}}
 
                     {{-- Slide 5 --}}
-                    <div class="carousel-item">
+                    {{-- <div class="carousel-item">
                         <img src="{{ asset('images/projects/project-6.jpg') }}" class="d-block w-100 project-slide-img"
                             alt="Minyak & Gas">
                         <div class="slide-overlay"></div>
@@ -117,7 +117,7 @@
                             <h3 class="fw-bold">Layanan Mekanikal</h3>
                             <p class="mb-0 d-none d-md-block">RDMP RU-V Pertamina Balikpapan</p>
                         </div>
-                    </div>
+                    </div> --}}
 
                 </div>
 

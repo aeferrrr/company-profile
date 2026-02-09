@@ -20,9 +20,8 @@ return [
         'subtitle' => 'Salam Dari KPCM',
         'title'    => 'Pesan dari <br> Direktur Utama',
         'position' => 'Direktur Utama',
-        'content_1' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'content_2' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        'content_3' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.',
+        'content_1' => 'Di KPCM, kami percaya bahwa integritas dan inovasi adalah kunci utama dalam menghadapi dinamika pasar global. Komitmen kami bukan sekadar mencapai pertumbuhan, tetapi juga memberikan nilai tambah yang berkelanjutan bagi seluruh mitra dan pemangku kepentingan.',
+        'content_2' => 'Kami terus bertransformasi untuk menghadirkan keunggulan di setiap layanan, memastikan bahwa setiap langkah yang kami ambil selaras dengan visi strategis perusahaan. Mari melangkah maju bersama menuju masa depan yang lebih gemilang.',
     ],
 
     'values' => [

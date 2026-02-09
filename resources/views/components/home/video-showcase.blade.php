@@ -74,23 +74,23 @@
                         </div>
 
                         {{-- Item 3 --}}
-                        <div class="video-item"
+                        {{-- <div class="video-item"
                             onclick="changeVideo('{{ asset('videos/construction.mp4') }}', '{{ __('messages.video.items.structural.title') }}', this)">
                             <img src="{{ asset('images/organization.jpg') }}" class="item-thumb" alt="Thumbnail">
                             <div class="item-info">
                                 <h6>{{ __('messages.video.items.structural.title') }}</h6>
                                 <p>{{ __('messages.video.items.structural.desc') }}</p>
                             </div>
-                        </div>
+                        </div>  --}}
 
                         {{-- Item 4 --}}
-                        <div class="video-item"
+                        {{--<div class="video-item"
                             onclick="changeVideo('{{ asset('videos/interior.mp4') }}', '{{ __('messages.video.items.safety.title') }}', this)">
                             <img src="{{ asset('images/landscape.jpg') }}" class="item-thumb" alt="Thumbnail">
-                            <div class="item-info">
+                             <div class="item-info">
                                 <h6>{{ __('messages.video.items.safety.title') }}</h6>
                                 <p>{{ __('messages.video.items.safety.desc') }}</p>
-                            </div>
+                            </div>--}}
                         </div>
 
                     </div>

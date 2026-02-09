@@ -21,9 +21,8 @@ return [
         'subtitle' => 'Greetings From KPCM',
         'title'    => 'Message from the <br> President Director',
         'position' => 'President Director',
-        'content_1' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'content_2' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        'content_3' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.',
+        'content_1' => 'At KPCM, we believe that integrity and innovation are the cornerstones of navigating the dynamics of the global market. Our commitment goes beyond achieving growth; it is about delivering sustainable value to all our partners and stakeholders.',
+        'content_2' => 'We continue to transform and strive for excellence in every service, ensuring that every step we take aligns with the company’s strategic vision. Let us move forward together toward a brighter and more prosperous future.',
     ],
 
     'values' => [

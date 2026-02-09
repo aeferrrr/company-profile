@@ -24,9 +24,6 @@
                     <p class="mb-3">
                         {{ __('messages.greetings.content_2') }}
                     </p>
-                    <p>
-                        {{ __('messages.greetings.content_3') }}"
-                    </p>
                 </div>
 
                 {{-- Signature Block --}}

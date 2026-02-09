@@ -36,11 +36,16 @@
                                 {{ __('general.organisasi') }}
                             </a>
                         </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                ID-KOR Global Trading (Soon)
+                            </a>
+                        </li>
                     </ul>
                 </li>
-                {{-- Services --}}
+                {{-- Services
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#services" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle" href="{{ route('services') }}" data-bs-toggle="dropdown">
                         {{ __('general.services') }}
                     </a>
                     <ul class="dropdown-menu shadow-sm">
@@ -65,6 +70,9 @@
                         <li><a class="dropdown-item" href="{{ route('electrical') }}">Electrical</a></li>
                         <li><a class="dropdown-item" href="{{ route('door') }}">Speed Door</a></li>
                     </ul>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('services') }}">{{ __('general.services') }}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('projects') }}">{{ __('general.projects') }}</a>

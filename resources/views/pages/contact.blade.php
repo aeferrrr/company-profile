@@ -38,7 +38,32 @@
                         Let’s discuss your industrial project with our professional team.
                     </p>
                 </div>
+                {{-- Tampilkan Pesan Sukses --}}
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
 
+                {{-- Tampilkan Pesan Error Server/SMTP --}}
+                @if (session('error'))
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{ session('error') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                @endif
+
+                {{-- Tampilkan Error Validasi (Misal file terlalu besar atau email kosong) --}}
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
                         <div class="contact-card shadow-sm">

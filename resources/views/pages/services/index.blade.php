@@ -243,4 +243,49 @@
 
         </div>
     </section>
+    {{-- ======================
+        CALL TO ACTION (CTA)
+    ====================== --}}
+    <section class="section-padding bg-primary text-white text-center py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h2 class="display-5 fw-bold mb-3 text-white">Siap Mewujudkan Proyek Industri Anda?</h2>
+                    <p class="lead mb-4 opacity-75">
+                        Dapatkan solusi konstruksi yang tepat, efisien, dan berkualitas tinggi bersama tim ahli KPCM Industrial Estate. 
+                        Kami siap membantu dari tahap perencanaan hingga pemeliharaan.
+                    </p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="{{ url('/contact') }}" class="btn btn-light btn-lg px-5 py-3 fw-bold">
+                            <i class="fas fa-envelope me-2"></i>Hubungi Kami Sekarang
+                        </a>
+                        <a href="https://wa.me/your-number" class="btn btn-outline-light btn-lg px-5 py-3">
+                            <i class="fab fa-whatsapp me-2"></i>Konsultasi Gratis
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {{-- Optional: CSS Tambahan untuk CTA (Jika belum ada di file CSS utama) --}}
+    <style>
+        .bg-primary {
+            background-color: #003366 !important; /* Sesuaikan dengan warna brand KPCM */
+        }
+        .section-padding {
+            padding: 80px 0;
+        }
+        .btn-light {
+            color: #003366;
+            transition: all 0.3s ease;
+        }
+        .btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .btn-outline-light:hover {
+            transform: translateY(-3px);
+        }
+    </style>
 @endsection
