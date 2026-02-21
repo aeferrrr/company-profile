@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Galeri Proyek | KPCM Industrial Estate')
+@section('title', __('projects.title') . ' | KPCM Industrial Estate')
 
 @section('content')
 
@@ -10,17 +10,16 @@
     <section class="hero-section hero-project">
 
         {{-- Background Image --}}
-        <img src="{{ asset('images/ourproject.jpg') }}" class="hero-bg" alt="Galeri Proyek KPCM Industrial Estate">
+        <img src="{{ asset('images/ourproject.jpg') }}" class="hero-bg" alt="{{ __('projects.hero_title') }}">
 
         {{-- Overlay --}}
         <div class="hero-overlay"></div>
 
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Galeri Proyek</h1>
+                <h1 class="hero-title">{{ __('projects.hero_title') }}</h1>
                 <p class="hero-subtitle">
-                    Proyek konstruksi industri pilihan yang dikerjakan 
-                    dengan presisi, kualitas, dan profesionalisme.
+                    {{ __('projects.hero_subtitle') }}
                 </p>
             </div>
         </div>
@@ -30,15 +29,14 @@
     {{-- ======================
         PROJECT CAROUSEL SECTION
     ====================== --}}
-    <section id="projects" class="projects-section">
+    <section id="projects" class="projects-section section-padding">
         <div class="container">
 
             {{-- Section Title --}}
             <div class="text-center mb-5 section-header">
-                <h2 class="fw-bold display-6">Proyek Unggulan</h2>
+                <h2 class="fw-bold display-6">{{ __('projects.featured_title') }}</h2>
                 <p class="text-muted mt-2 mx-auto w-75">
-                    Pilihan proyek konstruksi industri kami yang menunjukkan kualitas, 
-                    kapabilitas, dan pelaksanaan profesional di lapangan.
+                    {{ __('projects.featured_subtitle') }}
                 </p>
                 <hr class="mx-auto my-3" style="width: 60px; border: 2px solid #0d6efd; opacity: 1;">
             </div>
@@ -47,78 +45,51 @@
             <div id="projectCarousel" class="carousel slide carousel-fade shadow-lg rounded-3 overflow-hidden"
                 data-bs-ride="carousel">
 
+                @php
+                    // Mapping data slide agar rapi dan mudah dikelola
+                    $slides = [
+                        [
+                            'id' => 'roofing',
+                            'img' => 'project-4.jpg',
+                            'badge' => 'bg-primary'
+                        ],
+                        [
+                            'id' => 'mechanical',
+                            'img' => 'project-6.jpg',
+                            'badge' => 'bg-success'
+                        ],
+                        [
+                            'id' => 'temporary',
+                            'img' => 'project-12.jpg',
+                            'badge' => 'bg-warning text-dark'
+                        ]
+                    ];
+                @endphp
+
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
-                    {{-- <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="3"></button>
-                    <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="4"></button> --}}
+                    @foreach($slides as $index => $slide)
+                        <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="{{ $index }}" 
+                            class="{{ $index == 0 ? 'active' : '' }}"></button>
+                    @endforeach
                 </div>
 
                 <div class="carousel-inner">
-
-                    {{-- Slide 1 --}}
-                    <div class="carousel-item active">
-                        <img src="{{ asset('images/projects/project-4.jpg') }}" class="d-block w-100 project-slide-img"
-                            alt="Roofing">
+                    @foreach($slides as $index => $slide)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                        <img src="{{ asset('images/projects/' . $slide['img']) }}" class="d-block w-100 project-slide-img"
+                            alt="{{ __('projects.slide_' . $slide['id'] . '_title') }}">
 
                         <div class="slide-overlay"></div> 
 
                         <div class="carousel-caption">
-                            <span class="badge bg-primary mb-2">Roofing</span>
-                            <h3 class="fw-bold">Roofing, Insullation & Panels </h3>
-                            <p class="mb-0 d-none d-md-block">Subang, Jawa Barat</p>
+                            <span class="badge {{ $slide['badge'] }} mb-2">
+                                {{ __('projects.slide_' . $slide['id'] . '_badge') }}
+                            </span>
+                            <h3 class="fw-bold">{{ __('projects.slide_' . $slide['id'] . '_title') }}</h3>
+                            <p class="mb-0 d-none d-md-block">{{ __('projects.slide_' . $slide['id'] . '_location') }}</p>
                         </div>
                     </div>
-
-                    {{-- Slide 2 --}}
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/projects/project-6.jpg') }}" class="d-block w-100 project-slide-img"
-                            alt="Bangunan Pabrik">
-                        <div class="slide-overlay"></div>
-                        <div class="carousel-caption">
-                            <span class="badge bg-success mb-2">Mechanical & Piping Services</span>
-                            <h3 class="fw-bold">Partnership with PT. GEMILANG KARYA MANDIRI </h3>
-                            <p class="mb-0 d-none d-md-block">Balikpapan, Kalimantan Timur</p>
-                        </div>
-                    </div>
-
-                    {{-- Slide 3 --}}
-                    <div class="carousel-item">
-                        <img src="{{ asset('images/projects/project-12.jpg') }}" class="d-block w-100 project-slide-img"
-                            alt="Interior">
-                        <div class="slide-overlay"></div>
-                        <div class="carousel-caption">
-                            <span class="badge bg-warning text-dark mb-2">Temporary Office</span>
-                            <h3 class="fw-bold">Access Floor, Perforated (Air Grill), Data Center, and Server room</h3>
-                            <p class="mb-0 d-none d-md-block">Cikarang, Jawa Barat</p>
-                        </div>
-                    </div>
-
-                    {{-- Slide 4 --}}
-                    {{-- <div class="carousel-item">
-                        <img src="{{ asset('images/projects/project-4.jpg') }}" class="d-block w-100 project-slide-img"
-                            alt="Atap Industri">
-                        <div class="slide-overlay"></div>
-                        <div class="carousel-caption">
-                            <span class="badge bg-info text-dark mb-2">Atap</span>
-                            <h3 class="fw-bold">Pekerjaan Atap & Insulasi</h3>
-                            <p class="mb-0 d-none d-md-block">Pekerjaan Atap Industri - Subang</p>
-                        </div>
-                    </div> --}}
-
-                    {{-- Slide 5 --}}
-                    {{-- <div class="carousel-item">
-                        <img src="{{ asset('images/projects/project-6.jpg') }}" class="d-block w-100 project-slide-img"
-                            alt="Minyak & Gas">
-                        <div class="slide-overlay"></div>
-                        <div class="carousel-caption">
-                            <span class="badge bg-danger mb-2">MECHANICAL AND PIPING SERVICES</span>
-                            <h3 class="fw-bold">Layanan Mekanikal</h3>
-                            <p class="mb-0 d-none d-md-block">RDMP RU-V Pertamina Balikpapan</p>
-                        </div>
-                    </div> --}}
-
+                    @endforeach
                 </div>
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
@@ -140,14 +111,25 @@
     <section class="container py-5 mb-4">
         <div class="text-center p-5 rounded bg-white shadow-sm border border-light">
             <h3 class="fw-bold mb-3 text-dark">
-                Siap Membangun Proyek Industri Anda?
+                {{ __('projects.cta_title') }}
             </h3>
             <p class="text-muted mb-4">
-                Kami memastikan setiap proyek ditangani dengan standar keselamatan dan kualitas tertinggi.
+                {{ __('projects.cta_desc') }}
             </p>
-            <a href="/contact" class="btn btn-primary px-5 py-2 fw-bold">
-                Hubungi Kami
+            <a href="{{ url('/contact') }}" class="btn btn-primary px-5 py-3 fw-bold">
+                {{ __('projects.cta_button') }}
             </a>
         </div>
     </section>
+
+    <style>
+        .section-padding { padding: 60px 0; }
+        .project-slide-img { height: 500px; object-fit: cover; }
+        .slide-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+    </style>
 @endsection

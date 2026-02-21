@@ -1,293 +1,218 @@
-/* =====================================================
-   1. ORGANIZATION SECTION (CONTAINER & HEADER)
-===================================================== */
+ /* =====================================================
+           ORGANIZATION SECTION
+        ===================================================== */
+        .organization-section {
+            padding: 60px 0;
+        }
 
-.organization-section {
-    padding: 60px 0;
-    background-color: #ffffff;
-}
+        .section-header h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-yellow);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
 
-.section-header h2 {
-    font-size: 28px;
-    letter-spacing: 1px;
-}
+        .org-chart {
+            width: 100%;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
 
-/* =====================================================
-   2. HTML CHART STYLES (GRID / MOBILE VIEW)
-   (Ini untuk tampilan Grid/Card HTML biasa, jika masih dipakai)
-===================================================== */
+        /* =====================================================
+           SVG CHART STYLES (ADAPTED TO GLOBAL THEME)
+        ===================================================== */
+        svg {
+            overflow: visible;
+            max-width: 100%;
+            height: auto;
+            cursor: grab;
+        }
+        svg:active { cursor: grabbing; }
 
-.org-chart {
-    width: 100%;
-    overflow-x: auto;
-}
+        /* Lines */
+        .chart-line {
+            stroke: var(--text-dark); /* Menggunakan text-dark agar kontras */
+            stroke-width: 2px;
+            fill: none;
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 0;
+            animation: drawLine 2s ease-out forwards;
+        }
+        @keyframes drawLine {
+            from { stroke-dashoffset: 2000; }
+            to { stroke-dashoffset: 0; }
+        }
 
-.org-chart svg {
-    display: block;
-    width: 100%;
-    height: auto;
-}
+        /* Boxes */
+        .chart-rect {
+            fill: var(--bg-surface);
+            stroke: var(--samsung-blue); /* Brand Color Border */
+            stroke-width: 2px;
+            rx: 8px; /* Lebih rounded sesuai modern UI */
+            ry: 8px;
+            filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05)); /* Soft shadow */
+            transition: all 0.3s ease;
+        }
 
+        /* Text */
+        .chart-text {
+            fill: var(--samsung-blue);
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-anchor: middle;
+            dominant-baseline: middle;
+            pointer-events: none;
+            transition: fill 0.3s;
+        }
+        .chart-text-multiline-1 { dominant-baseline: auto; }
 
-/* Level */
-.org-level {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+        /* Interaction Group */
+        .node-group {
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .node-group:hover { z-index: 100; }
+        
+        .node-group:hover .chart-rect {
+            fill: var(--samsung-blue);
+            stroke: var(--samsung-blue-light);
+            filter: drop-shadow(0px 10px 20px var(--samsung-blue-glow));
+            transform: translateY(-3px);
+        }
+        .node-group:hover .chart-text { fill: var(--text-light); }
 
-.center-level {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+        /* Popup Photo Styles */
+        .chart-photo-wrapper {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transform: translate(45px, 0px) scale(0.8);
+            transform-origin: center bottom;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .node-group:hover .chart-photo-wrapper {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(45px, -130px) scale(1);
+        }
+        .chart-photo-wrapper image {
+            width: 90px;
+            height: 120px;
+            filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.15));
+            rx: 6px;
+        }
+        .node-group:hover .chart-photo-wrapper.pop-right {
+            transform: translate(-45px, -130px) scale(1);
+        }
 
-/* Grid Level */
-.org-level.org-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(220px, 1fr));
-    gap: 22px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+        /* =====================================================
+           MEMBERS SECTION (CORPORATE CARD STYLE)
+        ===================================================== */
+        .members-section {
+            width: 100%;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-soft);
+            border-top: 4px solid var(--samsung-blue);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            padding: 30px;
+            margin-top: 40px;
+            text-align: left;
+        }
 
-/* Box (HTML Version) */
-.org-box {
-    background-color: #f4f6f8;
-    border-radius: 10px;
-    padding: 18px 22px;
-    text-align: center;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
-}
+        .members-header {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border-soft);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
 
-/* Top Leader (HTML Version) */
-.org-box.main {
-    background-color: #1f2328;
-    color: #ffffff;
-}
+        .members-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--samsung-blue);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .members-title::before {
+            content: ''; display: block; width: 6px; height: 24px; 
+            background-color: var(--accent-yellow);
+            border-radius: 2px;
+        }
 
-/* Text (HTML Version) */
-.org-title {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+        .members-grid { display: grid; gap: 20px; }
+        
+        .member-group {
+            display: flex; flex-wrap: wrap; gap: 12px; padding: 15px;
+            background-color: var(--bg-broken-white); 
+            border: 1px solid var(--border-soft);
+            border-radius: 6px;
+        }
 
-.org-name {
-    display: block;
-    margin-top: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #6c757d;
-}
+        .member-badge {
+            position: relative; 
+            background: var(--bg-surface); 
+            color: var(--text-dark);
+            padding: 8px 16px; 
+            font-size: 14px; 
+            font-weight: 500;
+            border: 1px solid var(--border-soft); 
+            border-left: 4px solid var(--text-grey);
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02); 
+            cursor: pointer;
+            transition: all 0.2s ease; 
+            display: flex; align-items: center; gap: 8px;
+        }
+        
+        .member-badge:hover {
+            border-color: var(--samsung-blue); 
+            border-left-color: var(--accent-yellow);
+            transform: translateY(-2px); 
+            box-shadow: 0 5px 15px var(--samsung-blue-glow);
+            color: var(--samsung-blue);
+        }
+        
+        .badge-icon { width: 16px; height: 16px; fill: var(--text-muted); transition: fill 0.2s; }
+        .member-badge:hover .badge-icon { fill: var(--samsung-blue); }
 
-.org-box.main .org-name {
-    color: #e9ecef;
-}
+        /* Popup Photo List */
+        .popup-photo-list {
+            position: absolute; bottom: 125%; left: 50%;
+            transform: translateX(-50%) scale(0.8); opacity: 0; visibility: hidden;
+            width: 90px; height: 100px; background: var(--bg-surface);
+            padding: 4px 4px 15px 4px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-soft); 
+            border-radius: 4px;
+            z-index: 100; transition: all 0.2s; pointer-events: none;
+        }
+        .popup-photo-list::after {
+            content: ''; position: absolute; top: 100%; left: 50%; margin-left: -6px;
+            border-width: 6px; border-style: solid; 
+            border-color: var(--bg-surface) transparent transparent transparent;
+        }
+        .popup-photo-list img { width: 100%; height: 80px; object-fit: cover; background: var(--bg-broken-white); border-radius: 2px; }
+        .member-badge:hover .popup-photo-list {
+            visibility: visible; opacity: 1; transform: translateX(-50%) scale(1) rotate(-2deg);
+        }
 
-/* Responsive Grid */
-@media (max-width: 992px) {
-    .org-level.org-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 576px) {
-    .org-level.org-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =====================================================
-   3. ORGANIZATION TOGGLE (SWITCH BUTTONS)
-===================================================== */
-
-.org-toggle {
-    display: inline-flex;
-    gap: 14px;
-}
-
-.org-btn {
-    padding: 10px 26px;
-    border-radius: 8px;
-    border: 1.5px solid #1f2328;
-    background: transparent;
-    color: #1f2328;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.org-btn:hover {
-    background-color: #1f2328;
-    color: #ffffff;
-}
-
-.org-btn.active {
-    background-color: #1f2328;
-    color: #ffffff;
-}
-
-/* =====================================================
-   4. ORGANIZATION WRAPPER (ANIMATION)
-===================================================== */
-
-.org-wrapper {
-    display: none;
-}
-
-.org-wrapper.active {
-    display: block;
-    animation: orgFadeUp 0.45s ease;
-}
-
-@keyframes orgFadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* =====================================================
-   5. SVG CHART STYLES (CENTER HOVER POPUP 3x4)
-   Prefix: .chart- (Anti-Conflict)
-===================================================== */
-
-/* Global SVG Text Reset */
-svg text {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    pointer-events: none;
-}
-
-/* --- TEXT STYLES --- */
-.chart-title {
-    font-size: 12px;
-    fill: #0c4da2;
-    font-weight: 700;
-    text-anchor: middle;
-    dominant-baseline: middle;
-}
-
-.chart-name {
-    font-size: 15px;
-    fill: #2c3e50;
-    font-weight: 800;
-    text-anchor: middle;
-    dominant-baseline: middle;
-}
-
-/* --- BOX STYLES --- */
-.chart-box {
-    fill: #ffffff;
-    stroke: #2c3e50;
-    stroke-width: 2px;
-    rx: 6px;
-    filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.1));
-    transition: all 0.3s ease;
-}
-
-/* --- LINES --- */
-.chart-line {
-    stroke: #34495e;
-    stroke-width: 2px;
-    fill: none;
-}
-
-/* --- INTERACTION --- */
-.chart-person {
-    cursor: pointer;
-    position: relative;
-    z-index: 1;
-    /* Reset z-index agar tumpukan kembali normal saat tidak di-hover */
-    transition: z-index 0s linear 0.3s; 
-}
-
-.chart-person:hover {
-    z-index: 100; /* Bawa ke paling depan saat hover */
-    transition-delay: 0s;
-}
-
-/* Warna Box saat Hover */
-.chart-person:hover .chart-box {
-    stroke: #3498db;
-    stroke-width: 3px;
-    fill: #f0f8ff;
-}
-
-/* =====================================================
-   6. PHOTO HOVER STYLES (HIDDEN -> POPUP 3x4)
-===================================================== */
-
-/* 1. Hilangkan Frame/Garis Lingkaran selamanya */
-.chart-photo-frame {
-    display: none;
-}
-
-/* 2. State Awal Foto: Tersembunyi (Invisible) */
-.chart-photo-wrapper {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    
-    /* Posisi awal: Di tengah box tapi agak turun sedikit */
-    /* Box Width 320px -> Tengah = 160px. */
-    /* Karena kordinat awal wrapper di kiri, kita geser ke 115px (160 - setengah lebar foto) */
-    transform: translate(115px, 0px) scale(0.8);
-    transform-origin: center bottom;
-    
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* 3. State Hover: Muncul & Naik ke Atas */
-.chart-person:hover .chart-photo-wrapper {
-    opacity: 1;
-    visibility: visible;
-    
-    /* Geser ke tengah (115px) dan Naik ke atas (-130px) */
-    transform: translate(115px, -130px) scale(1);
-}
-
-/* 4. Bentuk Foto: Persegi Panjang 3x4 */
-.chart-photo-wrapper image {
-    /* Matikan potongan lingkaran */
-    clip-path: none;
-    
-    /* Ukuran 3x4 (Contoh: 90px x 120px) */
-    width: 90px;
-    height: 120px;
-    
-    /* Reset posisi x/y gambar di dalam wrapper */
-    x: 0;
-    y: 0;
-    
-    /* Style tambahan: Bayangan & Sudut Tumpul */
-    filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.3));
-    rx: 6px; 
-}
-
-/* UNTUK HAN GYU SEONG */
-/* =========================================
-   SPECIAL OVERRIDE: POPUP DI KANAN
-   ========================================= */
-
-/* Atur posisi saat hover khusus untuk yang punya class 'pop-right' */
-.chart-person:hover .chart-photo-wrapper.pop-right {
-    /* PENJELASAN KOORDINAT:
-       X = 330px -> Geser ke kanan (Lebar Box 320px + Jarak 10px)
-       Y = -30px -> Geser ke atas sedikit agar pas di tengah vertikal box
-                    (Tinggi Box 60px - Tinggi Foto 120px) / 2 = -30px
-    */
-    transform: translate(330px, -30px) scale(1) !important;
-}
-
-/* Opsional: Atur posisi start animasinya dari kanan juga supaya halus */
-.chart-photo-wrapper.pop-right {
-    transform: translate(300px, 0px) scale(0.8);
-}
+        /* Responsive Fix (From Global CSS) */
+        @media (max-width: 576px) {
+            .container { padding-left: 25px !important; padding-right: 25px !important; }
+            h1.hero-title { font-size: 2.2rem !important; }
+            .hero-section { padding: 60px 0; }
+        }

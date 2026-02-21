@@ -20,9 +20,9 @@ return [
         'subtitle' => 'KPCM의 인사말', // KPCM-ui Insamal
         'title'    => '대표이사 <br> 인사말', // Daepyo-isa Insamal
         'position' => '대표이사', // Daepyo-isa
-        'content_1' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        'content_2' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-        'content_3' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.',
+    'content_1' => 'KPCM은 정직과 혁신이야말로 급변하는 글로벌 시장의 역동성에 대응하는 핵심 열쇠라고 믿습니다. 저희의 다짐은 단순한 성장을 넘어, 모든 파트너와 이해관계자 여러분께 지속 가능한 가치를 제공하는 것입니다.',
+    
+    'content_2' => '저희는 모든 서비스 영역에서 탁월함을 구현하기 위해 끊임없이 변화하고 있으며, 저희가 내딛는 모든 걸음이 회사의 전략적 비전과 조화를 이루도록 최선을 다하고 있습니다. 더 찬란한 미래를 향해 함께 나아갑시다.'
     ],
 
     'values' => [

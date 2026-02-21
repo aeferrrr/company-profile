@@ -34,13 +34,13 @@
                         <li>
                             <a class="dropdown-item" href="{{ route('organization') }}">
                                 {{ __('general.organisasi') }}
-                            </a>
+                            </a> 
                         </li>
-                        <li>
+                        {{--<li>
                             <a class="dropdown-item" href="{{ route('anotherbiz') }}">
                                 ID-KOR Global Trading (Soon)
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </li>
                 {{-- Services
@@ -97,12 +97,12 @@
                                 🇮🇩 Bahasa Indonesia
                             </a>
                         </li>
-                        {{-- <li>
+                        <li>
                             <a class="dropdown-item {{ app()->getLocale() == 'ko' ? 'active' : '' }}"
                                 href="{{ route('lang.switch', 'ko') }}">
                                 🇰🇷 한국어 (Korean)
                             </a>
-                        </li> --}}
+                        </li>
                     </ul>
                 </li>
             </ul>

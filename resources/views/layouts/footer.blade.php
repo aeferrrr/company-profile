@@ -63,20 +63,25 @@
                     Hubungi kami untuk konsultasi gratis mengenai proyek Anda.
                 </p>
 
-                <a href="https://wa.me/628111966903" class="btn btn-footer" target="_blank">
+                <a href="https://wa.me/6285591710360" class="btn btn-footer" target="_blank">
                     <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis
                 </a>
 
                 <div class="social-section">
                     <span class="social-label">Follow Us</span>
                     <div class="social-icons">
-                        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                        <a href="https://www.instagram.com/kpcmindustrial/" target="_blank" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/pt-kpcm-real-estate/" target="_blank"
+                            aria-label="LinkedIn">
                             <i class="fa-brands fa-linkedin-in"></i>
                         </a>
-                        <a href="https://youtube.com" target="_blank" aria-label="YouTube">
+                        <a href="https://youtube.com/@kpcmie?si=YwJtoDFqWjoSkC-f" target="_blank" aria-label="YouTube">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
-                        <a href="https://tiktok.com" target="_blank" aria-label="TikTok">
+                        <a href="https://www.tiktok.com/@kpcmie?_r=1&_t=ZS-93h1TXdGNsI" target="_blank"
+                            aria-label="TikTok">
                             <i class="fa-brands fa-tiktok"></i>
                         </a>
                     </div>
