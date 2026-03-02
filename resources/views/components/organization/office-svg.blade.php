@@ -1,254 +1,140 @@
-    {{-- <!-- CHART SECTION -->
-    <div class="chart-container" id="chart-container">
-        <!-- Tambahkan overflow visible agar popup tidak terpotong -->
-        <svg id="org-svg" viewBox="0 0 1200 450" width="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-            
-            <!-- Garis Konektor -->
-            <line x1="600" y1="90" x2="600" y2="130" class="chart-line" />
-            <line x1="200" y1="130" x2="1000" y2="130" class="chart-line" />
-            
-            <line x1="200" y1="130" x2="200" y2="160" class="chart-line" />
-            <line x1="400" y1="130" x2="400" y2="160" class="chart-line" />
-            <line x1="600" y1="130" x2="600" y2="160" class="chart-line" />
-            <line x1="800" y1="130" x2="800" y2="160" class="chart-line" />
-            <line x1="1000" y1="130" x2="1000" y2="160" class="chart-line" />
 
-            <!-- 
-               NODE GROUPS 
-               Sekarang ditambahkan <g class="chart-photo-wrapper"> agar CSS hover bekerja 
-            -->
 
-            <!-- Presiden -->
-            <g class="node-group" transform="translate(510, 30)">
-                <rect width="180" height="60" class="chart-rect" />
-                <text x="90" y="22" class="chart-text chart-text-multiline-1">
-                    <tspan x="90" dy="0">PRESIDEN</tspan>
-                    <tspan x="90" dy="20">DIREKTUR</tspan>
-                </text>
-                <!-- Foto Popup -->
-                <g class="chart-photo-wrapper">
-                     <!-- Menggunakan placeholder karena tidak ada foto spesifik -->
-                    <image href="https://ui-avatars.com/api/?name=Presiden+Direktur&background=002B5C&color=fff&size=128" />
-                </g>
+<svg viewBox="0 0 1100 750" xmlns="http://www.w3.org/2000/svg" class="org-chart">
+    <g class="connector-group">
+        <line x1="550" y1="90" x2="550" y2="280" class="chart-line" />
+        
+        <line x1="550" y1="180" x2="770" y2="180" class="chart-line" />
+        <line x1="770" y1="180" x2="770" y2="210" class="chart-line" />
+        
+        <line x1="140" y1="280" x2="960" y2="280" class="chart-line" />
+        
+        <line x1="140" y1="280" x2="140" y2="310" class="chart-line" />
+        <line x1="410" y1="280" x2="410" y2="310" class="chart-line" />
+        <line x1="690" y1="280" x2="690" y2="310" class="chart-line" />
+        <line x1="960" y1="280" x2="960" y2="310" class="chart-line" />
+
+        <line x1="140" y1="360" x2="140" y2="400" class="chart-line" />
+        <line x1="410" y1="360" x2="410" y2="400" class="chart-line" />
+        <line x1="690" y1="360" x2="690" y2="400" class="chart-line" />
+        <line x1="960" y1="360" x2="960" y2="400" class="chart-line" />
+
+        <line x1="140" y1="450" x2="140" y2="480" class="chart-line" />
+        <line x1="410" y1="450" x2="410" y2="480" class="chart-line" />
+        <line x1="690" y1="450" x2="690" y2="480" class="chart-line" />
+        <line x1="960" y1="450" x2="960" y2="480" class="chart-line" />
+    </g>
+
+    <g class="node-group" transform="translate(460, 40)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">President Director</text>
+    </g>
+
+    <g class="node-group" transform="translate(680, 210)">
+        <rect width="180" height="40" class="chart-rect" />
+        <text x="90" y="20" class="chart-text">Auditor</text>
+    </g>
+
+    <g class="node-group" transform="translate(50, 310)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Finance Director</text>
+    </g>
+    <g class="node-group" transform="translate(320, 310)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Project Director</text>
+    </g>
+    <g class="node-group" transform="translate(600, 310)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Operation Director</text>
+    </g>
+    <g class="node-group" transform="translate(870, 310)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Project Mgt. Director</text>
+    </g>
+
+    <g class="node-group" transform="translate(50, 400)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Administration Team</text>
+    </g>
+    <g class="node-group" transform="translate(320, 400)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Engineering Team</text>
+    </g>
+    <g class="node-group" transform="translate(600, 400)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Procurement Team</text>
+    </g>
+    <g class="node-group" transform="translate(870, 400)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="25" class="chart-text">Proposal Team</text>
+    </g>
+
+    <g class="node-group" transform="translate(50, 480)">
+        <rect width="180" height="125" class="chart-rect" />
+        <text x="90" y="15" class="chart-text-staff">Finance</text>
+        <line x1="10" y1="25" x2="170" y2="25" class="sub-chart-line" />
+        <text x="90" y="40" class="chart-text-staff">Accounting</text>
+        <line x1="10" y1="50" x2="170" y2="50" class="sub-chart-line" />
+        <text x="90" y="65" class="chart-text-staff">Tax</text>
+        <line x1="10" y1="75" x2="170" y2="75" class="sub-chart-line" />
+        <text x="90" y="90" class="chart-text-staff">Administration</text>
+        <line x1="10" y1="100" x2="170" y2="100" class="sub-chart-line" />
+        <text x="90" y="115" class="chart-text-staff">IT</text>
+    </g>
+
+    <g class="node-group" transform="translate(320, 480)">
+        <rect width="180" height="40" class="chart-rect" />
+        <text x="90" y="20" class="chart-text">Project Manager</text>
+        <line x1="90" y1="40" x2="90" y2="50" class="chart-line" />
+
+        <g transform="translate(0, 50)">
+            <rect width="180" height="200" class="chart-rect" />
+            <text x="90" y="15" class="chart-text-staff">Civil</text>
+            <line x1="10" y1="25" x2="170" y2="25" class="sub-chart-line" />
+            <text x="90" y="40" class="chart-text-staff">Architecture</text>
+            <line x1="10" y1="50" x2="170" y2="50" class="sub-chart-line" />
+            <text x="90" y="65" class="chart-text-staff">Mechanical</text>
+            <line x1="10" y1="75" x2="170" y2="75" class="sub-chart-line" />
+            <text x="90" y="90" class="chart-text-staff">Electrical</text>
+            <line x1="10" y1="100" x2="170" y2="100" class="sub-chart-line" />
+            <text x="90" y="115" class="chart-text-staff">Instrument</text>
+            <line x1="10" y1="125" x2="170" y2="125" class="sub-chart-line" />
+            <text x="90" y="140" class="chart-text-staff">Revamping</text>
+            <line x1="10" y1="150" x2="170" y2="150" class="sub-chart-line" />
+            <text x="90" y="165" class="chart-text-staff">Maintenance</text>
+            <line x1="10" y1="175" x2="170" y2="175" class="sub-chart-line" />
+            <text x="90" y="190" class="chart-text-staff">Interior</text>
+        </g>
+    </g>
+
+    <g class="node-group" transform="translate(600, 480)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="15" class="chart-text-staff">Procurement</text>
+        <line x1="10" y1="25" x2="170" y2="25" class="sub-chart-line" />
+        <text x="90" y="40" class="chart-text-staff">Logistics</text>
+        
+        <g transform="translate(0, 75)">
+            <rect width="180" height="40" class="chart-rect" />
+            <text x="90" y="20" class="chart-text">Project Support Team</text>
+            <line x1="90" y1="40" x2="90" y2="50" class="chart-line" />
+
+            <g transform="translate(0, 50)">
+                <rect width="180" height="100" class="chart-rect" />
+                <text x="90" y="15" class="chart-text-staff">QA/QC</text>
+                <line x1="10" y1="25" x2="170" y2="25" class="sub-chart-line" />
+                <text x="90" y="40" class="chart-text-staff">HSE</text>
+                <line x1="10" y1="50" x2="170" y2="50" class="sub-chart-line" />
+                <text x="90" y="65" class="chart-text-staff">Documentation</text>
+                <line x1="10" y1="75" x2="170" y2="75" class="sub-chart-line" />
+                <text x="90" y="90" class="chart-text-staff">Workshop</text>
             </g>
+        </g>
+    </g>
 
-            <!-- Architect Design -->
-            <g class="node-group" transform="translate(110, 160)">
-                <rect width="180" height="60" class="chart-rect" />
-                <text x="90" y="30" class="chart-text">Architect Design</text>
-                <g class="chart-photo-wrapper">
-                    <image href="https://ui-avatars.com/api/?name=Architect&background=random&size=128" />
-                </g>
-            </g>
-
-            <!-- Finance -->
-            <g class="node-group" transform="translate(310, 160)">
-                <rect width="180" height="60" class="chart-rect" />
-                <text x="90" y="30" class="chart-text">Finance</text>
-                <g class="chart-photo-wrapper">
-                    <image href="https://ui-avatars.com/api/?name=Finance&background=random&size=128" />
-                </g>
-            </g>
-
-            <!-- General Affair -->
-            <g class="node-group" transform="translate(510, 160)">
-                <rect width="180" height="60" class="chart-rect" />
-                <text x="90" y="30" class="chart-text">General Affair</text>
-                <g class="chart-photo-wrapper">
-                    <image href="https://ui-avatars.com/api/?name=GA&background=random&size=128" />
-                </g>
-            </g>
-
-            <!-- Workshop -->
-            <g class="node-group" transform="translate(710, 160)">
-                <rect width="180" height="60" class="chart-rect" />
-                <text x="90" y="30" class="chart-text">Workshop</text>
-                <g class="chart-photo-wrapper">
-                    <image href="https://ui-avatars.com/api/?name=Workshop&background=random&size=128" />
-                </g>
-            </g>
-
-            <!-- Engineer -->
-            <!-- Tambahkan class pop-right agar popup geser ke kiri -->
-            <g class="node-group" transform="translate(910, 160)">
-                <rect width="180" height="60" class="chart-rect" />
-                <text x="90" y="30" class="chart-text">Engineer</text>
-                <g class="chart-photo-wrapper pop-right">
-                    <image href="https://ui-avatars.com/api/?name=Engineer&background=random&size=128" />
-                </g>
-            </g>
-
-        </svg>
-    </div>
-
-    <!-- MEMBERS SECTION -->
-    <div class="members-section">
-        <div class="members-header">
-            <div class="members-title">Team Members</div>
-        </div>
-
-        <div class="members-grid">
-            
-            <!-- Group 1 -->
-            <div class="member-group">
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Ratu Uliya.N
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Ratu+Uliya&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Adinda
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Adinda&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Mr Choi
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Mr+Choi&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Mr Lee
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Mr+Lee&background=random" alt="Foto"></div>
-                </div>
-            </div>
-
-            <!-- Group 2 -->
-            <div class="member-group">
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Ridho
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Ridho&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Rahmad
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Rahmad&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Leo
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Leo&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Rudy
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Rudy&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Tito
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Tito&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Arief
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Arief&background=random" alt="Foto"></div>
-                </div>
-            </div>
-
-            <!-- Group 3 -->
-            <div class="member-group">
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Ayu
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Ayu&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Pani
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Pani&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Steven
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Steven&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Hans
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Hans&background=random" alt="Foto"></div>
-                </div>
-            </div>
-
-            <!-- Group 4 -->
-            <div class="member-group">
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Samsul
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Samsul&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Faesal
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Faesal&background=random" alt="Foto"></div>
-                </div>
-                <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Sofyan
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Sofyan&background=random" alt="Foto"></div>
-                </div>
-                 <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Panji
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Panji&background=random" alt="Foto"></div>
-                </div>
-                 <div class="member-badge">
-                    <svg class="badge-icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                    Daniel
-                    <div class="popup-photo-list"><img src="https://ui-avatars.com/api/?name=Daniel&background=random" alt="Foto"></div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-        <!-- SCRIPT SEDERHANA UNTUK ZOOM (Opsional, agar tombol berfungsi) -->
-    <script>
-        const zoomPanel = document.getElementById('zoom-controls-panel');
-        const toggleBtn = document.getElementById('toggle-zoom');
-        const svg = document.getElementById('org-svg');
-        const slider = document.getElementById('zoom-slider');
-        const zoomIn = document.getElementById('zoom-in');
-        const zoomOut = document.getElementById('zoom-out');
-        const zoomReset = document.getElementById('zoom-reset');
-
-        let isZoomOpen = false;
-        let currentZoom = 1;
-
-        // Toggle Panel
-        toggleBtn.addEventListener('click', () => {
-            isZoomOpen = !isZoomOpen;
-            if(isZoomOpen) {
-                zoomPanel.classList.remove('hidden');
-                toggleBtn.innerHTML = '❌ Close';
-            } else {
-                zoomPanel.classList.add('hidden');
-                toggleBtn.innerHTML = '🔍 Zoom';
-            }
-        });
-
-        // Update Zoom Function
-        function updateZoom(val) {
-            currentZoom = parseFloat(val);
-            // Batasi
-            if(currentZoom < 0.5) currentZoom = 0.5;
-            if(currentZoom > 2.0) currentZoom = 2.0;
-            
-            // Update Slider UI
-            slider.value = currentZoom;
-            
-            // Apply Transform
-            // Kita scale container atau SVG viewBox. Untuk simpelnya kita ubah width style
-            // Tapi cara terbaik untuk SVG statis adalah scale transform
-            svg.style.transform = `scale(${currentZoom})`;
-            svg.style.transformOrigin = 'top center';
-            svg.style.transition = 'transform 0.2s ease-out';
-        }
-
-        slider.addEventListener('input', (e) => updateZoom(e.target.value));
-        zoomIn.addEventListener('click', () => updateZoom(currentZoom + 0.1));
-        zoomOut.addEventListener('click', () => updateZoom(currentZoom - 0.1));
-        zoomReset.addEventListener('click', () => updateZoom(1));
-
-    </script> --}}
+    <g class="node-group" transform="translate(870, 480)">
+        <rect width="180" height="50" class="chart-rect" />
+        <text x="90" y="15" class="chart-text-staff">Proposal</text>
+        <line x1="10" y1="25" x2="170" y2="25" class="sub-chart-line" />
+        <text x="90" y="40" class="chart-text-staff">Project Control</text>
+    </g>
+</svg>

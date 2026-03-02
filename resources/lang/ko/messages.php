@@ -4,7 +4,7 @@ return [
     'hero' => [
         'subtitle'    => 'EST. KPCM INDUSTRIAL ESTATE', // EST. KPCM Saneop Danji
         'title'       => '산업 단지의 <br> <span class="text-outline">미래를 건설하다</span>', // Saneop Danji-ui Mirae-reul Geonseolhada
-        'desc'        => '2011년에 설립된 KPCM은 인도네시아 전역에 신뢰할 수 있는 산업 건설 및 엔지니어링 솔루션을 제공해 왔습니다.',
+        'desc'        => '2011년에 설립된 Kawasan Perindustrian Construction Management (KPCM)은 인도네시아 전역에 신뢰할 수 있는 산업 건설 및 엔지니어링 솔루션을 제공해 왔습니다.',
         'btn_services'=> '서비스 탐색', // Seobiseu Tamsaek
         'btn_profile' => '회사 소개', // Hoesa Sogae
         

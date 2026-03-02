@@ -4,7 +4,7 @@ return [
     'hero' => [
         'subtitle'    => 'EST. KPCM INDUSTRIAL ESTATE',
         'title'       => 'BUILDING THE FUTURE OF <br> <span class="text-outline">INDUSTRIAL ESTATE</span>',
-        'desc'        => 'Established in 2011, KPCM has been delivering reliable industrial construction and engineering solutions across Indonesia.',
+        'desc'        => 'Established in 2011, Kawasan Perindustrian Construction Management (KPCM) has been delivering reliable industrial construction and engineering solutions across Indonesia.',
         'btn_services'=> 'EXPLORE SERVICES',
         'btn_profile' => 'COMPANY PROFILE',
         

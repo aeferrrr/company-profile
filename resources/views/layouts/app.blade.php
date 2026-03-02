@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>KPCM Industrial Estate</title>
+    <title>PT KPCM Industrial Estate</title>
     {{-- Font Poppins --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ asset('css/home/hero.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home/service.css') }}">
     <link rel="stylesheet" href="{{ asset('css/home/video.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/home/greeting.css') }}">
     {{-- PERUSAHAAN --}}
     <link rel="stylesheet" href="{{ asset('css/perusahaan/organization.css') }}">
     <link rel="stylesheet" href="{{ asset('css/perusahaan/perusahaan.css') }}">
@@ -35,10 +36,19 @@
     <link rel="stylesheet" href="{{ asset('css//contact/contactus.css') }}">
 
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/kpcm.ico') }}">
+    <!-- Favicon Standard -->
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="192x192">
+    
+    <!-- PNG fallback -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    
+    <!-- Apple -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    
     {{-- JavaScript --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    
+
 </head>
 
 <body>
@@ -65,7 +75,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/vidio.js') }}"></script>
+
     <script src="{{ asset('js/organization.js') }}"></script>
     <script>
         function openService(evt, serviceName) {
@@ -93,35 +103,36 @@
         }
     </script>
 
-<script>
-    // Inisialisasi Lenis
-    const lenis = new Lenis({
-        duration: 1.2,       // Durasi kelicinan (semakin besar semakin licin/lambat)
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Efek fisika
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        mouseMultiplier: 1,  // Sensitivitas scroll mouse
-        smoothTouch: false,  // Matikan di HP (biarkan native HP yang handle)
-        touchMultiplier: 2,
-    });
+    <script>
+        // Inisialisasi Lenis
+        const lenis = new Lenis({
+            duration: 1.2, // Durasi kelicinan (semakin besar semakin licin/lambat)
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Efek fisika
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1, // Sensitivitas scroll mouse
+            smoothTouch: false, // Matikan di HP (biarkan native HP yang handle)
+            touchMultiplier: 2,
+        });
 
-    // Jalankan Loop Animasi
-    function raf(time) {
-        lenis.raf(time);
+        // Jalankan Loop Animasi
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
         requestAnimationFrame(raf);
-    }
 
-    requestAnimationFrame(raf);
-    
-    // Opsional: Sambungkan dengan anchor links (agar klik menu tetap smooth)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        lenis.scrollTo(this.getAttribute('href'));
-      });
-    });
-</script>
+        // Opsional: Sambungkan dengan anchor links (agar klik menu tetap smooth)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                lenis.scrollTo(this.getAttribute('href'));
+            });
+        });
+    </script>
+    @stack('scripts')
 </body>
 
 </html>

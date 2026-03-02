@@ -18,7 +18,7 @@
                 <div class="video-wrapper shadow-lg h-100" id="videoWrapper" style="min-height: 400px;">
 
                     {{-- ID companyVideo dipertahankan --}}
-                    <video id="companyVideo" poster="{{ asset('images/video-poster.jpg') }}" autoplay muted loop
+                    <video id="companyVideo" autoplay muted loop
                         playsinline class="w-100 h-100 object-fit-cover">
                         <source src="{{ asset('videos/kpcm-construction.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.

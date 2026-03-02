@@ -14,7 +14,7 @@
 
         <div class="container">
             <div class="hero-content text-center">
-                <span class="badge bg-primary text-dark mb-3 px-3 py-2">KOR - IND Gateway</span>
+                <span class="badge bg-warning text-dark mb-3 px-3 py-2">KOR - IND Gateway</span>
                 <h1 class="hero-title">Divisi Perdagangan & Bisnis Global</h1>
                 <p class="hero-subtitle mx-auto" style="max-width: 800px;">
                     Memperluas jangkauan melampaui konstruksi. Kami menjembatani pasar Korea dan Indonesia melalui

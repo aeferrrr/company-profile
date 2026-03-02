@@ -13,15 +13,6 @@
     align-items: center;
 }
 
-/* Specific Backgrounds */
-.hero-about {
-    background-image: url('/images/background-senja.png');
-}
-
-.organization-hero {
-    background-image: url('/images/organization.jpg');
-}
-
 /* Overlay Gradient/Darkness */
 .hero-overlay {
     position: absolute;

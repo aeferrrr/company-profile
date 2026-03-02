@@ -53,7 +53,14 @@ return [
     
     's_villa_title' => 'Interior Villa',
     's_villa_desc' => 'Perancangan dan pengerjaan interior villa yang eksklusif, memadukan estetika mewah dengan kenyamanan hunian premium.',
+    
+    's_civil_title' => 'Civil',
+    's_civil_desc' => 'Pengerjaan infrastruktur sipil yang kokoh dan terencana untuk kebutuhan industri.',
+    's_mep_steel_title' => 'M.E.P Steel Structure',
+    's_mep_steel_desc' => 'Integrasi sistem Mekanikal, Elektrikal, Plumbing dengan struktur baja berkualitas tinggi.',
 
+    's_tank_title' => 'Pembuatan Tangki',
+    's_tank_desc' => 'Desain dan fabrikasi tangki industri berkualitas tinggi untuk penyimpanan cairan dan gas.',
     // CTA
     'cta_title' => 'Siap Mewujudkan Proyek Industri Anda?',
     'cta_desc' => 'Dapatkan solusi konstruksi yang tepat, efisien, dan berkualitas tinggi bersama tim ahli KPCM Industrial Estate. Kami siap membantu dari tahap perencanaan hingga pemeliharaan.',

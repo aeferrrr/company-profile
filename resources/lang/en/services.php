@@ -52,7 +52,13 @@ return [
     
     's_villa_title' => 'Interior Villa',
     's_villa_desc' => 'Exclusive villa interior design and execution, blending luxury aesthetics with premium residential comfort.',
+    's_civil_title' => 'Civil',
+    's_civil_desc' => 'Sturdy and well-planned civil infrastructure works for industrial needs.',
+    's_mep_steel_title' => 'M.E.P Steel Structure',
+    's_mep_steel_desc' => 'Integration of Mechanical, Electrical, and Plumbing systems with high-quality steel structures.',
 
+    's_tank_title' => 'Tank Fabrication',
+    's_tank_desc' => 'Custom design and fabrication of industrial storage tanks for liquids and gases.',
     'cta_title' => 'Ready to Realize Your Industrial Project?',
     'cta_desc' => 'Get precise, efficient, and high-quality construction solutions with the KPCM Industrial Estate expert team. We are ready to assist from planning to maintenance.',
     'cta_button_contact' => 'Contact Us Now',

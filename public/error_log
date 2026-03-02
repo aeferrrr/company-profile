@@ -1,0 +1,1 @@
+[13-Feb-2026 09:53:31 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes) in /home/kpcmcoid1/public_html/storage/framework/views/8f94bc3388332c98f33fd79614f74561.php on line 1

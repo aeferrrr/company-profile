@@ -52,6 +52,14 @@ return [
     
     's_villa_title' => '빌라 인테리어',
     's_villa_desc' => '고급스러운 미학과 프리미엄 주거의 편안함을 결합한 독점적인 빌라 인테리어 설계 및 시공.',
+    's_civil_title' => '토목공사 (Civil)',
+    's_civil_desc' => '산업 요건에 맞춘 견고하고 계획적인 토목 인프라 구축 서비스를 제공합니다.',
+    
+    's_mep_steel_title' => 'M.E.P 및 강구조물 (M.E.P Steel Structure)',
+    's_mep_steel_desc' => '기계, 전기, 배관(MEP) 시스템과 고품질 강구조물의 통합 솔루션을 제공합니다.',
+    
+    's_tank_title' => '탱크 제작 (Tank Storage)',
+    's_tank_desc' => '산업용 액체 및 gas 저장을 위한 고품질 탱크 설계 및 제작 서비스를 제공합니다.',
 
     'cta_title' => '산업 프로젝트를 실현할 준비가 되셨습니까?',
     'cta_desc' => 'KPCM Industrial Estate 전문가 팀과 함께 정확하고 효율적이며 고품질의 건설 솔루션을 만나보세요. 계획부터 유지 관리까지 지원할 준비가 되어 있습니다.',

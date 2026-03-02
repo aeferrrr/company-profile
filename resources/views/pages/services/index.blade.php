@@ -41,26 +41,29 @@
             </div>
 
             <div class="row g-4">
-                @php
-                    // Array bantuan untuk memetakan Icon ke Key Bahasa
-                    $services = [
-                        ['icon' => 'fas fa-project-diagram', 'key' => 'construction'],
-                        ['icon' => 'fas fa-warehouse',       'key' => 'warehouse'],
-                        ['icon' => 'fas fa-cogs',            'key' => 'mechanical'],
-                        ['icon' => 'fas fa-border-all',      'key' => 'walling'],
-                        ['icon' => 'fas fa-fill-drip',       'key' => 'epoxy'],
-                        ['icon' => 'fas fa-home',            'key' => 'roofing'],
-                        ['icon' => 'fas fa-th-large',        'key' => 'panel'],
-                        ['icon' => 'fas fa-road',            'key' => 'road'],
-                        ['icon' => 'fas fa-tree',            'key' => 'landscape'],
-                        ['icon' => 'fas fa-paint-roller',    'key' => 'interior'],
-                        ['icon' => 'fas fa-building',        'key' => 'temporary'],
-                        ['icon' => 'fas fa-bolt',            'key' => 'electrical'],
-                        ['icon' => 'fas fa-door-open',       'key' => 'speed_door'],
-                        ['icon' => 'fas fa-wrench',          'key' => 'utilities'],
-                        ['icon' => 'fas fa-couch',           'key' => 'villa'],
-                    ];
-                @endphp
+            @php
+                // Array bantuan untuk memetakan Icon ke Key Bahasa
+                $services = [
+                    ['icon' => 'fas fa-project-diagram', 'key' => 'construction'],
+                    ['icon' => 'fas fa-warehouse',       'key' => 'warehouse'],
+                    ['icon' => 'fas fa-city',            'key' => 'civil'], 
+                    ['icon' => 'fas fa-layer-group',     'key' => 'mep_steel'], 
+                    ['icon' => 'fas fa-cogs',            'key' => 'mechanical'],
+                    ['icon' => 'fas fa-database',         'key' => 'tank'],
+                    ['icon' => 'fas fa-border-all',      'key' => 'walling'],
+                    ['icon' => 'fas fa-fill-drip',       'key' => 'epoxy'],
+                    ['icon' => 'fas fa-home',            'key' => 'roofing'],
+                    ['icon' => 'fas fa-th-large',        'key' => 'panel'],
+                    ['icon' => 'fas fa-road',            'key' => 'road'],
+                    ['icon' => 'fas fa-tree',            'key' => 'landscape'],
+                    ['icon' => 'fas fa-paint-roller',    'key' => 'interior'],
+                    ['icon' => 'fas fa-building',        'key' => 'temporary'],
+                    ['icon' => 'fas fa-bolt',            'key' => 'electrical'],
+                    ['icon' => 'fas fa-door-open',       'key' => 'speed_door'],
+                    ['icon' => 'fas fa-wrench',          'key' => 'utilities'],
+                    ['icon' => 'fas fa-couch',           'key' => 'villa'],
+                ];
+            @endphp
 
                 @foreach($services as $item)
                 <div class="col-md-6 col-lg-4">
@@ -77,6 +80,7 @@
                     </div>
                 </div>
                 @endforeach
+
             </div>
         </div>
     </section>
