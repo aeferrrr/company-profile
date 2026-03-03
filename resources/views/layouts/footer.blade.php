@@ -46,7 +46,6 @@
                     <li><a href="{{ route('contact') }}">Contact Page</a></li>
                 </ul>
             </div>
-
             <div class="footer-col">
                 <h6 class="footer-title">Our Location</h6>
                 <div class="footer-map-wrapper">

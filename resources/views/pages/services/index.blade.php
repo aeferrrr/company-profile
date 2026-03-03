@@ -8,16 +8,12 @@
         SERVICES HERO (FULL WIDTH)
     ====================== --}}
     <section class="hero-section hero-services">
-        {{-- Background Image --}}
         <img src="{{ asset('images/services.jpg') }}" class="hero-bg" alt="{{ __('services.hero_title') }}">
-
-        {{-- Overlay --}}
         <div class="hero-overlay"></div>
-
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">{{ __('services.hero_title') }}</h1>
-                <p class="hero-subtitle">
+                <h1 class="hero-title display-3 fw-bold">{{ __('services.hero_title') }}</h1>
+                <p class="hero-subtitle lead">
                     {{ __('services.hero_subtitle') }}
                 </p>
             </div>
@@ -25,107 +21,116 @@
     </section>
 
     {{-- ======================
-        SERVICES GRID
+        SERVICES CATEGORIES (ENHANCED DESIGN)
     ====================== --}}
-    <section id="services" class="section-padding bg-light">
-        <div class="container">
+    <section id="services" class="section-padding position-relative overflow-hidden">
+        {{-- Decorative background elements --}}
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-light opacity-50 z-n1"></div>
+        <div class="blob-decorator position-absolute top-0 end-0"></div>
 
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8 text-center">
-                    <h2 class="section-heading">{{ __('services.capabilities_title') }}</h2>
-                    <div class="heading-line mx-auto"></div>
-                    <p class="text-muted mt-3">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-3">
+                <div class="col-lg-7 text-center">
+                    <span class="badge rounded-pill bg-danger-soft text-primary px-3 py-2 mb-3 text-uppercase fw-bold letter-spacing-1">Our Expertise</span>
+                    <h2 class="section-heading text-dark fw-bold display-5">{{ __('services.capabilities_title') }}</h2>
+                    <div class="heading-line mx-auto mb-4"></div>
+                    <p class="text-muted fs-5">
                         {{ __('services.capabilities_subtitle') }}
                     </p>
                 </div>
             </div>
 
-            <div class="row g-4">
             @php
-                // Array bantuan untuk memetakan Icon ke Key Bahasa
-                $services = [
-                    ['icon' => 'fas fa-project-diagram', 'key' => 'construction'],
-                    ['icon' => 'fas fa-warehouse',       'key' => 'warehouse'],
-                    ['icon' => 'fas fa-city',            'key' => 'civil'], 
-                    ['icon' => 'fas fa-layer-group',     'key' => 'mep_steel'], 
-                    ['icon' => 'fas fa-cogs',            'key' => 'mechanical'],
-                    ['icon' => 'fas fa-database',         'key' => 'tank'],
-                    ['icon' => 'fas fa-border-all',      'key' => 'walling'],
-                    ['icon' => 'fas fa-fill-drip',       'key' => 'epoxy'],
-                    ['icon' => 'fas fa-home',            'key' => 'roofing'],
-                    ['icon' => 'fas fa-th-large',        'key' => 'panel'],
-                    ['icon' => 'fas fa-road',            'key' => 'road'],
-                    ['icon' => 'fas fa-tree',            'key' => 'landscape'],
-                    ['icon' => 'fas fa-paint-roller',    'key' => 'interior'],
-                    ['icon' => 'fas fa-building',        'key' => 'temporary'],
-                    ['icon' => 'fas fa-bolt',            'key' => 'electrical'],
-                    ['icon' => 'fas fa-door-open',       'key' => 'speed_door'],
-                    ['icon' => 'fas fa-wrench',          'key' => 'utilities'],
-                    ['icon' => 'fas fa-couch',           'key' => 'villa'],
+                $serviceGroups = [
+                    [
+                        'title' => 'Civil',
+                        'icon' => 'fas fa-city',
+                        'items' => ['Foundation', 'Road Construction', 'Golf Course Development']
+                    ],
+                    [
+                        'title' => 'Architecture',
+                        'icon' => 'fas fa-drafting-compass',
+                        'items' => ['Apartment', 'Bungalow', 'Factory Design', 'Warehouse', 'Temporary Facilities']
+                    ],
+                    [
+                        'title' => 'Mechanical',
+                        'icon' => 'fas fa-tools',
+                        'items' => ['Fabrication', 'Erection', 'Steel Structure', 'Piping', 'Tank', 'Pipeline', 'Fire Fighting Systems', 'WTP/WWTP']
+                    ],
+                    [
+                        'title' => 'Electrical & Instrument',
+                        'icon' => 'fas fa-bolt',
+                        'items' => ['Substation', 'Transformer', 'Panel Board', 'Cabling', 'Industrial Lighting', 'Telecommunication', 'Fire Alarm/CCTV']
+                    ],
+                    [
+                        'title' => 'Revamping',
+                        'icon' => 'fas fa-recycle',
+                        'items' => ['Building Demolition', 'Structural Renovation']
+                    ],
+                    [
+                        'title' => 'Maintenance',
+                        'icon' => 'fas fa-hammer',
+                        'items' => ['Factory Maintenance', 'Plant Services']
+                    ],
+                    [
+                        'title' => 'Interior',
+                        'icon' => 'fas fa-couch',
+                        'items' => ['Space Design', 'Interior Fit-out']
+                    ],
+                    [
+                        'title' => 'Others',
+                        'icon' => 'fas fa-plus-circle',
+                        'items' => ['Epoxy Flooring', 'Roofing Solutions', 'Speed Door Systems']
+                    ],
                 ];
             @endphp
 
-                @foreach($services as $item)
-                <div class="col-md-6 col-lg-4">
-                    <div class="service-card h-100">
-                        <div class="icon-wrapper">
-                            <i class="{{ $item['icon'] }}"></i>
+            <div class="row g-4">
+                @foreach($serviceGroups as $group)
+                <div class="col-4 col-md-4 col-lg-3">
+                    <div class="service-card-modern p-4 h-100">
+                        <div class="icon-circle mb-4">
+                            <i class="{{ $group['icon'] }}"></i>
                         </div>
-                        <div class="card-body">
-                            <h5 class="card-title">{{ __('services.s_' . $item['key'] . '_title') }}</h5>
-                            <p class="card-text">
-                                {{ __('services.s_' . $item['key'] . '_desc') }}
-                            </p>
-                        </div>
+                        <h4 class="category-title-modern">{{ $group['title'] }}</h4>
+                        <ul class="list-unstyled category-list-modern">
+                            @foreach($group['items'] as $item)
+                                <li class="d-flex align-items-start mb-2">
+                                    <span class="bullet-dot me-2 mt-2"></span>
+                                    <span>{{ $item }}</span>
+                                </li>
+                            @endforeach
+                        </ul>
                     </div>
                 </div>
                 @endforeach
-
             </div>
         </div>
     </section>
     
     {{-- ======================
-        CALL TO ACTION (CTA)
+        CALL TO ACTION (MODERN GRADIENT)
     ====================== --}}
-    <section class="section-padding bg-primary text-white text-center py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <h2 class="display-5 fw-bold mb-3 text-white">{{ __('services.cta_title') }}</h2>
-                    <p class="lead mb-4 opacity-75">
-                        {{ __('services.cta_desc') }}
-                    </p>
-                    <div class="d-flex justify-content-center gap-3 flex-wrap">
-                        <a href="{{ url('/contact') }}" class="btn btn-light btn-lg px-5 py-3 fw-bold">
-                            <i class="fas fa-envelope me-2"></i>{{ __('services.cta_button_contact') }}
-                        </a>
-                        <a href="https://wa.me/your-number" class="btn btn-outline-light btn-lg px-5 py-3">
-                            <i class="fab fa-whatsapp me-2"></i>{{ __('services.cta_button_wa') }}
-                        </a>
+    <section class="cta-modern py-5">
+        <div class="container py-4">
+            <div class="cta-glass p-5 text-center shadow-lg">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <h2 class="display-5 fw-bold mb-3 text-white">{{ __('services.cta_title') }}</h2>
+                        <p class="lead mb-5 text-white opacity-90">
+                            {{ __('services.cta_desc') }}
+                        </p>
+                        <div class="d-flex justify-content-center gap-4 flex-wrap">
+                            <a href="{{ url('/contact') }}" class="btn btn-primary-modern btn-lg px-5 py-3 fw-bold">
+                                <i class="fas fa-paper-plane me-2"></i>Hubungi Kami
+                            </a>
+                            <a href="https://wa.me/085591710360" class="btn btn-whatsapp-modern btn-lg px-5 py-3">
+                                <i class="fab fa-whatsapp me-2"></i>WhatsApp Chat
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <style>
-        .bg-primary {
-            background-color: #003366 !important; 
-        }
-        .section-padding {
-            padding: 80px 0;
-        }
-        .btn-light {
-            color: #003366;
-            transition: all 0.3s ease;
-        }
-        .btn-light:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        .btn-outline-light:hover {
-            transform: translateY(-3px);
-        }
-    </style>
 @endsection

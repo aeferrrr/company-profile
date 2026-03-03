@@ -1,199 +1,205 @@
+/* ===============================
+   BASE & UTILITIES
+=============================== */
 
-/* --- UTILS --- */
-.ls-2 { letter-spacing: 2px; }
-.section-padding { padding: 80px 0; }
+.section-padding { padding: 100px 0; }
 
-/* --- HERO SECTION --- */
-.hero-section {
-    position: relative;
-    height: 500px;
-    width: 100%;
-    overflow: hidden;
-    color: #fff;
+.bg-danger-soft { 
+    background-color: rgba(20, 40, 160, 0.08); 
 }
 
-.hero-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-/* Overlay menggunakan Gradient Samsung Blue */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(20, 40, 160, 0.92) 0%, rgba(3, 78, 162, 0.8) 100%);
-    z-index: 2;
-}
-
-.hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    letter-spacing: -1px;
-}
-
-.hero-subtitle {
-    font-size: 1.15rem;
-    font-weight: 300;
-    opacity: 0.9;
-    max-width: 600px;
-    line-height: 1.6;
-}
-
-/* --- SECTION HEADINGS --- */
-.section-heading {
-    color: var(--samsung-blue);
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+.letter-spacing-1 { 
+    letter-spacing: 0.1rem; 
 }
 
 .heading-line {
-    width: 80px;
-    height: 4px;
-    background-color: var(--samsung-blue);
-    border-radius: 2px;
-}
-
-/* --- SERVICE CARDS (DESIGN UTAMA) --- */
-.service-card {
-    background: #ffffff;
-    padding: 2.5rem 2rem;
-    border-radius: 12px;
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Garis bawah biru saat hover */
-.service-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--samsung-blue);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
-
-/* Efek Hover Card */
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 30px rgba(20, 40, 160, 0.1);
-}
-
-.service-card:hover::after {
-    transform: scaleX(1);
-}
-
-/* Icon Styling */
-.icon-wrapper {
     width: 70px;
-    height: 70px;
-    background-color: rgba(20, 40, 160, 0.08); /* Biru transparan */
-    color: var(--samsung-blue);
-    border-radius: 50%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 5px;
+}
+
+/* ===============================
+   MODERN SERVICE CARDS
+=============================== */
+
+.service-card-modern {
+    background: var(--bg-surface);
+    border-radius: 20px;
+    border: 1px solid var(--border-soft);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.service-card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--samsung-blue-glow);
+    border-color: var(--primary);
+}
+
+.icon-circle {
+    width: 60px;
+    height: 60px;
+    background: var(--bg-broken-white);
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5rem auto;
-    transition: all 0.3s ease;
+    color: var(--primary);
+    font-size: 1.5rem;
+    transition: 0.3s;
 }
 
-.icon-wrapper svg {
-    width: 32px;
-    height: 32px;
+.service-card-modern:hover .icon-circle {
+    background: var(--primary);
+    color: var(--text-light);
+    transform: rotate(10deg);
 }
 
-.service-card:hover .icon-wrapper {
-    background-color: var(--samsung-blue);
-    color: #fff;
-    transform: scale(1.1);
-}
-
-/* Typography Card */
-.card-title {
-    font-weight: 700;
+.category-title-modern {
     color: var(--text-dark);
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    font-weight: 800;
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
 }
 
-.card-text {
+.category-list-modern li {
     color: var(--text-grey);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 1rem;
+    transition: 0.2s;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    .hero-section { height: 400px; }
-}
-
-/* ======================
-   PROCESS CIRCLE (OUR WORKFLOW)
-====================== */
-
-.process-circle-box {
-    width: 90px;
-    height: 90px;
+.bullet-dot {
+    width: 6px;
+    height: 6px;
+    background-color: var(--border-soft);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+    display: inline-block;
+    transition: 0.3s;
 }
 
-/* Optional: ukuran teks konsisten */
-.process-circle-box span {
-    line-height: 1;
-}
-/* ======================
-   SERVICES
-====================== */
-#services {
-    padding: 60px 0;
+.service-card-modern:hover .bullet-dot {
+    background-color: var(--primary);
+    width: 12px;
+    border-radius: 3px;
 }
 
-/* WHITE CONTAINER – FIX UTAMA */
-.service-box {
-    background: rgba(255,255,255,0.96);
-    backdrop-filter: blur(2px);
-    border-radius: 10px;
-    border: 1px solid rgba(0,0,0,0.04);
-    padding: 28px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+.service-card-modern:hover li {
+    color: var(--text-dark);
 }
 
-.service-box h5 {
-    margin-bottom: 12px;
+/* ===============================
+   DECORATIVE BACKGROUND
+=============================== */
+
+.blob-decorator {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--samsung-blue-glow) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
 }
 
-.service-box p {
-    font-size: 14px;
-    color: #6c757d;
-    line-height: 1.6;
+/* ===============================
+   CTA MODERN
+=============================== */
+
+.cta-modern {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+    position: relative;
 }
 
-.service-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 34px rgba(0,0,0,0.1);
+.cta-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
 }
 
+/* ===============================
+   BUTTONS
+=============================== */
 
+.btn-primary-modern {
+    background-color: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--samsung-blue-glow);
+    transition: 0.3s;
+}
+
+.btn-primary-modern:hover {
+    background-color: var(--primary-hover);
+    color: var(--text-light);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px var(--samsung-blue-glow);
+}
+
+.btn-whatsapp-modern {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: 0.3s;
+}
+
+.btn-whatsapp-modern:hover {
+    background-color: #128C7E;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+/* ===============================
+   RESPONSIVE COMPACT GRID
+=============================== */
+
+@media (max-width: 991px) {
+    .section-padding { padding: 60px 0; }
+
+    .service-card-modern {
+        padding: 1.5rem !important;
+        border-radius: 16px;
+    }
+
+    .category-title-modern {
+        font-size: 1.1rem;
+    }
+
+    .category-list-modern li {
+        font-size: 0.9rem;
+    }
+
+    .icon-circle {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .service-card-modern {
+        padding: 1.25rem !important;
+    }
+
+    .category-title-modern {
+        font-size: 1rem;
+    }
+
+    .category-list-modern li {
+        font-size: 0.85rem;
+    }
+
+    .bullet-dot {
+        width: 5px;
+        height: 5px;
+    }
+}
