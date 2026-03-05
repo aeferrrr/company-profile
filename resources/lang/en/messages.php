@@ -24,30 +24,30 @@ return [
         'content_2' => 'We continue to transform and strive for excellence in every service, ensuring that every step we take aligns with the company’s strategic vision. Let us move forward together toward a brighter and more prosperous future.',
     ],
 
-    'values' => [
+'values' => [
         'subtitle'    => 'Our Foundation',
-        'title'       => 'Corporate Values & <br> Principles',
-        'desc'        => 'The core values that underpin every step we take in delivering the best infrastructure solutions.',
+        'title'       => 'CORE <br> VALUES',
+        'desc'        => 'Driving Excellence Through Unity',
         
-        // Kartu 1: Integritas
+        // Kartu 1: Integrity
         'integrity_title' => 'Integrity',
         'integrity_sub'   => 'Utmost Honesty',
         'integrity_desc'  => 'We uphold honesty and transparency in every aspect of business, building solid trust.',
 
-        // Kartu 2: Inovasi
+        // Kartu 2: Innovation
         'innovation_title' => 'Innovation',
         'innovation_sub'   => 'Modernization',
         'innovation_desc'  => 'Continuous development and modernization for efficient industrial solutions.',
 
-        // Kartu 3: Kolaborasi
+        // Kartu 3: Collaboration
         'collaboration_title' => 'Collaboration',
         'collaboration_sub'   => 'Strong Synergy',
         'collaboration_desc'  => 'Building strong and harmonious synergy between internal teams, clients, and stakeholders.',
 
-        // Kartu 4: Keunggulan
-        'excellence_title' => 'Excellence',
-        'excellence_sub'   => 'Best Quality',
-        'excellence_desc'  => 'Prioritizing the best quality and highest safety standards in every project we undertake.',
+        // Kartu 4: Harmony (Menggantikan Excellence sesuai gambar)
+        'harmony_title' => 'Harmony',
+        'harmony_sub'   => 'Balanced Cooperation',
+        'harmony_desc'  => 'Creating a balanced and supportive environment to ensure seamless project delivery.',
     ],
 
     'video' => [

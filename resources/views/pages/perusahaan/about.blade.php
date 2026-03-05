@@ -41,10 +41,13 @@
         </div>
     </section>
 
+    {{-- SEPARATOR LINE --}}
+    <div class="container"><hr class="m-0" style="opacity: .05;"></div>
+
     {{-- ======================
     3. VISI & MISI
     ====================== --}}
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light" style="box-shadow: inset 0 10px 15px -15px rgba(0,0,0,0.1), inset 0 -10px 15px -15px rgba(0,0,0,0.1);">
         <div class="container py-lg-5">
             <div class="row">
                 {{-- Vision --}}
@@ -78,47 +81,55 @@
     {{-- ======================
     4. NILAI INTI (CORE VALUES)
     ====================== --}}
-    <section class="py-5 bg-white border-bottom">
+    <section class="py-5 bg-white border-top" style="border-color: rgba(0,0,0,0.05) !important;">
         <div class="container py-lg-5 text-center">
-            <h5 class="text-primary font-weight-bold text-uppercase mb-2">{{ __('about.foundation') }}</h5>
-            <h2 class="font-weight-bold mb-5">{{ __('about.corp_values') }}</h2>
+            <h2 class="font-weight-bold mb-2">
+                {!! __('messages.values.title') !!}
+            </h2>
+            <p class="text-muted mb-5">
+                {{ __('messages.values.desc') }}
+            </p>
+
             <div class="row justify-content-center">
-                <div class="col-md-4 col-lg-3 mb-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="p-3">
-                        <i class="bi bi-shield-check text-primary display-4 mb-3 d-block"></i>
-                        <h5 class="font-weight-bold">{{ __('about.val_integrity') }}</h5>
-                        <p class="small text-muted">{{ __('about.val_integrity_desc') }}</p>
+                        <i class="bi bi-hand-thumbs-up text-primary display-4 mb-3 d-block"></i>
+                        <h5 class="font-weight-bold">{{ __('messages.values.integrity_title') }}</h5>
+                        <p class="small text-muted">{{ __('messages.values.integrity_desc') }}</p>
                     </div>
                 </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="p-3">
-                        <i class="bi bi-lightbulb text-primary display-4 mb-3 d-block"></i>
-                        <h5 class="font-weight-bold">{{ __('about.val_innovation') }}</h5>
-                        <p class="small text-muted">{{ __('about.val_innovation_desc') }}</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="p-3">
-                        <i class="bi bi-people text-primary display-4 mb-3 d-block"></i>
-                        <h5 class="font-weight-bold">{{ __('about.val_collaboration') }}</h5>
-                        <p class="small text-muted">{{ __('about.val_collaboration_desc') }}</p>
-                    </div>
-                </div>
-                <div class="col-md-4 col-lg-3 mb-4">
+
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="p-3">
                         <i class="bi bi-gear-wide-connected text-primary display-4 mb-3 d-block"></i>
-                        <h5 class="font-weight-bold">{{ __('about.val_excellence') }}</h5>
-                        <p class="small text-muted">{{ __('about.val_excellence_desc') }}</p>
+                        <h5 class="font-weight-bold">{{ __('messages.values.collaboration_title') }}</h5>
+                        <p class="small text-muted">{{ __('messages.values.collaboration_desc') }}</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="p-3">
+                        <i class="bi bi-lightbulb text-primary display-4 mb-3 d-block"></i>
+                        <h5 class="font-weight-bold">{{ __('messages.values.innovation_title') }}</h5>
+                        <p class="small text-muted">{{ __('messages.values.innovation_desc') }}</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="p-3">
+                        <i class="fas fa-balance-scale text-primary display-4 mb-3 d-block"></i>
+                        <h5 class="font-weight-bold">{{ __('messages.values.harmony_title') }}</h5>
+                        <p class="small text-muted">{{ __('messages.values.harmony_desc') }}</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-{{-- ======================
+    {{-- ======================
     5. SIAPA PELANGGAN KAMI & BAGAIMANA KAMI BEKERJA
     ====================== --}}
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light border-top border-bottom" style="border-color: rgba(0,0,0,0.05) !important;">
         <div class="container py-lg-5">
             <div class="row">
                 {{-- Who We Serve --}}
@@ -126,127 +137,79 @@
                     <div class="pr-lg-4">
                         <h5 class="text-primary font-weight-bold text-uppercase mb-3">Siapa Pelanggan Kami</h5>
                         <h2 class="font-weight-bold mb-4">Mitra Pertumbuhan Industri Nasional</h2>
-                        
                         <p class="text-muted text-justify">
-                            Fokus kami adalah menjadi rumah bagi entitas bisnis di sektor industri strategis tanah air, mulai dari manufaktur otomotif, pusat logistik, hingga penyedia energi. Kami melayani perusahaan yang memprioritaskan ketepatan lokasi dan integritas fasilitas sebagai kunci sukses operasional mereka.
+                            Fokus kami adalah menjadi rumah bagi entitas bisnis di sektor industri strategis tanah air, mulai dari manufaktur otomotif, pusat logistik, hingga penyedia energi.
                         </p>
-                        
                         <p class="text-muted text-justify">
-                            Lebih dari sekadar penyedia lahan, kami bermitra dengan para pelaku industri nasional yang berkomitmen membangun rantai pasok yang tangguh, efisien, dan memiliki daya saing tinggi di pasar domestik.
+                            Lebih dari sekadar penyedia lahan, kami bermitra dengan para pelaku industri nasional yang berkomitmen membangun rantai pasok yang tangguh.
                         </p>
                     </div>
                 </div>
 
                 {{-- How We Work --}}
                 <div class="col-lg-6">
-                    <div class="pl-lg-4 border-left">
+                    <div class="pl-lg-4 border-left" style="border-width: 2px !important; border-color: #eee !important;">
                         <h5 class="text-primary font-weight-bold text-uppercase mb-3">Bagaimana Kami Bekerja</h5>
                         <h2 class="font-weight-bold mb-4">Dedikasi pada Standar & Ketepatan</h2>
-                        
                         <p class="text-muted text-justify">
-                            Operasional kami berpijak pada sinergi antara infrastruktur modern dan manajemen kawasan yang proaktif. Kami memastikan setiap kebutuhan spesifik tenant dijawab dengan solusi teknis yang handal dan proses perizinan yang transparan.
+                            Operasional kami berpijak pada sinergi antara infrastruktur modern dan manajemen kawasan yang proaktif. Kami memastikan setiap kebutuhan spesifik tenant dijawab dengan solusi teknis yang handal.
                         </p>
-                        
                         <p class="text-muted text-justify">
-                            Keberlanjutan adalah prinsip kerja kami; melalui pengelolaan lingkungan yang disiplin dan penyediaan utilitas tanpa henti, kami menciptakan ekosistem kerja yang aman dan produktif bagi seluruh mitra bisnis di dalam kawasan.
+                            Keberlanjutan adalah prinsip kerja kami; melalui pengelolaan lingkungan yang disiplin dan penyediaan utilitas tanpa henti.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     {{-- ======================
     7. NILAI YANG KAMI WUJUDKAN (VALUE DELIVERED)
-    Layout: Professional Technical List
     ====================== --}}
-    <section class="py-5 bg-white border-top">
+    <section class="py-5 bg-white">
         <div class="container py-lg-5">
             <div class="row">
                 {{-- Judul Samping --}}
                 <div class="col-lg-4 mb-5 mb-lg-0">
-                    <div class="sticky-top" style="top: 100px;">
+                    <div class="sticky-top" style="top: 100px; z-index: 1;">
                         <h5 class="text-primary font-weight-bold text-uppercase mb-3">Value Delivered</h5>
                         <h2 class="font-weight-bold mb-4" style="letter-spacing: -1px;">Hasil Nyata dalam Setiap Proyek</h2>
                         <p class="text-muted">
-                            Di KPCM, kualitas bukan sekadar janji, melainkan standar yang kami wujudkan melalui eksekusi teknis yang presisi. Berikut adalah nilai nyata yang dirasakan langsung oleh mitra kami di lapangan.
+                            Di KPCM, kualitas bukan sekadar janji, melainkan standar yang kami wujudkan melalui eksekusi teknis yang presisi.
                         </p>
-                        <hr class="w-25 ml-0 border-primary" style="border-width: 3px;">
+                        <hr class="w-25 ml-0 border-primary" style="border-width: 3px; opacity: 1;">
                     </div>
                 </div>
 
                 {{-- Daftar Nilai - Grid 2 Kolom --}}
                 <div class="col-lg-8">
                     <div class="row">
-                        {{-- 1. Ketepatan Waktu --}}
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                                <span class="h3 font-weight-bold text-light mr-3">01</span>
-                                <div>
-                                    <h6 class="font-weight-bold mb-1">Ketepatan Waktu Penyelesaian</h6>
-                                    <p class="small text-muted mb-0">Manajemen jadwal yang ketat guna memastikan operasional mitra dimulai sesuai target.</p>
-                                </div>
-                            </div>
-                        </div>
+                        @php
+                            $values = [
+                                ['01', 'Ketepatan Waktu Penyelesaian', 'Manajemen jadwal yang ketat guna memastikan operasional mitra dimulai sesuai target.'],
+                                ['02', 'Efisiensi Biaya (Cost Leadership)', 'Optimalisasi anggaran tanpa mengompromikan kualitas spesifikasi teknis.'],
+                                ['03', 'Zero Major Accident', 'Implementasi K3 (HSE) tingkat tinggi demi keselamatan lingkungan kerja.'],
+                                ['04', 'Minimalisasi Rework', 'Presisi dalam setiap tahap konstruksi untuk menghindari pengerjaan ulang.'],
+                                ['05', 'Transparansi Progress', 'Pelaporan data lapangan yang akurat dan dapat dipertanggungjawabkan.'],
+                                ['06', 'Durabilitas Tinggi', 'Penggunaan material terpilih untuk memastikan infrastruktur tahan lama.'],
+                            ];
+                        @endphp
 
-                        {{-- 2. Efisiensi Biaya --}}
+                        @foreach($values as $val)
                         <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                                <span class="h3 font-weight-bold text-light mr-3">02</span>
+                            <div class="d-flex align-items-start p-3 border rounded shadow-sm bg-white h-100" style="border-color: rgba(0,0,0,0.08) !important;">
+                                <span class="h3 font-weight-bold text-light mr-3" style="color: #e9ecef !important;">{{ $val[0] }}</span>
                                 <div>
-                                    <h6 class="font-weight-bold mb-1">Efisiensi Biaya (Cost Leadership)</h6>
-                                    <p class="small text-muted mb-0">Optimalisasi anggaran tanpa mengompromikan kualitas spesifikasi teknis.</p>
+                                    <h6 class="font-weight-bold mb-1">{{ $val[1] }}</h6>
+                                    <p class="small text-muted mb-0">{{ $val[2] }}</p>
                                 </div>
                             </div>
                         </div>
-
-                        {{-- 3. Zero Major Accident --}}
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                                <span class="h3 font-weight-bold text-light mr-3">03</span>
-                                <div>
-                                    <h6 class="font-weight-bold mb-1">Zero Major Accident</h6>
-                                    <p class="small text-muted mb-0">Implementasi K3 (HSE) tingkat tinggi demi keselamatan lingkungan kerja.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- 4. Minim Rework --}}
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                                <span class="h3 font-weight-bold text-light mr-3">04</span>
-                                <div>
-                                    <h6 class="font-weight-bold mb-1">Minimalisasi Rework</h6>
-                                    <p class="small text-muted mb-0">Presisi dalam setiap tahap konstruksi untuk menghindari pengerjaan ulang yang tidak efisien.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- 5. Transparansi Progress --}}
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                                <span class="h3 font-weight-bold text-light mr-3">05</span>
-                                <div>
-                                    <h6 class="font-weight-bold mb-1">Transparansi Progress</h6>
-                                    <p class="small text-muted mb-0">Pelaporan data lapangan yang akurat dan dapat dipertanggungjawabkan secara real-time.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {{-- 6. Kualitas Tahan Lama --}}
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start p-3 border rounded shadow-sm">
-                                <span class="h3 font-weight-bold text-light mr-3">06</span>
-                                <div>
-                                    <h6 class="font-weight-bold mb-1">Durabilitas Tinggi</h6>
-                                    <p class="small text-muted mb-0">Penggunaan material terpilih untuk memastikan infrastruktur tahan lama dan minim perawatan.</p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                         {{-- 7. Kemitraan Strategis --}}
-                        <div class="col-12">
-                            <div class="d-flex align-items-start p-4 bg-primary text-white rounded">
-                                <span class="h3 font-weight-bold opacity-50 mr-3"></span>
+                        <div class="col-12 mt-2">
+                            <div class="d-flex align-items-start p-4 bg-primary text-white rounded shadow">
                                 <div>
                                     <h6 class="font-weight-bold mb-1 text-white">Integritas Kemitraan Nasional</h6>
                                     <p class="small mb-0 opacity-80">Membangun kepercayaan melalui komitmen penuh terhadap standarisasi industri nasional.</p>

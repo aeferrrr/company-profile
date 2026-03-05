@@ -18,8 +18,7 @@
                 <div class="video-wrapper shadow-lg h-100" id="videoWrapper" style="min-height: 400px;">
 
                     {{-- ID companyVideo dipertahankan --}}
-                    <video id="companyVideo" autoplay muted loop
-                        playsinline class="w-100 h-100 object-fit-cover">
+                    <video id="companyVideo" autoplay muted loop playsinline class="w-100 h-100 object-fit-cover">
                         <source src="{{ asset('videos/kpcm-construction.mp4') }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -84,19 +83,19 @@
                         </div>  --}}
 
                         {{-- Item 4 --}}
-                        {{--<div class="video-item"
+                        {{-- <div class="video-item"
                             onclick="changeVideo('{{ asset('videos/interior.mp4') }}', '{{ __('messages.video.items.safety.title') }}', this)">
                             <img src="{{ asset('images/landscape.jpg') }}" class="item-thumb" alt="Thumbnail">
                              <div class="item-info">
                                 <h6>{{ __('messages.video.items.safety.title') }}</h6>
                                 <p>{{ __('messages.video.items.safety.desc') }}</p>
-                            </div>--}}
-                        </div>
-
+                            </div> --}}
                     </div>
+
                 </div>
             </div>
-
         </div>
+
+    </div>
     </div>
 </section>

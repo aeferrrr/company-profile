@@ -25,26 +25,31 @@ return [
     ],
 
     'values' => [
-        'subtitle'    => 'Fondasi Kami',
-        'title'       => 'Nilai & Prinsip <br> Perusahaan',
-        'desc'        => 'Nilai-nilai inti yang menjadi landasan setiap langkah kami dalam memberikan solusi infrastruktur terbaik.',
-        
-        'integrity_title' => 'Integritas',
-        'integrity_sub'   => 'Kejujuran Utama',
-        'integrity_desc'  => 'Kami menjunjung tinggi kejujuran dan transparansi dalam setiap aspek bisnis, membangun kepercayaan yang kokoh.',
+            'subtitle'    => 'Fondasi Kami',
+            'title'       => 'NILAI <br> INTI',
+            'desc'        => 'Mendorong Keunggulan Melalui Persatuan',
+            
+            // Kartu 1: Integritas
+            'integrity_title' => 'Integritas',
+            'integrity_sub'   => 'Kejujuran Utama',
+            'integrity_desc'  => 'Kami menjunjung tinggi kejujuran dan transparansi dalam setiap aspek bisnis, membangun kepercayaan yang kokoh.',
 
-        'innovation_title' => 'Inovasi',
-        'innovation_sub'   => 'Modernisasi',
-        'innovation_desc'  => 'Melakukan pengembangan dan modernisasi secara berkelanjutan untuk solusi industri yang efisien.',
+            // Kartu 2: Inovasi
+            'innovation_title' => 'Inovasi',
+            'innovation_sub'   => 'Modernisasi',
+            'innovation_desc'  => 'Pengembangan berkelanjutan dan modernisasi untuk solusi industri yang efisien.',
 
-        'collaboration_title' => 'Kolaborasi',
-        'collaboration_sub'   => 'Sinergi Kuat',
-        'collaboration_desc'  => 'Membangun sinergi yang kuat dan harmonis antara tim internal, klien, dan pemangku kepentingan.',
+            // Kartu 3: Kolaborasi
+            'collaboration_title' => 'Kolaborasi',
+            'collaboration_sub'   => 'Sinergi Kuat',
+            'collaboration_desc'  => 'Membangun sinergi yang kuat dan harmonis antara tim internal, klien, dan pemangku kepentingan.',
 
-        'excellence_title' => 'Keunggulan',
-        'excellence_sub'   => 'Kualitas Terbaik',
-        'excellence_desc'  => 'Mengutamakan kualitas terbaik dan standar keselamatan tertinggi dalam setiap proyek yang kami kerjakan.',
-    ],
+            // Kartu 4: Harmoni
+            'harmony_title' => 'Harmoni',
+            'harmony_sub'   => 'Kerja Sama Seimbang',
+            'harmony_desc'  => 'Menciptakan lingkungan yang seimbang dan suportif untuk memastikan penyelesaian proyek yang lancar.',
+        ],
+
     'video' => [
         'heading'           => 'Video Proyek Terbaru',
         'subheading'        => 'Lihat keahlian kami beraksi melalui sorotan proyek ini.',

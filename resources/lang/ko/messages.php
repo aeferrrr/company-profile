@@ -25,27 +25,32 @@ return [
     'content_2' => '저희는 모든 서비스 영역에서 탁월함을 구현하기 위해 끊임없이 변화하고 있으며, 저희가 내딛는 모든 걸음이 회사의 전략적 비전과 조화를 이루도록 최선을 다하고 있습니다. 더 찬란한 미래를 향해 함께 나아갑시다.'
     ],
 
-    'values' => [
-        'subtitle'    => '우리의 기반', // Uriui Giban
-        'title'       => '기업 가치 및 <br> 원칙', // Gieop Gachi mit Wonchik
-        'desc'        => '최고의 인프라 솔루션을 제공하기 위한 우리의 모든 발걸음을 뒷받침하는 핵심 가치입니다.',
+'values' => [
+        'subtitle'    => '우리의 기반',
+        'title'       => '핵심 <br> 가치',
+        'desc'        => '단합을 통한 탁월함 추구',
         
+        // Kartu 1: Integrity
         'integrity_title' => '청렴 (Integrity)',
-        'integrity_sub'   => '정직 최우선',
-        'integrity_desc'  => '우리는 모든 비즈니스 측면에서 정직과 투명성을 유지하며 견고한 신뢰를 구축합니다.',
+        'integrity_sub'   => '최고의 정직',
+        'integrity_desc'  => '모든 비즈니스 측면에서 정직과 투명성을 유지하며 확고한 신뢰를 구축합니다.',
 
+        // Kartu 2: Innovation
         'innovation_title' => '혁신 (Innovation)',
         'innovation_sub'   => '현대화',
-        'innovation_desc'  => '효율적인 산업 솔루션을 위해 지속적인 개발과 현대화를 수행합니다.',
+        'innovation_desc'  => '효율적인 산업 솔루션을 위해 지속적인 개발과 현대화를 추진합니다.',
 
+        // Kartu 3: Collaboration
         'collaboration_title' => '협력 (Collaboration)',
         'collaboration_sub'   => '강력한 시너지',
-        'collaboration_desc'  => '내부 팀, 고객 및 이해 관계자 간의 강력하고 조화로운 시너지를 구축합니다.',
+        'collaboration_desc'  => '내부 팀, 고객 및 이해관계자 간의 강력하고 조화로운 시너지를 구축합니다.',
 
-        'excellence_title' => '탁월성 (Excellence)',
-        'excellence_sub'   => '최고 품질',
-        'excellence_desc'  => '우리가 수행하는 모든 프로젝트에서 최고의 품질과 최고의 안전 표준을 최우선으로 합니다.',
+        // Kartu 4: Harmony
+        'harmony_title' => '화합 (Harmony)',
+        'harmony_sub'   => '균형 잡힌 협력',
+        'harmony_desc'  => '원활한 프로젝트 수행을 위해 균형 잡히고 상호 지원적인 환경을 조성합니다.',
     ],
+    
     'video' => [
         'heading'           => '최신 프로젝트 영상', // Choesin Peurojekteu Yeongsang
         'subheading'        => '프로젝트 하이라이트를 통해 우리의 전문성을 확인하세요.',
