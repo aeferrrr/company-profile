@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', __('services.title') . ' | KPCM Industrial Estate')
+@section('meta_title', __('general.seo.service_title'))
+@section('meta_description', __('general.seo.service_desc'))
 
 @section('content')
 
@@ -27,9 +28,8 @@
         {{-- Decorative background elements --}}
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-light opacity-50 z-n1"></div>
         <div class="blob-decorator position-absolute top-0 end-0"></div>
-
         <div class="container">
-            <div class="row justify-content-center mb-5 pb-3">
+            {{-- <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-lg-7 text-center">
                     <span class="badge rounded-pill bg-danger-soft text-primary px-3 py-2 mb-3 text-uppercase fw-bold letter-spacing-1">Our Expertise</span>
                     <h2 class="section-heading text-dark fw-bold display-5">{{ __('services.capabilities_title') }}</h2>
@@ -38,7 +38,7 @@
                         {{ __('services.capabilities_subtitle') }}
                     </p>
                 </div>
-            </div>
+            </div> --}}
 
             @php
                 $serviceGroups = [

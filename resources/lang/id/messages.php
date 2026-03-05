@@ -2,9 +2,9 @@
 
 return [
     'hero' => [
-        'subtitle'    => 'EST. KPCM INDUSTRIAL ESTATE',
+        'subtitle'    => 'PT KPCM INDUSTRIAL ESTATE',
         'title'       => 'MEMBANGUN MASA DEPAN <br> <span class="text-outline">KAWASAN INDUSTRI</span>',
-        'desc'        => 'Didirikan pada tahun 2011, Kawasan Perindustrian Construction Management (KPCM) telah memberikan solusi konstruksi dan teknik industri yang andal di seluruh Indonesia.',
+        'desc'        => 'PT KPCM adalah perusahaan konstruksi terkemuka di Jakarta Selatan. Didirikan sejak 2011, kami menyediakan solusi teknik industri dan manajemen konstruksi (KPCM) yang andal di seluruh Indonesia.',
         'btn_services'=> 'JELAJAHI LAYANAN',
         'btn_profile' => 'PROFIL PERUSAHAAN',
         

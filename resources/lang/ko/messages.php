@@ -2,18 +2,18 @@
 
 return [
     'hero' => [
-        'subtitle'    => 'EST. KPCM INDUSTRIAL ESTATE', // EST. KPCM Saneop Danji
-        'title'       => '산업 단지의 <br> <span class="text-outline">미래를 건설하다</span>', // Saneop Danji-ui Mirae-reul Geonseolhada
-        'desc'        => '2011년에 설립된 Kawasan Perindustrian Construction Management (KPCM)은 인도네시아 전역에 신뢰할 수 있는 산업 건설 및 엔지니어링 솔루션을 제공해 왔습니다.',
-        'btn_services'=> '서비스 탐색', // Seobiseu Tamsaek
-        'btn_profile' => '회사 소개', // Hoesa Sogae
+        'subtitle'    => 'PT KPCM INDUSTRIAL ESTATE',
+        'title'       => '산업 단지의 <br> <span class="text-outline">미래를 건설하다</span>',
+        'desc'        => 'PT KPCM은 자카르타 남부에 위치한 선도적인 산업 건설 회사입니다. 2011년 설립 이래 인도네시아 전역에 신뢰할 수 있는 엔지니어링 및 건설 관리 솔루션을 제공하고 있습니다.',
+        'btn_services'=> '서비스 탐색',
+        'btn_profile' => '회사 소개',
         
         'stat_1_val'  => '500+',
-        'stat_1_text' => '완료된 프로젝트', // Wanryodoen Peurojekteu
+        'stat_1_text' => '완료된 프로젝트',
         'stat_2_val'  => '14+',
-        'stat_2_text' => '년 경력', // Nyeon Gyeongnyeok
+        'stat_2_text' => '년 경력',
         'stat_3_val'  => '100%',
-        'stat_3_text' => '안전 기록', // Anjeon Girok
+        'stat_3_text' => '안전 기록',
     ],
 
     'greetings' => [

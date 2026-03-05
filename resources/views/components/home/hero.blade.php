@@ -1,6 +1,6 @@
 <section class="hero-section">
     {{-- Background Video --}}
-    <video class="hero-video" autoplay muted loop playsinline>
+    <video class="hero-video" alt="PT KPCM Industrial Estate - Perusahaan Konstruksi di Jakarta Selatan" autoplay muted loop playsinline>
         <source src="{{ asset('videos/hero.mp4') }}" type="video/mp4">
     </video>
 

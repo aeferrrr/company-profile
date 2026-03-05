@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', __('projects.title') . ' | KPCM Industrial Estate')
+@section('meta_title', __('general.seo.project_title'))
+@section('meta_description', __('general.seo.project_desc'))
 
 @section('content')
 
@@ -23,9 +24,9 @@
                 </p>
             </div>
         </div>
-
     </section>
 
+    </section>
     <!-- Section 2: Filter (Sticky) -->
     <section class="filter-section">
         <div class="container">
@@ -58,6 +59,13 @@
                     <div class="gallery-overlay">
                         <span class="item-category">{{ __('projects.label_roofing') }}</span>
                         <h3 class="item-title">PT Semarang Garment</h3>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="atap">
+                    <img src="{{ asset('images/projects/atap-pekerjaan.jpg') }}" alt="Atap Pekerjaan">
+                    <div class="gallery-overlay">
+                        <span class="item-category">{{ __('projects.label_roofing') }}</span>
+                        <h3 class="item-title">Pekerjaan Atap</h3>
                     </div>
                 </div>
 

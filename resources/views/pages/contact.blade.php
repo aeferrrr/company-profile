@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', __('contact.title') . ' | KPCM Industrial Estate')
+@section('meta_title', __('general.seo.contact_title'))
+@section('meta_description', __('general.seo.contact_desc'))
 
 @section('content')
 

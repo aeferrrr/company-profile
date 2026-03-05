@@ -2,13 +2,12 @@
 
 return [
     'hero' => [
-        'subtitle'    => 'EST. KPCM INDUSTRIAL ESTATE',
+        'subtitle'    => 'PT KPCM INDUSTRIAL ESTATE',
         'title'       => 'BUILDING THE FUTURE OF <br> <span class="text-outline">INDUSTRIAL ESTATE</span>',
-        'desc'        => 'Established in 2011, Kawasan Perindustrian Construction Management (KPCM) has been delivering reliable industrial construction and engineering solutions across Indonesia.',
+        'desc'        => 'PT KPCM is a premier industrial construction company based in South Jakarta. Since 2011, we have delivered reliable engineering solutions and construction management across Indonesia.',
         'btn_services'=> 'EXPLORE SERVICES',
         'btn_profile' => 'COMPANY PROFILE',
         
-        // Statistik Bawah
         'stat_1_val'  => '500+',
         'stat_1_text' => 'PROJECTS COMPLETED',
         'stat_2_val'  => '14+',
