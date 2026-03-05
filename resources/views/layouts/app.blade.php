@@ -75,7 +75,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-
+    <script src="{{ asset('js/project.js') }}"></script>
     <script src="{{ asset('js/organization.js') }}"></script>
     <script>
         function openService(evt, serviceName) {
