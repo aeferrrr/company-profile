@@ -5,7 +5,7 @@
 
 @section('content')
     <section class="hero-section hero-organization">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+        <img src="{{ asset('/images/hero/construction-1.jpg') }}"
             class="hero-bg" alt="{{ __('organization.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">

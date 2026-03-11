@@ -32,7 +32,7 @@
   position: absolute;
   inset: 0;
   /* Overlay gelap merata agar tulisan putih terbaca jelas */
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
@@ -243,7 +243,7 @@
 
 /* Override spesifik konten untuk hero tipe ini */
 .hero-section .hero-overlay {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .hero-section .hero-content {

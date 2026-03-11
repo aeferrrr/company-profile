@@ -9,7 +9,7 @@
         SERVICES HERO (FULL WIDTH)
     ====================== --}}
     <section class="hero-section hero-services">
-        <img src="{{ asset('images/services.jpg') }}" class="hero-bg" alt="{{ __('services.hero_title') }}">
+        <img src="{{ asset('/images/hero/excavator-action.jpg') }}" class="hero-bg" alt="{{ __('services.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">

@@ -9,7 +9,7 @@
     1. HERO SECTION
     ====================== --}}
     <section class="hero-section">
-        <img src="{{ asset('/images/hero/hero-siluate.jpg') }}" class="hero-bg" alt="{{ __('about.hero_title') }}">
+        <img src="{{ asset('/images/hero/worker-meeting.jpg') }}" class="hero-bg" alt="{{ __('about.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
