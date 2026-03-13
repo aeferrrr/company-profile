@@ -84,22 +84,22 @@ return [
         'button'   => 'View All Services',
 
         // Item 1
-        'epoxy_name' => 'Epoxy & Polishing', // Tetap Inggris
-        'epoxy_sub'  => 'Industrial grade flooring',
-        'epoxy_desc' => 'High-quality floor coating solutions for industrial and commercial durability.',
+        'civil_name' => 'Civil & M.E.P',
+        'civil_sub'  => 'Integrated Engineering',
+        'civil_desc' => 'Comprehensive civil works and mechanical installations for industrial efficiency.',
 
         // Item 2
-        'roofing_name' => 'Roofing Construction', // Tetap Inggris
-        'roofing_sub'  => 'Durable roof solutions',
-        'roofing_desc' => 'Installation and repair of roofs with weather-resistant materials.',
+        'architecture_name' => 'Architecture',
+        'architecture_sub'  => 'Innovative Design',
+        'architecture_desc' => 'High-end architectural planning that combines aesthetics with modern functionality.',
 
-        // Item 3
-        'interior_name' => 'Interior & Revamping', // Tetap Inggris
-        'interior_sub'  => 'Modern design updates',
-        'interior_desc' => 'Transforming spaces with modern aesthetics and functional design updates.',
+        // Item 3 (Interior dikembalikan)
+        'interior_name' => 'Interior Design',
+        'interior_sub'  => 'Modern Aesthetics',
+        'interior_desc' => 'Transforming indoor spaces with functional and stylish interior solutions.',
 
         // Item 4
-        'mgmt_name' => 'Construction & Management', // Tetap Inggris
+        'mgmt_name' => 'Construction & Management',
         'mgmt_sub'  => 'End-to-end supervision',
         'mgmt_desc' => 'Complete project supervision from planning to final handover.',
     ],

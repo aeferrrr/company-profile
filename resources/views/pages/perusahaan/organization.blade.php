@@ -5,7 +5,7 @@
 
 @section('content')
     <section class="hero-section hero-organization">
-        <img src="{{ asset('/images/hero/construction-1.jpg') }}"
+        <img src="{{ asset('/images/hero/construction-1.webp') }}"
             class="hero-bg" alt="{{ __('organization.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">

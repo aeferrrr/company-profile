@@ -83,25 +83,25 @@ return [
         'desc'     => 'Kami menyediakan solusi konstruksi komprehensif dengan kualitas terbaik dan manajemen profesional.',
         'button'   => 'Lihat Semua Layanan',
 
-        // Item 1
-        'epoxy_name' => 'Epoxy & Polishing', // Tetap Inggris
-        'epoxy_sub'  => 'Lantai kelas industri',
-        'epoxy_desc' => 'Solusi pelapisan lantai berkualitas tinggi untuk ketahanan industri dan komersial.',
+    // Item 1
+    'civil_name' => 'Civil & M.E.P',
+    'civil_sub'  => 'Teknik Terintegrasi',
+    'civil_desc' => 'Pekerjaan sipil komprehensif dan instalasi mekanikal untuk efisiensi industri.',
 
-        // Item 2
-        'roofing_name' => 'Roofing Construction', // Tetap Inggris
-        'roofing_sub'  => 'Solusi atap tahan lama',
-        'roofing_desc' => 'Pemasangan dan perbaikan atap dengan material tahan cuaca.',
+    // Item 2
+    'architecture_name' => 'Architecture',
+    'architecture_sub'  => 'Desain Inovatif',
+    'architecture_desc' => 'Perencanaan arsitektur tingkat tinggi yang memadukan estetika dan fungsionalitas.',
 
-        // Item 3
-        'interior_name' => 'Interior & Revamping', // Tetap Inggris
-        'interior_sub'  => 'Pembaruan desain modern',
-        'interior_desc' => 'Mengubah ruangan dengan estetika modern dan pembaruan desain fungsional.',
+    // Item 3
+    'interior_name' => 'Interior Design',
+    'interior_sub'  => 'Estetika Modern',
+    'interior_desc' => 'Transformasi ruang interior dengan solusi desain yang fungsional dan bergaya.',
 
-        // Item 4
-        'mgmt_name' => 'Construction & Management', // Tetap Inggris
-        'mgmt_sub'  => 'Pengawasan menyeluruh',
-        'mgmt_desc' => 'Pengawasan proyek lengkap mulai dari perencanaan hingga serah terima akhir.',
+    // Item 4
+    'mgmt_name' => 'Construction & Management',
+    'mgmt_sub'  => 'Pengawasan menyeluruh',
+    'mgmt_desc' => 'Pengawasan proyek lengkap mulai dari perencanaan hingga serah terima akhir.',
     ],
     'clients' => [
         'subtitle' => 'DIPERCAYA OLEH', // Sesuai gambar

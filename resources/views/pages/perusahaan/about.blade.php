@@ -9,7 +9,7 @@
     1. HERO SECTION
     ====================== --}}
     <section class="hero-section">
-        <img src="{{ asset('/images/hero/worker-meeting.jpg') }}" class="hero-bg" alt="{{ __('about.hero_title') }}">
+        <img src="{{ asset('/images/hero/worker-meeting.webp') }}" class="hero-bg" alt="{{ __('about.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
@@ -42,12 +42,15 @@
     </section>
 
     {{-- SEPARATOR LINE --}}
-    <div class="container"><hr class="m-0" style="opacity: .05;"></div>
+    <div class="container">
+        <hr class="m-0" style="opacity: .05;">
+    </div>
 
     {{-- ======================
     3. VISI & MISI
     ====================== --}}
-    <section class="py-5 bg-light" style="box-shadow: inset 0 10px 15px -15px rgba(0,0,0,0.1), inset 0 -10px 15px -15px rgba(0,0,0,0.1);">
+    <section class="py-5 bg-light"
+        style="box-shadow: inset 0 10px 15px -15px rgba(0,0,0,0.1), inset 0 -10px 15px -15px rgba(0,0,0,0.1);">
         <div class="container py-lg-5">
             <div class="row">
                 {{-- Vision --}}
@@ -138,10 +141,12 @@
                         <h5 class="text-primary font-weight-bold text-uppercase mb-3">Siapa Pelanggan Kami</h5>
                         <h2 class="font-weight-bold mb-4">Mitra Pertumbuhan Industri Nasional</h2>
                         <p class="text-muted text-justify">
-                            Fokus kami adalah menjadi rumah bagi entitas bisnis di sektor industri strategis tanah air, mulai dari manufaktur otomotif, pusat logistik, hingga penyedia energi.
+                            Fokus kami adalah menjadi rumah bagi entitas bisnis di sektor industri strategis tanah air,
+                            mulai dari manufaktur otomotif, pusat logistik, hingga penyedia energi.
                         </p>
                         <p class="text-muted text-justify">
-                            Lebih dari sekadar penyedia lahan, kami bermitra dengan para pelaku industri nasional yang berkomitmen membangun rantai pasok yang tangguh.
+                            Lebih dari sekadar penyedia lahan, kami bermitra dengan para pelaku industri nasional yang
+                            berkomitmen membangun rantai pasok yang tangguh.
                         </p>
                     </div>
                 </div>
@@ -152,10 +157,13 @@
                         <h5 class="text-primary font-weight-bold text-uppercase mb-3">Bagaimana Kami Bekerja</h5>
                         <h2 class="font-weight-bold mb-4">Dedikasi pada Standar & Ketepatan</h2>
                         <p class="text-muted text-justify">
-                            Operasional kami berpijak pada sinergi antara infrastruktur modern dan manajemen kawasan yang proaktif. Kami memastikan setiap kebutuhan spesifik tenant dijawab dengan solusi teknis yang handal.
+                            Operasional kami berpijak pada sinergi antara infrastruktur modern dan manajemen kawasan yang
+                            proaktif. Kami memastikan setiap kebutuhan spesifik tenant dijawab dengan solusi teknis yang
+                            handal.
                         </p>
                         <p class="text-muted text-justify">
-                            Keberlanjutan adalah prinsip kerja kami; melalui pengelolaan lingkungan yang disiplin dan penyediaan utilitas tanpa henti.
+                            Keberlanjutan adalah prinsip kerja kami; melalui pengelolaan lingkungan yang disiplin dan
+                            penyediaan utilitas tanpa henti.
                         </p>
                     </div>
                 </div>
@@ -175,7 +183,8 @@
                         <h5 class="text-primary font-weight-bold text-uppercase mb-3">Value Delivered</h5>
                         <h2 class="font-weight-bold mb-4" style="letter-spacing: -1px;">Hasil Nyata dalam Setiap Proyek</h2>
                         <p class="text-muted">
-                            Di KPCM, kualitas bukan sekadar janji, melainkan standar yang kami wujudkan melalui eksekusi teknis yang presisi.
+                            Di KPCM, kualitas bukan sekadar janji, melainkan standar yang kami wujudkan melalui eksekusi
+                            teknis yang presisi.
                         </p>
                         <hr class="w-25 ml-0 border-primary" style="border-width: 3px; opacity: 1;">
                     </div>
@@ -186,25 +195,51 @@
                     <div class="row">
                         @php
                             $values = [
-                                ['01', 'Ketepatan Waktu Penyelesaian', 'Manajemen jadwal yang ketat guna memastikan operasional mitra dimulai sesuai target.'],
-                                ['02', 'Efisiensi Biaya (Cost Leadership)', 'Optimalisasi anggaran tanpa mengompromikan kualitas spesifikasi teknis.'],
-                                ['03', 'Zero Major Accident', 'Implementasi K3 (HSE) tingkat tinggi demi keselamatan lingkungan kerja.'],
-                                ['04', 'Minimalisasi Rework', 'Presisi dalam setiap tahap konstruksi untuk menghindari pengerjaan ulang.'],
-                                ['05', 'Transparansi Progress', 'Pelaporan data lapangan yang akurat dan dapat dipertanggungjawabkan.'],
-                                ['06', 'Durabilitas Tinggi', 'Penggunaan material terpilih untuk memastikan infrastruktur tahan lama.'],
+                                [
+                                    '01',
+                                    'Ketepatan Waktu Penyelesaian',
+                                    'Manajemen jadwal yang ketat guna memastikan operasional mitra dimulai sesuai target.',
+                                ],
+                                [
+                                    '02',
+                                    'Efisiensi Biaya (Cost Leadership)',
+                                    'Optimalisasi anggaran tanpa mengompromikan kualitas spesifikasi teknis.',
+                                ],
+                                [
+                                    '03',
+                                    'Zero Major Accident',
+                                    'Implementasi K3 (HSE) tingkat tinggi demi keselamatan lingkungan kerja.',
+                                ],
+                                [
+                                    '04',
+                                    'Minimalisasi Rework',
+                                    'Presisi dalam setiap tahap konstruksi untuk menghindari pengerjaan ulang.',
+                                ],
+                                [
+                                    '05',
+                                    'Transparansi Progress',
+                                    'Pelaporan data lapangan yang akurat dan dapat dipertanggungjawabkan.',
+                                ],
+                                [
+                                    '06',
+                                    'Durabilitas Tinggi',
+                                    'Penggunaan material terpilih untuk memastikan infrastruktur tahan lama.',
+                                ],
                             ];
                         @endphp
 
-                        @foreach($values as $val)
-                        <div class="col-md-6 mb-4">
-                            <div class="d-flex align-items-start p-3 border rounded shadow-sm bg-white h-100" style="border-color: rgba(0,0,0,0.08) !important;">
-                                <span class="h3 font-weight-bold text-light mr-3" style="color: #e9ecef !important;">{{ $val[0] }}</span>
-                                <div>
-                                    <h6 class="font-weight-bold mb-1">{{ $val[1] }}</h6>
-                                    <p class="small text-muted mb-0">{{ $val[2] }}</p>
+                        @foreach ($values as $val)
+                            <div class="col-md-6 mb-4">
+                                <div class="d-flex align-items-start p-3 border rounded shadow-sm bg-white h-100"
+                                    style="border-color: rgba(0,0,0,0.08) !important;">
+                                    <span class="h3 font-weight-bold text-light mr-3"
+                                        style="color: #e9ecef !important;">{{ $val[0] }}</span>
+                                    <div>
+                                        <h6 class="font-weight-bold mb-1">{{ $val[1] }}</h6>
+                                        <p class="small text-muted mb-0">{{ $val[2] }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
                         {{-- 7. Kemitraan Strategis --}}
@@ -212,7 +247,8 @@
                             <div class="d-flex align-items-start p-4 bg-primary text-white rounded shadow">
                                 <div>
                                     <h6 class="font-weight-bold mb-1 text-white">Integritas Kemitraan Nasional</h6>
-                                    <p class="small mb-0 opacity-80">Membangun kepercayaan melalui komitmen penuh terhadap standarisasi industri nasional.</p>
+                                    <p class="small mb-0 opacity-80">Membangun kepercayaan melalui komitmen penuh terhadap
+                                        standarisasi industri nasional.</p>
                                 </div>
                             </div>
                         </div>

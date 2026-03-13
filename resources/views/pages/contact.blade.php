@@ -9,7 +9,7 @@
         CONTACT HERO
     ====================== --}}
     <section class="hero-section hero-contact">
-        <img src="{{ asset('/images/hero/engineer-working.jpg') }}" class="hero-bg" alt="{{ __('contact.hero_title') }}">
+        <img src="{{ asset('/images/hero/engineer-working.webp') }}" class="hero-bg" alt="{{ __('contact.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">

@@ -11,7 +11,7 @@
     <section class="hero-section hero-project">
 
         {{-- Background Image --}}
-        <img src="{{ asset('/images/hero/beko.jpg') }}" class="hero-bg" alt="{{ __('projects.hero_title') }}">
+        <img src="{{ asset('/images/hero/beko.webp') }}" class="hero-bg" alt="{{ __('projects.hero_title') }}">
 
         {{-- Overlay --}}
         <div class="hero-overlay"></div>

@@ -9,7 +9,7 @@
         SERVICES HERO (FULL WIDTH)
     ====================== --}}
     <section class="hero-section hero-services">
-        <img src="{{ asset('/images/hero/excavator-action.jpg') }}" class="hero-bg" alt="{{ __('services.hero_title') }}">
+        <img src="{{ asset('/images/hero/excavator-action.webp') }}" class="hero-bg" alt="{{ __('services.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
@@ -43,71 +43,102 @@
             @php
                 $serviceGroups = [
                     [
+                        'title' => 'Construction & Management',
+                        'icon' => 'fas fa-hard-hat',
+                        'items' => [
+                            'Project Planning',
+                            'Project Management',
+                            'Construction Supervision',
+                            'Site Management',
+                            'Quality Control',
+                            'Safety Management',
+                            'Cost Control',
+                            'Scheduling & Progress Monitoring',
+                        ],
+                    ],
+                    [
                         'title' => 'Civil',
                         'icon' => 'fas fa-city',
-                        'items' => ['Foundation', 'Road Construction', 'Golf Course Development']
+                        'items' => ['Foundation', 'Road Construction', 'Golf Course Development'],
                     ],
                     [
                         'title' => 'Architecture',
                         'icon' => 'fas fa-drafting-compass',
-                        'items' => ['Apartment', 'Bungalow', 'Factory Design', 'Warehouse', 'Temporary Facilities']
+                        'items' => ['Apartment', 'Bungalow', 'Factory Design', 'Warehouse', 'Temporary Facilities'],
                     ],
                     [
                         'title' => 'Mechanical',
                         'icon' => 'fas fa-tools',
-                        'items' => ['Fabrication', 'Erection', 'Steel Structure', 'Piping', 'Tank', 'Pipeline', 'Fire Fighting Systems', 'WTP/WWTP']
+                        'items' => [
+                            'Fabrication',
+                            'Erection',
+                            'Steel Structure',
+                            'Piping',
+                            'Tank',
+                            'Pipeline',
+                            'Fire Fighting Systems',
+                            'WTP/WWTP',
+                        ],
                     ],
                     [
                         'title' => 'Electrical & Instrument',
                         'icon' => 'fas fa-bolt',
-                        'items' => ['Substation', 'Transformer', 'Panel Board', 'Cabling', 'Industrial Lighting', 'Telecommunication', 'Fire Alarm/CCTV']
+                        'items' => [
+                            'Substation',
+                            'Transformer',
+                            'Panel Board',
+                            'Cabling',
+                            'Industrial Lighting',
+                            'Telecommunication',
+                            'Fire Alarm/CCTV',
+                        ],
                     ],
                     [
                         'title' => 'Revamping',
                         'icon' => 'fas fa-recycle',
-                        'items' => ['Building Demolition', 'Structural Renovation']
+                        'items' => ['Building Demolition', 'Structural Renovation'],
                     ],
                     [
                         'title' => 'Maintenance',
                         'icon' => 'fas fa-hammer',
-                        'items' => ['Factory Maintenance', 'Plant Services']
+                        'items' => ['Factory Maintenance', 'Plant Services'],
                     ],
                     [
                         'title' => 'Interior',
                         'icon' => 'fas fa-couch',
-                        'items' => ['Space Design', 'Interior Fit-out']
+                        'items' => ['Space Design', 'Interior Fit-out'],
                     ],
                     [
                         'title' => 'Others',
                         'icon' => 'fas fa-plus-circle',
-                        'items' => ['Epoxy Flooring', 'Roofing Solutions', 'Speed Door Systems']
+                        'items' => ['Flooring & ACP', 'Roofing Solutions', 'Speed Door Systems'],
                     ],
                 ];
             @endphp
 
             <div class="row g-4">
-                @foreach($serviceGroups as $group)
-                <div class="col-4 col-md-4 col-lg-3">
-                    <div class="service-card-modern p-4 h-100">
-                        <div class="icon-circle mb-4">
-                            <i class="{{ $group['icon'] }}"></i>
+                @foreach ($serviceGroups as $group)
+                    <div class="col-4 col-md-4 col-lg-3">
+                        <div class="service-card-modern p-4 h-100">
+                            <div class="icon-circle mb-4">
+                                <i class="{{ $group['icon'] }}"></i>
+                            </div>
+                            <h4 class="category-title-modern">{{ $group['title'] }}</h4>
+                            <ul class="list-unstyled category-list-modern">
+                                @foreach ($group['items'] as $item)
+                                    <li class="d-flex align-items-start mb-2">
+                                        <span class="bullet-dot me-2 mt-2"></span>
+                                        <span>{{ $item }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </div>
-                        <h4 class="category-title-modern">{{ $group['title'] }}</h4>
-                        <ul class="list-unstyled category-list-modern">
-                            @foreach($group['items'] as $item)
-                                <li class="d-flex align-items-start mb-2">
-                                    <span class="bullet-dot me-2 mt-2"></span>
-                                    <span>{{ $item }}</span>
-                                </li>
-                            @endforeach
-                        </ul>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
     </section>
-    
+
     {{-- ======================
         CALL TO ACTION (MODERN GRADIENT)
     ====================== --}}

@@ -21,7 +21,7 @@
                     {{-- Gambar 3: Lebar (Kiri Bawah dalam grid) --}}
                     <div class="img-wide-bottom rounded-4 overflow-hidden shadow" data-aos="fade-up"
                         data-aos-delay="300">
-                        <img src="{{ asset('images/background/4.jpg') }}" alt="Project Site"
+                        <img src="{{ asset('images/background/7.jpg') }}" alt="Project Site"
                             class="w-100 h-100 object-fit-cover hover-zoom">
                     </div>
 

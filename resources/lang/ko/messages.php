@@ -79,31 +79,32 @@ return [
         ],
     ],
     'services' => [
-        'subtitle' => '전문 분야', // Jeonmun Bunya
-        'title'    => '우리의 서비스', // Uriui Seobiseu
+        'subtitle' => '전문 분야',
+        'title'    => '우리의 서비스',
         'desc'     => '우리는 최고의 품질과 전문적인 관리로 포괄적인 건설 솔루션을 제공합니다.',
         'button'   => '모든 서비스 보기',
 
-        // Item 1
-        'epoxy_name' => 'Epoxy & Polishing', // Tetap Inggris
-        'epoxy_sub'  => '산업용 등급 바닥재',
-        'epoxy_desc' => '산업 및 상업용 내구성을 위한 고품질 바닥 코팅 솔루션.',
+        // Item 1: Civil & Mechanical
+        'civil_mech_name' => 'Civil & M.E.P',
+        'civil_mech_sub'  => '통합 엔지니어링',
+        'civil_mech_desc' => '산업 효율성과 구조적 무결성을 위해 설계된 포괄적인 토목 공사 및 기계 설비 서비스.',
 
-        // Item 2
-        'roofing_name' => 'Roofing Construction', // Tetap Inggris
-        'roofing_sub'  => '내구성이 뛰어난 지붕 솔루션',
-        'roofing_desc' => '내후성 자재를 사용한 지붕 설치 및 수리.',
+        // Item 2: Architecture
+        'architecture_name' => 'Architecture',
+        'architecture_sub'  => '혁신적인 디자인',
+        'architecture_desc' => '미학적 감각과 현대적 기능성을 결합한 고급 건축 계획 및 건물 설계.',
 
-        // Item 3
-        'interior_name' => 'Interior & Revamping', // Tetap Inggris
-        'interior_sub'  => '현대적인 디자인 업데이트',
-        'interior_desc' => '현대적인 미적 감각과 기능적인 디자인 업데이트로 공간을 변화시킵니다.',
+        // Item 3: Interior (Jika tetap ingin ditampilkan)
+        'interior_name' => 'Interior Design',
+        'interior_sub'  => '현대적인 미학',
+        'interior_desc' => '기능적이고 세련된 인테리어 솔루션으로 실내 공간을 변화시킵니다.',
 
-        // Item 4
-        'mgmt_name' => 'Construction & Management', // Tetap Inggris
+        // Item 4: Construction & Management
+        'mgmt_name' => 'Construction & Management',
         'mgmt_sub'  => '엔드 투 엔드 감독',
         'mgmt_desc' => '기획부터 최종 인계까지 완벽한 프로젝트 감독.',
     ],
+
     'clients' => [
         'subtitle' => '신뢰받는 파트너', // Bisa juga diterjemahkan: '' (Mitra Terpercaya)
         'title'    => '산업 고객의 신뢰', // Saneop Gogaek-ui Sinloe
