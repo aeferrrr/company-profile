@@ -5,333 +5,101 @@
     padding: 60px 0;
 }
 
-/* Pastikan halaman bisa scroll */
 html, body {
     overflow-x: hidden;
-    overflow-y: auto;
 }
 
+/* Header */
 .section-header h2 {
     font-size: 2rem;
-    position: relative;
     display: inline-block;
 }
 
-.section-header h2::after {
-    content: '';
-    display: block;
-    width: 60px;
+/* Separator (dipakai di HTML) */
+.separator {
+    width: 80px;
     height: 4px;
-    background: var(--accent-yellow);
-    margin: 10px auto 0;
-    border-radius: 2px;
+    background-color: #311b92;
+    border-radius: 4px;
 }
 
+/* =====================================================
+   ORG CHART (SVG)
+===================================================== */
 .org-chart {
     width: 100%;
     overflow-x: auto;
     padding-bottom: 20px;
-
-    /* FIX UTAMA SCROLL */
-    touch-action: pan-y;
 }
 
-/* =====================================================
-   SVG CHART STYLES
-===================================================== */
-svg {
-    overflow: visible;
+/* SVG */
+svg.org-chart {
     max-width: 100%;
     height: auto;
-    cursor: grab;
-
-    /* INI PENTING BANGET */
-    touch-action: pan-y;
-}
-
-svg:active {
-    cursor: grabbing;
 }
 
 /* Lines */
 .chart-line {
-    stroke: var(--text-dark);
+    stroke: #333;
     stroke-width: 2px;
     fill: none;
-    stroke-dasharray: 2000;
-    stroke-dashoffset: 0;
-    animation: drawLine 2s ease-out forwards;
 }
 
-@keyframes drawLine {
-    from { stroke-dashoffset: 2000; }
-    to { stroke-dashoffset: 0; }
+/* Sub lines */
+.sub-chart-line {
+    stroke: #d0d0d0;
+    stroke-width: 1px;
 }
 
-/* Boxes */
+/* Box */
 .chart-rect {
-    fill: var(--bg-surface);
-    stroke: var(--samsung-blue);
+    fill: #fff;
+    stroke: #311b92;
     stroke-width: 2px;
     rx: 8px;
     ry: 8px;
-    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.05));
-    transition: all 0.3s ease;
 }
 
-/* Text */
+/* Text utama */
 .chart-text {
-    fill: var(--samsung-blue);
-    font-family: 'Poppins', sans-serif;
+    fill: #311b92;
     font-size: 14px;
     font-weight: 600;
     text-anchor: middle;
     dominant-baseline: middle;
-    pointer-events: none;
-    transition: fill 0.3s;
 }
 
-.chart-text-multiline-1 {
-    dominant-baseline: auto;
-}
-
-/* Node Interaction */
-.node-group {
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-/* Popup Photo */
-.chart-photo-wrapper {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translate(45px, 0px) scale(0.8);
-    transform-origin: center bottom;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.node-group:hover .chart-photo-wrapper {
-    opacity: 1;
-    visibility: visible;
-    transform: translate(45px, -130px) scale(1);
-}
-
-.chart-photo-wrapper image {
-    width: 90px;
-    height: 120px;
-    filter: drop-shadow(0px 8px 15px rgba(0,0,0,0.15));
-    rx: 6px;
-}
-
-.node-group:hover .chart-photo-wrapper.pop-right {
-    transform: translate(-45px, -130px) scale(1);
+/* Text staff kecil */
+.chart-text-staff {
+    fill: #333;
+    font-size: 11px;
+    text-anchor: middle;
+    dominant-baseline: middle;
 }
 
 /* =====================================================
    MEMBERS SECTION
 ===================================================== */
 .members-section {
-    width: 100%;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-soft);
-    border-top: 4px solid var(--samsung-blue);
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    background: #fff;
+    border: 1px solid #eee;
+    border-top: 4px solid #311b92;
+    border-radius: 12px;
     padding: 30px;
-    margin-top: 40px;
-    text-align: left;
 }
 
-.members-header {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid var(--border-soft);
-    padding-bottom: 15px;
-    margin-bottom: 25px;
-}
-
-.members-title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--samsung-blue);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.members-title::before {
-    content: '';
-    width: 6px;
-    height: 24px;
-    background-color: var(--accent-yellow);
-    border-radius: 2px;
-}
-
-.members-grid {
-    display: grid;
-    gap: 20px;
-}
-
-.member-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 15px;
-    background-color: var(--bg-broken-white);
-    border: 1px solid var(--border-soft);
-    border-radius: 6px;
-}
-
-.member-badge {
-    position: relative;
-    background: var(--bg-surface);
-    color: var(--text-dark);
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid var(--border-soft);
-    border-left: 4px solid var(--text-grey);
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.member-badge:hover {
-    border-color: var(--samsung-blue);
-    border-left-color: var(--accent-yellow);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px var(--samsung-blue-glow);
-    color: var(--samsung-blue);
-}
-
-.badge-icon {
-    width: 16px;
-    height: 16px;
-    fill: var(--text-muted);
-    transition: fill 0.2s;
-}
-
-.member-badge:hover .badge-icon {
-    fill: var(--samsung-blue);
-}
-
-/* Popup */
-.popup-photo-list {
-    position: absolute;
-    bottom: 125%;
-    left: 50%;
-    transform: translateX(-50%) scale(0.8);
-    opacity: 0;
-    visibility: hidden;
-    width: 90px;
-    height: 100px;
-    background: var(--bg-surface);
-    padding: 4px 4px 15px 4px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border: 1px solid var(--border-soft);
-    border-radius: 4px;
-    z-index: 100;
-    transition: all 0.2s;
-    pointer-events: none;
-}
-
-.popup-photo-list img {
-    width: 100%;
-    height: 80px;
-    object-fit: cover;
-    background: var(--bg-broken-white);
-    border-radius: 2px;
-}
-
-.member-badge:hover .popup-photo-list {
-    visibility: visible;
-    opacity: 1;
-    transform: translateX(-50%) scale(1) rotate(-2deg);
-}
-
-.sub-chart-line {
-    stroke: #d0d0d0;
-    stroke-width: 1px;
-    fill: none;
-}
-
-.chart-text-staff {
-    fill: var(--text-dark);
-    font-size: 11px;
-    font-weight: 400;
-    text-anchor: middle;
-    dominant-baseline: middle;
-    pointer-events: none;
-}
-
-.node-group:hover .chart-text-staff {
-    fill: var(--text-dark);
-}
-
-.separator {
-    width: 160px;     /* lebih panjang */
-    height: 6px;      /* lebih tebal */
-    background-color: var(--samsung-blue);
-    border-radius: 6px;
-}
-
-/* Responsive */
-@media (max-width: 576px) {
-    .container {
-        padding-left: 25px !important;
-        padding-right: 25px !important;
-    }
-
-    h1.hero-title {
-        font-size: 2.2rem !important;
-    }
-
-    .hero-section {
-        padding: 60px 0;
-    }
-}
-
-/* .node-group:hover .chart-rect {
-    fill: var(--samsung-blue);
-    stroke: var(--samsung-blue-light);
-    filter: drop-shadow(0px 10px 20px var(--samsung-blue-glow));
-    transform: translateY(-3px);
-}
-
-.node-group:hover .chart-text {
-    fill: var(--text-light);
-} */
 /* =====================================================
-   MEMBERS – TEAM GALLERY EXTENSION (CUSTOM LAYOUT)
+   TEAM GALLERY
 ===================================================== */
-
-/* Tambahan properti baru untuk members-section (tanpa hapus yang lama) */
-.members-section {
-    font-family: 'Inter', sans-serif;
-}
-
-/* Grid Gallery Baru */
 .team-gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
     gap: 20px;
     justify-items: center;
-    align-items: start;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
 }
 
-/* =====================================================
-   PRESIDENT CARD CUSTOM
-===================================================== */
-
+/* PRESIDENT */
 .president-wrapper {
     grid-column: 1 / -1;
     display: flex;
@@ -341,15 +109,12 @@ svg:active {
 
 .president-card-custom {
     display: flex;
-    align-items: stretch;
-    background: var(--bg-surface);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     overflow: hidden;
 }
 
 .pres-photo-area {
-    display: flex;
-    flex-direction: column;
     width: 140px;
 }
 
@@ -357,34 +122,29 @@ svg:active {
     width: 140px;
     height: 175px;
     object-fit: cover;
-    display: block;
 }
 
 .pres-info {
-    padding: 8px 5px;
     text-align: center;
-    background: var(--bg-surface);
+    padding: 8px;
 }
 
 .pres-name {
-    color: var(--samsung-blue);
+    font-size: 0.75rem;
     font-weight: 700;
-    font-size: 0.7rem;
-    margin-bottom: 2px;
     text-transform: uppercase;
-    line-height: 1;
+    color: #311b92;
 }
 
 .pres-title-sub {
-    color: var(--text-dark);
-    font-weight: 800;
-    font-size: 0.9rem;
-    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
+/* Vertical label */
 .pres-label-vertical {
-    background: linear-gradient(to bottom, #5b91cf, #2f448b);
     width: 35px;
+    background: linear-gradient(to bottom, #5b91cf, #2f448b);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -393,22 +153,17 @@ svg:active {
 .pres-label-text {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    color: var(--text-light);
+    color: #fff;
+    font-size: 0.7rem;
     font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 1px;
-    white-space: nowrap;
-    text-transform: uppercase;
 }
 
 /* =====================================================
-   STANDARD TEAM CARD
+   TEAM CARD
 ===================================================== */
-
 .team-card {
     width: 100px;
-    text-align: center;
-    transition: transform 0.3s ease;
+    transition: 0.3s;
 }
 
 .team-card:hover {
@@ -419,34 +174,265 @@ svg:active {
     width: 100px;
     height: 125px;
     object-fit: cover;
-    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
 }
 
 /* =====================================================
-   RESPONSIVE EXTENSION
+   MOMENTS (OUR MOMENTS)
 ===================================================== */
+.cursor-pointer {
+    cursor: pointer;
+}
 
-@media (max-width: 576px) {
+.moment-card:hover img {
+    transform: scale(1.05);
+}
+
+.moment-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.moment-card:hover .moment-overlay {
+    opacity: 1;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+/* =====================================================
+   MODAL
+===================================================== */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.image-modal.show {
+    display: flex;
+}
+
+.modal-content-img {
+    max-width: 90%;
+    max-height: 80%;
+    border-radius: 8px;
+}
+
+/* =====================================================
+   PAGINATION
+===================================================== */
+.page-btn {
+    border: 1px solid #311b92;
+    background: #fff;
+    color: #311b92;
+    padding: 8px 16px;
+    margin: 0 4px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.page-btn.active {
+    background: #311b92;
+    color: #fff;
+}
+
+.page-btn:hover:not(.active) {
+    background: #eee;
+}
+
+/* =====================================================
+   EXTRA RESPONSIVE (TABLET)
+===================================================== */
+@media (max-width: 768px) {
+
+    .section-header h2 {
+        font-size: 1.6rem;
+    }
+
+    .members-section {
+        padding: 20px;
+    }
 
     .team-gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
         gap: 15px;
     }
 
+    .president-card-custom {
+        max-width: 320px;
+    }
+
+    /* ORG CHART SCROLL FIX */
+    .org-chart {
+        overflow-x: auto;
+    }
+
+    svg.org-chart {
+        min-width: 700px;
+    }
+
+    /* MOMENTS → mulai horizontal dari tablet */
+    #moments-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+    }
+
+    .moment-item {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+    }
+}
+
+/* =====================================================
+   MOBILE (IPHONE STANDARD ~375px)
+===================================================== */
+@media (max-width: 576px) {
+
+    .organization-section {
+        padding: 40px 0;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+
+    .members-section {
+        padding: 15px 10px;
+    }
+
+    .team-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .president-card-custom {
+        max-width: 260px;
+    }
+
     .pres-photo-area {
-        width: 120px;
+        width: 100px;
     }
 
     .pres-img {
-        width: 120px;
-        height: 150px;
+        width: 100px;
+        height: 130px;
     }
 
     .pres-label-vertical {
-        width: 30px;
+        width: 25px;
     }
 
     .pres-label-text {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+    }
+
+    .team-card,
+    .standard-img {
+        width: 80px;
+        height: 105px;
+    }
+
+    /* MOMENTS (HORIZONTAL + PAGINATION TETAP) */
+    #moments-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 12px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
+    }
+
+    .moment-item {
+        flex: 0 0 85%;
+        max-width: 85%;
+        scroll-snap-align: start;
+    }
+
+    .moment-overlay span {
+        font-size: 0.8rem;
+    }
+
+    /* Scrollbar biar clean */
+    #moments-container::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    #moments-container::-webkit-scrollbar-thumb {
+        background: #311b92;
+        border-radius: 10px;
+    }
+
+    /* PAGINATION */
+    .page-btn {
+        padding: 5px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* ORG CHART */
+    svg.org-chart {
+        min-width: 650px;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE (IPHONE SE ~320px)
+===================================================== */
+@media (max-width: 375px) {
+
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .team-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        gap: 8px;
+    }
+
+    .team-card,
+    .standard-img {
+        width: 70px;
+        height: 95px;
+    }
+
+    .president-card-custom {
+        max-width: 220px;
+    }
+
+    .pres-photo-area {
+        width: 90px;
+    }
+
+    .pres-img {
+        width: 90px;
+        height: 120px;
+    }
+
+    .pres-label-text {
+        font-size: 0.55rem;
+    }
+
+    /* MOMENTS lebih kecil lagi */
+    .moment-item {
+        flex: 0 0 90%;
+        max-width: 90%;
+    }
+
+    /* ORG CHART */
+    svg.org-chart {
+        min-width: 600px;
     }
 }

@@ -180,3 +180,69 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+// Organization
+
+        // Modal functions
+        function openImageModal(src) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.classList.add('show');
+            modalImg.src = src;
+            document.body.style.overflow = 'hidden'; // Disable scroll when modal open
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('show');
+            document.body.style.overflow = 'auto'; // Enable scroll
+        }
+
+        // Pagination
+        document.addEventListener('DOMContentLoaded', function() {
+            const itemsPerPage = 3;
+            const container = document.getElementById('moments-container');
+            if (!container) return;
+
+            const items = Array.from(container.getElementsByClassName('moment-item'));
+            const paginationRoot = document.getElementById('moments-pagination');
+
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+
+            function showPage(page) {
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+
+                items.forEach((item, index) => {
+                    item.style.display = (index >= start && index < end) ? 'block' : 'none';
+                });
+
+                updatePaginationButtons(page);
+            }
+
+            function updatePaginationButtons(currentPage) {
+                if (!paginationRoot) return;
+                paginationRoot.innerHTML = '';
+
+                if (totalPages <= 1) return;
+
+                for (let i = 1; i <= totalPages; i++) {
+                    const btn = document.createElement('button');
+                    btn.innerText = i;
+                    btn.classList.add('page-btn');
+                    if (i === currentPage) btn.classList.add('active');
+
+                    btn.addEventListener('click', () => {
+                        showPage(i);
+                        document.querySelector('.together-photos-section').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+
+                    paginationRoot.appendChild(btn);
+                }
+            }
+
+            // Init first page
+            showPage(1);
+        });
