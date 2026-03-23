@@ -1,82 +1,280 @@
-/* ======================
-   CONTACT PAGE 
-====================== */
-
-.contact-section {
-    padding: 50px 0;
-    background-color: #f4f6f8;
+/* =========================================================
+   MAIN CARD
+========================================================= */
+.main-card {
+    background: var(--bg-surface);
+    border-radius: 24px;
+    border: 1px solid var(--border-soft);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    margin-bottom: 40px;
 }
 
-/* Card */
-.contact-card {
-    background: #ffffff;
+/* =========================================================
+   SIDEBAR
+========================================================= */
+.info-sidebar {
+    background: var(--samsung-blue);
+    color: var(--text-light);
+    padding: 50px 40px;
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 35px;
+}
+
+.info-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 45px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    color: #fff;
+    flex-shrink: 0;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Label */
-.contact-card label {
-    font-size: 13.5px;
-    font-weight: 500;
-    color: #495057;
-    margin-bottom: 6px;
+.info-text h6 {
+    font-weight: 700;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: rgba(255,255,255,0.7);
 }
 
-/* Input & Textarea */
-.contact-card .form-control {
-    font-size: 14px;
-    padding: 11px 14px;
+.info-text p {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    color: #f0f0f0;
+}
+
+/* =========================================================
+   FORM AREA
+========================================================= */
+.form-area {
+    padding: 50px;
+}
+
+.section-tag {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--samsung-blue-glow);
+    color: var(--samsung-blue);
     border-radius: 6px;
-    border: 1px solid #ced4da;
-    transition: all 0.2s ease;
+    font-weight: 700;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
 }
 
-/* Focus State (biar premium) */
-.contact-card .form-control:focus {
-    border-color: #0720ff;
-    box-shadow: 0 0 0 0.15rem rgba(255, 193, 7, 0.25);
+.form-label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
 }
 
-/* Textarea */
-.contact-card textarea {
-    resize: none;
+/* INPUT & SELECT UNIFIED */
+.form-control,
+.form-select {
+    border: 1px solid var(--border-soft);
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    background-color: #fcfdfe;
+    height: 46px;
 }
 
-/* Small text */
-.contact-card small {
-    font-size: 12px;
-    color: #6c757d;
+/* TEXTAREA KHUSUS */
+textarea.form-control {
+    height: auto;
+    padding: 12px 14px;
 }
 
-/* Button */
-.contact-card .btn-warning {
-    padding: 12px 32px;
-    font-size: 14px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
+/* FOCUS */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--samsung-blue);
+    box-shadow: 0 0 0 3px var(--samsung-blue-glow);
 }
 
-.contact-card .btn-warning:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 18px rgba(255, 193, 7, 0.35);
+/* =========================================================
+   SELECT CUSTOM (BIAR GA JADUL)
+========================================================= */
+.form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='%23666'%3E%3Cpath d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 12px;
 }
 
+/* OPTION */
+.form-select option {
+    font-size: 0.9rem;
+}
 
-/* ======================
-   MOBILE OPTIMIZATION
-====================== */
+/* OPTGROUP */
+.form-select optgroup {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #666;
+}
 
+/* =========================================================
+   BUTTON
+========================================================= */
+.btn-send {
+    background: var(--samsung-blue);
+    color: var(--text-light);
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.btn-send:hover {
+    background: var(--samsung-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+.map-card {
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+@media (max-width: 991px) {
+    .form-area,
+    .info-sidebar {
+        padding: 35px;
+    }
+
+    .info-item {
+        margin-bottom: 25px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
 @media (max-width: 768px) {
-    .contact-section {
-        padding: 60px 0;
+
+    .main-card {
+        border-radius: 18px;
     }
 
-    .contact-card {
-        padding: 28px;
+    .info-sidebar {
+        padding: 30px 25px;
+        text-align: center;
     }
 
-    .contact-card .btn-warning {
-        width: 100%;
+    .info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
+
+    .info-icon {
+        margin: 0 0 10px 0;
+    }
+
+    .form-area {
+        padding: 30px 25px;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+@media (max-width: 480px) {
+
+    .main-card {
+        border-radius: 14px;
+    }
+
+    .info-sidebar {
+        padding: 25px 20px;
+    }
+
+    .form-area {
+        padding: 25px 20px;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 0.85rem;
+    }
+
+    .info-text p {
+        font-size: 0.85rem;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL (IPHONE SE)
+========================================================= */
+@media (max-width: 360px) {
+
+    .form-area {
+        padding: 20px 15px;
+    }
+
+    .info-sidebar {
+        padding: 20px 15px;
+    }
+
+    .form-control,
+    .form-select {
+        font-size: 0.8rem;
+        padding: 8px 10px;
+    }
+
+    .btn-send {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
+    .section-tag {
+        font-size: 0.6rem;
+        padding: 4px 10px;
+    }
+
+    .info-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+/* FIX OVERFLOW MOBILE */
+html, body {
+    overflow-x: hidden;
 }
