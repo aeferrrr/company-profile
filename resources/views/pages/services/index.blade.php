@@ -6,7 +6,7 @@
 @section('content')
 
     {{-- ======================
-        SERVICES HERO (FULL WIDTH)
+        SERVICES HERO 
     ====================== --}}
     <section class="hero-section hero-services">
         <img src="{{ asset('/images/hero/excavator-action.webp') }}" class="hero-bg" alt="{{ __('services.hero_title') }}">

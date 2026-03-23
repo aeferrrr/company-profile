@@ -1,195 +1,203 @@
 /* =========================================================
-   HERO SECTION – STRUCTURE & CONTENT
+   HERO SECTION
 ========================================================= */
+
+:root {
+  --navbar-height: 75px;
+}
 
 .hero-section {
   position: relative;
   width: 100%;
-  height: 85vh; /* Gunakan tinggi layar, JANGAN 360px */
-  min-height: 600px;
+  height: 100vh;
+  min-height: 720px;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: stretch;
   border-bottom: 5px solid var(--const-primary);
-  /* Padding disesuaikan agar pas di tengah */
-  padding-top: 0; 
-  padding-bottom: 0;
-  margin-top: 75px;
+  color: #fff;
 }
 
-/* Backgrounds */
-.hero-video,
-.hero-bg {
+/* =========================================
+   BACKGROUND SLIDER
+========================================= */
+
+.hero-bg,
+.hero-slide {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
 }
+
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero-slide {
+  opacity: 0;
+  transform: scale(1);
+  animation: heroSlide 18s linear infinite;
+}
+
+.hero-slide:nth-child(1) { animation-delay: 0s;  }
+.hero-slide:nth-child(2) { animation-delay: 6s;  }
+.hero-slide:nth-child(3) { animation-delay: 12s; }
+
+@keyframes heroSlide {
+  0%   { opacity: 0; transform: scale(1);    }
+  5%   { opacity: 1;                          }
+  30%  { opacity: 1; transform: scale(1.07); }
+  33%  { opacity: 0;                          }
+  100% { opacity: 0;                          }
+}
+
+/* =========================================
+   OVERLAY
+========================================= */
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* Overlay gelap merata agar tulisan putih terbaca jelas */
-  background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  background: rgba(0, 0, 0, 0.30);
+  z-index: 1;
 }
 
-.container {
+/* =========================================
+   CONTENT AREA
+========================================= */
+
+.hero-section > .container {
   position: relative;
-  z-index: 3;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: calc(var(--navbar-height) + 48px);
+  padding-bottom: 100px;   /* jarak dari tombol ke stats bar */
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
-/* Hero Content Styling */
 .hero-content {
-  /* Hapus border kiri dan padding kiri bawaan */
-  border-left: none; 
-  padding-left: 0;
-  
-  /* Pastikan text align center */
-  text-align: center; 
-  margin: 0 auto; 
+  max-width: 720px;
+  margin: auto;
+  text-align: center;
 }
 
+/* --- Badge --- */
 .hero-badge {
   display: inline-block;
-  font-size: 0.9rem;
+  font-size: .8rem;
   font-weight: 700;
   letter-spacing: 2px;
   color: var(--const-primary);
   text-transform: uppercase;
-  margin-bottom: 15px;
-  animation: fadeUp 0.8s ease forwards;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: slideUp .8s ease forwards .3s;
 }
 
+/* --- Title --- */
 .hero-title {
-  font-size: 3.5rem; /* Ukuran font besar */
+  font-size: 2.8rem;
   font-weight: 800;
-  color: var(--const-white); /* Pastikan variabel ini ada, atau ganti #ffffff */
   line-height: 1.2;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-  animation: fadeUp 0.8s ease forwards 0.2s;
-  opacity: 0;
-}
-
-.text-highlight {
-  color: transparent;
-  -webkit-text-stroke: 1px #ffffff; /* Ganti var(--const-white) ke hex kalau ragu */
-  /* Jika ingin tulisan putih SOLID (bukan garis tepi), hapus 2 baris di atas dan beri: color: #ffffff; */
-}
-
-.hero-subtitle {
-  font-size: 1.15rem;
+  margin-bottom: 14px;
   color: #e0e0e0;
-  max-width: 700px;
-  
-  /* Margin auto agar paragraf di tengah */
-  margin-left: auto;
-  margin-right: auto;
-  
-  margin-bottom: 40px;
-  font-weight: 300;
-  line-height: 1.6;
-  animation: fadeUp 0.8s ease forwards 0.4s;
   opacity: 0;
+  animation: slideUp .8s ease forwards .6s;
 }
 
-/* Buttons */
+/* --- Subtitle --- */
+.hero-subtitle {
+  font-size: 1rem;
+  color: #e0e0e0;
+  max-width: 640px;
+  margin: 0 auto 24px;
+  line-height: 1.6;
+  opacity: 0;
+  animation: slideUp .8s ease forwards .9s;
+}
+
+/* --- Buttons --- */
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px; /* Jarak konsisten antar tombol */
-    flex-wrap: wrap;
-    animation: fadeUp 0.8s ease forwards 0.6s;
-    opacity: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  opacity: 0;
+  animation: slideUp .8s ease forwards 1.2s;
+}
+
+.hero-buttons .custom-btn.ms-3 {
+  margin-left: 0 !important;
 }
 
 .custom-btn {
-    border-radius: 50px;
-    padding: 14px 30px; 
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    transition: all 0.3s ease;
-    
-    /* Kunci Keserasian: */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 220px; /* Lebar minimum ditingkatkan agar seragam */
-    height: 55px;     /* Tinggi tetap agar identik */
-    margin: 0 !important; /* Paksa hapus margin dari class bootstrap */
-}
-
-
-.btn-primary.custom-btn {
-    background: rgba(var(--const-primary-rgb), 0.9); /* Gunakan var warna anda */
-    /* Jika var rgb tidak ada, gunakan kode hex langsung misal: background: #e0a800; */
-    background-color: var(--const-primary); 
-    border-color: var(--const-primary);
-    color: var(--const-dark);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  border-radius: 30px;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: .82rem;
+  border: 1.5px solid rgba(255, 255, 255, .6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  height: 38px;
+  min-width: unset;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
 }
 
 .custom-btn:hover {
-    background-color: var(--const-primary);
-    border-color: var(--const-primary);
-    color: #000; /* Ganti ke warna gelap saat hover agar teks terbaca */
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  background: #fff;
+  color: #000;
 }
 
-.btn-primary.custom-btn:hover {
-    background-color: #fff;
-    border-color: #fff;
-    color: var(--const-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
-}
+/* =========================================
+   HERO STATS
+   Desktop : absolute bottom, full width
+   Mobile  : relative (ikut flow)
+========================================= */
 
-/* Penyesuaian Ikon agar tidak merusak alignment teks */
-.custom-btn i {
-    font-size: 1.2rem;
-    line-height: 0;
-}
-
-.btn-outline-light.custom-btn {
-    /* Background semi-transparan agar tulisan lebih terbaca */
-    background: rgba(255, 255, 255, 0.1); 
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    color: #fff;
-    backdrop-filter: blur(5px); /* Efek blur kaca */
-}
-
-.btn-outline-light.custom-btn:hover {
-    background-color: var(--const-primary);
-    border-color: var(--const-primary);
-    color: var(--const-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(117, 204, 255, 0.4);
-}
-
-/* Stats Bar */
 .hero-stats-wrapper {
-  position: absolute;
+  position: absolute;        /* tempel ke dasar hero */
   bottom: 0;
-  right: 0;
   left: 0;
-  z-index: 4;
-  background: rgba(0, 0, 0, 0.7);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
+  right: 0;
+  z-index: 3;
+  background: rgba(0, 0, 0, .72);
+  border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+/* Paksa satu baris — override semua col Bootstrap */
+.hero-stats-wrapper .row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+
+.hero-stats-wrapper .row > [class*="col"] {
+  flex: 1 1 0;
+  width: auto !important;
+  max-width: none !important;
+  padding: 0;
 }
 
 .stat-item {
-  padding: 25px 15px;
+  padding: 22px 10px;
   text-align: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--const-white);
+  border-right: 1px solid rgba(255, 255, 255, .1);
 }
 
 .stat-item:last-child {
@@ -197,124 +205,135 @@
 }
 
 .stat-number {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 800;
   color: var(--const-primary);
-  margin-bottom: 5px;
+  margin-bottom: 2px;
+  white-space: nowrap;
 }
 
 .stat-desc {
-  font-size: 0.85rem;
+  font-size: .75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin: 0;
-  opacity: 0.8;
-}
-
-/* Hero Animation */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-  
-  .custom-btn {
-    /* Kembalikan margin agar tombol di mobile rapi */
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-  
-  /* Agar tombol "Company Profile" punya jarak di mobile jika stack ke bawah */
-  .hero-buttons .btn:last-child {
-      margin-top: 10px;
-      margin-left: 0 !important; /* Reset margin ms-3 bootstrap */
-  }
-
-/* --- OVERRIDES (Style Hero Alternatif dari kode bagian bawah) --- */
-/* Style ini menimpa .hero-section di atas jika dimuat bersamaan */
-.hero-section {
-  position: relative;
-  height: 360px; /* Tinggi override */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-}
-
-/* Override spesifik konten untuk hero tipe ini */
-.hero-section .hero-overlay {
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-section .hero-content {
-  position: relative;
-  z-index: 3;
-  max-width: 720px;
-}
-
-.hero-section .hero-title {
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-.hero-section .hero-subtitle {
-  font-size: 1rem;
-  margin-bottom: 26px;
+  opacity: .8;
+  margin-bottom: 0;
 }
 
 /* =========================================
-   RESPONSIF KHUSUS MOBILE (Rata Kiri)
+   ANIMATION
 ========================================= */
+
+@keyframes slideUp {
+  0%   { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0);     }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+/* ---- Tablet (≤ 992px) ---- */
+@media (max-width: 992px) {
+  .hero-title { font-size: 2.4rem; }
+}
+
+/* ---- Small Tablet (≤ 768px) ---- */
+@media (max-width: 768px) {
+  :root { --navbar-height: 65px; }
+
+  .hero-section {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  /* Stats tetap absolute di tablet */
+  .stat-item   { padding: 18px 8px; }
+  .stat-number { font-size: 1.45rem; }
+  .stat-desc   { font-size: .7rem; }
+
+  .hero-title    { font-size: 2rem; }
+  .hero-subtitle { font-size: .95rem; margin-bottom: 20px; }
+
+  .custom-btn {
+    height: 36px;
+    padding: 0 16px;
+    font-size: .8rem;
+  }
+}
+
+/* ---- Mobile (≤ 576px) ---- */
 @media (max-width: 576px) {
-    
-    /* 1. Paksa Container Hero Content ke Kiri */
-    .hero-content {
-        /* Penting: !important digunakan untuk menimpa class text-center dari Bootstrap/Desktop */
-        text-align: left !important; 
-        
-        /* Kembalikan garis kuning di kiri agar manis */
-        border-left: 5px solid var(--const-primary); 
-        padding-left: 20px; 
-        
-        /* Reset margin agar tidak di tengah layar */
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-    }
+  :root { --navbar-height: 60px; }
 
-    /* 2. Judul Utama */
-    .hero-title {
-        font-size: 2.2rem; /* Ukuran font disesuaikan untuk HP */
-        margin-bottom: 15px;
-    }
+  .hero-section {
+    height: auto;
+    min-height: 100svh;
+    padding-bottom: 0;
+  }
 
-    /* 3. Subtitle / Deskripsi */
-    .hero-subtitle {
-        /* Pastikan paragraf rata kiri & margin reset */
-        text-align: left !important;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-        font-size: 1rem;
-        max-width: 100%;
-    }
+  /* Stats kembali ke flow normal di mobile */
+  .hero-stats-wrapper {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
 
-    /* 4. Area Tombol */
+  .hero-section > .container {
+    padding-top: calc(var(--navbar-height) + 28px);
+    padding-bottom: 80px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .hero-content {
+    text-align: left;
+    border-left: 4px solid var(--const-primary);
+    padding-left: 14px;
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 1.7rem;
+    line-height: 1.3;
+  }
+
+  .hero-subtitle {
+    font-size: .9rem;
+    margin: 0 0 18px;
+  }
+
   .hero-buttons {
-        flex-direction: column;
-        align-items: stretch; /* Tombol melebar penuh mengikuti container */
-        width: 100%;
-        max-width: 300px; /* Batasi lebar maksimal di mobile agar tidak terlalu lebar */
-        margin: 0 auto;
-    }
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 8px;
+  }
 
-    /* 5. Style Tombol di HP */
-    .custom-btn {
-        width: 100%;
-        min-width: unset;
-    }
-    
-    /* Reset khusus untuk tombol kedua (Profile) jika ada margin kiri */
-    .hero-buttons .btn.ms-3 {
-        margin-left: 0 !important;
-    }
+  .custom-btn {
+    height: 34px;
+    padding: 0 14px;
+    font-size: .78rem;
+    border-radius: 20px;
+  }
+
+  .stat-item   { padding: 10px 4px; }
+  .stat-number { font-size: 1.15rem; }
+  .stat-desc   { font-size: .6rem; letter-spacing: .3px; }
+}
+
+/* ---- Small Phone (≤ 375px) ---- */
+@media (max-width: 375px) {
+  .hero-title    { font-size: 1.5rem; }
+  .hero-subtitle { font-size: .85rem; }
+
+  .custom-btn {
+    height: 32px;
+    font-size: .75rem;
+    padding: 0 12px;
+  }
+
+  .stat-number { font-size: 1rem; }
+  .stat-desc   { font-size: .58rem; }
 }

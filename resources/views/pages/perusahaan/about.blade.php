@@ -6,7 +6,7 @@
 @section('content')
 
     {{-- ======================
-    1. HERO SECTION
+    1. About SECTION
     ====================== --}}
     <section class="hero-section">
         <img src="{{ asset('/images/hero/worker-meeting.webp') }}" class="hero-bg" alt="{{ __('about.hero_title') }}">

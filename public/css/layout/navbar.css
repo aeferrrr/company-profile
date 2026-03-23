@@ -278,3 +278,60 @@
         transform: none;
     }
 }
+
+/* =========================
+   SMALL MOBILE (IPHONE 375)
+========================= */
+
+@media (max-width: 375px) {
+
+    /* navbar height lebih kecil */
+    .navbar-corporate {
+        padding: 10px 0;
+    }
+
+    /* logo */
+    .navbar-brand img {
+        height: 40px;
+    }
+
+    .navbar-scrolled .navbar-brand img {
+        height: 36px;
+    }
+
+    /* brand text */
+    .navbar-brand span {
+        font-size: 12px;
+        letter-spacing: 0.4px;
+    }
+
+    /* hamburger menu */
+    .navbar-toggler {
+        padding: 4px 8px;
+        font-size: 18px;
+    }
+
+    /* mobile dropdown container */
+    .navbar-collapse {
+        padding: 16px 18px;
+        border-radius: 12px;
+    }
+
+    /* nav links */
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    /* dropdown */
+    .dropdown-item {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+
+    /* dropdown arrow spacing */
+    .navbar .dropdown-toggle::after {
+        margin-left: 4px;
+    }
+
+}

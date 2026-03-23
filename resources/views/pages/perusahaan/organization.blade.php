@@ -4,6 +4,10 @@
 @section('meta_description', __('general.seo.organization_desc'))
 
 @section('content')
+
+    {{-- ======================
+     Organization SECTION
+    ====================== --}}
     <section class="hero-section hero-organization">
         <img src="{{ asset('/images/hero/construction-1.webp') }}"
             class="hero-bg" alt="{{ __('organization.hero_title') }}">
