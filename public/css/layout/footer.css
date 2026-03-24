@@ -158,60 +158,183 @@
    RESPONSIVE DESIGN (TABLET & MOBILE)
    ========================================================= */
 
-/* TABLET (Max 991px) */
+/* =========================================================
+   TABLET (≤ 991px)
+========================================================= */
 @media (max-width: 991px) {
     .footer-grid {
-        grid-template-columns: repeat(2, 1fr); /* Jadi 2 Kolom */
+        grid-template-columns: repeat(2, 1fr);
         gap: 40px;
+    }
+
+    .footer {
+        padding: 60px 0 30px;
     }
 }
 
-/* MOBILE (Max 768px) - REDESIGN UTAMA */
+/* =========================================================
+   MOBILE (≤ 768px)
+========================================================= */
 @media (max-width: 768px) {
-    
-    /* 1. Ubah Grid menjadi Flex Column */
+
+    .footer {
+        padding: 50px 0 25px;
+    }
+
     .footer-grid {
         display: flex;
         flex-direction: column;
-        gap: 50px; /* Jarak antar bagian lebih jauh biar jelas */
+        gap: 50px;
     }
 
-    /* 2. Style Per-Kolom (Card Style tanpa Background) */
     .footer-col {
-        /* Border kiri tebal (Industrial Look) */
-        border-left: 4px solid var(--primary); 
-        
-        /* Padding Kiri agar teks masuk ke dalam (Safe Area) */
-        padding-left: 25px; 
-        
-        /* Pastikan teks rata kiri */
-        text-align: left;
-    }
-
-    /* 3. Judul di HP */
-    .footer-title {
-        font-size: 1.25rem; /* Lebih besar sedikit biar terbaca */
-        margin-bottom: 20px;
-    }
-
-    /* 4. Fix Peta & Tombol Full Width */
-    .footer-map-wrapper iframe {
-        height: 250px; /* Peta lebih tinggi biar gampang di-tap */
-    }
-    
-    .btn-footer {
-        display: block; /* Tombol jadi panjang penuh */
-        width: 100%;
-    }
-
-    /* 5. Pastikan Container punya padding bawaan */
-    .footer .container {
+        border-left: 4px solid var(--primary);
         padding-left: 20px;
-        padding-right: 20px;
     }
-    
-    /* 6. Social Icons di HP */
+
+    .footer-title {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .footer-text {
+        font-size: 0.85rem;
+    }
+
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+
+    .footer-map-wrapper iframe {
+        height: 230px;
+    }
+
+    .btn-footer {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
     .social-icons {
-        justify-content: flex-start; /* Rata kiri */
+        justify-content: flex-start;
+    }
+
+    .footer .container {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE (≤ 480px)
+========================================================= */
+@media (max-width: 480px) {
+
+    .footer {
+        padding: 45px 0 20px;
+    }
+
+    .footer-grid {
+        gap: 40px;
+    }
+
+    .footer-col {
+        padding-left: 18px;
+    }
+
+    .footer-title {
+        font-size: 1rem;
+    }
+
+    .footer-text {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .footer-links li {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .footer-links a {
+        font-size: 0.85rem;
+    }
+
+    .icon-accent {
+        width: 20px;
+        font-size: 0.9rem;
+    }
+
+    .footer-map-wrapper iframe {
+        height: 200px;
+    }
+
+    .social-icons a {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+}
+
+/* =========================================================
+   EXTRA SMALL (iPhone SE ~320px)
+========================================================= */
+@media (max-width: 360px) {
+
+    .footer {
+        padding: 40px 0 15px;
+    }
+
+    .footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .footer-col {
+        padding-left: 15px;
+        border-left: 3px solid var(--primary);
+    }
+
+    .footer-title {
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+    }
+
+    .footer-text {
+        font-size: 0.75rem;
+    }
+
+    .footer-links a {
+        font-size: 0.8rem;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+        padding-bottom: 8px;
+    }
+
+    .btn-footer {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+
+    .social-icons {
+        gap: 8px;
+    }
+
+    .social-icons a {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+
+    .footer-map-wrapper iframe {
+        height: 180px;
+    }
+
+    .footer-bottom {
+        font-size: 0.75rem;
+        padding-top: 15px;
     }
 }
