@@ -125,6 +125,9 @@
 .gallery-item img {
     width: 100%;
     height: auto;
+    aspect-ratio: 3 / 2; /* 1200:800 = 3:2 */
+    object-fit: cover;
+    object-position: center;
     display: block;
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -1,4 +1,12 @@
 <section id="services" class="services-highlight py-5 bg-white">
+    {{-- SEPARATOR ATAS OUR SERVICES --}}
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon">
+            <i class="fa-solid fa-clipboard-list" style="font-size: 14px; color: var(--samsung-blue);"></i>
+        </div>
+        <div class="separator-line"></div>
+    </div>
     <div class="container">
 
         <div class="text-center mb-5" data-aos="fade-up">
@@ -78,7 +86,8 @@
             <div class="col-lg-8 position-relative bg-dark">
                 {{-- Content 1: Civil & Mechanical --}}
                 <div id="service1" class="service-content active">
-                    <img src="{{ asset('images/background/civil.webp') }}" alt="Civil & Mechanical" class="service-bg-img">
+                    <img src="{{ asset('images/background/civil.webp') }}" alt="Civil & Mechanical"
+                        class="service-bg-img">
                     <div class="service-overlay p-5 d-flex flex-column justify-content-end h-100">
                         <h3 class="text-white fw-bold mb-3">{{ __('messages.services.civil_name') }}</h3>
                         <p class="text-white-50 fs-5">
@@ -89,7 +98,8 @@
 
                 {{-- Content 2: Architecture --}}
                 <div id="service2" class="service-content">
-                    <img src="{{ asset('images/background/architecture.webp') }}" alt="Architecture" class="service-bg-img">
+                    <img src="{{ asset('images/background/architecture.webp') }}" alt="Architecture"
+                        class="service-bg-img">
                     <div class="service-overlay p-5 d-flex flex-column justify-content-end h-100">
                         <h3 class="text-white fw-bold mb-3">{{ __('messages.services.architecture_name') }}</h3>
                         <p class="text-white-50 fs-5">
@@ -100,7 +110,8 @@
 
                 {{-- Content 3: Interior --}}
                 <div id="service3" class="service-content">
-                    <img src="{{ asset('images/background/interior-design.webp') }}" alt="Interior" class="service-bg-img">
+                    <img src="{{ asset('images/background/interior-design.webp') }}" alt="Interior"
+                        class="service-bg-img">
                     <div class="service-overlay p-5 d-flex flex-column justify-content-end h-100">
                         <h3 class="text-white fw-bold mb-3">{{ __('messages.services.interior_name') }}</h3>
                         <p class="text-white-50 fs-5">
@@ -122,4 +133,5 @@
             </div>
         </div>
     </div>
+    
 </section>

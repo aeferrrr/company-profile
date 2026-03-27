@@ -9,95 +9,123 @@
      PRIMARY / BRAND COLORS
   ====================================================== */
 
-  /* Samsung / Corporate */
   --samsung-blue: #1428A0;
   --samsung-blue-light: #2f4bff;
   --samsung-hover: #0f1e7a;
-  --samsung-blue-glow: rgba(20, 40, 160, 0.15); /* Disesuaikan untuk bg putih */
+  --samsung-blue-glow: rgba(20, 40, 160, 0.15);
 
-  /* Standardized Alias */
   --primary: var(--samsung-blue);
   --primary-light: var(--samsung-blue-light);
   --primary-hover: var(--samsung-hover);
 
-  /* Legacy Blue */
   --primary-blue: #1e4fd8;
   --primary-blue-light: #4f6dff;
 
   /* ======================================================
-     BACKGROUND COLORS (BROKEN WHITE THEME)
+     BACKGROUND COLORS
   ====================================================== */
 
-  /* Broken White / Off-White (Tidak Putih Murni) */
-  --bg-broken-white: #f9fafb; 
-  --bg-surface: #ffffff; /* Untuk Card/Kotak konten */
+  --bg-broken-white: #f9fafb;
+  --bg-surface: #ffffff;
 
-  /* Navbar tetap gelap agar kontras (Corporate Style) */
   --dark-navbar: #0a111a;
   --dark-navbar-solid: rgba(10, 17, 26, 0.98);
 
   /* ======================================================
-     TEXT COLORS (OPTIMIZED FOR LIGHT BG)
+     TEXT COLORS
   ====================================================== */
 
-  --text-dark: #212529; /* Warna utama teks paragraf */
+  --text-dark: #212529;
   --text-grey: #5e6c7e;
   --text-muted: #8892b0;
-  --text-light: #ffffff; /* Hanya untuk teks di dalam elemen gelap (seperti navbar/tombol) */
+  --text-light: #ffffff;
 
   /* ======================================================
      BORDER & UI
   ====================================================== */
 
-  --border-soft: #e2e8f0; /* Border abu halus */
+  --border-soft: #e2e8f0;
+
+  /* ======================================================
+     SPACING — Section Padding Konsisten
+  ====================================================== */
+
+  --section-padding-y: 100px;
+  --section-padding-y-md: 70px;
+  --section-padding-y-sm: 50px;
+
+  /* ======================================================
+     SHADOWS
+  ====================================================== */
+
+  --shadow-soft: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-blue: 0 12px 30px var(--samsung-blue-glow);
+  --shadow-blue-hover: 0 20px 50px rgba(20, 40, 160, 0.2);
+
+  /* ======================================================
+     BORDER RADIUS
+  ====================================================== */
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  /* ======================================================
+     TRANSITIONS
+  ====================================================== */
+
+  --transition-fast: all 0.2s ease;
+  --transition-base: all 0.3s ease;
+  --transition-slow: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 }
+
+/* ======================================================
+   LENIS SMOOTH SCROLL
+====================================================== */
 
 html {
     scroll-behavior: smooth;
 }
 
 html.lenis, html.lenis body {
-  height: auto;
+    height: auto;
 }
+
 .lenis.lenis-smooth {
-  scroll-behavior: auto !important; /* Matikan CSS native biar JS yang handle */
+    scroll-behavior: auto !important;
 }
+
 .lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
+    overscroll-behavior: contain;
 }
+
 .lenis.lenis-stopped {
-  overflow: hidden;
+    overflow: hidden;
 }
+
 .lenis.lenis-scrolling iframe {
-  pointer-events: none;
+    pointer-events: none;
 }
 
-/* ======================
-    GLOBAL
-====================== */
-/* ======================
-    GLOBAL TYPOGRAPHY
-====================== */
+/* ======================================================
+   GLOBAL BASE
+====================================================== */
 
-/* Body → Clean & readable */
 body {
     font-family: 'Poppins', sans-serif;
-    
     background-color: var(--bg-broken-white);
     color: var(--text-dark);
-    
     line-height: 1.6;
     padding: 0;
     position: relative;
     min-height: 100vh;
-
-    /* Lebih smooth & modern */
     font-weight: 400;
     letter-spacing: 0.2px;
 }
 
-/* Heading → Tegas & Industrial */
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     color: var(--samsung-blue);
@@ -105,41 +133,20 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 0.5px;
     line-height: 1.3;
 }
-h1 {
-    font-size: 2.8rem;
-}
 
-h2 {
-    font-size: 2.2rem;
-}
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.3rem; }
 
-h3 {
-    font-size: 1.6rem;
-}
-
-h4 {
-    font-size: 1.3rem;
-}
-
-/* Background Industrial Overlay (Versi Light Mode) */
-/* Memberikan nuansa teknis yang sangat halus di belakang */
+/* Background Industrial Overlay */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: 
-        /* Sentuhan biru Samsung sangat tipis di pojok kanan atas */
-        radial-gradient(
-            circle at 85% 15%, 
-            rgba(20, 40, 160, 0.04), 
-            transparent 40%
-        ),
-        /* Sentuhan abu hangat di kiri bawah */
-        radial-gradient(
-            circle at 10% 85%, 
-            rgba(0, 0, 0, 0.03), 
-            transparent 50%
-        );
+    background:
+        radial-gradient(circle at 85% 15%, rgba(20, 40, 160, 0.04), transparent 40%),
+        radial-gradient(circle at 10% 85%, rgba(0, 0, 0, 0.03), transparent 50%);
     z-index: -1;
     pointer-events: none;
 }
@@ -149,15 +156,15 @@ section {
     z-index: 1;
 }
 
-.text-justify {
-    text-align: justify;
+/* Utility tambahan */
+section, .container-fluid, .hero-section {
+    background-color: transparent;
 }
 
-/* Utility: Link Style */
 a {
     color: var(--samsung-blue);
     text-decoration: none;
-    transition: 0.3s;
+    transition: var(--transition-base);
     font-weight: 500;
 }
 
@@ -166,18 +173,263 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Utility tambahan untuk memastikan Section transparan */
-section, .container-fluid, .hero-section {
-    background-color: transparent;
+/* ======================================================
+   UTILITY CLASSES — Reusable di Semua Section
+====================================================== */
+
+/* Section Padding */
+.section-padding {
+    padding: var(--section-padding-y) 0;
+}
+
+.section-padding-sm {
+    padding: var(--section-padding-y-sm) 0;
+}
+
+/* Section Header — Label + Title + Subtitle */
+.section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.section-label-line {
+    display: block;
+    width: 36px;
+    height: 2px;
+    background: var(--samsung-blue);
+    flex-shrink: 0;
+}
+
+.section-label-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--samsung-blue);
+    text-transform: uppercase;
+}
+
+/* Card Global */
+.card-surface {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-base);
+}
+
+.card-surface:hover {
+    border-color: var(--samsung-blue-light);
+    box-shadow: var(--shadow-blue);
+    transform: translateY(-4px);
+}
+
+/* Badge Global */
+.badge-primary {
+    display: inline-block;
+    background: var(--samsung-blue);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.badge-outline {
+    display: inline-block;
+    background: transparent;
+    color: var(--samsung-blue);
+    border: 1px solid var(--samsung-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+/* Button Global */
+.btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--samsung-blue);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 14px 32px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-decoration: none;
+}
+
+.btn-primary-custom:hover {
+    background: var(--samsung-hover);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-blue);
+}
+
+.btn-outline-custom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: transparent;
+    color: var(--samsung-blue);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 13px 32px;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--samsung-blue);
+    cursor: pointer;
+    transition: var(--transition-base);
+    text-decoration: none;
+}
+
+.btn-outline-custom:hover {
+    background: var(--samsung-blue);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-blue);
+}
+
+/* Background Grid Pattern — Reusable */
+.bg-grid-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--border-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Section Top Accent Line */
+.section-accent-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--samsung-blue), var(--samsung-blue-light), transparent);
 }
 
 /* ======================================================
-   RESPONSIVE SPACING & SAFE AREA (MOBILE FIX)
+   ANIMATIONS — Reusable di Semua Section
 ====================================================== */
+
+/* Fade Up — untuk elemen masuk dari bawah */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.7s ease forwards;
+}
+
+/* Fade In saja */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Pulse — untuk dot indikator aktif */
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+}
+
+/* ======================================================
+   TEXT UTILITY
+====================================================== */
+
+.text-justify    { text-align: justify; }
+.text-primary    { color: var(--samsung-blue) !important; }
+.text-muted-custom { color: var(--text-grey) !important; }
+.font-heading    { font-family: 'Montserrat', sans-serif; }
+
+
+/* ======================================================
+   SECTION SEPARATOR — Reusable di semua halaman
+====================================================== */
+
+.section-separator {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.separator-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--border-soft) 30%,
+        var(--border-soft) 70%,
+        transparent 100%
+    );
+}
+
+.separator-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--border-soft);
+    background: var(--bg-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--samsung-blue);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-soft);
+}
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+
+@media (max-width: 992px) {
+    .section-padding {
+        padding: var(--section-padding-y-md) 0;
+    }
+}
 
 @media (max-width: 576px) {
 
-    .container, 
+    .container,
     .container-fluid {
         padding-left: 25px !important;
         padding-right: 25px !important;
@@ -188,12 +440,13 @@ section, .container-fluid, .hero-section {
         width: 100%;
     }
 
-    /* Typography scaling */
     h1 { font-size: 2rem !important; }
     h2 { font-size: 1.6rem !important; }
     h3 { font-size: 1.3rem !important; }
 
-    body {
-        font-size: 0.9rem;
+    body { font-size: 0.9rem; }
+
+    .section-padding {
+        padding: var(--section-padding-y-sm) 0;
     }
 }

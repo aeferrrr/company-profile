@@ -32,11 +32,12 @@
         <div class="container">
             <nav class="nav-filter">
                 <div class="filter-link active" onclick="changeCategory('all', this)">{{ __('projects.filter_all') }}</div>
-                <div class="filter-link" onclick="changeCategory('atap', this)">{{ __('projects.filter_roofing') }}</div>
-                <div class="filter-link" onclick="changeCategory('pipa', this)">{{ __('projects.filter_piping') }}</div>
-                <div class="filter-link" onclick="changeCategory('epoxy', this)">{{ __('projects.filter_epoxy') }}</div>
+                <div class="filter-link" onclick="changeCategory('atap', this)">Roofing</div>
+                <div class="filter-link" onclick="changeCategory('pipa', this)">Piping</div>
+                <div class="filter-link" onclick="changeCategory('epoxy', this)">Epoxy</div>
                 <div class="filter-link" onclick="changeCategory('interior', this)">{{ __('projects.filter_interior') }}
                 </div>
+                <div class="filter-link" onclick="changeCategory('civil', this)">Civil</div>
             </nav>
         </div>
     </section>
@@ -98,6 +99,13 @@
                         <h3 class="item-title">K Dasoni - Interior Concept 2</h3>
                     </div>
                 </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="{{ asset('images/projects/interior-vipkn.jpeg') }}" alt="Interior Dasoni">
+                    <div class="gallery-overlay">
+                        <span class="item-category">{{ __('projects.label_interior') }}</span>
+                        <h3 class="item-title">Interior & Revamping - Kertas Nusantara</h3>
+                    </div>
+                </div>
 
                 <!-- Pipa -->
                 <div class="gallery-item" data-category="pipa">
@@ -118,6 +126,15 @@
                 </div>
 
                 <!-- Epoxy -->
+                <div class="gallery-item" data-category="civil">
+                    <img src="{{ asset('images/projects/civil-chipyard1.jpeg') }}" alt="Civil Cor">
+                    <div class="gallery-overlay">
+                        <span class="item-category">Civil</span>
+                        <h3 class="item-title">Chipyard - Kertas Nusantara</h3>
+                    </div>
+                </div>
+
+                <!-- Epoxy -->
                 <div class="gallery-item" data-category="epoxy">
                     <img src="{{ asset('images/projects/epoxy-concrete.jpg') }}" alt="Pipe Rack">
                     <div class="gallery-overlay">
@@ -125,6 +142,7 @@
                         <h3 class="item-title">Concrete Polishing Epoxy</h3>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

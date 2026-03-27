@@ -1,232 +1,397 @@
 /* =========================================================
-   VIDEO SECTION & CONTROLS
+   VIDEO SECTION — KPCM LIGHT THEME (Samsung Blue)
 ========================================================= */
 
 .video-section {
-  position: relative;
-  padding: 80px 0;
-  background-color: var(--white-pure);
+    position: relative;
+    padding: 100px 0 80px;
+    background-color: var(--bg-broken-white);
+    overflow: hidden;
 }
 
-/* Video Wrapper */
-.video-wrapper {
-  position: relative;
-  border-radius: 20px;
-  overflow: hidden;
-  background: #000;
-  transform: translateZ(0);
-  cursor: pointer;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Background grid pattern sangat halus */
+.vs-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(var(--border-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.5;
+    pointer-events: none;
 }
 
-.video-wrapper:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(13, 110, 253, 0.2) !important;
+/* Garis aksen biru di atas section */
+.video-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--samsung-blue), var(--samsung-blue-light), transparent);
 }
 
-.video-wrapper video {
-  display: block;
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+/* ---- Header ---- */
+.vs-header {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-/* Overlays & Controls */
-.play-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  padding: 25px;
-  pointer-events: none;
+.vs-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
 }
 
-.video-wrapper.paused .play-overlay {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+.vs-label-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--samsung-blue);
 }
 
-.video-controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0) 100%);
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  pointer-events: none;
+.vs-label-text {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: var(--samsung-blue);
+    font-family: 'Montserrat', sans-serif;
 }
 
-.video-caption {
-  color: var(--white-pure);
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+.vs-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Playlist Styling */
-.playlist-container {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  height: 100%;
-  max-height: 500px;
-  display: flex;
-  flex-direction: column;
+.vs-subtitle {
+    font-size: 1rem;
+    color: var(--text-grey);
+    max-width: 520px;
+    margin: 0 auto;
+    line-height: 1.7;
 }
 
-.playlist-header {
-  padding: 15px 20px;
-  background: #f8f9fa;
-  border-bottom: 1px solid #eee;
+/* ---- Layout ---- */
+.vs-layout {
+    display: grid;
+    grid-template-columns: 1fr 370px;
+    gap: 40px;
+    align-items: start;
 }
 
-.playlist-items {
-  overflow-y: auto;
-  flex-grow: 1;
+@media (max-width: 1100px) {
+    .vs-layout { grid-template-columns: 1fr; }
 }
 
-.playlist-items::-webkit-scrollbar { width: 6px; }
-.playlist-items::-webkit-scrollbar-thumb { background-color: #ccc; border-radius: 10px; }
-
-.video-item {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid #f0f0f0;
-  gap: 15px;
+/* ---- Player Badge ---- */
+.vs-player-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    padding: 6px 14px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--text-grey);
+    margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.video-item:hover { background-color: #f1f5f9; }
-
-.video-item.active {
-  background-color: #eef2ff;
-  border-left: 4px solid #0d6efd;
+.vs-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #22c55e;
+    box-shadow: 0 0 6px rgba(34, 197, 94, 0.6);
+    animation: pulse-dot 2s infinite;
 }
 
-.item-thumb {
-  width: 80px;
-  height: 55px;
-  border-radius: 6px;
-  object-fit: cover;
-  background-color: #ddd;
-  flex-shrink: 0;
-  position: relative;
-  overflow: hidden;
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
 }
 
-.item-thumb::after {
-  content: '▶';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 10px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+/* ---- Player Wrapper ---- */
+.vs-player-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--border-soft);
+    cursor: pointer;
+    box-shadow: 0 20px 50px var(--samsung-blue-glow);
+    transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
-.item-info h6 {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 4px;
-  color: #333;
-  line-height: 1.2;
+.vs-player-wrapper:hover {
+    box-shadow: 0 28px 60px rgba(20, 40, 160, 0.2);
+    transform: translateY(-4px);
 }
 
-.item-info p {
-  font-size: 12px;
-  color: #888;
-  margin: 0;
+.vs-player-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
 }
 
-/* Transition & Buttons */
-#companyVideo { transition: opacity 0.4s ease, transform 0.4s ease; }
-.video-fade-out { opacity: 0; transform: scale(0.98); }
-.video-fade-in { opacity: 1; transform: scale(1); }
-
-.btn-glass {
-  pointer-events: auto;
-  /* Pastikan background transparan/glass */
-  background: rgba(255, 255, 255, 0.1); 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  
-  /* PENTING: Ini membuat icon SVG menjadi Putih */
-  color: #ffffff !important; 
-  
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 10; /* Pastikan tombol di atas layer lain */
+.vs-player-wrapper:hover video {
+    transform: scale(1.02);
 }
 
-.btn-glass:hover {
-  background: var(--primary-blue); /* Atau warna biru anda: #0d6efd */
-  border-color: var(--primary-blue);
-  color: #ffffff !important;
-  transform: scale(1.1);
+/* Corner Accents */
+.vs-player-wrapper::before,
+.vs-player-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    z-index: 5;
+    pointer-events: none;
+}
+.vs-player-wrapper::before {
+    top: 12px; left: 12px;
+    border-top: 2px solid var(--samsung-blue);
+    border-left: 2px solid var(--samsung-blue);
+}
+.vs-player-wrapper::after {
+    bottom: 12px; right: 12px;
+    border-bottom: 2px solid var(--samsung-blue);
+    border-right: 2px solid var(--samsung-blue);
 }
 
-/* Custom Video Button (Link/Trigger) */
-.btn-video {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+/* Play Overlay */
+.vs-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(10, 17, 26, 0.45);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 3;
 }
 
-.btn-glass svg {
-    stroke: currentColor;
-    fill: none;
+.vs-player-wrapper.paused .vs-play-overlay { opacity: 1; }
+
+.vs-play-btn {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--samsung-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 8px 24px var(--samsung-blue-glow);
 }
 
-.play-icon {
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--primary-blue);
-  border-radius: 50%;
-  position: relative;
+.vs-play-btn:hover {
+    transform: scale(1.1);
+    background: var(--samsung-blue-light);
 }
 
-.play-icon::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 55%;
-  transform: translate(-50%, -50%);
-  border-left: 6px solid var(--primary-blue);
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
+/* Caption */
+.vs-caption {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px 28px;
+    background: linear-gradient(to top, rgba(10, 17, 26, 0.92) 0%, transparent 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 2;
+    pointer-events: none;
 }
 
-.btn-video:hover .play-icon {
-  background-color: var(--primary-blue);
+.vs-caption-badge {
+    display: inline-block;
+    background: var(--samsung-blue);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.btn-video:hover .play-icon::before {
-  border-left-color: #ffffff;
+.vs-caption-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 4px;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Video Responsive */
-@media (max-width: 991px) {
-  .playlist-container { margin-top: 20px; max-height: 300px; }
+.vs-caption-desc {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.8rem;
+    margin: 0;
 }
+
+/* ---- Stats Row ---- */
+.vs-stats {
+    display: flex;
+    align-items: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    margin-top: 16px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.vs-stat-item {
+    flex: 1;
+    text-align: center;
+}
+
+.vs-stat-number {
+    display: block;
+    font-size: 1.9rem;
+    font-weight: 800;
+    color: var(--samsung-blue);
+    line-height: 1;
+    margin-bottom: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.vs-stat-label {
+    font-size: 0.75rem;
+    color: var(--text-grey);
+    font-weight: 500;
+}
+
+.vs-stat-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border-soft);
+    flex-shrink: 0;
+}
+
+/* ---- Info Column ---- */
+.vs-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.vs-info-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    padding: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vs-info-card:hover {
+    border-color: var(--samsung-blue-light);
+    box-shadow: 0 6px 20px var(--samsung-blue-glow);
+}
+
+.vs-info-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    background: rgba(20, 40, 160, 0.06);
+    border: 1px solid rgba(20, 40, 160, 0.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--samsung-blue);
+    flex-shrink: 0;
+}
+
+.vs-info-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 6px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.vs-info-text {
+    font-size: 0.82rem;
+    color: var(--text-grey);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.vs-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.vs-info-list li {
+    font-size: 0.82rem;
+    color: var(--text-grey);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.vs-info-list li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--samsung-blue);
+    flex-shrink: 0;
+}
+
+/* ---- CTA Button ---- */
+.vs-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--samsung-blue);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    padding: 16px 28px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    margin-top: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.vs-cta-btn:hover {
+    background: var(--samsung-hover);
+    color: #fff;
+    text-decoration: none;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px var(--samsung-blue-glow);
+}
+
+/* ---- Responsive ---- */
 @media (max-width: 768px) {
-  .video-controls { padding: 20px; }
-  .video-caption h5 { font-size: 1rem; }
+    .vs-title { font-size: 1.8rem; }
+    .vs-stats { padding: 16px 20px; }
+    .vs-stat-number { font-size: 1.5rem; }
+    .vs-caption { padding: 16px 18px; }
 }

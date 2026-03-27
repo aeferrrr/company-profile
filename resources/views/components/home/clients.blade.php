@@ -1,6 +1,15 @@
 <section class="client-section py-5 bg-white position-relative overflow-hidden">
+    {{-- SEPARATOR ATAS OUR CLIENTS --}}
+    <div class="section-separator">
+        <div class="separator-line"></div>
+        <div class="separator-icon">
+            <i class="fa-solid fa-handshake-simple" style="font-size: 14px; color: var(--samsung-blue);"></i>
+        </div>
+        <div class="separator-line"></div>
+    </div>
+
     <div class="container py-3 py-lg-5">
-        
+
         <div class="row align-items-center">
 
             <!-- Bagian Teks (Kiri) -->
@@ -27,21 +36,31 @@
                 <div class="marquee-wrapper">
                     <div class="marquee-content" id="logoMarquee">
                         <!-- List Logo -->
-                        <div class="logo-item"><img src="{{ asset('images/clients/samsung.png') }}" alt="Samsung"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/hyundai.png') }}" alt="Hyundai"></div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/samsung.png') }}" alt="Samsung">
+                        </div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/hyundai.png') }}" alt="Hyundai">
+                        </div>
                         <div class="logo-item"><img src="{{ asset('images/clients/nike.png') }}" alt="Nike"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/locklock.png') }}" alt="Lock & Lock"></div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/locklock.png') }}" alt="Lock & Lock">
+                        </div>
                         <div class="logo-item"><img src="{{ asset('images/clients/cj.png') }}" alt="CJ"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/erajaya.png') }}" alt="Erajaya"></div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/erajaya.png') }}" alt="Erajaya">
+                        </div>
                         <div class="logo-item"><img src="{{ asset('images/clients/lg.png') }}" alt="LG"></div>
                         <div class="logo-item"><img src="{{ asset('images/clients/lotte.png') }}" alt="Lotte"></div>
                         <div class="logo-item"><img src="{{ asset('images/clients/zinus.png') }}" alt="Zinus"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/emsonic.png') }}" alt="Emsonic"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/strawland.png') }}" alt="Strawland"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/shinwon.png') }}" alt="Shinwon"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/zimmoah.png') }}" alt="Zimmoah"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/daeyoung.png') }}" alt="Daeyoung"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/pungkook.png') }}" alt="Pungkook"></div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/emsonic.png') }}" alt="Emsonic">
+                        </div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/strawland.png') }}" alt="Strawland">
+                        </div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/shinwon.png') }}" alt="Shinwon">
+                        </div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/zimmoah.png') }}" alt="Zimmoah">
+                        </div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/daeyoung.png') }}" alt="Daeyoung">
+                        </div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/pungkook.png') }}" alt="Pungkook">
+                        </div>
                         <div class="logo-item"><img src="{{ asset('images/clients/serim.png') }}" alt="Serim"></div>
                     </div>
                 </div>
@@ -52,7 +71,7 @@
         <!-- Sub-sub Heading -->
         <div class="row">
             <div class="col-12">
-                 <div class="text-center mt-5 pt-3 border-top w-lg-75 w-100 mx-auto">
+                <div class="text-center mt-5 pt-3 border-top w-lg-75 w-100 mx-auto">
                     <p class="small text-muted mb-0">
                         {{ __('messages.clients.note') }}
                     </p>
@@ -65,10 +84,10 @@
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const marquee = document.getElementById('logoMarquee');
-        
+
         // Clone konten marquee untuk menciptakan efek infinite loop tanpa putus
         // Kita menduplikasi isi di dalam .marquee-content
-        if(marquee) {
+        if (marquee) {
             marquee.innerHTML += marquee.innerHTML;
         }
     });
