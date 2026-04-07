@@ -7,11 +7,8 @@
         </div>
         <div class="separator-line"></div>
     </div>
-
     <div class="container py-3 py-lg-5">
-
         <div class="row align-items-center">
-
             <!-- Bagian Teks (Kiri) -->
             <div class="col-lg-5 mb-5 mb-lg-0 pe-lg-5 text-center text-lg-start z-index-2">
                 <div data-aos="fade-right">

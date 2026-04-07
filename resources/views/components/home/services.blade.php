@@ -7,7 +7,7 @@
         </div>
         <div class="separator-line"></div>
     </div>
-    <div class="container">
+    <div class="container py-3 py-lg-5">
 
         <div class="text-center mb-5" data-aos="fade-up">
             <h6 class="text-primary fw-bold text-uppercase ls-2">
@@ -24,18 +24,7 @@
         <div class="row g-0 shadow-lg rounded-4 overflow-hidden bg-white">
             <div class="col-lg-4 bg-white border-end position-relative">
                 <div class="service-tabs d-flex flex-column h-100 p-4">
-                    {{-- Service 4: Management --}}
-                    <button class="service-btn" onclick="openService(event, 'service4')">
-                        <div class="d-flex align-items-center">
-                            <div class="icon-box me-3">
-                                <i class="fas fa-hard-hat"></i>
-                            </div>
-                            <div class="text-start">
-                                <h6 class="mb-0 fw-bold">{{ __('messages.services.mgmt_name') }}</h6>
-                                <small class="text-muted">{{ __('messages.services.mgmt_sub') }}</small>
-                            </div>
-                        </div>
-                    </button>
+
                     {{-- Service 1: Civil & Mechanical --}}
                     <button class="service-btn active mb-3" onclick="openService(event, 'service1')">
                         <div class="d-flex align-items-center">
@@ -74,7 +63,18 @@
                             </div>
                         </div>
                     </button>
-
+                    {{-- Service 4: Management --}}
+                    <button class="service-btn" onclick="openService(event, 'service4')">
+                        <div class="d-flex align-items-center">
+                            <div class="icon-box me-3">
+                                <i class="fas fa-hard-hat"></i>
+                            </div>
+                            <div class="text-start">
+                                <h6 class="mb-0 fw-bold">{{ __('messages.services.mgmt_name') }}</h6>
+                                <small class="text-muted">{{ __('messages.services.mgmt_sub') }}</small>
+                            </div>
+                        </div>
+                    </button>
                     <div class="mt-auto pt-4">
                         <a href="{{ route('services') }}" class="btn btn-primary w-100 py-2 rounded-pill fw-bold">
                             {{ __('messages.services.button') }} <i class="fas fa-arrow-right ms-2"></i>
@@ -133,5 +133,28 @@
             </div>
         </div>
     </div>
-    
+
 </section>
+<script>
+    function openService(evt, serviceName) {
+        let i, content, buttons;
+
+        // sembunyikan semua content
+        content = document.getElementsByClassName("service-content");
+        for (i = 0; i < content.length; i++) {
+            content[i].classList.remove("active");
+        }
+
+        // hapus active dari semua button
+        buttons = document.getElementsByClassName("service-btn");
+        for (i = 0; i < buttons.length; i++) {
+            buttons[i].classList.remove("active");
+        }
+
+        // tampilkan yang dipilih
+        document.getElementById(serviceName).classList.add("active");
+
+        // aktifkan button yg diklik
+        evt.currentTarget.classList.add("active");
+    }
+</script>

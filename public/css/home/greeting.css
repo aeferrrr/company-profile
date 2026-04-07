@@ -1,82 +1,67 @@
-            /* Typography */
-            .letter-spacing-2 {
-                letter-spacing: 2px;
-            }
+    /* --- Typography & Colors --- */
+    :root {
+        --samsung-blue: #034EA2; /* Contoh variabel warna */
+        --samsung-blue-glow: rgba(3, 78, 162, 0.1);
+        --border-soft: #f1f1f1;
+    }
 
-            .ls-1 {
-                letter-spacing: 1px;
-            }
+    .letter-spacing-2 { letter-spacing: 2px; }
+    .ls-1 { letter-spacing: 1px; }
+    .leading-relaxed { line-height: 1.8; }
+    .text-primary { color: var(--samsung-blue) !important; }
+    .bg-primary-subtle { background-color: var(--samsung-blue-glow) !important; }
+    .border-light { border-color: var(--border-soft) !important; }
 
-            .leading-relaxed {
-                line-height: 1.8;
-            }
+    /* --- Image Grid Layout --- */
+    .image-grid-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 220px;
+        gap: 20px;
+        height: 440px;
+    }
 
-            /* Warna Mengikuti Root */
-            .text-primary {
-                color: var(--samsung-blue) !important;
-            }
+    .img-tall { grid-column: 2; grid-row: 1 / span 2; position: relative; z-index: 1; }
+    .img-small-top { grid-column: 1; grid-row: 1; }
+    .img-wide-bottom { grid-column: 1; grid-row: 2; }
+    .hover-zoom { transition: transform 0.6s ease; }
+    .image-grid-wrapper div:hover .hover-zoom { transform: scale(1.05); }
 
-            .bg-primary-subtle {
-                background-color: var(--samsung-blue-glow) !important;
-            }
+    /* --- Signature Styles --- */
+    .signature-box {
+        height: 80px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center;
+    }
 
-            .border-light {
-                border-color: var(--border-soft) !important;
-            }
+    .signature-img {
+        height: 100%;
+        max-width: 140px;
+        object-fit: contain;
+        /* Jika gambar backgroundnya tidak transparan, gunakan mix-blend-mode */
+        mix-blend-mode: multiply; 
+    }
 
-            /* --- IMAGE GRID LAYOUT --- */
-            .image-grid-wrapper {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 200px 220px;
-                gap: 20px;
-                height: 440px;
-            }
+    .signature-item {
+        min-width: 100px;
+    }
 
-            /* Posisi Gambar */
-            .img-tall {
-                grid-column: 2;
-                grid-row: 1 / span 2;
-                position: relative;
-                z-index: 1;
-            }
+    /* --- Responsive Mobile --- */
+    @media (max-width: 991px) {
+        .image-grid-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .img-tall { height: 250px; }
+        .img-small-top, .img-wide-bottom { height: 180px; }
+    }
 
-            .img-small-top {
-                grid-column: 1;
-                grid-row: 1;
-            }
-
-            .img-wide-bottom {
-                grid-column: 1;
-                grid-row: 2;
-            }
-
-            /* Efek Hover Zoom Halus */
-            .hover-zoom {
-                transition: transform 0.6s ease;
-            }
-
-            .image-grid-wrapper div:hover .hover-zoom {
-                transform: scale(1.05);
-            }
-
-            /* Responsive Mobile */
-            @media (max-width: 991px) {
-                .image-grid-wrapper {
-                    display: flex;
-                    flex-direction: column;
-                    height: auto;
-                    gap: 15px;
-                    /* Margin top dipindah ke margin bottom karena gambar sekarang diatas pada mobile */
-                    margin-bottom: 30px;
-                }
-
-                .img-tall {
-                    height: 250px;
-                }
-
-                .img-small-top,
-                .img-wide-bottom {
-                    height: 180px;
-                }
-            }
+    @media (max-width: 576px) {
+        .signature-box { height: 60px; }
+        .signature-img { max-width: 100px; }
+        .gap-4 { gap: 1rem !important; }
+    }   

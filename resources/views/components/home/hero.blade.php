@@ -52,36 +52,4 @@
             </div>
         </div>
     </div>
-
-    {{-- Stats --}}
-    <div class="hero-stats-wrapper">
-
-        <div class="container">
-
-            <div class="row">
-
-                @php
-                    $stats = [
-                        [__('messages.hero.stat_1_val'), __('messages.hero.stat_1_text')],
-                        [__('messages.hero.stat_2_val'), __('messages.hero.stat_2_text')],
-                        [__('messages.hero.stat_3_val'), __('messages.hero.stat_3_text')],
-                    ];
-                @endphp
-
-                @foreach ($stats as [$number, $label])
-                    <div class="col-md-4 col-sm-6 stat-item">
-
-                        <h3 class="stat-number">{{ $number }}</h3>
-
-                        <p class="stat-desc">{{ $label }}</p>
-
-                    </div>
-                @endforeach
-
-            </div>
-
-        </div>
-
-    </div>
-
 </section>

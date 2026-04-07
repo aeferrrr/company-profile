@@ -39,7 +39,7 @@
                 <div class="vs-player-wrapper" id="videoWrapper">
 
                     <video id="companyVideo" autoplay muted loop playsinline>
-                        <source src="{{ asset('videos/kpcm-construction.mp4') }}" type="video/mp4">
+                        <source src="{{ asset('videos/kpcm-construction.webm') }}" type="video/mp4">
                     </video>
 
                     {{-- Overlay Paused --}}
@@ -76,12 +76,12 @@
                 {{-- Stats Row --}}
                 <div class="vs-stats">
                     <div class="vs-stat-item">
-                        <span class="vs-stat-number">15+</span>
+                        <span class="vs-stat-number">14+</span>
                         <span class="vs-stat-label">Tahun Pengalaman</span>
                     </div>
                     <div class="vs-stat-divider"></div>
                     <div class="vs-stat-item">
-                        <span class="vs-stat-number">200+</span>
+                        <span class="vs-stat-number">500+</span>
                         <span class="vs-stat-label">Proyek Selesai</span>
                     </div>
                     <div class="vs-stat-divider"></div>
@@ -158,10 +158,7 @@
                         <polyline points="12 5 19 12 12 19" />
                     </svg>
                 </a>
-
             </div>
-
         </div>
-
     </div>
 </section>
