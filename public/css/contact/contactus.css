@@ -1,13 +1,19 @@
 /* =========================================================
-   MAIN CARD
+   BASE CARD (REUSABLE)
 ========================================================= */
-.main-card {
+.card-base {
     background: var(--bg-surface);
     border-radius: 24px;
     border: 1px solid var(--border-soft);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
     overflow: hidden;
-    margin-bottom: 40px;
+}
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+.main-card {
+    margin-bottom: 0;
 }
 
 /* =========================================================
@@ -82,7 +88,6 @@
     margin-bottom: 8px;
 }
 
-/* INPUT & SELECT UNIFIED */
 .form-control,
 .form-select {
     border: 1px solid var(--border-soft);
@@ -93,22 +98,16 @@
     height: 46px;
 }
 
-/* TEXTAREA KHUSUS */
 textarea.form-control {
     height: auto;
-    padding: 12px 14px;
 }
 
-/* FOCUS */
 .form-control:focus,
 .form-select:focus {
     border-color: var(--samsung-blue);
     box-shadow: 0 0 0 3px var(--samsung-blue-glow);
 }
 
-/* =========================================================
-   SELECT CUSTOM (BIAR GA JADUL)
-========================================================= */
 .form-select {
     appearance: none;
     -webkit-appearance: none;
@@ -119,17 +118,8 @@ textarea.form-control {
     background-size: 12px;
 }
 
-/* OPTION */
-.form-select option {
-    font-size: 0.9rem;
-}
-
-/* OPTGROUP */
-.form-select optgroup {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #666;
-}
+.form-select option { font-size: 0.9rem; }
+.form-select optgroup { font-size: 0.8rem; font-weight: 600; color: #666; }
 
 /* =========================================================
    BUTTON
@@ -163,118 +153,299 @@ textarea.form-control {
 }
 
 /* =========================================================
-   TABLET
+   RESPONSIVE CONTACT FORM
 ========================================================= */
 @media (max-width: 991px) {
     .form-area,
-    .info-sidebar {
-        padding: 35px;
-    }
-
-    .info-item {
-        margin-bottom: 25px;
-    }
+    .info-sidebar { padding: 35px; }
+    .info-item { margin-bottom: 25px; }
 }
 
-/* =========================================================
-   MOBILE
-========================================================= */
 @media (max-width: 768px) {
-
-    .main-card {
-        border-radius: 18px;
-    }
-
-    .info-sidebar {
-        padding: 30px 25px;
-        text-align: center;
-    }
-
-    .info-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .info-icon {
-        margin: 0 0 10px 0;
-    }
-
-    .form-area {
-        padding: 30px 25px;
-    }
-
+    .main-card { border-radius: 18px; }
+    .info-sidebar { padding: 30px 25px; text-align: center; }
+    .info-item { flex-direction: column; align-items: center; text-align: center; }
+    .info-icon { margin: 0 0 10px 0; }
+    .form-area { padding: 30px 25px; }
     .form-control,
-    .form-select {
-        font-size: 0.85rem;
-        padding: 10px 12px;
-    }
+    .form-select { font-size: 0.85rem; padding: 10px 12px; }
 }
 
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 @media (max-width: 480px) {
+    .main-card { border-radius: 14px; }
+    .info-sidebar { padding: 25px 20px; }
+    .form-area { padding: 25px 20px; }
+    .info-text p { font-size: 0.85rem; }
+}
 
-    .main-card {
-        border-radius: 14px;
-    }
-
-    .info-sidebar {
-        padding: 25px 20px;
-    }
-
-    .form-area {
-        padding: 25px 20px;
-    }
-
+@media (max-width: 360px) {
+    .form-area { padding: 20px 15px; }
+    .info-sidebar { padding: 20px 15px; }
     .form-control,
-    .form-select {
-        font-size: 0.85rem;
-    }
+    .form-select { font-size: 0.8rem; padding: 8px 10px; }
+    .btn-send { font-size: 0.85rem; padding: 12px; }
+    .section-tag { font-size: 0.6rem; padding: 4px 10px; }
+    .info-icon { width: 40px; height: 40px; font-size: 1rem; }
+}
 
-    .info-text p {
-        font-size: 0.85rem;
-    }
+/* FIX OVERFLOW */
+html, body { overflow-x: hidden; }
+
+/* =========================================================
+   KPCM LOUNGE — FULL WIDTH STAGGERED LAYOUT
+========================================================= */
+
+/* SECTION WRAPPER */
+.lounge-section {
+    /* Hapus padding-bottom dan background color karena sudah di-handle oleh class utility (py-5 bg-sky-blue) di HTML */
+    overflow: visible;
+}
+
+/* ── STAGE WRAPPER: full width, tengah layar ── */
+.lounge-stage-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* Disesuaikan padding atasnya agar tidak terlalu jauh dari separator */
+    padding: 20px 20px 40px; 
+    min-height: 480px; 
+    overflow: visible;
+}
+
+/* ── ROW 3 KARTU ── */
+.lounge-cards-stage {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+/* ── BASE KARTU: ukuran eksplisit ── */
+.lounge-card-item {
+    width: 280px;
+    height: 380px;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: transform 0.38s ease, box-shadow 0.38s ease;
+}
+
+/* IMAGE: background-image inline, 100% fill */
+.lc-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.lounge-card-item:hover .lc-bg {
+    transform: scale(1.05);
+}
+
+/* OVERLAY GELAP BAWAH */
+.lc-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.65) 0%,
+        rgba(0, 0, 0, 0.25) 50%,
+        rgba(0, 0, 0, 0.05) 100%
+    );
+}
+
+/* LABEL BAWAH ITALIC */
+.lc-label {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    z-index: 3;
+    line-height: 1.3;
+}
+
+/* TOMBOL BULAT + */
+.lc-plus {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.18);
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1;
+    z-index: 3;
+    transition: background 0.2s ease;
+}
+
+.lounge-card-item:hover .lc-plus {
+    background: rgba(255, 255, 255, 0.32);
+}
+
+/* ── KARTU KIRI: miring kiri, lebih rendah ── */
+.card-left {
+    transform: translateY(55px) rotate(-10deg) translateX(40px);
+    z-index: 1;
+    box-shadow: -10px 18px 50px rgba(0,0,0,0.22);
+}
+.card-left:hover {
+    transform: translateY(30px) rotate(-6deg) translateX(20px);
+    z-index: 4;
+}
+
+/* ── KARTU TENGAH: tegak, paling tinggi, border emas ── */
+.card-middle {
+    transform: translateY(0);
+    z-index: 2;
+    margin: 0 -30px;              /* overlap ke kiri dan kanan */
+    box-shadow: 0 28px 80px rgba(0,0,0,0.35);
+    border: 2.5px solid #c9a84c; /* border emas */
+    border-radius: 22px;
+}
+.card-middle:hover {
+    transform: translateY(-16px);
+    box-shadow: 0 40px 90px rgba(0,0,0,0.38);
+    z-index: 5;
+}
+
+/* ── KARTU KANAN: miring kanan, lebih rendah ── */
+.card-right {
+    transform: translateY(55px) rotate(10deg) translateX(-40px);
+    z-index: 1;
+    box-shadow: 10px 18px 50px rgba(0,0,0,0.22);
+}
+.card-right:hover {
+    transform: translateY(30px) rotate(6deg) translateX(-20px);
+    z-index: 4;
 }
 
 /* =========================================================
-   EXTRA SMALL (IPHONE SE)
+   TEKS BAWAH: 2 KOLOM (heading kiri | deskripsi kanan)
 ========================================================= */
-@media (max-width: 360px) {
-
-    .form-area {
-        padding: 20px 15px;
-    }
-
-    .info-sidebar {
-        padding: 20px 15px;
-    }
-
-    .form-control,
-    .form-select {
-        font-size: 0.8rem;
-        padding: 8px 10px;
-    }
-
-    .btn-send {
-        font-size: 0.85rem;
-        padding: 12px;
-    }
-
-    .section-tag {
-        font-size: 0.6rem;
-        padding: 4px 10px;
-    }
-
-    .info-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
+.lounge-bottom-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    padding-top: 10px;
 }
 
-/* FIX OVERFLOW MOBILE */
-html, body {
-    overflow-x: hidden;
+.lounge-bottom-left {
+    flex: 0 0 auto;
+    max-width: 380px;
+}
+
+.lounge-main-title {
+    font-size: 2.6rem;
+    font-weight: 800;
+    color: #1a2212;
+    line-height: 1.2;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', serif;
+}
+
+.lounge-bottom-right {
+    flex: 1;
+    padding-top: 6px;
+}
+
+.lounge-main-desc {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 24px;
+}
+
+/* CTA LINK: teks + underline + panah */
+.lounge-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1a2212;
+    text-decoration: none;
+    border-bottom: 1.5px solid #1a2212;
+    padding-bottom: 3px;
+    transition: gap 0.2s ease, color 0.2s ease;
+}
+
+.lounge-cta-link:hover {
+    gap: 16px;
+    color: var(--samsung-blue);
+    border-color: var(--samsung-blue);
+}
+
+.lounge-cta-arrow {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+/* =========================================================
+   RESPONSIVE LOUNGE
+========================================================= */
+@media (max-width: 1199px) {
+    .lounge-card-item { width: 240px; height: 330px; }
+    .lounge-main-title { font-size: 2.2rem; }
+}
+
+@media (max-width: 991px) {
+    .lounge-stage-wrap { padding: 40px 10px 40px; min-height: 420px; }
+    .lounge-card-item { width: 210px; height: 290px; }
+    .card-left  { transform: translateY(45px) rotate(-8deg) translateX(30px); }
+    .card-right { transform: translateY(45px) rotate(8deg)  translateX(-30px); }
+    .card-middle { margin: 0 -24px; }
+    .lounge-bottom-row { gap: 40px; }
+    .lounge-main-title { font-size: 1.9rem; }
+}
+
+@media (max-width: 768px) {
+    .lounge-stage-wrap { padding: 36px 10px 36px; min-height: 360px; }
+    .lounge-card-item { width: 175px; height: 245px; border-radius: 16px; }
+    .card-left  { transform: translateY(36px) rotate(-7deg) translateX(22px); }
+    .card-left:hover  { transform: translateY(18px) rotate(-4deg) translateX(12px); }
+    .card-right { transform: translateY(36px) rotate(7deg)  translateX(-22px); }
+    .card-right:hover { transform: translateY(18px) rotate(4deg)  translateX(-12px); }
+    .card-middle { margin: 0 -18px; border-radius: 16px; }
+    .lc-label { font-size: 12px; bottom: 14px; left: 14px; right: 14px; }
+    .lc-plus  { width: 28px; height: 28px; font-size: 18px; top: 12px; right: 12px; }
+    .lounge-bottom-row { flex-direction: column; gap: 20px; }
+    .lounge-bottom-left { max-width: 100%; }
+    .lounge-main-title { font-size: 1.7rem; }
+}
+
+@media (max-width: 480px) {
+    .lounge-stage-wrap { padding: 28px 8px 28px; min-height: 290px; }
+    .lounge-card-item { width: 130px; height: 185px; border-radius: 12px; }
+    .card-left  { transform: translateY(28px) rotate(-7deg) translateX(14px); }
+    .card-left:hover  { transform: translateY(14px) rotate(-4deg) translateX(8px); }
+    .card-right { transform: translateY(28px) rotate(7deg)  translateX(-14px); }
+    .card-right:hover { transform: translateY(14px) rotate(4deg)  translateX(-8px); }
+    .card-middle { margin: 0 -12px; }
+    .lc-label { font-size: 10px; bottom: 10px; left: 10px; right: 10px; }
+    .lc-plus  { width: 22px; height: 22px; font-size: 14px; top: 8px; right: 8px; }
+    .lounge-main-title { font-size: 1.4rem; }
+    .lounge-main-desc { font-size: 0.88rem; }
+}
+
+@media (max-width: 360px) {
+    .lounge-card-item { width: 108px; height: 155px; }
+    .card-middle { margin: 0 -8px; }
+    .lounge-main-title { font-size: 1.25rem; }
 }
