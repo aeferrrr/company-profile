@@ -8,33 +8,33 @@
     {{-- ======================
 Organization SECTION
 ====================== --}}
-    <section class="hero-section hero-organization">
+    <section class="hero-section hero-organization reveal">
         <img src="{{ asset('/images/hero/construction-1.webp') }}" class="hero-bg" alt="{{ __('organization.hero_title') }}">
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">{{ __('organization.hero_title') }}</h1>
-                <p class="hero-subtitle">{{ __('organization.hero_subtitle') }}</p>
+                <h1 class="hero-title reveal">{{ __('organization.hero_title') }}</h1>
+                <p class="hero-subtitle reveal">{{ __('organization.hero_subtitle') }}</p>
             </div>
         </div>
     </section>
 
     <section id="organization" class="organization-section">
         <div class="container">
-            <div class="section-header text-center mb-5">
+
+            <div class="section-header text-center mb-5 reveal">
                 <h2 class="fw-bold text-uppercase">{{ __('organization.header_title') }}</h2>
-                <div class="separator mx-auto" style="width: 80px; height: 4px; background: #311b92; margin-top: 15px;">
-                </div>
+                <div class="separator mx-auto" style="width: 80px; height: 4px; background: #311b92; margin-top: 15px;"></div>
             </div>
 
-            <div class="org-chart text-center mb-5" id="chart-container">
+            <div class="org-chart text-center mb-5 reveal" id="chart-container">
                 <div id="org-hq">
                     @include('components.organization.office-svg')
                 </div>
             </div>
 
-            <div class="members-section rounded-4 mb-5">
-                <div class="members-header text-center mb-5">
+            <div class="members-section rounded-4 mb-5 reveal">
+                <div class="members-header text-center mb-5 reveal">
                     <h3 class="fw-bold ms-4" style="color: #311b92;">Meet Our Team</h3>
                 </div>
 
@@ -53,8 +53,6 @@ Organization SECTION
                             ['photo' => '/images/team/tito.webp'],
                             ['photo' => '/images/team/steven.webp'],
                             ['photo' => '/images/team/pani.webp'],
-                            // ['photo' => '/images/team/nia.webp'],
-                            // ['photo' => '/images/team/ayu.webp'],
                             ['photo' => '/images/team/fauzia.webp'],
                             ['photo' => '/images/team/samsul.webp'],
                             ['photo' => '/images/team/faesal.webp'],
@@ -67,7 +65,7 @@ Organization SECTION
 
                     @foreach ($teams as $member)
                         @if ($loop->first)
-                            <div class="president-wrapper">
+                            <div class="president-wrapper reveal">
                                 <div class="president-card-custom">
                                     <div class="pres-photo-area">
                                         <img src="{{ $member['photo'] }}" class="pres-img" loading="lazy">
@@ -82,7 +80,7 @@ Organization SECTION
                                 </div>
                             </div>
                         @else
-                            <div class="team-card">
+                            <div class="team-card reveal">
                                 <img src="{{ $member['photo'] }}" class="standard-img" loading="lazy">
                             </div>
                         @endif
@@ -90,9 +88,8 @@ Organization SECTION
                 </div>
             </div>
 
-            {{-- Section: Together Photos with Client-side Pagination --}}
-            <div class="together-photos-section mt-5 pt-5 border-top">
-                <div class="section-header text-center mb-5">
+            <div class="together-photos-section mt-5 pt-5 border-top reveal">
+                <div class="section-header text-center mb-5 reveal">
                     <h3 class="fw-bold" style="color: #311b92;">OUR MOMENTS</h3>
                     <p class="text-muted">Captured memories of our journey together</p>
                 </div>
@@ -100,35 +97,22 @@ Organization SECTION
                 <div class="row g-4" id="moments-container">
                     @php
                         $moments = [
-                            [
-                                'url' => '/images/team/moments/moments-bachingplant.webp',
-                                'caption' => 'Team Gathering at Batching Plant Area',
-                            ],
-                            [
-                                'url' => '/images/team/moments/moments-chipyard.webp',
-                                'caption' => 'Night Shift Operations & On-site Coordination',
-                            ],
-                            [
-                                'url' => '/images/team/moments/moments-chipyard2.webp',
-                                'caption' => 'Technical Team Inspection at Industrial Project Site',
-                            ],
-                            // TAMBAH DATA MOMENTS DISINI
-                                                        [
-                                'url' => '/images/team/moments/moments-eid.webp',
-                                'caption' => 'Harmony & Togetherness',
-                            ],
+                            ['url' => '/images/team/moments/moments-bachingplant.webp', 'caption' => 'Team Gathering at Batching Plant Area'],
+                            ['url' => '/images/team/moments/moments-chipyard.webp', 'caption' => 'Night Shift Operations & On-site Coordination'],
+                            ['url' => '/images/team/moments/moments-chipyard2.webp', 'caption' => 'Technical Team Inspection at Industrial Project Site'],
+                            ['url' => '/images/team/moments/moments-eid.webp', 'caption' => 'Harmony & Togetherness'],
                         ];
                     @endphp
 
                     @foreach ($moments as $moment)
-                        <div class="col-md-6 col-lg-4 moment-item">
+                        <div class="col-md-6 col-lg-4 moment-item reveal">
                             <div class="moment-card gallery-item shadow-sm rounded-3 overflow-hidden cursor-pointer"
                                 onclick="openImageModal('{{ asset($moment['url']) }}')">
-                                <div class="moment-img-wrapper"
-                                    style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
-                                    <img src="{{ asset($moment['url']) }}" alt="{{ $moment['caption'] }}"
-                                        class="w-100 h-100 object-fit-cover transition-transform"
-                                        style="transition: transform 0.3s ease;">
+                                <div class="moment-img-wrapper" style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
+                                    <img src="{{ asset($moment['url']) }}"
+                                         alt="{{ $moment['caption'] }}"
+                                         class="w-100 h-100 object-fit-cover transition-transform"
+                                         style="transition: transform 0.3s ease;">
                                     <div class="moment-overlay d-flex align-items-end p-3">
                                         <span class="text-white fw-medium">{{ $moment['caption'] }}</span>
                                     </div>
@@ -138,15 +122,12 @@ Organization SECTION
                     @endforeach
                 </div>
 
-                {{-- Pagination Controls --}}
-                <div id="moments-pagination" class="d-flex justify-content-center mt-5">
-                    <!-- Buttons will be injected by JS -->
-                </div>
+                <div id="moments-pagination" class="d-flex justify-content-center mt-5"></div>
             </div>
+
         </div>
     </section>
 
-    <!-- Image Modal -->
     <div id="imageModal" class="image-modal" onclick="closeImageModal()">
         <span class="close-modal">&times;</span>
         <img class="modal-content-img" id="modalImage" onclick="event.stopPropagation()">

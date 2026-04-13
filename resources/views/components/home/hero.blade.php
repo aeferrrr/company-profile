@@ -1,4 +1,4 @@
-<section class="hero-section">
+<section class="hero-section ">
 
     {{-- Background Image Slider --}}
     <div class="hero-slider">

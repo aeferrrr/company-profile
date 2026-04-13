@@ -13,11 +13,11 @@
         <div class="separator-line"></div>
     </div>
 
-    <div class="container py-lg-5">
+    <div class="container py-lg-5 reveal">
         <div class="row align-items-center gy-5">
 
             {{-- BAGIAN KIRI: Image Grid --}}
-            <div class="col-lg-6 pe-lg-5">
+            <div class="col-lg-6 pe-lg-5 reveal">
                 <div class="image-grid-wrapper position-relative">
                     <div class="img-tall rounded-4 overflow-hidden shadow-lg" data-aos="fade-right" data-aos-delay="100">
                         <img src="{{ asset('images/background/6.jpg') }}" alt="Project High" class="w-100 h-100 object-fit-cover hover-zoom">
@@ -32,7 +32,7 @@
             </div>
 
             {{-- BAGIAN KANAN: CEO Message --}}
-            <div class="col-lg-6 ps-lg-5" data-aos="fade-left">
+            <div class="col-lg-6 ps-lg-5 reveal" data-aos="fade-left">
                 <h6 class="text-primary fw-bold text-uppercase mb-2 letter-spacing-2">
                     {{ __('messages.greetings.subtitle') }}
                 </h6>
@@ -47,14 +47,14 @@
                 </div>
 
                 {{-- SIGNATURE BLOCK (2 SIGNATURES) --}}
-                <div class="d-flex align-items-center justify-content-between mt-5 pt-4 border-top border-light">
+                <div class="d-flex align-items-center justify-content-between mt-5 pt-4 border-top border-light reveal">
                     <div class="me-3 d-none d-sm-block">
                         <div class="bg-primary-subtle text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
                             <i class="bi bi-quote fs-3"></i>
                         </div>
                     </div>
 
-                    <div class="d-flex gap-4 gap-md-5">
+                    <div class="d-flex gap-4 gap-md-5 reveal">
                         <div class="text-center signature-item">
                             <div class="mb-2 signature-box">
                                 <img src="{{ asset('images/sign/sign-korean.webp') }}" alt="Korean Signature" class="signature-img">

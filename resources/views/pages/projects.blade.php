@@ -8,12 +8,12 @@
 {{-- =====================================================
      HERO
 ===================================================== --}}
-<section class="hero-section hero-project">
+<section class="hero-section hero-project reveal">
     <img src="{{ asset('/images/hero/beko.webp') }}" class="hero-bg" alt="Hero Background">
     <div class="hero-overlay"></div>
 
     <div class="container">
-        <div class="hero-content">
+        <div class="hero-content reveal">
             <h1 class="hero-title">{{ __('projects.hero_title') }}</h1>
             <p class="hero-subtitle">{{ __('projects.hero_subtitle') }}</p>
         </div>
@@ -23,9 +23,9 @@
 {{-- =====================================================
      FILTER
 ===================================================== --}}
-<section class="filter-section">
+<section class="filter-section reveal">
     <div class="container">
-        <nav class="nav-filter">
+        <nav class="nav-filter reveal">
             @foreach ($categories as $key => $label)
                 <div class="filter-link {{ $selected === $key ? 'active' : '' }}"
                      onclick="changeCategory('{{ $key }}', this)">
@@ -41,18 +41,18 @@
 
 
 {{-- GALLERY --}}
-<section class="gallery-section" id="gallerySection">
+<section class="gallery-section reveal" id="gallerySection">
     <div class="container">
         <div id="galleryGrid">
 
             @if ($paginated->isEmpty())
-                <div class="empty-state">
+                <div class="empty-state reveal">
                     <div class="empty-icon">📂</div>
                     <h3 class="empty-title">No Projects Found</h3>
                     <p class="empty-desc">There are no projects in this category yet.</p>
                 </div>
             @else
-                <div class="gallery-container">
+                <div class="gallery-container reveal">
                     @foreach ($paginated as $item)
                         <div class="gallery-item" data-src="{{ asset('images/projects/' . $item['image']) }}">
                             <img src="{{ asset('images/projects/' . $item['image']) }}"
@@ -74,7 +74,7 @@
 {{-- =====================================================
      PAGINATION
 ===================================================== --}}
-<section class="action-section text-center">
+<section class="action-section text-center reveal">
     <div class="container">
         {{ $paginated->links('pagination::bootstrap-5') }}
     </div>

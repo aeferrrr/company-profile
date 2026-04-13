@@ -1,4 +1,4 @@
-<section class="py-5 bg-light position-relative">
+<section class="py-5 bg-light position-relative reveal">
     <div class="container py-lg-5">
         <div class="row align-items-center">
 

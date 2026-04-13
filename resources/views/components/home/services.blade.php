@@ -1,4 +1,4 @@
-<section id="services" class="services-highlight py-5 bg-white">
+<section id="services" class="services-highlight py-5 bg-white reveal">
     {{-- SEPARATOR ATAS OUR SERVICES --}}
     <div class="section-separator">
         <div class="separator-line"></div>
@@ -7,7 +7,7 @@
         </div>
         <div class="separator-line"></div>
     </div>
-    <div class="container py-3 py-lg-5">
+    <div class="container py-3 py-lg-5 reveal">
 
         <div class="text-center mb-5" data-aos="fade-up">
             <h6 class="text-primary fw-bold text-uppercase ls-2">
@@ -21,12 +21,12 @@
             </p>
         </div>
 
-        <div class="row g-0 shadow-lg rounded-4 overflow-hidden bg-white">
+        <div class="row g-0 shadow-lg rounded-4 overflow-hidden bg-white reveal">
             <div class="col-lg-4 bg-white border-end position-relative">
                 <div class="service-tabs d-flex flex-column h-100 p-4">
 
                     {{-- Service 1: Civil & Mechanical --}}
-                    <button class="service-btn active mb-3" onclick="openService(event, 'service1')">
+                    <button class="service-btn active mb-3 reveal" onclick="openService(event, 'service1')">
                         <div class="d-flex align-items-center">
                             <div class="icon-box me-3">
                                 <i class="fas fa-industry"></i>
@@ -39,7 +39,7 @@
                     </button>
 
                     {{-- Service 2: Architecture --}}
-                    <button class="service-btn mb-3" onclick="openService(event, 'service2')">
+                    <button class="service-btn mb-3 reveal" onclick="openService(event, 'service2')">
                         <div class="d-flex align-items-center">
                             <div class="icon-box me-3">
                                 <i class="fas fa-pencil-ruler"></i>
@@ -52,7 +52,7 @@
                     </button>
 
                     {{-- Service 3: Tetap Interior (Atau Architecture jika Interior & Revamping digabung) --}}
-                    <button class="service-btn mb-3" onclick="openService(event, 'service3')">
+                    <button class="service-btn mb-3 reveal" onclick="openService(event, 'service3')">
                         <div class="d-flex align-items-center">
                             <div class="icon-box me-3">
                                 <i class="fas fa-couch"></i>
@@ -64,7 +64,7 @@
                         </div>
                     </button>
                     {{-- Service 4: Management --}}
-                    <button class="service-btn" onclick="openService(event, 'service4')">
+                    <button class="service-btn reveal" onclick="openService(event, 'service4')">
                         <div class="d-flex align-items-center">
                             <div class="icon-box me-3">
                                 <i class="fas fa-hard-hat"></i>
@@ -83,7 +83,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-8 position-relative bg-dark">
+            <div class="col-lg-8 position-relative bg-dark reveal">
                 {{-- Content 1: Civil & Mechanical --}}
                 <div id="service1" class="service-content active">
                     <img src="{{ asset('images/background/civil.webp') }}" alt="Civil & Mechanical"

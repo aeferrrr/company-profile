@@ -1,6 +1,6 @@
 <section id="video-showcase" class="video-section">
 
-    <div class="container position-relative">
+    <div class="container position-relative reveal">
         <div class="section-separator">
             <div class="separator-line"></div>
             <div class="separator-icon">
@@ -13,7 +13,7 @@
             <div class="separator-line"></div>
         </div>
         {{-- Section Header --}}
-        <div class="vs-header">
+        <div class="vs-header reveal">
             <div class="vs-label">
                 <span class="vs-label-line"></span>
                 <span class="vs-label-text">VIDEO PROFIL</span>
@@ -26,13 +26,13 @@
         </div>
 
         {{-- Main Layout --}}
-        <div class="vs-layout">
+        <div class="vs-layout ">
 
             {{-- LEFT: Video Player --}}
-            <div class="vs-player-col">
+            <div class="vs-player-col reveal">
 
                 {{-- Badge Atas --}}
-                <div class="vs-player-badge">
+                <div class="vs-player-badge reveal">
                     <span class="vs-dot"></span> LIVE PREVIEW
                 </div>
 
@@ -52,7 +52,7 @@
                     </div>
 
                     {{-- Bottom Caption --}}
-                    <div class="vs-caption">
+                    <div class="vs-caption reveal">
                         <div class="vs-caption-inner">
                             <span class="vs-caption-badge">KPCM CONSTRUCTION</span>
                             <h4 class="vs-caption-title" id="currentVideoTitle">
@@ -62,7 +62,7 @@
                                 Membangun dengan integritas, menghadirkan hasil terbaik sejak awal berdiri.
                             </p>
                         </div>
-                        <div class="vs-caption-icon">
+                        <div class="vs-caption-icon reveal">
                             <svg viewBox="0 0 24 24" width="40" height="40" fill="none"
                                 stroke="rgba(255,255,255,0.2)" stroke-width="1.5">
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
@@ -74,7 +74,7 @@
                 </div>
 
                 {{-- Stats Row --}}
-                <div class="vs-stats">
+                <div class="vs-stats reveal">
                     <div class="vs-stat-item">
                         <span class="vs-stat-number">14+</span>
                         <span class="vs-stat-label">Tahun Pengalaman</span>
@@ -94,7 +94,7 @@
             </div>
 
             {{-- RIGHT: Info Panel --}}
-            <div class="vs-info-col">
+            <div class="vs-info-col reveal">
 
                 <div class="vs-info-card">
                     <div class="vs-info-icon">
@@ -115,7 +115,7 @@
                     </div>
                 </div>
 
-                <div class="vs-info-card">
+                <div class="vs-info-card reveal">
                     <div class="vs-info-icon">
                         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor"
                             stroke-width="2">
@@ -124,7 +124,7 @@
                         </svg>
                     </div>
                     <div>
-                        <h6 class="vs-info-title">Keunggulan KPCM</h6>
+                        <h6 class="vs-info-title reveal">Keunggulan KPCM</h6>
                         <ul class="vs-info-list">
                             <li>Pengerjaan tepat waktu & sesuai anggaran</li>
                             <li>Tim berpengalaman & bersertifikat</li>
@@ -134,14 +134,14 @@
                     </div>
                 </div>
 
-                <div class="vs-info-card">
+                <div class="vs-info-card reveal">
                     <div class="vs-info-icon">
                         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor"
                             stroke-width="2">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
-                    <div>
+                    <div class="reveal">
                         <h6 class="vs-info-title">Sertifikasi & Standar</h6>
                         <p class="vs-info-text">
                             Berlisensi resmi, memenuhi standar K3 nasional, ISO 9001:2015, dan berpengalaman dalam
@@ -150,7 +150,7 @@
                     </div>
                 </div>
 
-                <a href="#contact" class="vs-cta-btn">
+                <a href="https://wa.me/6285111377112" class="vs-cta-btn reveal">
                     Konsultasi Gratis
                     <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
                         stroke-width="2.5">

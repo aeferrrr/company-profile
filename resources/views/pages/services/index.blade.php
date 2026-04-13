@@ -1,50 +1,43 @@
-@extends('layouts.app')
+    @extends('layouts.app')
 
-@section('meta_title', __('general.seo.service_title'))
-@section('meta_description', __('general.seo.service_desc'))
+    @section('meta_title', __('general.seo.service_title'))
+    @section('meta_description', __('general.seo.service_desc'))
 
-@section('content')
+    @section('content')
 
-    {{-- ======================
-        SERVICES HERO 
-    ====================== --}}
-    <section class="hero-section hero-services">
-        <img src="{{ asset('/images/hero/excavator-action.webp') }}" class="hero-bg" alt="{{ __('services.hero_title') }}">
+    {{-- ============================================================
+        HERO
+    ============================================================ --}}
+    <section class="hero-section hero-services reveal">
+        <img
+            src="{{ asset('/images/hero/excavator-action.webp') }}"
+            class="hero-bg"
+            alt="{{ __('services.hero_title') }}"
+        >
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title display-3 fw-bold">{{ __('services.hero_title') }}</h1>
-                <p class="hero-subtitle lead">
-                    {{ __('services.hero_subtitle') }}
-                </p>
+                <h1 class="hero-title display-3 fw-bold reveal">{{ __('services.hero_title') }}</h1>
+                <p class="hero-subtitle lead reveal">{{ __('services.hero_subtitle') }}</p>
             </div>
         </div>
     </section>
 
-    {{-- ======================
-        SERVICES CATEGORIES (ENHANCED DESIGN)
-    ====================== --}}
+
+    {{-- ============================================================
+        SERVICE CATEGORIES
+    ============================================================ --}}
     <section id="services" class="section-padding position-relative overflow-hidden">
-        {{-- Decorative background elements --}}
-        <div class="position-absolute top-0 start-0 w-100 h-100 bg-light opacity-50 z-n1"></div>
+
         <div class="blob-decorator position-absolute top-0 end-0"></div>
-        <div class="container">
-            {{-- <div class="row justify-content-center mb-5 pb-3">
-                <div class="col-lg-7 text-center">
-                    <span class="badge rounded-pill bg-danger-soft text-primary px-3 py-2 mb-3 text-uppercase fw-bold letter-spacing-1">Our Expertise</span>
-                    <h2 class="section-heading text-dark fw-bold display-5">{{ __('services.capabilities_title') }}</h2>
-                    <div class="heading-line mx-auto mb-4"></div>
-                    <p class="text-muted fs-5">
-                        {{ __('services.capabilities_subtitle') }}
-                    </p>
-                </div>
-            </div> --}}
+
+        <div class="container reveal">
 
             @php
                 $serviceGroups = [
                     [
+                        'icon'  => 'fas fa-hard-hat',
                         'title' => 'Construction & Management',
-                        'icon' => 'fas fa-hard-hat',
                         'items' => [
                             'Project Planning',
                             'Project Management',
@@ -57,18 +50,28 @@
                         ],
                     ],
                     [
+                        'icon'  => 'fas fa-city',
                         'title' => 'Civil',
-                        'icon' => 'fas fa-city',
-                        'items' => ['Foundation', 'Road Construction', 'Golf Course Development'],
+                        'items' => [
+                            'Foundation',
+                            'Road Construction',
+                            'Golf Course Development',
+                        ],
                     ],
                     [
+                        'icon'  => 'fas fa-drafting-compass',
                         'title' => 'Architecture',
-                        'icon' => 'fas fa-drafting-compass',
-                        'items' => ['Apartment', 'Bungalow', 'Factory Design', 'Warehouse', 'Temporary Facilities'],
+                        'items' => [
+                            'Apartment',
+                            'Bungalow',
+                            'Factory Design',
+                            'Warehouse',
+                            'Temporary Facilities',
+                        ],
                     ],
                     [
+                        'icon'  => 'fas fa-tools',
                         'title' => 'Mechanical',
-                        'icon' => 'fas fa-tools',
                         'items' => [
                             'Fabrication',
                             'Erection',
@@ -77,12 +80,12 @@
                             'Tank',
                             'Pipeline',
                             'Fire Fighting Systems',
-                            'WTP/WWTP',
+                            'WTP / WWTP',
                         ],
                     ],
                     [
+                        'icon'  => 'fas fa-bolt',
                         'title' => 'Electrical & Instrument',
-                        'icon' => 'fas fa-bolt',
                         'items' => [
                             'Substation',
                             'Transformer',
@@ -90,72 +93,91 @@
                             'Cabling',
                             'Industrial Lighting',
                             'Telecommunication',
-                            'Fire Alarm/CCTV',
+                            'Fire Alarm / CCTV',
                         ],
                     ],
                     [
+                        'icon'  => 'fas fa-recycle',
                         'title' => 'Revamping',
-                        'icon' => 'fas fa-recycle',
-                        'items' => ['Building Demolition', 'Structural Renovation'],
+                        'items' => [
+                            'Building Demolition',
+                            'Structural Renovation',
+                        ],
                     ],
                     [
+                        'icon'  => 'fas fa-hammer',
                         'title' => 'Maintenance',
-                        'icon' => 'fas fa-hammer',
-                        'items' => ['Factory Maintenance', 'Plant Services'],
+                        'items' => [
+                            'Factory Maintenance',
+                            'Plant Services',
+                        ],
                     ],
                     [
+                        'icon'  => 'fas fa-couch',
                         'title' => 'Interior',
-                        'icon' => 'fas fa-couch',
-                        'items' => ['Space Design', 'Interior Fit-out'],
+                        'items' => [
+                            'Space Design',
+                            'Interior Fit-out',
+                        ],
                     ],
                     [
+                        'icon'  => 'fas fa-plus-circle',
                         'title' => 'Others',
-                        'icon' => 'fas fa-plus-circle',
-                        'items' => ['Flooring & ACP', 'Roofing Solutions', 'Speed Door Systems'],
+                        'items' => [
+                            'Flooring & ACP',
+                            'Roofing Solutions',
+                            'Speed Door Systems',
+                        ],
                     ],
                 ];
             @endphp
 
             <div class="row g-4">
                 @foreach ($serviceGroups as $group)
-                    <div class="col-4 col-md-4 col-lg-3">
-                        <div class="service-card-modern p-4 h-100">
-                            <div class="icon-circle mb-4">
+                    <div class="col-6 col-md-4 col-lg-3 reveal">
+                        <div class="service-card">
+
+                            <div class="service-icon">
                                 <i class="{{ $group['icon'] }}"></i>
                             </div>
-                            <h4 class="category-title-modern">{{ $group['title'] }}</h4>
-                            <ul class="list-unstyled category-list-modern">
+
+                            <h4 class="service-title">{{ $group['title'] }}</h4>
+
+                            <ul class="service-list">
                                 @foreach ($group['items'] as $item)
-                                    <li class="d-flex align-items-start mb-2">
-                                        <span class="bullet-dot me-2 mt-2"></span>
+                                    <li>
+                                        <span class="dot"></span>
                                         <span>{{ $item }}</span>
                                     </li>
                                 @endforeach
                             </ul>
+
                         </div>
                     </div>
                 @endforeach
             </div>
+
         </div>
     </section>
 
-    {{-- ======================
-        CALL TO ACTION (MODERN GRADIENT)
-    ====================== --}}
-    <section class="cta-modern py-5">
+
+    {{-- ============================================================
+        CALL TO ACTION
+    ============================================================ --}}
+    <section class="cta-section py-5 reveal">
         <div class="container py-4">
-            <div class="cta-glass p-5 text-center shadow-lg">
+            <div class="cta-card text-center shadow-lg reveal">
                 <div class="row justify-content-center">
                     <div class="col-lg-9">
-                        <h2 class="display-5 fw-bold mb-3 text-white">{{ __('services.cta_title') }}</h2>
-                        <p class="lead mb-5 text-white opacity-90">
-                            {{ __('services.cta_desc') }}
-                        </p>
-                        <div class="d-flex justify-content-center gap-4 flex-wrap">
-                            <a href="{{ url('/contact') }}" class="btn btn-primary-modern btn-lg px-5 py-3 fw-bold">
+
+                        <h2 class="display-5 fw-bold mb-3 reveal">{{ __('services.cta_title') }}</h2>
+                        <p class="lead mb-5 reveal">{{ __('services.cta_desc') }}</p>
+
+                        <div class="d-flex justify-content-center gap-3 flex-wrap reveal">
+                            <a href="{{ url('/contact') }}" class="btn btn-primary-cta btn-lg px-5 py-3 fw-bold">
                                 <i class="fas fa-paper-plane me-2"></i>Hubungi Kami
                             </a>
-                            <a href="https://wa.me/085591710360" class="btn btn-whatsapp-modern btn-lg px-5 py-3">
+                            <a href="https://wa.me/6285111377112" class="btn btn-whatsapp btn-lg px-5 py-3 fw-bold">
                                 <i class="fab fa-whatsapp me-2"></i>WhatsApp Chat
                             </a>
                         </div>
@@ -164,4 +186,5 @@
             </div>
         </div>
     </section>
-@endsection
+
+    @endsection

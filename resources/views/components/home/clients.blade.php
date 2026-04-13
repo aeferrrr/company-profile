@@ -1,13 +1,13 @@
-<section class="client-section py-5 bg-white position-relative overflow-hidden">
+<section class="client-section py-5 bg-white position-relative overflow-hidden reveal">
     {{-- SEPARATOR ATAS OUR CLIENTS --}}
-    <div class="section-separator">
+    <div class="section-separator ">
         <div class="separator-line"></div>
         <div class="separator-icon">
             <i class="fa-solid fa-handshake-simple" style="font-size: 14px; color: var(--samsung-blue);"></i>
         </div>
-        <div class="separator-line"></div>
+        <div class="separator-line "></div>
     </div>
-    <div class="container py-3 py-lg-5">
+    <div class="container py-3 py-lg-5 reveal">
         <div class="row align-items-center">
             <!-- Bagian Teks (Kiri) -->
             <div class="col-lg-5 mb-5 mb-lg-0 pe-lg-5 text-center text-lg-start z-index-2">
@@ -26,7 +26,7 @@
             </div>
 
             <!-- Bagian Slider Logo (Kanan) -->
-            <div class="col-lg-7 position-relative">
+            <div class="col-lg-7 position-relative reveal">
                 <!-- Efek Fade Kiri & Kanan -->
                 <div class="slider-fade-mask"></div>
 
@@ -66,7 +66,7 @@
         </div>
 
         <!-- Sub-sub Heading -->
-        <div class="row">
+        <div class="row reveal">
             <div class="col-12">
                 <div class="text-center mt-5 pt-3 border-top w-lg-75 w-100 mx-auto">
                     <p class="small text-muted mb-0">

@@ -1,242 +1,152 @@
-/* =====================================================
-   1. HERO SECTION (Global & Specific)
-===================================================== */
-
-/* Base Hero Style (Shared) */
-.hero-section {
-    position: relative;
-    height: 320px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex; /* Untuk centering content vertikal */
-    align-items: center;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
-/* Content Positioning */
-.hero-content {
-    position: relative;
-    z-index: 2; /* Agar di atas overlay */
-    color: #ffffff;
-    max-width: 700px;
-}
-
-.hero-title {
-    font-size: 40px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.hero-subtitle {
-    font-size: 18px;
-    opacity: 0.95;
-    line-height: 1.6;
-    font-weight: 300;
-}
-
-/* Responsive Hero */
-@media (max-width: 768px) {
-    .hero-section {
-        height: 260px;
-    }
-
-    .hero-title {
-        font-size: 28px;
-    }
-
-    .hero-subtitle {
-        font-size: 14px;
-    }
-}
-
-
-/* =====================================================
-   2. ABOUT INTRO SECTION
-===================================================== */
-.about-intro {
+.section-padding {
     padding: 80px 0;
-    background-color: #ffffff;
 }
 
-.about-intro h2 {
-    font-size: 32px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #222;
+.bg-light {
+    background: #f1f3f7;
+    border-top: 1px solid #eee;
 }
 
-.about-intro p {
-    line-height: 1.8;
-    color: #555;
-    font-size: 16px;
-}
-
-
-/* =====================================================
-   3. IMAGE DIVIDER
-===================================================== */
-.about-image-divider {
-    width: 100%;
-    margin: 60px 0;
-    overflow: hidden;
-}
-
-.about-image-divider img {
-    width: 100%;
-    height: 520px;
-    object-fit: cover;
-    display: block;
-    /* Optional: Efek Parallax halus */
-    background-attachment: fixed; 
-}
-
-@media (max-width: 768px) {
-    .about-image-divider {
-        margin: 40px 0;
-    }
-    
-    .about-image-divider img {
-        height: 200px;
-    }
-}
-
-
-/* =====================================================
-   4. VISION & MISSION (OFFSET STYLE)
-===================================================== */
-.vision-mission-offset {
-    padding: 80px 0;
-    background-color: #f9f9f9; /* Sedikit abu-abu agar kontras */
-}
-
-.vm-row {
-    display: flex;
-    margin-bottom: 60px;
-}
-
-.vm-row:last-child {
-    margin-bottom: 0;
-}
-
-.vm-left {
-    justify-content: flex-start;
-}
-
-.vm-right {
-    justify-content: flex-end;
-}
-
-.vm-box {
-    width: 55%;
-    background: #fff;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* Shadow halus = Modern */
-    border-radius: 8px;
-    border-left: 5px solid #0d6efd; /* Aksen warna biru */
-}
-
-/* VM Header */
-.vm-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-}
-
-.vm-header i {
-    font-size: 28px;
-    color: #0d6efd;
-}
-
-.vm-header h3 {
-    font-size: 24px;
-    font-weight: 700;
-    margin: 0;
-    text-transform: uppercase;
-    color: #333;
-}
-
-/* VM Text */
-.vm-box p {
-    line-height: 1.8;
-    color: #555;
-    margin: 0;
-    font-size: 15px;
-}
-
-/* Responsive VM */
-@media (max-width: 992px) {
-    .vm-box {
-        width: 80%;
-    }
-    .vm-row {
-        justify-content: center; /* Tengah di tablet */
-    }
-}
-
-@media (max-width: 768px) {
-    .vm-box {
-        width: 100%;
-        padding: 25px;
-    }
-    
-    .vm-row {
-        margin-bottom: 40px;
-    }
-}
-
-
-/* =====================================================
-   5. ORGANIZATION HOVER PHOTO (Utility)
-===================================================== */
-.org-box {
-    position: relative;
-    cursor: pointer;
-}
-
-/* Photo container tooltip style */
-.org-photo {
-    position: absolute;
-    bottom: 110%;
-    left: 50%;
-    transform: translateX(-50%) translateY(10px);
-    width: 140px; /* Sedikit diperbesar */
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+.reveal {
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi bouncier */
-    z-index: 100;
-    padding: 5px;
+    transform: translateY(20px);
+    transition: all .6s ease-out;
 }
 
-/* Arrow indicator */
-.org-photo::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -6px;
-    border-width: 6px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.org-photo img {
+/* LABEL */
+.section-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: .75rem;
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--samsung-blue-light);
+}
+
+.section-label.center {
+    justify-content: center;
+}
+
+.label-line {
+    width: 30px;
+    height: 2px;
+    background: var(--samsung-blue-light);
+}
+
+/* GRID */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.vd-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+/* IMAGE */
+.img-box {
+    border-radius: 16px;
+    overflow: hidden;
+    height: 350px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.1);
+}
+
+.img-box img {
     width: 100%;
-    border-radius: 4px;
+    height: 100%;
     object-fit: cover;
+}
+
+/* CARD */
+.card-mini,
+.work-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    transition: .3s;
+}
+
+.card-mini:hover,
+.work-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--samsung-blue);
+}
+
+.card-mini i {
+    font-size: 1.8rem;
+    color: var(--samsung-blue);
+    margin-bottom: 15px;
     display: block;
 }
 
-/* Hover effect */
-.org-box:hover .org-photo {
-    opacity: 1;
-    visibility: visible;
-    transform: translateX(-50%) translateY(0);
+.vd-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--samsung-blue);
+}
+
+.highlight-box {
+    margin-top: 30px;
+    background: var(--samsung-blue);
+    color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 992px) {
+    .intro-grid,
+    .grid-2,
+    .grid-4,
+    .work-grid,
+    .vd-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
 }

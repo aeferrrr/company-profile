@@ -81,7 +81,7 @@
     @endif
 
     {{-- main Konten --}}
-    <main>
+    <main class="page-content">
         @yield('content')
     </main>
 
@@ -93,6 +93,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/project.js') }}"></script>
     <script src="{{ asset('js/organization.js') }}"></script>
+    <script src="{{ asset('js/animasi.js') }}"></script>
     @stack('scripts')
 </body>
 
