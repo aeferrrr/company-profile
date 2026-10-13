@@ -35,6 +35,8 @@
                         <!-- List Logo -->
                         <div class="logo-item"><img src="{{ asset('images/clients/samsung.png') }}" alt="Samsung">
                         </div>
+                        <div class="logo-item"><img src="{{ asset('images/clients/kn.webp') }}" alt="Kertas Nusantara">
+                        </div>
                         <div class="logo-item"><img src="{{ asset('images/clients/hyundai.png') }}" alt="Hyundai">
                         </div>
                         <div class="logo-item"><img src="{{ asset('images/clients/nike.png') }}" alt="Nike"></div>
