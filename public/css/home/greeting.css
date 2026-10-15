@@ -65,3 +65,168 @@
         .signature-img { max-width: 100px; }
         .gap-4 { gap: 1rem !important; }
     }   
+
+    /* --- Image Grid (dibuat sedikit lebih tinggi agar seimbang dengan teks) --- */
+.image-grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px 270px;
+    gap: 20px;
+    height: 540px;
+}
+
+/* --- Heading & teks --- */
+.journey-title {
+    font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+    line-height: 1.2;
+}
+
+.journey-copy p {
+    text-align: left;
+    line-height: 1.75;
+    margin-bottom: 0.9rem;
+}
+
+.journey-lead {
+    font-size: 0.95rem;
+    color: #444;
+    padding-left: 1rem;
+    border-left: 3px solid var(--samsung-blue);
+}
+
+.journey-body {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+/* --- Journey Steps --- */
+.journey-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.journey-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.journey-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--samsung-blue);
+    background: var(--samsung-blue-glow);
+    border: 1px solid rgba(3, 78, 162, 0.18);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.journey-step:hover .journey-icon {
+    transform: translateY(-3px);
+}
+
+/* Tahap akhir (General Contractor) ditonjolkan */
+.journey-step--final .journey-icon {
+    background: var(--samsung-blue);
+    color: #fff;
+    border-color: var(--samsung-blue);
+    box-shadow: 0 8px 18px rgba(3, 78, 162, 0.28);
+}
+
+/* Garis penghubung antar tahap */
+.journey-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 22px;
+    left: 56px;
+    width: calc(100% - 56px + 1.25rem - 10px);
+    border-top: 2px dashed rgba(3, 78, 162, 0.35);
+}
+
+.journey-num {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #adb5bd;
+    margin-bottom: 2px;
+}
+
+.journey-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--samsung-blue);
+    margin-bottom: 0.5rem;
+}
+
+.journey-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.journey-list li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 0.8rem;
+    line-height: 1.5;
+    color: #6c757d;
+    margin-bottom: 2px;
+}
+
+.journey-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 1px;
+    background: var(--samsung-blue);
+    transform: rotate(45deg);
+}
+
+/* --- Tablet & Mobile --- */
+@media (max-width: 991px) {
+    .image-grid-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .img-tall { height: 250px; }
+    .img-small-top, .img-wide-bottom { height: 180px; }
+}
+
+@media (max-width: 575px) {
+    .journey-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .journey-step {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .journey-icon { flex-shrink: 0; }
+    .journey-step:not(:last-child)::after {
+        top: 52px;
+        left: 22px;
+        width: 0;
+        height: calc(100% - 52px + 1.5rem - 6px);
+        border-top: 0;
+        border-left: 2px dashed rgba(3, 78, 162, 0.35);
+    }
+}
