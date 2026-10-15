@@ -24,7 +24,8 @@ Organization SECTION
 
             <div class="section-header text-center mb-5 reveal">
                 <h2 class="fw-bold text-uppercase">{{ __('organization.header_title') }}</h2>
-                <div class="separator mx-auto" style="width: 80px; height: 4px; background: #311b92; margin-top: 15px;"></div>
+                <div class="separator mx-auto" style="width: 80px; height: 4px; background: #311b92; margin-top: 15px;">
+                </div>
             </div>
 
             <div class="org-chart text-center mb-5 reveal" id="chart-container">
@@ -34,56 +35,48 @@ Organization SECTION
             </div>
 
             <div class="members-section rounded-4 mb-5 reveal">
-                <div class="members-header text-center mb-5 reveal">
-                    <h3 class="fw-bold ms-4" style="color: #311b92;">Meet Our Team</h3>
+                <div class="members-header text-center mb-4 reveal">
+                    <h3 class="fw-bold" style="color: #311b92;">Meet Our Team</h3>
                 </div>
 
-                <div class="team-gallery-grid">
-                    @php
-                        $teams = [
-                            ['photo' => '/images/team/mrhan.webp', 'name' => 'Han Gyu Seong', 'title' => ''],
-                            ['photo' => '/images/team/ratu.webp'],
-                            ['photo' => '/images/team/adinda.webp'],
-                            ['photo' => '/images/team/mrchoi.webp'],
-                            ['photo' => '/images/team/rido.webp'],
-                            ['photo' => '/images/team/nugroho.webp'],
-                            ['photo' => '/images/team/rahmad.webp'],
-                            ['photo' => '/images/team/leo.webp'],
-                            ['photo' => '/images/team/rudy.webp'],
-                            ['photo' => '/images/team/tito.webp'],
-                            ['photo' => '/images/team/steven.webp'],
-                            ['photo' => '/images/team/pani.webp'],
-                            ['photo' => '/images/team/fauzia.webp'],
-                            ['photo' => '/images/team/samsul.webp'],
-                            ['photo' => '/images/team/faesal.webp'],
-                            ['photo' => '/images/team/sofyan.webp'],
-                            ['photo' => '/images/team/panji.webp'],
-                            ['photo' => '/images/team/arief.webp'],
-                            ['photo' => '/images/team/hans.webp'],
-                        ];
-                    @endphp
+                @php
+                    $teams = [
+                        [
+                            'photo' => '/images/team/mrhan.webp',
+                            'name' => 'Han Gyu Seong',
+                            'title' => 'President Director',
+                        ],
+                        ['photo' => '/images/team/ratu.webp', 'name' => 'Ratu', 'title' => ''],
+                        ['photo' => '/images/team/adinda.webp', 'name' => 'Adinda', 'title' => ''],
+                        ['photo' => '/images/team/ayu.webp', 'name' => 'Ayu', 'title' => ''],
+                        ['photo' => '/images/team/arief.webp', 'name' => 'Arief', 'title' => ''],
+                        ['photo' => '/images/team/hans.webp', 'name' => 'Hans', 'title' => ''],
+                    ];
+                    $rows = array_chunk($teams, 3, true); // pertahankan nomor urut
+                @endphp
 
-                    @foreach ($teams as $member)
-                        @if ($loop->first)
-                            <div class="president-wrapper reveal">
-                                <div class="president-card-custom">
-                                    <div class="pres-photo-area">
-                                        <img src="{{ $member['photo'] }}" class="pres-img" loading="lazy">
-                                        <div class="pres-info">
-                                            <div class="pres-name">{{ $member['name'] }}</div>
-                                            <div class="pres-title-sub">{{ $member['title'] }}</div>
+                <div class="team-board" id="team-board">
+                    <svg class="team-strings" id="team-strings" aria-hidden="true"></svg>
+
+                    @foreach ($rows as $rowIndex => $row)
+                        <div class="team-row {{ $rowIndex % 2 === 1 ? 'is-reverse' : '' }}">
+                            @foreach ($row as $i => $member)
+                                <div class="team-item {{ $loop->iteration === 2 ? 'is-down' : '' }} reveal">
+                                    <div class="team-pin-card">
+                                        <span class="pin" data-pin></span>
+                                        <span class="card-number">{{ $i + 1 }}</span>
+                                        <div class="card-avatar">
+                                            <img src="{{ asset($member['photo']) }}" alt="{{ $member['name'] }}"
+                                                loading="lazy">
                                         </div>
-                                    </div>
-                                    <div class="pres-label-vertical">
-                                        <div class="pres-label-text">President Director</div>
+                                        <div class="card-name">{{ $member['name'] }}</div>
+                                        @if ($member['title'])
+                                            <div class="card-title">{{ $member['title'] }}</div>
+                                        @endif
                                     </div>
                                 </div>
-                            </div>
-                        @else
-                            <div class="team-card reveal">
-                                <img src="{{ $member['photo'] }}" class="standard-img" loading="lazy">
-                            </div>
-                        @endif
+                            @endforeach
+                        </div>
                     @endforeach
                 </div>
             </div>
@@ -97,9 +90,18 @@ Organization SECTION
                 <div class="row g-4" id="moments-container">
                     @php
                         $moments = [
-                            ['url' => '/images/team/moments/moments-bachingplant.webp', 'caption' => 'Team Gathering at Batching Plant Area'],
-                            ['url' => '/images/team/moments/moments-chipyard.webp', 'caption' => 'Night Shift Operations & On-site Coordination'],
-                            ['url' => '/images/team/moments/moments-chipyard2.webp', 'caption' => 'Technical Team Inspection at Industrial Project Site'],
+                            [
+                                'url' => '/images/team/moments/moments-bachingplant.webp',
+                                'caption' => 'Team Gathering at Batching Plant Area',
+                            ],
+                            [
+                                'url' => '/images/team/moments/moments-chipyard.webp',
+                                'caption' => 'Night Shift Operations & On-site Coordination',
+                            ],
+                            [
+                                'url' => '/images/team/moments/moments-chipyard2.webp',
+                                'caption' => 'Technical Team Inspection at Industrial Project Site',
+                            ],
                             ['url' => '/images/team/moments/moments-eid.webp', 'caption' => 'Harmony & Togetherness'],
                         ];
                     @endphp
@@ -108,11 +110,11 @@ Organization SECTION
                         <div class="col-md-6 col-lg-4 moment-item reveal">
                             <div class="moment-card gallery-item shadow-sm rounded-3 overflow-hidden cursor-pointer"
                                 onclick="openImageModal('{{ asset($moment['url']) }}')">
-                                <div class="moment-img-wrapper" style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
-                                    <img src="{{ asset($moment['url']) }}"
-                                         alt="{{ $moment['caption'] }}"
-                                         class="w-100 h-100 object-fit-cover transition-transform"
-                                         style="transition: transform 0.3s ease;">
+                                <div class="moment-img-wrapper"
+                                    style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
+                                    <img src="{{ asset($moment['url']) }}" alt="{{ $moment['caption'] }}"
+                                        class="w-100 h-100 object-fit-cover transition-transform"
+                                        style="transition: transform 0.3s ease;">
                                     <div class="moment-overlay d-flex align-items-end p-3">
                                         <span class="text-white fw-medium">{{ $moment['caption'] }}</span>
                                     </div>
@@ -132,5 +134,43 @@ Organization SECTION
         <span class="close-modal">&times;</span>
         <img class="modal-content-img" id="modalImage" onclick="event.stopPropagation()">
     </div>
+    <script>
+        (function() {
+            function drawStrings() {
+                const board = document.getElementById('team-board');
+                const svg = document.getElementById('team-strings');
+                if (!board || !svg) return;
 
+                const b = board.getBoundingClientRect();
+                const pins = board.querySelectorAll('[data-pin]');
+                svg.setAttribute('width', b.width);
+                svg.setAttribute('height', b.height);
+                svg.innerHTML = '';
+
+                const pts = Array.from(pins).map(p => {
+                    const r = p.getBoundingClientRect();
+                    return {
+                        x: r.left - b.left + r.width / 2,
+                        y: r.top - b.top + r.height / 2
+                    };
+                });
+
+                for (let i = 0; i < pts.length - 1; i++) {
+                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+                    line.setAttribute('x1', pts[i].x);
+                    line.setAttribute('y1', pts[i].y);
+                    line.setAttribute('x2', pts[i + 1].x);
+                    line.setAttribute('y2', pts[i + 1].y);
+                    line.setAttribute('class', 'team-string');
+                    svg.appendChild(line);
+                }
+            }
+
+            window.addEventListener('load', drawStrings);
+            window.addEventListener('resize', drawStrings);
+            // animasi .reveal bisa menggeser posisi, hitung ulang setelahnya
+            setTimeout(drawStrings, 600);
+            setTimeout(drawStrings, 1500);
+        })();
+    </script>
 @endsection
