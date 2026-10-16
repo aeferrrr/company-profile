@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
-
+use Illuminate\Support\Str;
 class PageController extends Controller
 {
     public function home()
@@ -29,86 +29,34 @@ class PageController extends Controller
 
     public function projects(Request $request)
     {
-        // ── Categories ────────────────────────────────────────
         $categories = [
-            'all'          => 'All',
-            'atap'         => 'Roofing',
-            'construction' => 'Construction And Management',
-            'pipa'         => 'Piping',
-            'epoxy'        => 'Flooring',
-            'interior'     => 'Interior',
-            'civil'        => 'Civil',
-            'electrical'   => 'Electrical',
-            'architecture' => 'Architecture',
+            'all' => 'All',
+            'civil' => 'Civil & Structural',
+            'architecture' => 'Architecture & Interior',
+            'mechanical' => 'Mechanical Engineering',
+            'electrical' => 'Electrical & Instrumentation',
+            'management' => 'Project Management & Construction',
+            'concept' => 'Design Concept',
         ];
 
-        // ── Project Data ──────────────────────────────────────
-        $projects = collect([
-            // Roofing
-            ['category' => 'atap', 'image' => 'atap-pungkook.webp',  'title' => 'PT Pungkook Indonesia One',  'label' => 'Roofing'],
-            ['category' => 'atap', 'image' => 'atap-sg.webp',        'title' => 'PT Semarang Garment',        'label' => 'Roofing'],
-            ['category' => 'atap', 'image' => 'atap-pekerjaan.webp', 'title' => 'Pekerjaan Atap',             'label' => 'Roofing'],
+        $raw = config('projects');
 
-            // Interior
-            ['category' => 'interior', 'image' => 'interior-bidakara.webp',  'title' => 'Interior - Bidakara',       'label' => 'Interior'],
-            ['category' => 'interior', 'image' => 'interior-mezzanine.webp', 'title' => 'Solo - Mezzanine',          'label' => 'Interior'],
-            ['category' => 'interior', 'image' => 'interior-dasoni1.webp',   'title' => 'K Dasoni - Concept 1',      'label' => 'Interior'],
-            ['category' => 'interior', 'image' => 'interior-dasoni.webp',    'title' => 'K Dasoni - Concept 2',      'label' => 'Interior'],
-            ['category' => 'interior', 'image' => 'interior-vipkn.webp',    'title' => 'Interior & Revamping - KN', 'label' => 'Interior'],
-
-            // Piping
-            ['category' => 'pipa', 'image' => 'piping-balikpapan.webp', 'title' => 'Piping RDMP Balikpapan',                                                    'label' => 'Piping'],
-            ['category' => 'pipa', 'image' => 'piping1.webp',          'title' => 'Supply Expansion Joint Rubber, JO With PT. Sabi Tehnik',                     'label' => 'Piping'],
-            ['category' => 'pipa', 'image' => 'piping2.webp',          'title' => 'Installation Expansion Joint Metal, JO With PT. Sabi Tehnik',                'label' => 'Piping'],
-            ['category' => 'pipa', 'image' => 'piping3.webp',          'title' => 'Installation, PLTU SEBALANG, JO With PT. Sabi Tehnik',                       'label' => 'Piping'],
-            ['category' => 'pipa', 'image' => 'piping4.webp',          'title' => 'Supply Flexible Hose, PT. Pamitra, 2024, JO With PT. Sabi Tehnik',           'label' => 'Piping'],
-            ['category' => 'pipa', 'image' => 'piping5.webp',          'title' => 'Installation & Service PT. Yoowon – Cikarang 2022, JO With PT. Sabi Tehnik', 'label' => 'Piping'],
-
-            // Civil
-            ['category' => 'civil', 'image' => 'civil-chipyard1.webp', 'title' => 'Pengecoran Area Chipyard', 'label' => 'Civil Works'],
-            ['category' => 'civil', 'image' => 'roadwork.webp','title' => 'Road Work - Jakarta Utara',   'label' => 'Civil Works'],
-            ['category' => 'civil', 'image' => 'civil-bachingplant1.webp', 'title' => 'Operasional Batching Plant 1', 'label' => 'Batching Plant'],
-            ['category' => 'civil', 'image' => 'civil-bachingplant2.webp','title' => 'Operasional Batching Plant 2',   'label' => 'Batching Plant'],
-            ['category' => 'civil', 'image' => 'civil-pengukuran.webp','title' => 'Survey dan Pemetaan',   'label' => 'Land Survey'],
-
-            // Construction
-            ['category' => 'construction', 'image' => 'construction1.webp', 'title' => 'Koordinasi dan Briefing Lapangan', 'label' => 'Construction & Management'],
-            ['category' => 'construction', 'image' => 'construction3.webp', 'title' => 'Inspeksi Struktur dan Progress Proyek', 'label' => 'Construction & Management'],
-
-
-            // Epoxy
-            ['category' => 'epoxy', 'image' => 'epoxy-concrete.webp', 'title' => 'Concrete Polishing', 'label' => 'Epoxy'],
-            ['category' => 'epoxy', 'image' => 'flooring-1.webp', 'title' => 'Area Penyimpanan', 'label' => 'Epoxy'],
-            ['category' => 'epoxy', 'image' => 'flooring-2.webp', 'title' => 'Aplikasi Lapisan Epoxy', 'label' => 'Epoxy'],
-
-            // Electrical
-            ['category' => 'electrical', 'image' => 'electrical-batara.webp', 'title' => 'Electrical, PG Rendeng', 'label' => 'Electrical'],
-            ['category' => 'electrical', 'image' => 'electrical-jawapower.webp', 'title' => 'Switchgear Installation PT Jawa Power, 2021', 'label' => 'Electrical'],
-
-            // Architecture
-            ['category' => 'architecture', 'image' => 'architecture-bungalow1.webp', 'title' => 'Seed Resort, Rote, 9 bungalows, PT Santic Sari Dewi, 2015–2016',   'label' => 'Architecture'],
-            ['category' => 'architecture', 'image' => 'architecture-bungalow2.webp', 'title' => 'Sudamala Resort, Seraya, 23 bungalows, PT Griya Usaha, 2014–2015', 'label' => 'Architecture'],
-        ]);
+        $projects = collect($raw)->map(fn($p) => $this->normalize($p));
 
         // ── Selected Category ───────────────────────────────
         $selected = $request->get('category', 'all');
-
         if (!array_key_exists($selected, $categories)) {
             $selected = 'all';
         }
 
-        // ── Filter Data ─────────────────────────────────────
+        // ── Filter ──────────────────────────────────────────
         $filtered = $selected === 'all'
             ? $projects
             : $projects->where('category', $selected);
 
-        // ── Count Data ──────────────────────────────────────
+        // ── Count ───────────────────────────────────────────
         $totalProjects = $projects->count();
-
-        $categoryCounts = [
-            'all' => $totalProjects,
-        ];
-
+        $categoryCounts = ['all' => $totalProjects];
         foreach ($categories as $key => $label) {
             if ($key !== 'all') {
                 $categoryCounts[$key] = $projects->where('category', $key)->count();
@@ -117,17 +65,14 @@ class PageController extends Controller
 
         // ── Pagination ──────────────────────────────────────
         $perPage = 6;
-        $currentPage = (int) $request->get('page', 1);
+        $currentPage = max(1, (int) $request->get('page', 1));
 
         $paginated = new LengthAwarePaginator(
-            $filtered->forPage($currentPage, $perPage),
+            $filtered->values()->forPage($currentPage, $perPage)->values(),
             $filtered->count(),
             $perPage,
             $currentPage,
-            [
-                'path'  => $request->url(),
-                'query' => $request->query(),
-            ]
+            ['path' => $request->url(), 'query' => $request->query()]
         );
 
         return view('pages.projects', compact(
@@ -137,6 +82,66 @@ class PageController extends Controller
             'totalProjects',
             'categoryCounts'
         ));
+    }
+
+    /**
+     * Ubah Format A / Format B menjadi satu struktur seragam.
+     */
+    private function normalize(array $p): array
+    {
+        // Folder otomatis = nama category (atau isi 'folder' kalau ingin beda)
+        $folder = $p['folder'] ?? $p['category'];
+        $url = fn(string $path) => asset("images/projects/{$folder}/" . ltrim($path, '/'));
+
+        // Format A → jadikan 1 section berisi 1 foto
+        if (isset($p['image'])) {
+            $p['media'] = [$p['image']];
+        }
+
+        // 'media' (tanpa nama section) → 1 section tanpa nama
+        $sections = $p['sections'] ?? [null => $p['media'] ?? []];
+
+        $viewerSections = [];
+        foreach ($sections as $name => $items) {
+            $media = [];
+            foreach ($items as $item) {
+                if (is_string($item)) {
+                    $media[] = ['type' => 'image', 'src' => $url($item), 'thumb' => $url($item)];
+                } elseif (isset($item['video'])) {
+                    $poster = isset($item['poster']) ? $url($item['poster']) : null;
+                    $media[] = ['type' => 'video', 'src' => $url($item['video']), 'thumb' => $poster, 'poster' => $poster];
+                } elseif (isset($item['youtube'])) {
+                    $media[] = [
+                        'type' => 'youtube',
+                        'src' => $item['youtube'],
+                        'thumb' => $item['poster'] ?? null
+                            ? $url($item['poster'])
+                            : 'https://img.youtube.com/vi/' . $item['youtube'] . '/hqdefault.jpg',
+                    ];
+                }
+            }
+            $viewerSections[] = ['name' => is_string($name) ? $name : null, 'media' => $media];
+        }
+
+        $allMedia = collect($viewerSections)->flatMap(fn($s) => $s['media']);
+
+        $firstImage = $allMedia->firstWhere('type', 'image')['src'] ?? ($allMedia->first()['thumb'] ?? null);
+
+        return [
+            'slug' => $p['slug'] ?? Str::slug($p['title']),
+            'category' => $p['category'],
+            'label' => $p['label'],
+            'title' => $p['title'],
+            'cover' => isset($p['cover']) ? $url($p['cover']) : $firstImage,
+            'photo_count' => $allMedia->where('type', 'image')->count(),
+            'video_count' => $allMedia->whereIn('type', ['video', 'youtube'])->count(),
+            // dikirim ke JS
+            'viewer' => [
+                'title' => $p['title'],
+                'label' => $p['label'],
+                'sections' => $viewerSections,
+            ],
+        ];
     }
 
     public function contact()
