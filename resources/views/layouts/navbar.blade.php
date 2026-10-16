@@ -6,7 +6,7 @@
 
             <img src="{{ asset('images/logo-company.png') }}" alt="KPCM Logo">
             <span class="ms-2 fw-semibold text-uppercase">
-                KPCM Industrial Estate
+                PT. KPCM Industrial Estate
             </span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCorporate">
@@ -34,9 +34,9 @@
                         <li>
                             <a class="dropdown-item" href="{{ route('organization') }}">
                                 {{ __('general.organisasi') }}
-                            </a> 
+                            </a>
                         </li>
-                        {{--<li>
+                        {{-- <li>
                             <a class="dropdown-item" href="{{ route('anotherbiz') }}">
                                 ID-KOR Global Trading (Soon)
                             </a>

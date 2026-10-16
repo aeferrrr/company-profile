@@ -23,22 +23,21 @@
                 <div class="image-grid-wrapper position-relative">
                     <div class="img-tall rounded-4 overflow-hidden shadow-lg" data-aos="fade-right"
                         data-aos-delay="100">
-                        <img src="{{ asset('images/background/6.jpg') }}" alt="Project High"
+                        <img src="{{ asset('images/background/6.webp') }}" alt="Project High"
                             class="w-100 h-100 object-fit-cover hover-zoom">
                     </div>
                     <div class="img-small-top rounded-4 overflow-hidden shadow" data-aos="fade-up" data-aos-delay="200">
-                        <img src="{{ asset('images/background/5.png') }}" alt="Project Planning"
+                        <img src="{{ asset('images/background/5.webp') }}" alt="Project Planning"
                             class="w-100 h-100 object-fit-cover hover-zoom">
                     </div>
                     <div class="img-wide-bottom rounded-4 overflow-hidden shadow" data-aos="fade-up"
                         data-aos-delay="300">
-                        <img src="{{ asset('images/background/7.jpg') }}" alt="Project Site"
+                        <img src="{{ asset('images/background/7.webp') }}" alt="Project Site"
                             class="w-100 h-100 object-fit-cover hover-zoom">
                     </div>
                 </div>
             </div>
 
-            {{-- BAGIAN KANAN: CEO Message --}}
             {{-- BAGIAN KANAN: Our Journey --}}
             <div class="col-lg-6 ps-lg-5 reveal" data-aos="fade-left">
                 <h6 class="text-primary fw-bold text-uppercase mb-2 letter-spacing-2">

@@ -91,8 +91,16 @@ Organization SECTION
                     @php
                         $moments = [
                             [
+                                'url' => '/images/team/moments/moments-loading.webp',
+                                'caption' => 'Process Loading Materials in Jetty Area for Industrial Project',
+                            ],
+                            [
                                 'url' => '/images/team/moments/moments-bachingplant.webp',
                                 'caption' => 'Team Gathering at Batching Plant Area',
+                            ],
+                            [
+                                'url' => '/images/team/moments/moments-survey.webp',
+                                'caption' => 'Surveying Chipyard Area',
                             ],
                             [
                                 'url' => '/images/team/moments/moments-chipyard.webp',
@@ -103,6 +111,7 @@ Organization SECTION
                                 'caption' => 'Technical Team Inspection at Industrial Project Site',
                             ],
                             ['url' => '/images/team/moments/moments-eid.webp', 'caption' => 'Harmony & Togetherness'],
+                            ['url' => '/images/team/moments/moments-teamchipyard.webp', 'caption' => 'Chipyard Team'],
                         ];
                     @endphp
 
