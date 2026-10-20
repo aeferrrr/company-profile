@@ -37,6 +37,7 @@ class PageController extends Controller
             'electrical' => 'Electrical & Instrumentation',
             'management' => 'Project Management & Construction',
             'concept' => 'Design Concept',
+            'flooring' => 'Flooring',
         ];
 
         $raw = config('projects');

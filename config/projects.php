@@ -54,14 +54,6 @@ return [
     // ═════════════════════════════════════════════════════
     // 1. CIVIL & STRUCTURAL                  category: civil
     // ═════════════════════════════════════════════════════
-
-    // Civil
-    ['category' => 'civil', 'image' => 'roadwork.webp', 'title' => 'Road Work - Jakarta Utara', 'label' => 'Civil Works'],
-    //civil-roofing
-    ['category' => 'civil', 'image' => 'atap-pungkook.webp', 'title' => 'PT Pungkook Indonesia One', 'label' => 'Roofing'],
-    ['category' => 'civil', 'image' => 'atap-sg.webp', 'title' => 'PT Semarang Garment', 'label' => 'Roofing'],
-    ['category' => 'civil', 'image' => 'atap-pekerjaan.webp', 'title' => 'Pekerjaan Atap', 'label' => 'Roofing'],
-
     // CIVIL TYPE (B)
     [
         'category' => 'civil',
@@ -71,13 +63,24 @@ return [
         'sections' => [
             'Desain Concept' => [
                 'civil-chipyard1.webp',
+                'civil-chipyard2.webp',
+                'civil-chipyard3.webp',
+                'civil-chipyard4.webp',
+                'civil-chipyard5.webp',
+                'civil-chipyard6.webp',
+                'civil-chipyard7.webp',
                 'civil-bachingplant1.webp',
                 'civil-bachingplant2.webp',
                 'civil-pengukuran.webp',
             ],
         ],
     ],
-
+    // Civil
+    ['category' => 'civil', 'image' => 'roadwork.webp', 'title' => 'Road Work - Jakarta Utara', 'label' => 'Civil Works'],
+    //civil-roofing
+    ['category' => 'civil', 'image' => 'atap-pungkook.webp', 'title' => 'PT Pungkook Indonesia One', 'label' => 'Roofing'],
+    ['category' => 'civil', 'image' => 'atap-sg.webp', 'title' => 'PT Semarang Garment', 'label' => 'Roofing'],
+    ['category' => 'civil', 'image' => 'atap-pekerjaan.webp', 'title' => 'Pekerjaan Atap', 'label' => 'Roofing'],
 
     // ═════════════════════════════════════════════════════
     // 2. ARCHITECTURE & INTERIOR       category: architecture
@@ -191,5 +194,63 @@ return [
             ],
         ],
     ],
-
+    [
+        'category' => 'concept',
+        'label' => 'Design Concept',
+        'title' => 'Villa Cikeas 2013 - Concept Design',
+        'cover' => 'concept-villa1.webp',
+        'sections' => [
+            'Desain Concept' => [
+                'concept-villa1.webp',
+                'concept-villa2.webp',
+                'concept-villa3.webp',
+            ],
+        ],
+    ],
+    [
+        'category' => 'concept',
+        'label' => 'Design Concept',
+        'title' => 'Project SPA and Sauna pasaraya Blok M - Concept Design',
+        'cover' => 'concept-spa1.webp',
+        'sections' => [
+            'Desain Concept' => [
+                'concept-spa1.webp',
+                'concept-spa2.webp',
+                'concept-spa3.webp',
+                'concept-spa4.webp',
+            ],
+        ],
+    ],
+    [
+        'category' => 'concept',
+        'label' => 'Design Concept',
+        'title' => 'SK Plasma 2025 Interior Concept - Concept Design',
+        'cover' => 'concept-sk1.webp',
+        'sections' => [
+            'Desain Concept' => [
+                'concept-sk1.webp',
+                'concept-sk2.webp',
+                'concept-sk3.webp',
+                'concept-sk4.webp',
+            ],
+        ],
+    ],
+    [
+        'category' => 'concept',
+        'label' => 'Design Concept',
+        'title' => 'Cinema Harapan Indah - Concept Design',
+        'cover' => 'concept-hi1.webp',
+        'sections' => [
+            'Desain Concept' => [
+                'concept-hi1.webp',
+                'concept-hi2.webp',
+                'concept-hi3.webp',
+                'concept-hi4.webp',
+                'concept-hi5.webp',
+                'concept-hi6.webp',
+                'concept-hi7.webp',
+                'concept-hi8.webp',
+            ],
+        ],
+    ],
 ];
