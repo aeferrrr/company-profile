@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
         elTitle.textContent = project.title;
 
         buildSectionChips();
-        show(0);
+       show(project.start || 0);
 
         viewer.classList.add('show');
         document.body.classList.add('viewer-open');

@@ -113,35 +113,69 @@ Organization SECTION
                             ['url' => '/images/team/moments/moments-eid.webp', 'caption' => 'Harmony & Togetherness'],
                             ['url' => '/images/team/moments/moments-teamchipyard.webp', 'caption' => 'Chipyard Team'],
                         ];
+
+                        $momentsMedia = collect($moments)
+                            ->map(
+                                fn($m) => [
+                                    'type' => 'image',
+                                    'src' => asset($m['url']),
+                                    'thumb' => asset($m['url']),
+                                ],
+                            )
+                            ->all();
                     @endphp
 
-                    @foreach ($moments as $moment)
-                        <div class="col-md-6 col-lg-4 moment-item reveal">
-                            <div class="moment-card gallery-item shadow-sm rounded-3 overflow-hidden cursor-pointer"
-                                onclick="openImageModal('{{ asset($moment['url']) }}')">
-                                <div class="moment-img-wrapper"
-                                    style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
-                                    <img src="{{ asset($moment['url']) }}" alt="{{ $moment['caption'] }}"
-                                        class="w-100 h-100 object-fit-cover transition-transform"
-                                        style="transition: transform 0.3s ease;">
-                                    <div class="moment-overlay d-flex align-items-end p-3">
-                                        <span class="text-white fw-medium">{{ $moment['caption'] }}</span>
+                    <div class="row g-4" id="moments-container">
+                        @foreach ($moments as $i => $moment)
+                            @php
+                                $project = [
+                                    'title' => 'Our Moments',
+                                    'start' => $i,
+                                    'sections' => [['name' => null, 'media' => $momentsMedia]],
+                                ];
+                            @endphp
+
+                            <div class="col-md-6 col-lg-4 moment-item reveal">
+                                <div class="moment-card gallery-item shadow-sm rounded-3 overflow-hidden" role="button"
+                                    tabindex="0" data-project="{{ json_encode($project) }}">
+                                    <div class="moment-img-wrapper"
+                                        style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
+                                        <img src="{{ asset($moment['url']) }}" alt="{{ $moment['caption'] }}"
+                                            class="w-100 h-100 object-fit-cover" loading="lazy"
+                                            style="transition: transform 0.3s ease;"
+                                            onload="this.classList.add('loaded'); this.closest('.gallery-item').classList.add('is-ready')">
+                                        <div class="moment-overlay d-flex align-items-end p-3">
+                                            <span class="text-white fw-medium">{{ $moment['caption'] }}</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
+                    <div id="moments-pagination" class="d-flex justify-content-center mt-5"></div>
                 </div>
 
-                <div id="moments-pagination" class="d-flex justify-content-center mt-5"></div>
+            </div>
+    </section>
+    <div id="projectViewer" class="image-modal" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
+        <button type="button" class="close-modal" id="viewerClose" aria-label="Close">&times;</button>
+
+        <div class="viewer-wrap">
+            <div class="viewer-head">
+                <h2 class="viewer-title" id="viewerTitle"></h2>
+                <span class="viewer-counter" id="viewerCounter"></span>
             </div>
 
-        </div>
-    </section>
+            <div class="viewer-sections" id="viewerSections"></div>
 
-    <div id="imageModal" class="image-modal" onclick="closeImageModal()">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content-img" id="modalImage" onclick="event.stopPropagation()">
+            <div class="viewer-stage-wrap">
+                <button type="button" class="modal-nav modal-prev" id="viewerPrev" aria-label="Previous">&#8249;</button>
+                <div class="viewer-stage" id="viewerStage"></div>
+                <button type="button" class="modal-nav modal-next" id="viewerNext" aria-label="Next">&#8250;</button>
+            </div>
+
+            <div class="viewer-thumbs" id="viewerThumbs"></div>
+        </div>
     </div>
     <script>
         (function() {
@@ -180,6 +214,13 @@ Organization SECTION
             // animasi .reveal bisa menggeser posisi, hitung ulang setelahnya
             setTimeout(drawStrings, 600);
             setTimeout(drawStrings, 1500);
+            document.querySelectorAll('.moment-card img').forEach(img => {
+                const done = () => {
+                    img.classList.add('loaded');
+                    img.closest('.gallery-item')?.classList.add('is-ready');
+                };
+                img.complete ? done() : img.addEventListener('load', done);
+            });
         })();
     </script>
 @endsection
