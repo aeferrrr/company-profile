@@ -6,21 +6,23 @@
 @section('content')
 
     {{-- ======================
-Organization SECTION
-====================== --}}
-    <section class="hero-section hero-organization reveal">
-        <img src="{{ asset('/images/hero/construction-1.webp') }}" class="hero-bg" alt="{{ __('organization.hero_title') }}">
+    HERO SECTION
+    ====================== --}}
+    <section class="hero-section hero-page">
+        <img src="{{ asset('images/hero/construction-1.webp') }}" class="hero-bg" alt="{{ __('organization.hero_title') }}">
         <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title reveal">{{ __('organization.hero_title') }}</h1>
-                <p class="hero-subtitle reveal">{{ __('organization.hero_subtitle') }}</p>
-            </div>
+
+        <div class="hero-text">
+            <h1>{{ __('organization.hero_title') }}</h1>
+            <p>{{ __('organization.hero_subtitle') }}</p>
         </div>
     </section>
 
+    {{-- ======================
+    ORGANIZATION SECTION
+    ====================== --}}
     <section id="organization" class="organization-section">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
 
             <div class="section-header text-center mb-5 reveal">
                 <h2 class="fw-bold text-uppercase">{{ __('organization.header_title') }}</h2>
@@ -64,7 +66,7 @@ Organization SECTION
                                 <div class="team-item {{ $loop->iteration === 2 ? 'is-down' : '' }} reveal">
                                     <div class="team-pin-card">
                                         <span class="pin" data-pin></span>
-                                        <span class="card-number">{{ $i + 1 }}</span>
+
                                         <div class="card-avatar">
                                             <img src="{{ asset($member['photo']) }}" alt="{{ $member['name'] }}"
                                                 loading="lazy">
@@ -87,76 +89,78 @@ Organization SECTION
                     <p class="text-muted">Captured memories of our journey together</p>
                 </div>
 
+                @php
+                    $moments = [
+                        [
+                            'url' => '/images/team/moments/moments-loading.webp',
+                            'caption' => 'Process Loading Materials in Jetty Area for Industrial Project',
+                        ],
+                        [
+                            'url' => '/images/team/moments/moments-bachingplant.webp',
+                            'caption' => 'Team Gathering at Batching Plant Area',
+                        ],
+                        [
+                            'url' => '/images/team/moments/moments-survey.webp',
+                            'caption' => 'Surveying Chipyard Area',
+                        ],
+                        [
+                            'url' => '/images/team/moments/moments-chipyard.webp',
+                            'caption' => 'Night Shift Operations & On-site Coordination',
+                        ],
+                        [
+                            'url' => '/images/team/moments/moments-chipyard2.webp',
+                            'caption' => 'Technical Team Inspection at Industrial Project Site',
+                        ],
+                        ['url' => '/images/team/moments/moments-eid.webp', 'caption' => 'Harmony & Togetherness'],
+                        ['url' => '/images/team/moments/moments-teamchipyard.webp', 'caption' => 'Chipyard Team'],
+                    ];
+
+                    $momentsMedia = collect($moments)
+                        ->map(
+                            fn($m) => [
+                                'type' => 'image',
+                                'src' => asset($m['url']),
+                                'thumb' => asset($m['url']),
+                            ],
+                        )
+                        ->all();
+                @endphp
+
+                {{-- hanya satu #moments-container --}}
                 <div class="row g-4" id="moments-container">
-                    @php
-                        $moments = [
-                            [
-                                'url' => '/images/team/moments/moments-loading.webp',
-                                'caption' => 'Process Loading Materials in Jetty Area for Industrial Project',
-                            ],
-                            [
-                                'url' => '/images/team/moments/moments-bachingplant.webp',
-                                'caption' => 'Team Gathering at Batching Plant Area',
-                            ],
-                            [
-                                'url' => '/images/team/moments/moments-survey.webp',
-                                'caption' => 'Surveying Chipyard Area',
-                            ],
-                            [
-                                'url' => '/images/team/moments/moments-chipyard.webp',
-                                'caption' => 'Night Shift Operations & On-site Coordination',
-                            ],
-                            [
-                                'url' => '/images/team/moments/moments-chipyard2.webp',
-                                'caption' => 'Technical Team Inspection at Industrial Project Site',
-                            ],
-                            ['url' => '/images/team/moments/moments-eid.webp', 'caption' => 'Harmony & Togetherness'],
-                            ['url' => '/images/team/moments/moments-teamchipyard.webp', 'caption' => 'Chipyard Team'],
-                        ];
+                    @foreach ($moments as $i => $moment)
+                        @php
+                            $project = [
+                                'title' => 'Our Moments',
+                                'start' => $i,
+                                'sections' => [['name' => null, 'media' => $momentsMedia]],
+                            ];
+                        @endphp
 
-                        $momentsMedia = collect($moments)
-                            ->map(
-                                fn($m) => [
-                                    'type' => 'image',
-                                    'src' => asset($m['url']),
-                                    'thumb' => asset($m['url']),
-                                ],
-                            )
-                            ->all();
-                    @endphp
-
-                    <div class="row g-4" id="moments-container">
-                        @foreach ($moments as $i => $moment)
-                            @php
-                                $project = [
-                                    'title' => 'Our Moments',
-                                    'start' => $i,
-                                    'sections' => [['name' => null, 'media' => $momentsMedia]],
-                                ];
-                            @endphp
-
-                            <div class="col-md-6 col-lg-4 moment-item reveal">
-                                <div class="moment-card gallery-item shadow-sm rounded-3 overflow-hidden" role="button"
-                                    tabindex="0" data-project="{{ json_encode($project) }}">
-                                    <div class="moment-img-wrapper"
-                                        style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
-                                        <img src="{{ asset($moment['url']) }}" alt="{{ $moment['caption'] }}"
-                                            class="w-100 h-100 object-fit-cover" loading="lazy"
-                                            style="transition: transform 0.3s ease;"
-                                            onload="this.classList.add('loaded'); this.closest('.gallery-item').classList.add('is-ready')">
-                                        <div class="moment-overlay d-flex align-items-end p-3">
-                                            <span class="text-white fw-medium">{{ $moment['caption'] }}</span>
-                                        </div>
+                        <div class="col-md-6 col-lg-4 moment-item reveal">
+                            <div class="moment-card gallery-item shadow-sm rounded-3 overflow-hidden" role="button"
+                                tabindex="0" data-project="{{ json_encode($project) }}">
+                                <div class="moment-img-wrapper"
+                                    style="aspect-ratio: 16/9; overflow: hidden; position: relative;">
+                                    <img src="{{ asset($moment['url']) }}" alt="{{ $moment['caption'] }}"
+                                        class="w-100 h-100 object-fit-cover" loading="lazy"
+                                        style="transition: transform 0.3s ease;"
+                                        onload="this.classList.add('loaded'); this.closest('.gallery-item').classList.add('is-ready')">
+                                    <div class="moment-overlay d-flex align-items-end p-3">
+                                        <span class="text-white fw-medium">{{ $moment['caption'] }}</span>
                                     </div>
                                 </div>
                             </div>
-                        @endforeach
-                    </div>
-                    <div id="moments-pagination" class="d-flex justify-content-center mt-5"></div>
+                        </div>
+                    @endforeach
                 </div>
 
-            </div>
+                <div id="moments-pagination" class="d-flex justify-content-center mt-5"></div>
+            </div> {{-- /.together-photos-section --}}
+
+        </div> {{-- /.container-fluid --}}
     </section>
+
     <div id="projectViewer" class="image-modal" role="dialog" aria-modal="true" aria-labelledby="viewerTitle">
         <button type="button" class="close-modal" id="viewerClose" aria-label="Close">&times;</button>
 
@@ -177,6 +181,7 @@ Organization SECTION
             <div class="viewer-thumbs" id="viewerThumbs"></div>
         </div>
     </div>
+
     <script>
         (function() {
             function drawStrings() {
@@ -214,6 +219,7 @@ Organization SECTION
             // animasi .reveal bisa menggeser posisi, hitung ulang setelahnya
             setTimeout(drawStrings, 600);
             setTimeout(drawStrings, 1500);
+
             document.querySelectorAll('.moment-card img').forEach(img => {
                 const done = () => {
                     img.classList.add('loaded');

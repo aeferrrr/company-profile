@@ -1,6 +1,6 @@
 <section id="video-showcase" class="video-section">
 
-    <div class="container position-relative reveal">
+    <<div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
         <div class="section-separator">
             <div class="separator-line"></div>
             <div class="separator-icon">
@@ -160,5 +160,5 @@
                 </a>
             </div>
         </div>
-    </div>
+        </div>
 </section>

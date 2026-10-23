@@ -4,24 +4,20 @@
 @section('meta_description', __('general.seo.about_desc'))
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
 @endpush
 
 @section('content')
 
     {{-- HERO SECTION --}}
-    <section class="hero-section">
-        <img src="{{ asset('images/hero/worker-meeting.webp') }}"
-             class="hero-bg"
-             alt="{{ __('about.hero_title') }}">
+    <section class="hero-section hero-page">
+        <img src="{{ asset('images/hero/worker-meeting.webp') }}" class="hero-bg" alt="{{ __('about.hero_title') }}">
 
         <div class="hero-overlay"></div>
 
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">{{ __('about.hero_title') }}</h1>
-                <p class="hero-subtitle">{{ __('about.hero_subtitle') }}</p>
-            </div>
+        <div class="hero-text">
+            <h1>{{ __('about.hero_title') }}</h1>
+            <p>{{ __('about.hero_subtitle') }}</p>
         </div>
     </section>
 
@@ -32,8 +28,7 @@
             <div class="intro-grid">
 
                 <div class="img-box reveal">
-                    <img src="{{ asset('images/about/office.webp') }}"
-                         alt="Kantor KPCM">
+                    <img src="{{ asset('images/about/office.webp') }}" alt="Kantor KPCM">
                 </div>
 
                 <div class="reveal">
@@ -206,5 +201,5 @@
 
 
 @push('scripts')
-<script src="{{ asset('js/about.js') }}"></script>
+    <script src="{{ asset('js/about.js') }}"></script>
 @endpush

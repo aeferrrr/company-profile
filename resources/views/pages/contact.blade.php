@@ -8,14 +8,15 @@
     {{-- ======================
         CONTACT HERO
     ====================== --}}
-    <section class="hero-section hero-contact reveal">
-        <img src="{{ asset('/images/hero/engineer-working.webp') }}" class="hero-bg" alt="{{ __('contact.hero_title') }}">
+    {{-- HERO --}}
+    <section class="hero-section hero-page">
+        <img src="{{ asset('images/hero/worker-meeting.webp') }}" class="hero-bg" alt="{{ __('contact.hero_title') }}">
+
         <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content text-center reveal">
-                <h1 class="hero-title">{{ __('contact.hero_title') }}</h1>
-                <p class="hero-subtitle">{{ __('contact.hero_subtitle') }}</p>
-            </div>
+
+        <div class="hero-text">
+            <h1>{{ __('contact.hero_title') }}</h1>
+            <p>{{ __('contact.hero_subtitle') }}</p>
         </div>
     </section>
 
@@ -43,7 +44,8 @@
                     </div>
 
                     <div class="lounge-card-item card-middle">
-                        <div class="lc-bg" style="background-image: url('{{ asset('images/lounge/exterior.webp') }}');"></div>
+                        <div class="lc-bg" style="background-image: url('{{ asset('images/lounge/exterior.webp') }}');">
+                        </div>
                         <div class="lc-overlay"></div>
                         <span class="lc-label">Exterior & Networking</span>
                     </div>
@@ -124,9 +126,12 @@
                             <div class="mt-5 pt-4 border-top border-secondary">
                                 <h6 class="text-white opacity-50 small text-uppercase mb-3">Ikuti Kami</h6>
                                 <div class="d-flex gap-3">
-                                    <a href="#" class="text-white opacity-75 fs-5"><i class="fa-brands fa-linkedin"></i></a>
-                                    <a href="#" class="text-white opacity-75 fs-5"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#" class="text-white opacity-75 fs-5"><i class="fa-brands fa-facebook"></i></a>
+                                    <a href="#" class="text-white opacity-75 fs-5"><i
+                                            class="fa-brands fa-linkedin"></i></a>
+                                    <a href="#" class="text-white opacity-75 fs-5"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                    <a href="#" class="text-white opacity-75 fs-5"><i
+                                            class="fa-brands fa-facebook"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -151,17 +156,20 @@
                                 <div class="row g-4">
                                     <div class="col-md-6">
                                         <label class="form-label">Nama Lengkap</label>
-                                        <input type="text" name="name" class="form-control" placeholder="Contoh: Budi Santoso" required>
+                                        <input type="text" name="name" class="form-control"
+                                            placeholder="Contoh: Budi Santoso" required>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label class="form-label">Alamat Email</label>
-                                        <input type="email" name="email" class="form-control" placeholder="contoh@perusahaan.com" required>
+                                        <input type="email" name="email" class="form-control"
+                                            placeholder="contoh@perusahaan.com" required>
                                     </div>
 
                                     <div class="col-md-6">
                                         <label class="form-label">Nomor WhatsApp</label>
-                                        <input type="text" name="phone" class="form-control" placeholder="+62 812 3456 7890">
+                                        <input type="text" name="phone" class="form-control"
+                                            placeholder="+62 812 3456 7890">
                                     </div>
 
                                     <div class="col-md-6">
@@ -175,7 +183,8 @@
 
                                     <div class="col-12">
                                         <label class="form-label">Pesan Detail</label>
-                                        <textarea name="message" rows="5" class="form-control" required placeholder="Jelaskan kebutuhan proyek Anda secara singkat..."></textarea>
+                                        <textarea name="message" rows="5" class="form-control" required
+                                            placeholder="Jelaskan kebutuhan proyek Anda secara singkat..."></textarea>
                                     </div>
 
                                     <div class="col-12">
@@ -183,7 +192,8 @@
                                         <input type="file" name="attachment" class="form-control">
                                     </div>
 
-                                    <div class="g-recaptcha" data-sitekey="6Ldxb5QsAAAAAMCjqWnOcbzik0QQ6PJFaVZxpSDk"></div>
+                                    <div class="g-recaptcha" data-sitekey="6Ldxb5QsAAAAAMCjqWnOcbzik0QQ6PJFaVZxpSDk">
+                                    </div>
 
                                     <div class="col-12 mt-4">
                                         <button type="submit" class="btn btn-send w-100">Kirim Pesan 🚀</button>

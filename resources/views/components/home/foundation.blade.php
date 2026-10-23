@@ -1,5 +1,5 @@
 <section class="py-5 bg-light position-relative reveal">
-    <div class="container py-lg-5">
+    <<div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
         <div class="row align-items-center">
 
             {{-- BAGIAN KIRI: Heading & Navigasi --}}
@@ -112,72 +112,72 @@
             </div>
 
         </div>
-    </div>
+        </div>
 
-    {{-- Style CSS (Sama seperti sebelumnya) --}}
-    <style>
-        .value-card {
-            border: 1px solid #f8f9fa;
-            transition: all 0.3s ease;
-        }
+        {{-- Style CSS (Sama seperti sebelumnya) --}}
+        <style>
+            .value-card {
+                border: 1px solid #f8f9fa;
+                transition: all 0.3s ease;
+            }
 
-        .value-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.075) !important;
-        }
+            .value-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.075) !important;
+            }
 
-        .icon-circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+            .icon-circle {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
-        .btn-nav-custom {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background-color: #badcf3;
-            color: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
+            .btn-nav-custom {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: none;
+                background-color: #badcf3;
+                color: #333;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s;
+                cursor: pointer;
+            }
 
-        .btn-nav-custom:hover,
-        .btn-nav-custom.active {
-            background-color: #0734ff;
-            color: #000;
-            box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
-        }
-    </style>
+            .btn-nav-custom:hover,
+            .btn-nav-custom.active {
+                background-color: #0734ff;
+                color: #000;
+                box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
+            }
+        </style>
 
-    {{-- Script JS (Sama seperti sebelumnya) --}}
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var valSwiper = new Swiper(".valueSwiper", {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false
-                },
-                breakpoints: {
-                    768: {
-                        slidesPerView: 2
-                    }
-                },
-                navigation: {
-                    nextEl: ".next-val",
-                    prevEl: ".prev-val"
-                },
+        {{-- Script JS (Sama seperti sebelumnya) --}}
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var valSwiper = new Swiper(".valueSwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false
+                    },
+                    breakpoints: {
+                        768: {
+                            slidesPerView: 2
+                        }
+                    },
+                    navigation: {
+                        nextEl: ".next-val",
+                        prevEl: ".prev-val"
+                    },
+                });
             });
-        });
-    </script>
+        </script>
 </section>

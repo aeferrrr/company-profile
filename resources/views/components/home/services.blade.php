@@ -7,7 +7,7 @@
         </div>
         <div class="separator-line"></div>
     </div>
-    <div class="container py-3 py-lg-5 reveal">
+    <<div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
 
         <div class="text-center mb-5" data-aos="fade-up">
             <h6 class="text-primary fw-bold text-uppercase ls-2">
@@ -132,7 +132,7 @@
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
 </section>
 <script>

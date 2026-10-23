@@ -6,18 +6,16 @@
 @section('content')
 
     {{-- HERO --}}
-    <section class="hero-section hero-project reveal">
-        <img src="{{ asset('/images/hero/beko.webp') }}" class="hero-bg" alt="Hero Background">
+    <section class="hero-section hero-page">
+        <img src="{{ asset('images/hero/excavator-action.webp') }}" class="hero-bg" alt="{{ __('projects.hero_title') }}">
+
         <div class="hero-overlay"></div>
 
-        <div class="container">
-            <div class="hero-content reveal">
-                <h1 class="hero-title">{{ __('projects.hero_title') }}</h1>
-                <p class="hero-subtitle">{{ __('projects.hero_subtitle') }}</p>
-            </div>
+        <div class="hero-text">
+            <h1>{{ __('projects.hero_title') }}</h1>
+            <p>{{ __('projects.hero_subtitle') }}</p>
         </div>
     </section>
-
     {{-- FILTER --}}
     <section class="filter-section reveal">
         <div class="container">

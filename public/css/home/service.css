@@ -1,15 +1,276 @@
 /* =========================================================
-   SERVICES SECTION
+   SERVICES PAGE — Division cards (expand on click)
+   Prefix .dv-  (halaman /services)
+   Prefix .service-* / .services-highlight di bagian bawah = beranda
+========================================================= */
+
+/* Header section */
+.dv-header {
+  max-width: 680px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.dv-header .section-label {
+  justify-content: center;
+}
+
+.dv-header-title {
+  margin: 0 0 14px;
+  font-size: 2.2rem;
+}
+
+.dv-header-desc {
+  margin: 0;
+  color: var(--text-grey);
+  font-size: 1.05rem;
+}
+
+.dv-wrap {
+  display: flex;
+  gap: 12px;
+  height: 520px;
+}
+
+.dv-card {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--dark-navbar);
+  color: var(--text-light);
+  transition: flex 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.dv-card.is-active {
+  flex: 5 1 0;
+}
+
+/* Foto + lapisan gelap */
+.dv-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.dv-card.is-active .dv-bg {
+  transform: scale(1.04);
+}
+
+.dv-shade {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 17, 26, 0.55);
+  transition: background-color 0.5s ease;
+}
+
+.dv-card:not(.is-active):hover .dv-shade {
+  background: rgba(20, 40, 160, 0.55);
+}
+
+.dv-card.is-active .dv-shade {
+  background: rgba(10, 17, 26, 0.84);
+}
+
+/* Tombol penuh satu kartu (untuk klik & keyboard) */
+.dv-toggle {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dv-toggle:focus-visible {
+  outline: 3px solid var(--samsung-blue-light);
+  outline-offset: -3px;
+}
+
+.dv-card.is-active .dv-toggle {
+  pointer-events: none;
+}
+
+/* Tampilan saat kartu menyempit: ikon + judul vertikal */
+.dv-rail {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.dv-card.is-active .dv-rail {
+  opacity: 0;
+}
+
+.dv-rail i {
+  font-size: 1.4rem;
+}
+
+.dv-rail-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.dv-plus {
+  display: none;
+}
+
+/* Isi saat kartu terbuka */
+.dv-body {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  padding: 36px 32px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
+}
+
+.dv-card.is-active .dv-body {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s, visibility 0s;
+}
+
+.dv-title {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+  color: var(--text-light);
+}
+
+.dv-desc {
+  margin: 0;
+  max-width: 520px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dv-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.dv-group-title {
+  margin: 0 0 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.dv-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dv-group li {
+  padding: 5px 0;
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Kalau hanya satu kelompok (Project Management), daftar dibagi 2 kolom */
+.dv-group:only-child ul {
+  columns: 2;
+  column-gap: 32px;
+}
+
+/* ---------- Mobile / tablet: akordeon vertikal ---------- */
+@media (max-width: 991px) {
+  .dv-wrap {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .dv-card {
+    flex: none;
+    height: 84px;
+    transition: none;
+    scroll-margin-top: 90px;
+  }
+
+  .dv-card.is-active {
+    height: auto;
+    min-height: 420px;
+  }
+
+  .dv-rail {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 0 22px;
+  }
+
+  .dv-rail-title {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .dv-plus {
+    display: block;
+    margin-left: auto;
+    font-size: 0.9rem !important;
+    opacity: 0.8;
+  }
+
+  .dv-body {
+    position: relative;
+    inset: auto;
+    padding: 28px 22px 32px;
+  }
+
+  .dv-card:not(.is-active) .dv-body {
+    position: absolute;
+  }
+}
+
+@media (max-width: 576px) {
+  .dv-header { margin-bottom: 32px; }
+  .dv-groups { grid-template-columns: 1fr; gap: 20px; }
+  .dv-group:only-child ul { columns: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dv-card, .dv-bg, .dv-body, .dv-shade { transition: none !important; }
+}
+
+
+/* =========================================================
+   HOME — SERVICES HIGHLIGHT (tab kiri, gambar kanan)
+   Dipakai di beranda (section "Our Services"). Jangan dihapus.
+   Class berawalan .service-* dan .services-highlight,
+   terpisah dari halaman /services yang memakai .svc-*
 ========================================================= */
 
 .services-highlight {
-  background-color: var(--white-off);
+  background-color: var(--white-off, #f4f6f9);
   padding: 60px 0;
 }
 
-/* Service Button (Left Nav) */
+/* Tombol tab (kiri) */
 .service-btn {
-  background: var(--white-pure);
+  background: var(--white-pure, #ffffff);
   border: none;
   border-radius: 12px;
   padding: 18px 24px;
@@ -27,13 +288,11 @@
 }
 
 .service-btn:hover {
-  background-color: var(--white-pure);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
 }
 
 .service-btn.active {
-  background-color: var(--white-pure);
   box-shadow: 0 8px 25px rgba(13, 110, 253, 0.15);
   z-index: 2;
 }
@@ -52,39 +311,24 @@
 .service-btn .icon-box {
   width: 42px;
   height: 42px;
-  background: var(--white-off); /* Warna background agak gelap dikit dari putih murni */
+  background: var(--white-off, #f4f6f9);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  
-  /* Warna Icon Hitam */
-  color: #000000; 
-
-  /* --- HAPUS BORDER YANG LAMA --- */
-  /* border: 2px solid #000000;  <- Hapus ini */
-  
-  /* --- GANTI DENGAN BAYANGAN LEMBUT --- */
-  /* Ini memberikan efek 'mengambang' yang halus */
+  color: #000000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  
-  transition: all 0.3s ease; /* Transisi halus untuk warna dan bayangan */
+  transition: all 0.3s ease;
 }
 
 .service-btn.active .icon-box {
   background: var(--primary-blue);
-  color: #ffffff !important; 
-  
-  /* --- BAYANGAN SAAT AKTIF (Berwarna Biru) --- */
-  /* Bayangan abu di atas akan berubah menjadi bayangan biru ini */
+  color: #ffffff !important;
   box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
-  
-  /* Hapus override border karena sudah tidak pakai border */
-  /* border-color: ... <- Hapus ini */
 }
 
 .service-btn .icon-box i {
-    color: inherit; 
+  color: inherit;
 }
 
 .service-btn span {
@@ -96,7 +340,7 @@
   color: var(--primary-blue);
 }
 
-/* Service Content (Right Side) */
+/* Panel gambar (kanan) */
 .service-content {
   display: none;
   position: absolute;
@@ -141,16 +385,14 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  color: var(--white-pure);
+  color: var(--white-pure, #ffffff);
 }
 
-/* Service Animation */
 @keyframes fadeInScale {
   from { opacity: 0; transform: scale(0.98); }
-  to { opacity: 1; transform: scale(1); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
-/* Service Responsive */
 @media (max-width: 991px) {
   .service-content {
     position: relative;

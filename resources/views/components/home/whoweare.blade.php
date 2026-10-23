@@ -15,7 +15,7 @@
         <div class="separator-line"></div>
     </div>
 
-    <div class="container py-lg-5 reveal">
+    <<div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
         <div class="row align-items-center gy-5">
 
             {{-- BAGIAN KIRI: Image Grid --}}
@@ -99,7 +99,7 @@
             </div>
             <div class="separator-line"></div>
         </div>
-    </div>
+        </div>
 </section>
 
 <style>

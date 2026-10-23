@@ -33,7 +33,7 @@
                                 <i class="fa-solid fa-envelope icon-accent"></i> adinda.kpcm@gmail.com
                             </a>
                         </div>
-                                                <div class="contact-person mt-3">
+                        <div class="contact-person mt-3">
                             <strong class="text-white">Admin 1</strong>
                             <a href="tel:+6285111377112">
                                 <i class="fa-solid fa-phone icon-accent"></i> +62 851-1137-7112
