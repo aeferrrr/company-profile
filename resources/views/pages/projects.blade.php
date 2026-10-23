@@ -48,7 +48,7 @@
                     <div class="gallery-container reveal">
                         @foreach ($paginated as $item)
                             <div class="gallery-item" role="button" tabindex="0" aria-label="{{ $item['title'] }}"
-                                data-project="{{ json_encode($item['viewer']) }}">
+                                data-slug="{{ $item['slug'] }}" data-project="{{ json_encode($item['viewer']) }}">
 
                                 <img src="{{ $item['cover'] }}" alt="{{ $item['title'] }}" loading="lazy"
                                     onload="this.classList.add('loaded'); this.parentNode.classList.add('is-ready')">
@@ -105,5 +105,24 @@
             <div class="viewer-thumbs" id="viewerThumbs"></div>
         </div>
     </div>
+    <script>
+        window.addEventListener('load', function() {
+            const params = new URLSearchParams(location.search);
+            const slug = params.get('open');
+            if (!slug) return;
 
+            const el = document.querySelector('.gallery-item[data-slug="' + CSS.escape(slug) + '"]');
+            if (!el) return;
+
+            el.scrollIntoView({
+                block: 'center'
+            });
+            setTimeout(() => el.click(), 400); // buka viewer project
+
+            // bersihkan ?open= dari URL supaya refresh tidak membuka ulang
+            params.delete('open');
+            const qs = params.toString();
+            history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
+        });
+    </script>
 @endsection

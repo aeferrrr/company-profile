@@ -68,12 +68,20 @@ class PageController extends Controller
         $perPage = 6;
         $currentPage = max(1, (int) $request->get('page', 1));
 
+        // kalau ada ?open=slug, lompat ke halaman yang berisi project itu
+        if ($open = $request->get('open')) {
+            $index = $filtered->values()->search(fn($p) => $p['slug'] === $open);
+            if ($index !== false) {
+                $currentPage = intdiv($index, $perPage) + 1;
+            }
+        }
+
         $paginated = new LengthAwarePaginator(
             $filtered->values()->forPage($currentPage, $perPage)->values(),
             $filtered->count(),
             $perPage,
             $currentPage,
-            ['path' => $request->url(), 'query' => $request->query()]
+            ['path' => $request->url(), 'query' => $request->except('open')]
         );
 
         return view('pages.projects', compact(
