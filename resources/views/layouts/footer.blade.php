@@ -24,7 +24,7 @@
                             </a>
                         </div>
 
-                        <div class="contact-person mt-3">
+                        {{-- <div class="contact-person mt-3">
                             <strong class="text-white">Adinda (Marketing)</strong>
                             <a href="tel:+6281370704904">
                                 <i class="fa-solid fa-phone icon-accent"></i> +62 813-7070-4904
@@ -32,14 +32,14 @@
                             <a href="mailto:adinda.kpcm@gmail.com">
                                 <i class="fa-solid fa-envelope icon-accent"></i> adinda.kpcm@gmail.com
                             </a>
-                        </div>
+                        </div> --}}
                         <div class="contact-person mt-3">
-                            <strong class="text-white">Admin 1</strong>
+                            <strong class="text-white">Admin</strong>
                             <a href="tel:+6285111377112">
                                 <i class="fa-solid fa-phone icon-accent"></i> +62 851-1137-7112
                             </a>
-                            <a href="mailto:kpcmdigitalmarketing@gmail.com">
-                                <i class="fa-solid fa-envelope icon-accent"></i> kpcmdigitalmarketing@gmail.com
+                            <a href="mailto:kpcmplan@gmail.com">
+                                <i class="fa-solid fa-envelope icon-accent"></i> kpcmplan@gmail.com
                             </a>
                         </div>
                     </div>

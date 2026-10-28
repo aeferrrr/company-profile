@@ -9,9 +9,10 @@
 
 @section('content')
 
-    {{-- HERO SECTION --}}
+    {{-- ============ HERO ============ --}}
     <section class="hero-section hero-page">
-        <img src="{{ asset('images/hero/worker-meeting.webp') }}" class="hero-bg" alt="{{ __('about.hero_title') }}">
+        <img src="{{ asset('images/hero/worker-meeting.webp') }}" class="hero-bg"
+            alt="{{ __('about.hero_title') }}">
 
         <div class="hero-overlay"></div>
 
@@ -22,19 +23,19 @@
     </section>
 
 
-    {{-- WHO WE ARE --}}
+    {{-- ============ WHO WE ARE ============ --}}
     <section class="section-padding">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5">
             <div class="intro-grid">
 
                 <div class="img-box reveal">
-                    <img src="{{ asset('images/about/office.webp') }}" alt="Kantor KPCM">
+                    <img src="{{ asset('images/about/office.webp') }}" alt="Kantor KPCM" loading="lazy">
                 </div>
 
                 <div class="reveal">
                     <div class="section-label">
-                        <span class="label-line"></span>
-                        WHO WE ARE
+                        <span class="section-label-line"></span>
+                        <span class="section-label-text">WHO WE ARE</span>
                     </div>
 
                     <h2>Strategic Partner for Industrial Excellence</h2>
@@ -56,12 +57,12 @@
     </section>
 
 
-    {{-- VISION & MISSION --}}
-    <section class="section-padding bg-light">
-        <div class="container">
+    {{-- ============ VISION & MISSION ============ --}}
+    <section class="section-padding section-alt">
+        <div class="container-fluid px-4 px-lg-5">
             <div class="grid-2">
 
-                <div class="card-mini reveal">
+                <div class="card-surface card-mini reveal">
                     <i class="bi bi-eye"></i>
                     <h3>Visi</h3>
                     <p>
@@ -70,7 +71,7 @@
                     </p>
                 </div>
 
-                <div class="card-mini reveal">
+                <div class="card-surface card-mini reveal">
                     <i class="bi bi-flag"></i>
                     <h3>Misi</h3>
                     <p>
@@ -84,39 +85,39 @@
     </section>
 
 
-    {{-- CORE VALUES --}}
+    {{-- ============ CORE VALUES ============ --}}
     <section class="section-padding">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5">
 
             <div class="section-heading reveal">
-                <div class="section-label center">
-                    <span class="label-line"></span>
-                    OUR FOUNDATION
+                <div class="section-label">
+                    <span class="section-label-line"></span>
+                    <span class="section-label-text">OUR FOUNDATION</span>
                 </div>
                 <h2>Core Values</h2>
             </div>
 
             <div class="grid-4">
 
-                <div class="card-mini reveal">
+                <div class="card-surface card-mini reveal">
                     <i class="bi bi-shield-check"></i>
                     <h3>Integrity</h3>
                     <p>We uphold honesty and transparency in every aspect of business.</p>
                 </div>
 
-                <div class="card-mini reveal">
+                <div class="card-surface card-mini reveal">
                     <i class="bi bi-people-fill"></i>
                     <h3>Collaboration</h3>
                     <p>Building strong synergy between internal teams and stakeholders.</p>
                 </div>
 
-                <div class="card-mini reveal">
+                <div class="card-surface card-mini reveal">
                     <i class="bi bi-lightbulb-fill"></i>
                     <h3>Innovation</h3>
                     <p>Continuous modernization for efficient industrial solutions.</p>
                 </div>
 
-                <div class="card-mini reveal">
+                <div class="card-surface card-mini reveal">
                     <i class="bi bi-heart-fill"></i>
                     <h3>Harmony</h3>
                     <p>Creating a balanced environment for seamless project delivery.</p>
@@ -127,15 +128,15 @@
     </section>
 
 
-    {{-- WHO WE SERVE --}}
-    <section class="section-padding bg-light">
-        <div class="container">
+    {{-- ============ WHO WE SERVE / HOW WE WORK ============ --}}
+    <section class="section-padding section-alt">
+        <div class="container-fluid px-4 px-lg-5">
             <div class="work-grid">
 
-                <div class="work-box reveal">
+                <div class="card-surface work-box reveal">
                     <div class="section-label">
-                        <span class="label-line"></span>
-                        WHO WE SERVE
+                        <span class="section-label-line"></span>
+                        <span class="section-label-text">WHO WE SERVE</span>
                     </div>
 
                     <h3>Mitra Industri Nasional</h3>
@@ -146,10 +147,10 @@
                     </p>
                 </div>
 
-                <div class="work-box reveal">
+                <div class="card-surface work-box reveal">
                     <div class="section-label">
-                        <span class="label-line"></span>
-                        HOW WE WORK
+                        <span class="section-label-line"></span>
+                        <span class="section-label-text">HOW WE WORK</span>
                     </div>
 
                     <h3>Standar & Ketepatan</h3>
@@ -161,39 +162,6 @@
                 </div>
 
             </div>
-        </div>
-    </section>
-
-
-    {{-- VALUE DELIVERED --}}
-    <section class="section-padding">
-        <div class="container">
-
-            <div class="section-heading reveal">
-                <div class="section-label center">
-                    <span class="label-line"></span>
-                    VALUE DELIVERED
-                </div>
-                <h2>Hasil Nyata Proyek</h2>
-            </div>
-
-            <div class="vd-grid">
-
-                <div class="vd-item reveal"><strong>01.</strong> Ketepatan Waktu</div>
-                <div class="vd-item reveal"><strong>02.</strong> Efisiensi Biaya</div>
-                <div class="vd-item reveal"><strong>03.</strong> Keamanan (HSE)</div>
-                <div class="vd-item reveal"><strong>04.</strong> Presisi Konstruksi</div>
-                <div class="vd-item reveal"><strong>05.</strong> Transparansi</div>
-                <div class="vd-item reveal"><strong>06.</strong> Durabilitas</div>
-
-            </div>
-
-            <div class="highlight-box reveal">
-                <i class="bi bi-patch-check-fill"></i>
-                <strong>Integritas Kemitraan Nasional:</strong>
-                Membangun kepercayaan melalui standarisasi industri.
-            </div>
-
         </div>
     </section>
 

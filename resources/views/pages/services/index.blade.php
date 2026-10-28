@@ -110,7 +110,7 @@
     @endphp
 
     <section id="services" class="section-padding">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
 
             {{-- Header section --}}
             <div class="dv-header">
@@ -178,7 +178,7 @@
     CALL TO ACTION
 ============================================================ --}}
     <section class="cta-section py-5">
-        <div class="container py-4">
+        <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
             <div class="cta-card text-center shadow-lg">
                 <div class="row justify-content-center">
                     <div class="col-lg-9">

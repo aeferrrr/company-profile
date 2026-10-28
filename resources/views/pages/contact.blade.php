@@ -23,9 +23,9 @@
     {{-- ======================
         KPCM LOUNGE SECTION
     ====================== --}}
-    <section class="lounge-section bg-sky-blue py-5">
+    <section class="lounge-section bg-sky-blue py-4">
 
-        <div class="section-separator mb-4 reveal">
+        <div class="section-separator mb-2 reveal">
             <div class="separator-line"></div>
             <div class="separator-icon">
                 <i class="fa-solid fa-mug-hot" style="font-size: 14px; color: var(--samsung-blue);"></i>
@@ -33,7 +33,7 @@
             <div class="separator-line"></div>
         </div>
 
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5 py-lg-2 reveal">
 
             <div class="lounge-stage-wrap reveal">
                 <div class="lounge-cards-stage">
@@ -58,7 +58,7 @@
                 </div>
             </div>
 
-            <div class="lounge-bottom-row mt-5 reveal">
+            <div class="lounge-bottom-row reveal">
                 <div class="lounge-bottom-left">
                     <h2 class="lounge-main-title">KPCM Lounge,<br>Ruang Eksklusif<br>untuk Bisnis Anda</h2>
                 </div>
@@ -81,10 +81,10 @@
     {{-- ======================
         CONTACT SECTION
     ====================== --}}
-    <section id="contact-form" class="contact-section py-5 bg-sky-blue reveal">
-        <div class="container">
+    <section id="contact-form" class="contact-section py-4 bg-sky-blue reveal">
+        <div class="container-fluid px-4 px-lg-5 py-lg-2 reveal">
 
-            <div class="section-separator mb-5 reveal">
+            <div class="section-separator mb-4 reveal">
                 <div class="separator-line"></div>
                 <div class="separator-icon">
                     <i class="fa-solid fa-headset" style="font-size: 14px; color: var(--samsung-blue);"></i>
@@ -95,9 +95,9 @@
             <div class="card-base main-card reveal">
                 <div class="row g-0">
 
-                    <div class="col-lg-5 col-xl-4">
+                    <div class="col-lg-5 col-xl-4 d-flex">
                         <div class="info-sidebar">
-                            <h3 class="fw-bold mb-5 text-white">Saluran Komunikasi</h3>
+                            <h3 class="fw-bold mb-4 text-white">Saluran Komunikasi</h3>
 
                             <div class="info-item">
                                 <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
@@ -122,7 +122,10 @@
                                     <p>kpcidhan@gmail.com<br>adinda.kpcm@gmail.com</p>
                                 </div>
                             </div>
-
+                            <div class="info-poster">
+                                <img src="{{ asset('images/poster/internal/han-poster.webp') }}"
+                                    alt="KPCM - Building a Better Tomorrow" loading="lazy" width="1131" height="1600">
+                            </div>
                             <div class="mt-5 pt-4 border-top border-secondary">
                                 <h6 class="text-white opacity-50 small text-uppercase mb-3">Ikuti Kami</h6>
                                 <div class="d-flex gap-3">
@@ -183,7 +186,7 @@
 
                                     <div class="col-12">
                                         <label class="form-label">Pesan Detail</label>
-                                        <textarea name="message" rows="5" class="form-control" required
+                                        <textarea name="message" rows="8" class="form-control" required
                                             placeholder="Jelaskan kebutuhan proyek Anda secara singkat..."></textarea>
                                     </div>
 
@@ -212,7 +215,7 @@
         MAP SECTION
     ====================== --}}
     <section class="map-section py-5 bg-sky-blue reveal">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
 
             <div class="section-separator mb-4 reveal">
                 <div class="separator-line"></div>

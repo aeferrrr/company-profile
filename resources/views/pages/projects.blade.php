@@ -18,7 +18,7 @@
     </section>
     {{-- FILTER --}}
     <section class="filter-section reveal">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
             <nav class="nav-filter reveal">
                 @foreach ($categories as $key => $label)
                     <div class="filter-link {{ $selected === $key ? 'active' : '' }}"
@@ -35,7 +35,7 @@
 
     {{-- GALLERY: 1 card = 1 project --}}
     <section class="gallery-section reveal" id="gallerySection">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
             <div id="galleryGrid">
 
                 @if ($paginated->isEmpty())
@@ -79,7 +79,7 @@
 
     {{-- PAGINATION --}}
     <section class="action-section text-center reveal">
-        <div class="container">
+        <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
             {{ $paginated->links('pagination::bootstrap-5') }}
         </div>
     </section>
