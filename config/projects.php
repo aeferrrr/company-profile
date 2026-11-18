@@ -178,10 +178,20 @@ return [
     // ═════════════════════════════════════════════════════
     // 7. DESIGN CONCEPT                     category: concept
     // ═════════════════════════════════════════════════════
-    // CONCEPT DESAIN TYPE (A)
-    ['category' => 'concept', 'image' => 'concept-mezzanine.webp', 'title' => 'Solo - Mezzanine', 'label' => 'Design Concept'],
-
-    // CONCEPT DESAIN TYPE (B)
+    [
+        'category' => 'concept',
+        'label' => 'Design Concept',
+        'title' => 'KS Club Cafe & Lounge 2 - Concept Design',
+        'cover' => 'concept-ksclub1.webp',
+        'sections' => [
+            'Desain Concept' => [
+                'concept-ksclub1.webp',
+                'concept-ksclub2.webp',
+                'concept-ksclub3.webp',
+                'concept-ksclub4.webp',
+            ],
+        ],
+    ],
     [
         'category' => 'concept',
         'label' => 'Design Concept',
@@ -198,26 +208,106 @@ return [
         'category' => 'concept',
         'label' => 'Design Concept',
         'title' => 'Villa Cikeas 2013 - Concept Design',
-        'cover' => 'concept-villa1.webp',
+        'cover' => 'concept-villa-pool-waterfall.webp',
         'sections' => [
-            'Desain Concept' => [
-                'concept-villa1.webp',
-                'concept-villa2.webp',
-                'concept-villa3.webp',
+            'Denah' => [
+                'concept-villa-denah-lt1.webp',
+            ],
+            'Pool & Waterfall' => [
+                'concept-villa-pool-waterfall.webp',
+            ],
+            'Interior' => [
+                'concept-villa-dining-room.webp',
+                'concept-villa-kitchen-island.webp',
+                'concept-villa-zen-living1.webp',
+                'concept-villa-zen-living2.webp',
+                'concept-villa-guest-room.webp',
+            ],
+            'Lantai 2' => [
+                'concept-villa-master-bedroom.webp',
+                'concept-villa-master-bedroom-perspektif.webp',
+                'concept-villa-kamar-reguler.webp',
+                'concept-villa-kamar-reguler-perspektif.webp',
+                'concept-villa-ruang-tengah-perspektif.webp',
+                'concept-villa-ruang-tengah-option2.webp',
+            ],
+            'Toilet' => [
+                'concept-villa-toilet-master.webp',
+                'concept-villa-toilet-kamar-reguler.webp',
+            ],
+            '3D Tour' => [
+                ['video' => 'concept-villa-3d-tour.webm', 'poster' => 'concept-villa-3d-tour-poster.webp'],
             ],
         ],
     ],
+    // CONCEPT DESAIN TYPE (A)
+    ['category' => 'concept', 'image' => 'concept-mezzanine.webp', 'title' => 'Solo - Mezzanine', 'label' => 'Design Concept'],
+
+    // CONCEPT DESAIN TYPE (B)
+
+
+
     [
         'category' => 'concept',
         'label' => 'Design Concept',
         'title' => 'Project SPA and Sauna pasaraya Blok M - Concept Design',
         'cover' => 'concept-spa1.webp',
         'sections' => [
-            'Desain Concept' => [
+            'Lobby & Reception' => [
                 'concept-spa1.webp',
                 'concept-spa2.webp',
                 'concept-spa3.webp',
+            ],
+            'Lounge & Bar' => [
                 'concept-spa4.webp',
+                'concept-spa5.webp',
+                'concept-spa6.webp',
+            ],
+            'Relaxation Room' => [
+                'concept-spa7.webp',
+                'concept-spa8.webp',
+            ],
+            'Locker & Gym Area' => [
+                'concept-spa9.webp',
+                'concept-spa10.webp',
+                'concept-spa11.webp',
+            ],
+            'Treatment Room' => [
+                'concept-spa12.webp',
+                'concept-spa13.webp',
+                'concept-spa14.webp',
+                'concept-spa15.webp',
+            ],
+            'VIP Room' => [
+                'concept-spa16.webp',
+                'concept-spa17.webp',
+                'concept-spa18.webp',
+            ],
+            'Pool Area' => [
+                'concept-spa19.webp',
+                'concept-spa20.webp',
+                'concept-spa21.webp',
+            ],
+            'Sauna' => [
+                'concept-spa22.webp',
+                'concept-spa23.webp',
+                'concept-spa24.webp',
+                'concept-spa25.webp',
+                'concept-spa26.webp',
+            ],
+            'Shower & Body Scrub' => [
+                'concept-spa27.webp',
+                'concept-spa28.webp',
+                'concept-spa29.webp',
+                'concept-spa30.webp',
+            ],
+            'Locker Room' => [
+                'concept-spa31.webp',
+                'concept-spa32.webp',
+                'concept-spa33.webp',
+                'concept-spa34.webp',
+                'concept-spa35.webp',
+                'concept-spa36.webp',
             ],
         ],
     ],
@@ -227,11 +317,35 @@ return [
         'title' => 'SK Plasma 2025 Interior Concept - Concept Design',
         'cover' => 'concept-sk1.webp',
         'sections' => [
-            'Desain Concept' => [
-                'concept-sk1.webp',
+            'Lobby & Reception' => [
                 'concept-sk2.webp',
                 'concept-sk3.webp',
                 'concept-sk4.webp',
+                'concept-sk5.webp',
+                'concept-sk11.webp',
+                'concept-sk12.webp',
+                'concept-sk13.webp',
+            ],
+            'Trainee Room & Canteen' => [
+                'concept-sk1.webp',
+                'concept-sk6.webp',
+                'concept-sk7.webp',
+                'concept-sk8.webp',
+                'concept-sk9.webp',
+            ],
+            'Meeting Room' => [
+                'concept-sk10.webp',
+                'concept-sk14.webp',
+                'concept-sk17.webp',
+                'concept-sk18.webp',
+            ],
+            'Ruang Direktur' => [
+                'concept-sk16.webp',
+                'concept-sk19.webp',
+                'concept-sk20.webp',
+            ],
+            'Tangga' => [
+                'concept-sk15.webp',
             ],
         ],
     ],
@@ -243,13 +357,7 @@ return [
         'sections' => [
             'Desain Concept' => [
                 'concept-hi1.webp',
-                'concept-hi2.webp',
-                'concept-hi3.webp',
-                'concept-hi4.webp',
-                'concept-hi5.webp',
-                'concept-hi6.webp',
-                'concept-hi7.webp',
-                'concept-hi8.webp',
+                'concept-hi2.webp',     
             ],
         ],
     ],

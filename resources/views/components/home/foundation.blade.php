@@ -1,183 +1,231 @@
-<section class="py-5 bg-light position-relative reveal">
-    <<div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
-        <div class="row align-items-center">
+<section class="py-5 bg-white overflow-hidden" id="greetings">
 
-            {{-- BAGIAN KIRI: Heading & Navigasi --}}
-            <div class="col-lg-4 mb-5 mb-lg-0 pe-lg-5">
-                <h2 class="display-5 fw-bold text-dark mb-4">
-                    {!! __('messages.values.title') !!}
-                </h2>
-                <p class="text-muted leading-relaxed mb-4">
-                    {{ __('messages.values.desc') }}
-                </p>
+    <div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
+        <div class="row align-items-center gy-5 gm-row">
 
-                {{-- Tombol Navigasi Bulat Kuning --}}
-                <div class="d-flex gap-3 mt-4">
-                    <button class="btn-nav-custom prev-val">
-                        <i class="bi bi-arrow-left"></i>
-                    </button>
-                    <button class="btn-nav-custom next-val">
-                        <i class="bi bi-arrow-right"></i>
-                    </button>
-                </div>
-            </div>
+            {{-- KIRI: Foto CEO + papan nama (tanda tangan) --}}
+            <div class="col-lg-5" data-aos="fade-right">
+                <div class="gm-photo-wrap">
 
-            {{-- BAGIAN KANAN: Slider Cards --}}
-            <div class="col-lg-8">
-                <div class="swiper valueSwiper p-3">
-                    <div class="swiper-wrapper">
+                    <figure class="gm-photo">
+                        {{-- simpan fotonya di public/images/mrhan.webp --}}
+                        <img src="{{ asset('images/team/mrhan.webp') }}" alt="Han Gyu Seong">
+                    </figure>
 
-                        {{-- Card 1: Integrity --}}
-                        <div class="swiper-slide">
-                            <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="icon-circle bg-light text-primary me-3">
-                                        {{-- Ikon Jabat Tangan --}}
-                                        <i class="bi bi-hand-thumbs-up fs-3"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="fw-bold mb-0">{{ __('messages.values.integrity_title') }}</h5>
-                                        <small class="text-muted">{{ __('messages.values.integrity_sub') }}</small>
-                                        <div class="text-primary small mt-1">★★★★★</div>
-                                    </div>
-                                </div>
-                                <p class="text-muted mb-0 small">
-                                    "{{ __('messages.values.integrity_desc') }}"
-                                </p>
-                            </div>
+                    {{-- SIGNATURE BLOCK (KOREAN ONLY) --}}
+                    <div class="gm-plate">
+                        <div class="gm-sign">
+                            <h6 class="gm-name">
+                                한규성
+                                <span class="gm-name-latin">Han Gyu Seong</span>
+                            </h6>
                         </div>
-
-                        {{-- Card 2: Collaboration --}}
-                        <div class="swiper-slide">
-                            <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="icon-circle bg-light text-primary me-3">
-                                        {{-- Ikon Roda Gigi Terhubung --}}
-                                        <i class="bi bi-gear-wide-connected fs-3"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="fw-bold mb-0">{{ __('messages.values.collaboration_title') }}</h5>
-                                        <small class="text-muted">{{ __('messages.values.collaboration_sub') }}</small>
-                                        <div class="text-primary small mt-1">★★★★★</div>
-                                    </div>
-                                </div>
-                                <p class="text-muted mb-0 small">
-                                    "{{ __('messages.values.collaboration_desc') }}"
-                                </p>
-                            </div>
-                        </div>
-
-                        {{-- Card 3: Innovation --}}
-                        <div class="swiper-slide">
-                            <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="icon-circle bg-light text-primary me-3">
-                                        {{-- Ikon Lampu --}}
-                                        <i class="bi bi-lightbulb fs-3"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="fw-bold mb-0">{{ __('messages.values.innovation_title') }}</h5>
-                                        <small class="text-muted">{{ __('messages.values.innovation_sub') }}</small>
-                                        <div class="text-primary small mt-1">★★★★★</div>
-                                    </div>
-                                </div>
-                                <p class="text-muted mb-0 small">
-                                    "{{ __('messages.values.innovation_desc') }}"
-                                </p>
-                            </div>
-                        </div>
-
-                        {{-- Card 4: Harmony --}}
-                        <div class="swiper-slide">
-                            <div class="value-card bg-white p-4 rounded-4 shadow-sm h-100">
-                                <div class="d-flex align-items-center mb-4">
-                                    <div class="icon-circle bg-light text-primary me-3">
-                                        {{-- Ikon Timbangan (Gunakan bi-scales jika bi-balance-scale tidak muncul) --}}
-                                        <i class="bi bi-flower1 fs-3"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="fw-bold mb-0">{{ __('messages.values.harmony_title') }}</h5>
-                                        <small class="text-muted">{{ __('messages.values.harmony_sub') }}</small>
-                                        <div class="text-primary small mt-1">★★★★★</div>
-                                    </div>
-                                </div>
-                                <p class="text-muted mb-0 small">
-                                    "{{ __('messages.values.harmony_desc') }}"
-                                </p>
-                            </div>
-                        </div>
-
+                        <p class="gm-position">{{ __('messages.greetings.position') }}</p>
                     </div>
+
                 </div>
             </div>
 
+            {{-- KANAN: Isi sambutan --}}
+            <div class="col-lg-7 ps-lg-5" data-aos="fade-left">
+
+                <h6 class="gm-subtitle">
+                    {{ __('messages.greetings.subtitle') }}
+                </h6>
+
+                <h2 class="gm-title">
+                    {!! __('messages.greetings.title') !!}
+                </h2>
+
+                <p class="gm-lead">"{{ __('messages.greetings.content_1') }}"</p>
+
+                <p class="gm-text">{{ __('messages.greetings.content_2') }}</p>
+
+            </div>
         </div>
-        </div>
-
-        {{-- Style CSS (Sama seperti sebelumnya) --}}
-        <style>
-            .value-card {
-                border: 1px solid #f8f9fa;
-                transition: all 0.3s ease;
-            }
-
-            .value-card:hover {
-                transform: translateY(-5px);
-                box-shadow: 0 1rem 3rem rgba(255, 255, 255, 0.075) !important;
-            }
-
-            .icon-circle {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .btn-nav-custom {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                border: none;
-                background-color: #badcf3;
-                color: #333;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                transition: all 0.3s;
-                cursor: pointer;
-            }
-
-            .btn-nav-custom:hover,
-            .btn-nav-custom.active {
-                background-color: #0734ff;
-                color: #000;
-                box-shadow: 0 4px 10px rgba(255, 193, 7, 0.4);
-            }
-        </style>
-
-        {{-- Script JS (Sama seperti sebelumnya) --}}
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var valSwiper = new Swiper(".valueSwiper", {
-                    slidesPerView: 1,
-                    spaceBetween: 30,
-                    loop: true,
-                    autoplay: {
-                        delay: 4000,
-                        disableOnInteraction: false
-                    },
-                    breakpoints: {
-                        768: {
-                            slidesPerView: 2
-                        }
-                    },
-                    navigation: {
-                        nextEl: ".next-val",
-                        prevEl: ".prev-val"
-                    },
-                });
-            });
-        </script>
+    </div>
 </section>
+
+<style>
+    /* Font serif (opsional, fallback Georgia). Tambahkan di layout utama:
+       <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet"> */
+    #greetings {
+        --gm-serif: "Lora", Georgia, "Times New Roman", serif;
+        --gm-ink: #0b1540;
+        --gm-pale: #e6eafb;
+        --gm-arch: 140px 14px 14px 14px; /* satu sudut melengkung besar, sisanya tegas */
+    }
+
+    /* ============ FOTO + PAPAN NAMA ============ */
+    #greetings .gm-photo-wrap {
+        position: relative;
+        max-width: 520px;
+        margin: 0 auto 4rem;
+    }
+
+    /* blok pucat di belakang foto, bergeser ke kanan-bawah */
+    #greetings .gm-photo-wrap::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        transform: translate(18px, 18px);
+        background: var(--gm-pale);
+        border-radius: var(--gm-arch);
+        z-index: 0;
+    }
+
+    #greetings .gm-photo {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        aspect-ratio: 1 / 1;
+        border-radius: var(--gm-arch);
+        overflow: hidden;
+        background: #cfd6e6;
+    }
+
+    #greetings .gm-photo img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 30%;
+    }
+
+    /* papan nama di bawah foto, seperti papan nama di meja kerja */
+    #greetings .gm-plate {
+        position: absolute;
+        z-index: 2;
+        left: 1.25rem;
+        right: 1.25rem;
+        bottom: -3.5rem;
+        padding: 1rem 1rem .9rem;
+        background: var(--bg-surface);
+        border-top: 3px solid var(--samsung-blue);
+        border-radius: 0 0 var(--radius-md) var(--radius-md);
+        box-shadow: var(--shadow-card);
+    }
+
+    /* container-fluid melebar penuh, jadi lebar isi dibatasi di sini */
+    #greetings .gm-row {
+        max-width: 1400px;
+        margin-inline: auto;
+    }
+
+    #greetings .gm-sign {
+        text-align: center;
+    }
+
+    #greetings .gm-sign-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 64px;
+        margin-bottom: .35rem;
+    }
+
+    #greetings .gm-sign-box img {
+        max-height: 100%;
+        max-width: 170px;
+        object-fit: contain;
+        mix-blend-mode: multiply; /* latar putih TTD menyatu dengan papan */
+    }
+
+    #greetings .gm-name {
+        margin: 0;
+        font-family: var(--gm-serif);
+        font-size: .95rem;
+        font-weight: 700;
+        letter-spacing: 0;
+        color: var(--gm-ink);
+    }
+
+    #greetings .gm-name-latin {
+        display: block;
+        margin-top: .1rem;
+        font-size: .8rem;
+        font-weight: 500;
+        color: var(--text-grey);
+    }
+
+    #greetings .gm-position {
+        margin: .8rem 0 0;
+        padding-top: .65rem;
+        border-top: 1px solid var(--border-soft);
+        text-align: center;
+        font-size: .8rem;
+        font-weight: 600;
+        color: var(--samsung-blue);
+    }
+
+    /* ============ TEKS ============ */
+    #greetings .gm-subtitle {
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+        margin: 0 0 1rem;
+        font-size: .95rem;
+        font-weight: 600;
+        letter-spacing: 0;
+        color: var(--samsung-blue);
+    }
+
+    #greetings .gm-subtitle::before {
+        content: "";
+        width: 28px;
+        height: 2px;
+        background: var(--samsung-blue);
+    }
+
+    #greetings .gm-title {
+        margin: 0 0 1.75rem;
+        font-size: clamp(1.7rem, 3vw, 2.5rem);
+        line-height: 1.25;
+        color: var(--samsung-blue);
+    }
+
+    #greetings .gm-lead {
+        max-width: 56ch;
+        margin: 0 0 1.5rem;
+        padding-left: 1.25rem;
+        border-left: 4px solid var(--samsung-blue);
+        font-family: var(--gm-serif);
+        font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+        font-style: italic;
+        font-weight: 500;
+        line-height: 1.6;
+        color: var(--gm-ink);
+    }
+
+    #greetings .gm-text {
+        max-width: 58ch;
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.85;
+        text-align: left;
+        color: var(--text-grey);
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 991.98px) {
+        #greetings { --gm-arch: 100px 12px 12px 12px; }
+
+        #greetings .gm-photo-wrap { margin-bottom: 0; }
+
+        /* papan nama turun ke alur normal, hanya menimpa sedikit foto */
+        #greetings .gm-plate {
+            position: relative;
+            left: auto;
+            right: auto;
+            bottom: auto;
+            margin: -2.5rem 1.25rem 0;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        #greetings .gm-photo-wrap::before { transform: translate(10px, 10px); }
+        #greetings .gm-sign-box img { max-width: 140px; }
+        #greetings .gm-name { font-size: .9rem; }
+    }
+</style>

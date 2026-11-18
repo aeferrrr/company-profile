@@ -79,7 +79,6 @@
                         operasional dan ROI melalui integritas dan inovasi.
                     </p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -140,7 +139,6 @@
                     </div>
 
                     <h3>Mitra Industri Nasional</h3>
-
                     <p>
                         Rumah bagi sektor manufaktur otomotif, pusat logistik,
                         dan penyedia energi yang berkomitmen membangun rantai pasok tangguh.
@@ -164,7 +162,6 @@
             </div>
         </div>
     </section>
-
 @endsection
 
 

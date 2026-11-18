@@ -1,20 +1,4 @@
 <section class="py-5 bg-white overflow-hidden" id="greetings">
-    {{-- SEPARATOR ATAS --}}
-    <div class="section-separator">
-        <div class="separator-line"></div>
-        <div class="separator-icon">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M6 9H4.5a2.5 2.5 0 0 0 0 5H6" />
-                <path d="M18 9h1.5a2.5 2.5 0 0 1 0 5H18" />
-                <path d="M8 9h8" />
-                <path d="M8 15h8" />
-                <path d="M8 9a4 4 0 0 1 8 0" />
-                <path d="M8 15a4 4 0 0 0 8 0" />
-            </svg>
-        </div>
-        <div class="separator-line"></div>
-    </div>
-
     <<div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
         <div class="row align-items-center gy-5">
 
@@ -82,26 +66,4 @@
                 </div>
             </div>
         </div>
-
-        {{-- SEPARATOR BAWAH --}}
-        <div class="section-separator mt-5">
-            <div class="separator-line"></div>
-            <div class="separator-icon">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-                    stroke-width="1.8">
-                    <path d="M6 9H4.5a2.5 2.5 0 0 0 0 5H6" />
-                    <path d="M18 9h1.5a2.5 2.5 0 0 1 0 5H18" />
-                    <path d="M8 9h8" />
-                    <path d="M8 15h8" />
-                    <path d="M8 9a4 4 0 0 1 8 0" />
-                    <path d="M8 15a4 4 0 0 0 8 0" />
-                </svg>
-            </div>
-            <div class="separator-line"></div>
-        </div>
-        </div>
 </section>
-
-<style>
-
-</style>

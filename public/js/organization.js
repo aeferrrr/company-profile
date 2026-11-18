@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
 
     // =====================================================
@@ -182,70 +181,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// Organization
 
-        // Modal functions
-        function openImageModal(src) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            modal.classList.add('show');
-            modalImg.src = src;
-            document.body.style.overflow = 'hidden'; // Disable scroll when modal open
+// =====================================================
+// 3. OUR MOMENTS: FILTER KATEGORI + LOAD MORE
+// =====================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const container = document.getElementById('moments-container');
+    if (!container) return;
+
+    const items   = Array.from(container.querySelectorAll('.moment-item'));
+    const chips   = document.querySelectorAll('.moment-filter');
+    const moreBtn = document.getElementById('moments-more');
+    const countEl = document.getElementById('moments-count');
+    const STEP    = 12; // jumlah foto per "Load more"
+
+    let activeCat = 'all';
+    let limit = STEP;
+
+    function render() {
+        const matched = items.filter(i => activeCat === 'all' || i.dataset.cat === activeCat);
+
+        items.forEach(i => (i.style.display = 'none'));
+        matched.slice(0, limit).forEach(i => (i.style.display = ''));
+
+        if (countEl) {
+            countEl.textContent = `Showing ${Math.min(limit, matched.length)} of ${matched.length} photos`;
         }
-
-        function closeImageModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.remove('show');
-            document.body.style.overflow = 'auto'; // Enable scroll
+        if (moreBtn) {
+            moreBtn.style.display = matched.length > limit ? '' : 'none';
         }
+    }
 
-        // Pagination
-        document.addEventListener('DOMContentLoaded', function() {
-            const itemsPerPage = 3;
-            const container = document.getElementById('moments-container');
-            if (!container) return;
-
-            const items = Array.from(container.getElementsByClassName('moment-item'));
-            const paginationRoot = document.getElementById('moments-pagination');
-
-            const totalPages = Math.ceil(items.length / itemsPerPage);
-
-            function showPage(page) {
-                const start = (page - 1) * itemsPerPage;
-                const end = start + itemsPerPage;
-
-                items.forEach((item, index) => {
-                    item.style.display = (index >= start && index < end) ? 'block' : 'none';
-                });
-
-                updatePaginationButtons(page);
-            }
-
-            function updatePaginationButtons(currentPage) {
-                if (!paginationRoot) return;
-                paginationRoot.innerHTML = '';
-
-                if (totalPages <= 1) return;
-
-                for (let i = 1; i <= totalPages; i++) {
-                    const btn = document.createElement('button');
-                    btn.innerText = i;
-                    btn.classList.add('page-btn');
-                    if (i === currentPage) btn.classList.add('active');
-
-                    btn.addEventListener('click', () => {
-                        showPage(i);
-                        document.querySelector('.together-photos-section').scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
-
-                    paginationRoot.appendChild(btn);
-                }
-            }
-
-            // Init first page
-            showPage(1);
+    chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+            chips.forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            activeCat = chip.dataset.filter;
+            limit = STEP;
+            render();
         });
+    });
 
-        
+    if (moreBtn) {
+        moreBtn.addEventListener('click', () => {
+            limit += STEP;
+            render();
+        });
+    }
+
+    render();
+});

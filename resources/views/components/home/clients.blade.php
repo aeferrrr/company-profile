@@ -1,93 +1,54 @@
-<section class="client-section py-5 bg-white position-relative overflow-hidden reveal">
-    {{-- SEPARATOR ATAS OUR CLIENTS --}}
-    <div class="section-separator ">
-        <div class="separator-line"></div>
-        <div class="separator-icon">
-            <i class="fa-solid fa-handshake-simple" style="font-size: 14px; color: var(--samsung-blue);"></i>
+@php
+    // [file, nama]  -> tambah / hapus klien cukup di sini
+    $clients = [
+        ['samsung.png', 'Samsung'],
+        ['kn.webp', 'Kertas Nusantara'],
+        ['hyundai.png', 'Hyundai'],
+        ['nike.png', 'Nike'],
+        ['locklock.png', 'Lock & Lock'],
+        ['cj.png', 'CJ'],
+        ['erajaya.png', 'Erajaya'],
+        ['lg.png', 'LG'],
+        ['lotte.png', 'Lotte'],
+        ['zinus.png', 'Zinus'],
+        ['emsonic.png', 'Emsonic'],
+        ['strawland.png', 'Strawland'],
+        ['shinwon.png', 'Shinwon'],
+        ['zimmoah.png', 'Zimmoah'],
+        ['daeyoung.png', 'Daeyoung'],
+        ['pungkook.png', 'Pungkook'],
+        ['serim.png', 'Serim'],
+    ];
+
+    // bagi dua baris; tiap baris dirender 3x supaya loop-nya tanpa putus di layar selebar apa pun
+    $rows = array_chunk($clients, (int) ceil(count($clients) / 2));
+    $copies = 3;
+@endphp
+
+<section class="cl-section reveal">
+    <div class="cl-head" data-aos="fade-up">
+        <div>
+            <h2 class="cl-heading">{{ __('messages.clients.title') }}</h2>
+            <p class="cl-intro">{{ __('messages.clients.desc') }}</p>
         </div>
-        <div class="separator-line "></div>
+        <p class="cl-note">{{ __('messages.clients.note') }}</p>
     </div>
-    <<div class="container-fluid px-4 px-lg-5 py-lg-5 reveal">
-        <div class="row align-items-center">
-            <!-- Bagian Teks (Kiri) -->
-            <div class="col-lg-5 mb-5 mb-lg-0 pe-lg-5 text-center text-lg-start z-index-2">
-                <div data-aos="fade-right">
-                    <h6 class="text-primary fw-bold text-uppercase ls-2 mb-2">
-                        {{ __('messages.clients.subtitle') }}
-                    </h6>
-                    <h2 class="fw-bold display-6 mb-3">
-                        {{ __('messages.clients.title') }}
-                    </h2>
-                    <p class="text-muted leading-relaxed" style="font-size: 1.05rem;">
-                        {{ __('messages.clients.desc') }}
-                    </p>
-                    <div class="mt-4 border-top border-primary border-2 mx-auto mx-lg-0" style="width: 50px;"></div>
+
+    {{-- DUA BARIS LOGO, ARAH BERLAWANAN --}}
+    <div class="cl-rows">
+        @foreach ($rows as $r => $row)
+            <div class="cl-row {{ $r % 2 ? 'cl-row--rev' : '' }}" style="--cl-dur: {{ 50 + $r * 12 }}s">
+                <div class="cl-track">
+                    @for ($c = 0; $c < $copies; $c++)
+                        @foreach ($row as $logo)
+                            <div class="cl-item" @if ($c > 0) aria-hidden="true" @endif>
+                                <img src="{{ asset('images/clients/' . $logo[0]) }}"
+                                    alt="{{ $c === 0 ? $logo[1] : '' }}" loading="lazy" draggable="false">
+                            </div>
+                        @endforeach
+                    @endfor
                 </div>
             </div>
-
-            <!-- Bagian Slider Logo (Kanan) -->
-            <div class="col-lg-7 position-relative reveal">
-                <!-- Efek Fade Kiri & Kanan -->
-                <div class="slider-fade-mask"></div>
-
-                <div class="marquee-wrapper">
-                    <div class="marquee-content" id="logoMarquee">
-                        <!-- List Logo -->
-                        <div class="logo-item"><img src="{{ asset('images/clients/samsung.png') }}" alt="Samsung">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/kn.webp') }}" alt="Kertas Nusantara">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/hyundai.png') }}" alt="Hyundai">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/nike.png') }}" alt="Nike"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/locklock.png') }}" alt="Lock & Lock">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/cj.png') }}" alt="CJ"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/erajaya.png') }}" alt="Erajaya">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/lg.png') }}" alt="LG"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/lotte.png') }}" alt="Lotte"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/zinus.png') }}" alt="Zinus"></div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/emsonic.png') }}" alt="Emsonic">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/strawland.png') }}" alt="Strawland">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/shinwon.png') }}" alt="Shinwon">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/zimmoah.png') }}" alt="Zimmoah">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/daeyoung.png') }}" alt="Daeyoung">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/pungkook.png') }}" alt="Pungkook">
-                        </div>
-                        <div class="logo-item"><img src="{{ asset('images/clients/serim.png') }}" alt="Serim"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Sub-sub Heading -->
-        <div class="row reveal">
-            <div class="col-12">
-                <div class="text-center mt-5 pt-3 border-top w-lg-75 w-100 mx-auto">
-                    <p class="small text-muted mb-0">
-                        {{ __('messages.clients.note') }}
-                    </p>
-                </div>
-            </div>
-        </div>
-        </div>
+        @endforeach
+    </div>
 </section>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const marquee = document.getElementById('logoMarquee');
-
-        // Clone konten marquee untuk menciptakan efek infinite loop tanpa putus
-        // Kita menduplikasi isi di dalam .marquee-content
-        if (marquee) {
-            marquee.innerHTML += marquee.innerHTML;
-        }
-    });
-</script>

@@ -98,7 +98,7 @@ svg.org-chart {
     flex-direction: column;
     gap: 40px;
     width: 100%;
-    max-width: 100%;          /* sebelumnya 820px */
+    max-width: 100%;
     margin: 0 auto;
     padding: 16px 10px 20px;
 }
@@ -124,7 +124,7 @@ svg.org-chart {
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 1100px;        /* jaga kartu tidak terlalu renggang; naikkan/hapus jika ingin lebih lebar */
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -210,10 +210,24 @@ svg.org-chart {
 }
 
 /* =====================================================
-   MOMENTS (OUR MOMENTS)
+   MOMENTS (FILTER + GRID + LOAD MORE)
 ===================================================== */
 .cursor-pointer {
     cursor: pointer;
+}
+
+.object-fit-cover {
+    object-fit: cover;
+}
+
+.moment-img-wrapper {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    position: relative;
+}
+
+.moment-img-wrapper img {
+    transition: transform 0.4s ease;
 }
 
 .moment-card:hover img {
@@ -232,8 +246,61 @@ svg.org-chart {
     opacity: 1;
 }
 
-.object-fit-cover {
-    object-fit: cover;
+/* Filter chips */
+.moment-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.moment-filter {
+    border: 1px solid #311b92;
+    background: #fff;
+    color: #311b92;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.moment-filter span {
+    margin-left: 6px;
+    padding: 1px 8px;
+    border-radius: 999px;
+    background: rgba(49, 27, 146, 0.1);
+    font-size: 0.75rem;
+}
+
+.moment-filter:hover:not(.active) {
+    background: #ede7f6;
+}
+
+.moment-filter.active {
+    background: #311b92;
+    color: #fff;
+}
+
+.moment-filter.active span {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Load more */
+.moments-more {
+    border: 2px solid #311b92;
+    background: transparent;
+    color: #311b92;
+    padding: 10px 32px;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: 0.25s;
+}
+
+.moments-more:hover {
+    background: #311b92;
+    color: #fff;
 }
 
 /* =====================================================
@@ -257,28 +324,6 @@ svg.org-chart {
     max-width: 90%;
     max-height: 80%;
     border-radius: 8px;
-}
-
-/* =====================================================
-   PAGINATION
-===================================================== */
-.page-btn {
-    border: 1px solid #311b92;
-    background: #fff;
-    color: #311b92;
-    padding: 8px 16px;
-    margin: 0 4px;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.page-btn.active {
-    background: #311b92;
-    color: #fff;
-}
-
-.page-btn:hover:not(.active) {
-    background: #eee;
 }
 
 /* =====================================================
@@ -314,21 +359,6 @@ svg.org-chart {
 
     svg.org-chart {
         min-width: 700px;
-    }
-
-    /* MOMENTS → mulai horizontal dari tablet */
-    #moments-container {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 15px;
-        padding-bottom: 10px;
-        scroll-snap-type: x mandatory;
-    }
-
-    .moment-item {
-        flex: 0 0 300px;
-        scroll-snap-align: start;
     }
 }
 
@@ -394,40 +424,26 @@ svg.org-chart {
         height: 105px;
     }
 
-    /* MOMENTS (HORIZONTAL + PAGINATION TETAP) */
-    #moments-container {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 12px;
-        padding-bottom: 10px;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-    }
-
-    .moment-item {
-        flex: 0 0 85%;
-        max-width: 85%;
-        scroll-snap-align: start;
-    }
-
     .moment-overlay span {
         font-size: 0.8rem;
     }
 
-    #moments-container::-webkit-scrollbar {
-        height: 5px;
+    /* Filter bisa digeser horizontal supaya tidak memakan tinggi layar */
+    .moment-filters {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scrollbar-width: none;
     }
 
-    #moments-container::-webkit-scrollbar-thumb {
-        background: #311b92;
-        border-radius: 10px;
+    .moment-filters::-webkit-scrollbar {
+        display: none;
     }
 
-    /* PAGINATION */
-    .page-btn {
-        padding: 5px 10px;
-        font-size: 0.8rem;
+    .moment-filter {
+        white-space: nowrap;
+        flex: 0 0 auto;
     }
 
     /* ORG CHART */
@@ -471,11 +487,6 @@ svg.org-chart {
 
     .pres-label-text {
         font-size: 0.55rem;
-    }
-
-    .moment-item {
-        flex: 0 0 90%;
-        max-width: 90%;
     }
 
     /* ORG CHART */

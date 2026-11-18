@@ -1,505 +1,263 @@
 /* =========================================================
-   SERVICES PAGE — Division cards (expand on click)
-   Prefix .dv-  (halaman /services)
-   Prefix .service-* / .services-highlight di bagian bawah = beranda
+   HOME — SERVICES (carousel full-width ala SAMOOCM)
+   Gantikan SELURUH bagian "HOME — SERVICES HIGHLIGHT" lama
+   di file CSS (dari .services-highlight sampai akhir file).
+   Prefix: .sx-
 ========================================================= */
 
-/* Header section */
-.dv-header {
-  max-width: 680px;
-  margin: 0 auto 48px;
-  text-align: center;
-}
-
-.dv-header .section-label {
-  justify-content: center;
-}
-
-.dv-header-title {
-  margin: 0 0 14px;
-  font-size: 2.2rem;
-}
-
-.dv-header-desc {
-  margin: 0;
-  color: var(--text-grey);
-  font-size: 1.05rem;
-}
-
-.dv-wrap {
-  display: flex;
-  gap: 12px;
-  height: 520px;
-}
-
-.dv-card {
-  position: relative;
-  flex: 1 1 0;
-  min-width: 0;
+.sx-section {
+  background: #fff;
+  padding: 70px 0 90px;
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: var(--dark-navbar);
-  color: var(--text-light);
-  transition: flex 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.dv-card.is-active {
-  flex: 5 1 0;
-}
-
-/* Foto + lapisan gelap */
-.dv-bg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.8s ease;
-}
-
-.dv-card.is-active .dv-bg {
-  transform: scale(1.04);
-}
-
-.dv-shade {
-  position: absolute;
-  inset: 0;
-  background: rgba(10, 17, 26, 0.55);
-  transition: background-color 0.5s ease;
-}
-
-.dv-card:not(.is-active):hover .dv-shade {
-  background: rgba(20, 40, 160, 0.55);
-}
-
-.dv-card.is-active .dv-shade {
-  background: rgba(10, 17, 26, 0.84);
-}
-
-/* Tombol penuh satu kartu (untuk klik & keyboard) */
-.dv-toggle {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  width: 100%;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.dv-toggle:focus-visible {
-  outline: 3px solid var(--samsung-blue-light);
-  outline-offset: -3px;
-}
-
-.dv-card.is-active .dv-toggle {
-  pointer-events: none;
-}
-
-/* Tampilan saat kartu menyempit: ikon + judul vertikal */
-.dv-rail {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
+/* ---------- Header ---------- */
+.sx-head {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  padding: 28px 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-.dv-card.is-active .dv-rail {
-  opacity: 0;
-}
-
-.dv-rail i {
-  font-size: 1.4rem;
-}
-
-.dv-rail-title {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-}
-
-.dv-plus {
-  display: none;
-}
-
-/* Isi saat kartu terbuka */
-.dv-body {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  padding: 36px 32px;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0s linear 0.35s;
-}
-
-.dv-card.is-active .dv-body {
-  opacity: 1;
-  visibility: visible;
-  transform: none;
-  transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s, visibility 0s;
-}
-
-.dv-title {
-  margin: 0 0 8px;
-  font-size: 1.7rem;
-  color: var(--text-light);
-}
-
-.dv-desc {
-  margin: 0;
-  max-width: 520px;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.dv-groups {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 24px;
-  margin-top: 28px;
-}
-
-.dv-group-title {
-  margin: 0 0 10px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  font-size: 1rem;
-  color: var(--text-light);
-}
-
-.dv-group ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.dv-group li {
-  padding: 5px 0;
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-/* Kalau hanya satu kelompok (Project Management), daftar dibagi 2 kolom */
-.dv-group:only-child ul {
-  columns: 2;
-  column-gap: 32px;
-}
-
-/* ---------- Mobile / tablet: akordeon vertikal ---------- */
-@media (max-width: 991px) {
-  .dv-wrap {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .dv-card {
-    flex: none;
-    height: 84px;
-    transition: none;
-    scroll-margin-top: 90px;
-  }
-
-  .dv-card.is-active {
-    height: auto;
-    min-height: 420px;
-  }
-
-  .dv-rail {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 16px;
-    padding: 0 22px;
-  }
-
-  .dv-rail-title {
-    writing-mode: horizontal-tb;
-    transform: none;
-  }
-
-  .dv-plus {
-    display: block;
-    margin-left: auto;
-    font-size: 0.9rem !important;
-    opacity: 0.8;
-  }
-
-  .dv-body {
-    position: relative;
-    inset: auto;
-    padding: 28px 22px 32px;
-  }
-
-  .dv-card:not(.is-active) .dv-body {
-    position: absolute;
-  }
-}
-
-@media (max-width: 576px) {
-  .dv-header { margin-bottom: 32px; }
-  .dv-groups { grid-template-columns: 1fr; gap: 20px; }
-  .dv-group:only-child ul { columns: 1; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .dv-card, .dv-bg, .dv-body, .dv-shade { transition: none !important; }
-}
-
-
-/* =========================================================
-   HOME — SERVICES HIGHLIGHT (tab kiri, gambar kanan)
-   Dipakai di beranda (section "Our Services"). Jangan dihapus.
-   Class berawalan .service-* dan .services-highlight,
-   terpisah dari halaman /services yang memakai .svc-*
-========================================================= */
-
-.services-highlight {
-  background-color: var(--white-off, #f4f6f9);
-  padding: 60px 0;
-}
-
-/* Tombol tab (kiri) */
-.service-btn {
-  background: var(--white-pure, #ffffff);
-  border: none;
-  border-radius: 12px;
-  padding: 18px 24px;
   width: 100%;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  outline: none;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  padding: 0 clamp(20px, 4vw, 64px);   /* jarak ke tepi layar */
+  margin: 0 0 50px;
 }
 
-.service-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-}
-
-.service-btn.active {
-  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.15);
-  z-index: 2;
-}
-
-.service-btn.active::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background-color: var(--primary-blue);
-  border-radius: 4px 0 0 4px;
-}
-
-.service-btn .icon-box {
-  width: 42px;
-  height: 42px;
-  background: var(--white-off, #f4f6f9);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #000000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
-}
-
-.service-btn.active .icon-box {
-  background: var(--primary-blue);
-  color: #ffffff !important;
-  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
-}
-
-.service-btn .icon-box i {
-  color: inherit;
-}
-
-.service-btn span {
-  font-weight: 600;
+.sx-heading {
+  margin: 0 0 14px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
   color: var(--text-dark);
 }
 
-.service-btn.active span {
-  color: var(--primary-blue);
+.sx-intro {
+  margin: 0;
+  max-width: 300px;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text-grey);
 }
 
-/* Panel gambar (kanan) */
-.service-content {
-  display: none;
+.sx-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-grey);
+  white-space: nowrap;
+}
+
+.sx-more::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.sx-more:hover { color: var(--samsung-blue); text-decoration: none; }
+.sx-more:hover::before { width: 44px; }
+
+/* ---------- Track full-width ---------- */
+.sx-viewport { position: relative; }
+
+.sx-track {
+  overflow: hidden;
+  touch-action: pan-y;      /* geser horizontal = carousel, vertikal = scroll halaman */
+  cursor: none;
+}
+
+.sx-rail {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* ---------- Kartu ---------- */
+.sx-card {
+  position: relative;
+  flex: 0 0 max(280px, 32vw);
+  height: 480px;
+  overflow: hidden;
+  background: var(--dark-navbar);
+  color: #fff;
+  user-select: none;
+  -webkit-user-select: none;
+  contain: layout paint;
+}
+
+.sx-slides { position: absolute; inset: 0; }
+
+.sx-slide {
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 1.2s ease;
 }
 
-.service-content.active {
-  display: block;
-  animation: fadeInScale 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
+.sx-slide.is-on { opacity: 1; }
 
-.service-bg-img {
+.sx-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+
+.sx-shade {
   position: absolute;
-  z-index: 0;
-  transition: transform 5s ease;
+  inset: 0;
+  background: rgba(10, 17, 26, 0.6);
+  opacity: 0.3;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
 }
 
-.service-content.active .service-bg-img {
-  transform: scale(1.05);
-}
+.sx-card:hover .sx-shade { opacity: 1; }
 
-.service-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.5) 60%,
-    rgba(0, 0, 0, 0.1) 100%
-  );
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  padding: 30px;
+/* Judul di tengah; saat hover diganti deskripsi */
+.sx-body {
+  position: absolute;
+  inset: 0;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  color: var(--white-pure, #ffffff);
+  align-items: center;
+  justify-content: center;
+  padding: 0 14%;
+  text-align: center;
+  pointer-events: none;
 }
 
-@keyframes fadeInScale {
-  from { opacity: 0; transform: scale(0.98); }
-  to   { opacity: 1; transform: scale(1); }
+.sx-title,
+.sx-desc {
+  position: absolute;
+  left: 14%;
+  right: 14%;
+  margin: 0;
+  transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
+.sx-title {
+  color: #fff;
+  font-size: clamp(1.4rem, 2.1vw, 1.9rem);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+.sx-desc {
+  font-size: 0.95rem;
+  line-height: 1.85;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.sx-card:hover .sx-title { opacity: 0; transform: translateY(-10px); }
+.sx-card:hover .sx-desc  { opacity: 1; transform: none; }
+
+/* Indikator foto */
+.sx-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.sx-dots span {
+  width: 14px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.sx-dots span.is-on { background: #fff; width: 24px; }
+
+/* ---------- Kursor "Hold and Drag" ---------- */
+.sx-cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 84px;
+  height: 84px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.sx-cursor.is-visible { opacity: 1; }
+
+.sx-ring {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: rgba(10, 17, 26, 0.2);
+  animation: sxSpin 14s linear infinite;
+  transition: transform 0.25s ease;
+}
+
+.sx-ring text {
+  font-size: 9px;
+  fill: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.sx-cursor.is-down .sx-ring { transform: scale(0.85); }
+
+.sx-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+@keyframes sxSpin { to { transform: rotate(360deg); } }
+
+/* ---------- Responsive ---------- */
 @media (max-width: 991px) {
-  .service-content {
-    position: relative;
-    height: 350px;
-    margin-top: 20px;
-  }
+  .sx-card { flex-basis: 62vw; height: 440px; }
 }
 
-.service-content { overflow: hidden; }
-
-.service-carousel {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-}
-.service-carousel .carousel-inner,
-.service-carousel .carousel-item { height: 100%; }
-
-.service-carousel .carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+@media (max-width: 576px) {
+  .sx-section { padding: 50px 0 60px; }
+  .sx-head { flex-direction: column; align-items: flex-start; margin-bottom: 28px; }
+  .sx-card { flex-basis: 78vw; height: 400px; }
 }
 
-/* zoom pelan tiap slide */
-.service-carousel .carousel-item.active img,
-.service-carousel .carousel-item-next img,
-.service-carousel .carousel-item-prev img {
-    animation: serviceZoom 6s linear forwards;
-}
-@keyframes serviceZoom {
-    from { transform: scale(1); }
-    to   { transform: scale(1.08); }
-}
-
-/* gradasi gelap di bawah supaya teks terbaca */
-.service-content .service-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    pointer-events: none;
-    background: linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.05) 100%);
-}
-
-/* indikator di kanan atas */
-.service-carousel .carousel-indicators {
-    top: 20px;
-    bottom: auto;
-    left: auto;
-    right: 24px;
-    margin: 0;
-    z-index: 3;
-}
-.service-carousel .carousel-indicators [data-bs-target] {
-    width: 22px;
-    height: 3px;
-    border: 0;
-    margin: 0 3px;
-    background: #fff;
-}
-
-/* nama project asal foto */
-.service-caption {
-    position: absolute;
-    top: 18px;
-    left: 24px;
-    z-index: 3;
-    max-width: 62%;
-    display: flex;
+/* Layar sentuh: tidak ada hover, judul di atas & deskripsi di bawah */
+@media (hover: none) {
+  .sx-track { cursor: auto; }
+  .sx-cursor { display: none; }
+  .sx-shade { opacity: 0.85; }
+  .sx-body {
     flex-direction: column;
-    gap: 4px;
-    padding: 10px 16px;
-    color: #fff;
-    background: rgba(0, 0, 0, .5);
-    backdrop-filter: blur(6px);
-    border-left: 3px solid var(--const-primary, #0d6efd);
-    border-radius: 10px;
-    transition: background .25s ease;
+    justify-content: flex-end;
+    padding: 0 24px 48px;
+  }
+  .sx-title, .sx-desc {
+    position: static;
+    opacity: 1;
+    transform: none;
+  }
+  .sx-title { margin-bottom: 10px; }
+  .sx-desc { font-size: 0.85rem; line-height: 1.7; }
 }
 
-.service-tag {
-    font-size: .68rem;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: #8fb6f2;
+@media (prefers-reduced-motion: reduce) {
+  .sx-title, .sx-desc, .sx-shade { transition: none; }
+  .sx-ring { animation: none; }
 }
-
-.service-caption-title {
-    font-size: .82rem;
-    font-weight: 600;
-    line-height: 1.35;
-}
-
-.service-link:hover .service-caption {
-    background: rgba(0, 0, 0, .7);
-}
-
-.service-link {
-    display: block;
-    height: 100%;
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.service-caption { transition: background .25s ease; }
-.service-link:hover .service-caption { background: var(--const-primary, #0d6efd); }
-
