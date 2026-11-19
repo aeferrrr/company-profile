@@ -1,20 +1,25 @@
 
 /* =========================================================
-   KPCM CORPORATE NAVBAR — REFINED VERSION
-   Bootstrap 5 | KPC Indonesia | Responsive
+   KPCM CORPORATE NAVBAR
+   UNIFIED VERSION — BOOTSTRAP 5
+   Company | Services & Projects | KPC | Language
+========================================================= */
+
+/* =========================================================
+   1. NAVBAR BASE
 ========================================================= */
 
 .navbar-corporate {
     --nav-blue: var(--samsung-blue, #1428A0);
-    --nav-blue-light: var(--samsung-blue-light, #2f4bff);
+    --nav-blue-light: var(--samsung-blue-light, #8fb6ff);
     --nav-dark: #0a111a;
-    --nav-text: #ffffff;
     --nav-muted: #64748b;
     --nav-border: #e2e8f0;
 
     position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     z-index: 1050;
 
@@ -31,6 +36,7 @@
 /* Background saat scroll, hover, atau menu terbuka */
 .navbar-corporate.navbar-scrolled,
 .navbar-corporate:hover,
+.navbar-corporate:focus-within,
 .navbar-corporate:has(.dropdown-menu.show),
 .navbar-corporate:has(.navbar-collapse.show) {
     background: rgba(10, 17, 26, .97);
@@ -39,17 +45,18 @@
     -webkit-backdrop-filter: blur(16px);
 }
 
+/* Navbar lebih ringkas saat scroll */
 .navbar-corporate.navbar-scrolled {
     padding: 10px 0;
 }
 
-/* Hide navbar saat scroll turun */
+/* Sembunyikan navbar saat scroll turun */
 .navbar-corporate.navbar-hidden:not(:hover):not(:focus-within):not(:has(.show)) {
     transform: translateY(-110%);
 }
 
 /* =========================================================
-   BRAND
+   2. BRAND / LOGO
 ========================================================= */
 
 .navbar-corporate .navbar-brand {
@@ -85,7 +92,7 @@
 }
 
 /* =========================================================
-   NAV LINKS
+   3. NAVIGATION LINKS
 ========================================================= */
 
 .navbar-corporate .navbar-nav {
@@ -103,7 +110,7 @@
     gap: 4px;
 
     padding: 9px 0;
-    color: rgba(255,255,255,.88) !important;
+    color: rgba(255, 255, 255, .88) !important;
 
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
@@ -117,14 +124,14 @@
     transition: color .25s ease;
 }
 
-/* Hover & Active */
+/* Hover dan active */
 .navbar-corporate .navbar-nav > .nav-item > .nav-link:hover,
 .navbar-corporate .navbar-nav > .nav-item > .nav-link.active,
 .navbar-corporate .navbar-nav > .nav-item > .nav-link.show {
     color: #fff !important;
 }
 
-/* Garis bawah */
+/* Underline hanya untuk link biasa */
 .navbar-corporate .navbar-nav > .nav-item > .nav-link:not(.dropdown-toggle)::after {
     content: "";
     position: absolute;
@@ -142,8 +149,11 @@
     width: 100%;
 }
 
-/* Bootstrap dropdown arrow */
-.navbar-corporate .dropdown-toggle::after {
+/* =========================================================
+   4. DROPDOWN ARROW
+========================================================= */
+
+.navbar-corporate .navbar-nav > .nav-item > .dropdown-toggle::after {
     display: inline-block;
     width: 6px;
     height: 6px;
@@ -159,13 +169,14 @@
     vertical-align: middle;
 }
 
-.navbar-corporate .dropdown-toggle.show::after {
+.navbar-corporate .navbar-nav > .nav-item > .dropdown-toggle.show::after {
     transform: rotate(225deg);
     margin-top: 3px;
 }
 
 /* =========================================================
-   DROPDOWN MENU
+   5. UNIFIED DROPDOWN TEMPLATE
+   Berlaku untuk semua dropdown
 ========================================================= */
 
 .navbar-corporate .dropdown-menu {
@@ -173,18 +184,20 @@
     padding: 9px;
     margin-top: 10px;
 
-    background: #fff;
-    border: 1px solid rgba(226,232,240,.85);
+    background: #ffffff;
+    border: 1px solid rgba(226, 232, 240, .85);
     border-radius: 12px;
 
     box-shadow:
-        0 15px 45px rgba(0,0,0,.16),
-        0 3px 10px rgba(0,0,0,.04);
+        0 15px 45px rgba(0, 0, 0, .16),
+        0 3px 10px rgba(0, 0, 0, .04);
 }
 
+/* Semua item dropdown memiliki desain sama */
 .navbar-corporate .dropdown-menu .dropdown-item {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
 
     padding: 11px 13px;
@@ -203,18 +216,21 @@
         color .2s ease;
 }
 
+/* Hover */
 .navbar-corporate .dropdown-menu .dropdown-item:hover,
 .navbar-corporate .dropdown-menu .dropdown-item:focus {
     background: #edf2ff;
     color: var(--nav-blue);
 }
 
+/* Active */
 .navbar-corporate .dropdown-menu .dropdown-item.active,
 .navbar-corporate .dropdown-menu .dropdown-item:active {
     background: var(--nav-blue);
-    color: #fff;
+    color: #ffffff;
 }
 
+/* Dropdown header */
 .navbar-corporate .dropdown-header {
     padding: 10px 13px;
     color: var(--nav-muted);
@@ -225,24 +241,16 @@
     white-space: normal;
 }
 
+/* Divider */
 .navbar-corporate .dropdown-divider {
     margin: 8px 4px;
     border-color: #e2e8f0;
 }
 
 /* =========================================================
-   KPC INDONESIA
+   6. KPC BADGE
 ========================================================= */
 
-.navbar-corporate .kpc-nav-item {
-    position: relative;
-}
-
-.navbar-corporate .kpc-nav-item > .nav-link {
-    gap: 5px;
-}
-
-/* NEW Badge */
 .navbar-corporate .badge-new {
     display: inline-flex;
     align-items: center;
@@ -250,7 +258,7 @@
 
     padding: 4px 6px;
     background: #c7192d;
-    color: #fff;
+    color: #ffffff;
 
     border-radius: 4px;
     font-size: 8px;
@@ -259,32 +267,23 @@
     line-height: 1;
 }
 
-/* KPC Dropdown */
-.navbar-corporate .dropdown-menu-kpc {
-    width: 285px;
-    max-width: calc(100vw - 30px);
-    padding: 10px;
-}
+/* =========================================================
+   7. KPC SUBMENU
+   Menggunakan template dropdown yang sama
+========================================================= */
 
-/* Overview link */
-.navbar-corporate .dropdown-menu-kpc > li:first-child > .dropdown-item {
-    color: var(--nav-blue);
-    font-weight: 700;
-    background: #f3f6ff;
-}
-
-/* Submenu */
 .navbar-corporate .dropdown-submenu {
     position: relative;
 }
 
-.navbar-corporate .dropdown-submenu > .dropdown-item {
+.navbar-corporate .submenu-toggle {
     cursor: pointer;
 }
 
-.navbar-corporate .dropdown-submenu > .dropdown-item span {
+.navbar-corporate .submenu-arrow {
     margin-left: auto;
     font-size: 18px;
+    line-height: 1;
     color: #94a3b8;
 }
 
@@ -293,20 +292,62 @@
 }
 
 /* =========================================================
-   DESKTOP
+   8. DESKTOP DROPDOWN
 ========================================================= */
 
 @media (min-width: 992px) {
 
-    /* Dropdown utama mengikuti Bootstrap.
-       Hover juga didukung untuk desktop. */
-
-    .navbar-corporate .navbar-nav > .dropdown:hover > .dropdown-menu,
-    .navbar-corporate .navbar-nav > .dropdown:focus-within > .dropdown-menu {
-        display: block;
+    /* Dropdown mengikuti posisi menu induknya */
+    .navbar-corporate .navbar-nav > .nav-item.dropdown {
+        position: relative;
     }
 
-    .navbar-corporate .dropdown-menu {
+    /* Default tertutup */
+    .navbar-corporate .navbar-nav > .nav-item.dropdown > .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: auto;
+
+        display: none;
+        margin-top: 10px;
+        z-index: 1060;
+    }
+
+    /* Dibuka oleh Bootstrap melalui klik */
+    .navbar-corporate .navbar-nav > .nav-item.dropdown > .dropdown-menu.show {
+        display: block;
+        animation: kpcmDropdownIn .22s ease both;
+    }
+
+    /* Dropdown bahasa rata kanan */
+    .navbar-corporate .navbar-nav > .nav-item.dropdown > .dropdown-menu-end {
+        left: auto;
+        right: 0;
+    }
+
+    /* KPC rata kanan agar tidak keluar layar */
+    .navbar-corporate #kpcDropdown + .dropdown-menu {
+        left: auto;
+        right: 0;
+    }
+
+    /* Submenu KPC membuka ke kiri */
+    .navbar-corporate .dropdown-submenu > .dropdown-menu {
+        position: absolute;
+        top: -10px;
+        left: auto;
+        right: calc(100% - 2px);
+
+        display: none;
+        margin: 0;
+        z-index: 1070;
+    }
+
+    /* Hover hanya untuk submenu KPC */
+    .navbar-corporate .dropdown-submenu:hover > .dropdown-menu,
+    .navbar-corporate .dropdown-submenu:focus-within > .dropdown-menu {
+        display: block;
         animation: kpcmDropdownIn .22s ease both;
     }
 
@@ -315,52 +356,23 @@
             opacity: 0;
             transform: translateY(8px);
         }
+
         to {
             opacity: 1;
             transform: translateY(0);
         }
     }
-
-    /* KPC submenu */
-    .navbar-corporate .dropdown-submenu > .dropdown-menu {
-        position: absolute;
-        top: -10px;
-        left: calc(100% - 2px);
-        display: none;
-        margin: 0;
-    }
-
-    .navbar-corporate .dropdown-submenu:hover > .dropdown-menu,
-    .navbar-corporate .dropdown-submenu:focus-within > .dropdown-menu {
-        display: block;
-    }
-
-    /* Submenu bergerak ke kiri jika KPC berada
-       dekat sisi kanan layar. */
-    .navbar-corporate .dropdown-menu-kpc {
-        left: auto;
-        right: 0;
-    }
-
-    .navbar-corporate .dropdown-menu-kpc .dropdown-submenu > .dropdown-menu {
-        left: auto;
-        right: calc(100% - 2px);
-    }
-
-    .navbar-corporate .dropdown-menu-end {
-        right: 0;
-        left: auto;
-    }
 }
 
 /* =========================================================
-   TABLET & MOBILE
+   9. TABLET & MOBILE
 ========================================================= */
 
 @media (max-width: 991.98px) {
 
     .navbar-corporate {
         padding: 12px 0;
+        background: rgba(10, 17, 26, .97);
     }
 
     .navbar-corporate .navbar-brand img {
@@ -371,17 +383,19 @@
         font-size: 12px;
     }
 
+    /* Hamburger */
     .navbar-corporate .navbar-toggler {
         padding: 7px 10px;
-        border: 1px solid rgba(255,255,255,.3);
+        border: 1px solid rgba(255, 255, 255, .3);
         border-radius: 9px;
         box-shadow: none;
     }
 
     .navbar-corporate .navbar-toggler:focus {
-        box-shadow: 0 0 0 3px rgba(143,182,255,.2);
+        box-shadow: 0 0 0 3px rgba(143, 182, 255, .2);
     }
 
+    /* Mobile menu container */
     .navbar-corporate .navbar-collapse {
         max-height: calc(100dvh - 90px);
         overflow-y: auto;
@@ -391,10 +405,10 @@
         padding: 15px;
 
         background: #101d33;
-        border: 1px solid rgba(255,255,255,.1);
+        border: 1px solid rgba(255, 255, 255, .1);
         border-radius: 14px;
 
-        box-shadow: 0 18px 40px rgba(0,0,0,.25);
+        box-shadow: 0 18px 40px rgba(0, 0, 0, .25);
         overscroll-behavior: contain;
     }
 
@@ -405,7 +419,7 @@
 
     .navbar-corporate .navbar-nav > .nav-item {
         width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,.08);
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
     }
 
     .navbar-corporate .navbar-nav > .nav-item:last-child {
@@ -420,10 +434,12 @@
         font-size: 13px;
     }
 
+    /* Hilangkan underline desktop */
     .navbar-corporate .navbar-nav > .nav-item > .nav-link:not(.dropdown-toggle)::after {
         display: none;
     }
 
+    /* Semua dropdown mobile */
     .navbar-corporate .dropdown-menu {
         position: static !important;
         width: 100%;
@@ -433,21 +449,18 @@
         margin: 0 0 12px;
         padding: 8px;
 
-        background: #fff;
+        background: #ffffff;
         border: 0;
         border-radius: 10px;
         box-shadow: none;
         animation: none;
     }
 
-    .navbar-corporate .dropdown-menu-kpc {
-        width: 100%;
-        max-width: 100%;
-    }
-
+    /* Submenu KPC default tertutup */
     .navbar-corporate .dropdown-submenu > .dropdown-menu {
         position: static !important;
-        display: block;
+        display: none;
+
         width: 100%;
         min-width: 0;
 
@@ -459,7 +472,12 @@
         box-shadow: none;
     }
 
-    .navbar-corporate .dropdown-submenu > .dropdown-item span {
+    /* Dibuka melalui JavaScript */
+    .navbar-corporate .dropdown-submenu.submenu-open > .dropdown-menu {
+        display: block;
+    }
+
+    .navbar-corporate .submenu-arrow {
         transform: rotate(90deg);
     }
 
@@ -470,7 +488,7 @@
 }
 
 /* =========================================================
-   SMALL MOBILE
+   10. SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 420px) {
@@ -501,10 +519,33 @@
 }
 
 /* =========================================================
-   ACCESSIBILITY
+   11. NAVBAR KHUSUS HALAMAN KPC
+========================================================= */
+
+/* Background awal pada halaman KPC */
+body:has(.kpc-page) .navbar-corporate:not(.navbar-scrolled) {
+    background: rgba(8, 26, 59, .35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Background KPC ketika scroll */
+body:has(.kpc-page) .navbar-corporate.navbar-scrolled {
+    background: rgba(8, 26, 59, .97);
+}
+
+/* Pastikan background solid saat menu KPC terbuka */
+body:has(.kpc-page) .navbar-corporate:has(.dropdown-menu.show),
+body:has(.kpc-page) .navbar-corporate:has(.navbar-collapse.show) {
+    background: rgba(8, 26, 59, .97);
+}
+
+/* =========================================================
+   12. ACCESSIBILITY
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
     .navbar-corporate,
     .navbar-corporate *,
     .navbar-corporate *::before,
@@ -512,18 +553,4 @@
         animation: none !important;
         transition: none !important;
     }
-}
-
-
-/* Navbar khusus halaman KPC Indonesia */
-
-body:has(.kpc-page) .navbar-corporate:not(.navbar-scrolled) {
-    background: rgba(8, 26, 59, 0.35);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-}
-
-/* Tetap solid ketika scroll */
-body:has(.kpc-page) .navbar-corporate.navbar-scrolled {
-    background: rgba(8, 26, 59, 0.97);
 }

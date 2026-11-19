@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('meta_title', __('general.seo.about_title'))
@@ -11,8 +12,12 @@
 
     {{-- ============ HERO ============ --}}
     <section class="hero-section hero-page">
-        <img src="{{ asset('images/hero/worker-meeting.webp') }}" class="hero-bg"
-            alt="{{ __('about.hero_title') }}">
+
+        <img
+            src="{{ asset('images/hero/worker-meeting.webp') }}"
+            class="hero-bg"
+            alt="{{ __('about.hero_title') }}"
+        >
 
         <div class="hero-overlay"></div>
 
@@ -20,6 +25,7 @@
             <h1>{{ __('about.hero_title') }}</h1>
             <p>{{ __('about.hero_subtitle') }}</p>
         </div>
+
     </section>
 
 
@@ -29,27 +35,32 @@
             <div class="intro-grid">
 
                 <div class="img-box reveal">
-                    <img src="{{ asset('images/about/office.webp') }}" alt="Kantor KPCM" loading="lazy">
+                    <img
+                        src="{{ asset('images/about/office.webp') }}"
+                        alt="{{ __('about.intro_image_alt') }}"
+                        loading="lazy"
+                    >
                 </div>
 
                 <div class="reveal">
+
                     <div class="section-label">
                         <span class="section-label-line"></span>
-                        <span class="section-label-text">WHO WE ARE</span>
+                        <span class="section-label-text">
+                            {{ __('about.intro_label') }}
+                        </span>
                     </div>
 
-                    <h2>Strategic Partner for Industrial Excellence</h2>
+                    <h2>{{ __('about.intro_title') }}</h2>
+
+<p>
+    <strong>PT. KPCM Industrial Estate</strong>{{ app()->getLocale() === 'ko' ? '는 ' : ', ' }}{{ __('about.intro_content_1') }}
+</p>
 
                     <p>
-                        <strong>PT. KPCM Industrial Estate</strong>, didirikan pada 2011,
-                        adalah pionir pengembang kawasan industri terpadu yang mendorong
-                        kemajuan ekonomi nasional melalui infrastruktur kelas dunia.
+                        {{ __('about.intro_content_2') }}
                     </p>
 
-                    <p>
-                        Kami memberdayakan perusahaan untuk menghadapi tantangan global abad ke-21
-                        melalui inovasi manajemen dan ekosistem bisnis yang dinamis.
-                    </p>
                 </div>
 
             </div>
@@ -62,23 +73,32 @@
         <div class="container-fluid px-4 px-lg-5">
             <div class="grid-2">
 
+                {{-- VISION --}}
                 <div class="card-surface card-mini reveal">
+
                     <i class="bi bi-eye"></i>
-                    <h3>Visi</h3>
+
+                    <h3>{{ __('about.vision_title') }}</h3>
+
                     <p>
-                        Menjadi pengembang terkemuka solusi industri berkelanjutan dan inovatif
-                        untuk nilai jangka panjang bagi klien, mitra, dan sektor industri.
+                        {{ __('about.vision_desc') }}
                     </p>
+
                 </div>
 
+                {{-- MISSION --}}
                 <div class="card-surface card-mini reveal">
+
                     <i class="bi bi-flag"></i>
-                    <h3>Misi</h3>
+
+                    <h3>{{ __('about.mission_title') }}</h3>
+
                     <p>
-                        Menyediakan solusi strategis kompetitif untuk optimasi efisiensi
-                        operasional dan ROI melalui integritas dan inovasi.
+                        {{ __('about.mission_desc') }}
                     </p>
+
                 </div>
+
             </div>
         </div>
     </section>
@@ -89,37 +109,70 @@
         <div class="container-fluid px-4 px-lg-5">
 
             <div class="section-heading reveal">
+
                 <div class="section-label">
                     <span class="section-label-line"></span>
-                    <span class="section-label-text">OUR FOUNDATION</span>
+                    <span class="section-label-text">
+                        {{ __('about.values_label') }}
+                    </span>
                 </div>
-                <h2>Core Values</h2>
+
+                <h2>{{ __('about.values_title') }}</h2>
+
             </div>
 
             <div class="grid-4">
 
+                {{-- INTEGRITY --}}
                 <div class="card-surface card-mini reveal">
+
                     <i class="bi bi-shield-check"></i>
-                    <h3>Integrity</h3>
-                    <p>We uphold honesty and transparency in every aspect of business.</p>
+
+                    <h3>{{ __('about.integrity_title') }}</h3>
+
+                    <p>
+                        {{ __('about.integrity_desc') }}
+                    </p>
+
                 </div>
 
+                {{-- COLLABORATION --}}
                 <div class="card-surface card-mini reveal">
+
                     <i class="bi bi-people-fill"></i>
-                    <h3>Collaboration</h3>
-                    <p>Building strong synergy between internal teams and stakeholders.</p>
+
+                    <h3>{{ __('about.collaboration_title') }}</h3>
+
+                    <p>
+                        {{ __('about.collaboration_desc') }}
+                    </p>
+
                 </div>
 
+                {{-- INNOVATION --}}
                 <div class="card-surface card-mini reveal">
+
                     <i class="bi bi-lightbulb-fill"></i>
-                    <h3>Innovation</h3>
-                    <p>Continuous modernization for efficient industrial solutions.</p>
+
+                    <h3>{{ __('about.innovation_title') }}</h3>
+
+                    <p>
+                        {{ __('about.innovation_desc') }}
+                    </p>
+
                 </div>
 
+                {{-- HARMONY --}}
                 <div class="card-surface card-mini reveal">
+
                     <i class="bi bi-heart-fill"></i>
-                    <h3>Harmony</h3>
-                    <p>Creating a balanced environment for seamless project delivery.</p>
+
+                    <h3>{{ __('about.harmony_title') }}</h3>
+
+                    <p>
+                        {{ __('about.harmony_desc') }}
+                    </p>
+
                 </div>
 
             </div>
@@ -132,36 +185,46 @@
         <div class="container-fluid px-4 px-lg-5">
             <div class="work-grid">
 
+                {{-- WHO WE SERVE --}}
                 <div class="card-surface work-box reveal">
+
                     <div class="section-label">
                         <span class="section-label-line"></span>
-                        <span class="section-label-text">WHO WE SERVE</span>
+                        <span class="section-label-text">
+                            {{ __('about.serve_label') }}
+                        </span>
                     </div>
 
-                    <h3>Mitra Industri Nasional</h3>
+                    <h3>{{ __('about.serve_title') }}</h3>
+
                     <p>
-                        Rumah bagi sektor manufaktur otomotif, pusat logistik,
-                        dan penyedia energi yang berkomitmen membangun rantai pasok tangguh.
+                        {{ __('about.serve_desc') }}
                     </p>
+
                 </div>
 
+                {{-- HOW WE WORK --}}
                 <div class="card-surface work-box reveal">
+
                     <div class="section-label">
                         <span class="section-label-line"></span>
-                        <span class="section-label-text">HOW WE WORK</span>
+                        <span class="section-label-text">
+                            {{ __('about.work_label') }}
+                        </span>
                     </div>
 
-                    <h3>Standar & Ketepatan</h3>
+                    <h3>{{ __('about.work_title') }}</h3>
 
                     <p>
-                        Sinergi infrastruktur modern dengan manajemen proaktif
-                        guna memastikan solusi teknis yang handal dan berkelanjutan.
+                        {{ __('about.work_desc') }}
                     </p>
+
                 </div>
 
             </div>
         </div>
     </section>
+
 @endsection
 
 

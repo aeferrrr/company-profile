@@ -16,6 +16,48 @@ return [
     'hero_desc'  => '2011년부터 신뢰할 수 있고 효율적이며 지속 가능한 산업 건설 솔루션을 제공합니다.', // Hero Description
     'cta'        => '무료 상담 받기', // Get Free Consultation
 
+    // ===== KPC INDONESIA =====
+    'kpc_name' => 'KPC Indonesia',
+    'kpc_new' => '신규',
+    'kpc_overview' => 'KPC Indonesia 개요',
+    'kpc_desc' => 'KPC INDONESIA 소개',
+    'kpc_about' => 'KPC Indonesia 소개',
+    'kpc_services' => '사업 분야',
+    'kpc_training' => '교육 및 훈련',
+    'kpc_history' => '회사 연혁',
+    'kpc_leader' => '경영진 소개',
+    'kpc_contact' => 'KPC Indonesia 문의',
+
+    // ===== KPC INDONESIA 서비스 =====
+    'kpc_consulting' => '경영 컨설팅',
+    'kpc_industrial_training' => '산업 교육 및 훈련',
+    'kpc_investment' => '투자 지원 서비스',
+    'kpc_iso' => 'ISO 인증 컨설팅',
+    'kpc_tax' => '세무 및 법률 자문',
+    'kpc_halal' => '할랄 인증 지원',
+
+'footer' => [
+    'company_info' => '회사 정보',
+    'address_line1' => 'AKA 빌딩 9층, Jl. Bangka Raya,',
+    'address_line2' => 'Mampang Prapatan, 남부 자카르타',
+
+    'quick_links' => '바로가기',
+    'about_company' => '회사 소개',
+    'our_services' => '주요 서비스',
+    'project_gallery' => '프로젝트 갤러리',
+    'organization' => '조직도',
+    'contact_page' => '문의하기',
+
+    'our_location' => '오시는 길',
+
+    'cta_title' => '프로젝트를 준비하고 계신가요?',
+    'cta_description' => '프로젝트에 관한 무료 상담을 원하시면 언제든지 문의해 주세요.',
+    'free_consultation' => '무료 상담 신청',
+
+    'follow_us' => '소셜 미디어',
+    'copyright' => '모든 권리 보유.',
+],
+
 'seo' => [
         'default_title' => 'PT KPCM Industrial Estate | 전국 건설 및 엔지니어링',
         'default_desc'  => 'PT KPCM Industrial Estate는 토목, 기계, 전기 등 인도네시아 전역에 포괄적인 산업 건설 솔루션을 제공합니다. 본사는 자카르타 남부에 위치하고 있습니다.',      

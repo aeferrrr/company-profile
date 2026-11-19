@@ -1,114 +1,129 @@
+
 <?php
 
 return [
     'hero' => [
-        'subtitle'    => 'PT KPCM INDUSTRIAL ESTATE',
-        'title'       => '산업 단지의 <br> <span class="text-outline">미래를 건설하다</span>',
-        'desc'        => 'PT KPCM은 자카르타 남부에 위치한 선도적인 산업 건설 회사입니다. 2011년 설립 이래 인도네시아 전역에 신뢰할 수 있는 엔지니어링 및 건설 관리 솔루션을 제공하고 있습니다.',
-        'btn_services'=> '서비스 탐색',
+        'subtitle' => 'PT KPCM INDUSTRIAL ESTATE',
+        'title' => '산업단지의 <br> <span class="text-outline">미래를 건설합니다</span>',
+        'desc' => 'PT KPCM은 자카르타 남부에 위치한 선도적인 건설 기업입니다. 2011년 설립 이래 인도네시아 전역에서 신뢰할 수 있는 산업 엔지니어링 및 건설 관리(KPCM) 솔루션을 제공하고 있습니다.',
+        'btn_services' => '사업 분야 살펴보기',
         'btn_profile' => '회사 소개',
-        
-        'stat_1_val'  => '500+',
-        'stat_1_text' => '완료된 프로젝트',
-        'stat_2_val'  => '14+',
-        'stat_2_text' => '년 경력',
-        'stat_3_val'  => '100%',
-        'stat_3_text' => '안전 기록',
+
+        'stat_1_val' => '500+',
+        'stat_1_text' => '완료 프로젝트',
+        'stat_2_val' => '14+',
+        'stat_2_text' => '년 이상의 경험',
+        'stat_3_val' => '100%',
+        'stat_3_text' => '안전 관리 실적',
     ],
 
     'greetings' => [
-        'subtitle' => 'KPCM의 인사말', // KPCM-ui Insamal
-        'title'    => '대표이사 <br> 인사말', // Daepyo-isa Insamal
-        'position' => '대표이사', // Daepyo-isa
-    'content_1' => 'KPCM은 정직과 혁신이야말로 급변하는 글로벌 시장의 역동성에 대응하는 핵심 열쇠라고 믿습니다. 저희의 다짐은 단순한 성장을 넘어, 모든 파트너와 이해관계자 여러분께 지속 가능한 가치를 제공하는 것입니다.',
-    
-    'content_2' => '저희는 모든 서비스 영역에서 탁월함을 구현하기 위해 끊임없이 변화하고 있으며, 저희가 내딛는 모든 걸음이 회사의 전략적 비전과 조화를 이루도록 최선을 다하고 있습니다. 더 찬란한 미래를 향해 함께 나아갑시다.'
+        'subtitle' => 'KPCM 인사말',
+        'title' => '대표이사 <br> 인사말',
+        'position' => '대표이사',
+        'content_1' => 'KPCM은 급변하는 글로벌 시장 환경에 대응하기 위해 정직과 혁신이 가장 중요한 가치라고 믿습니다. 당사의 목표는 단순한 성장을 넘어 모든 협력사와 이해관계자에게 지속 가능한 가치를 제공하는 것입니다.',
+        'content_2' => '당사는 모든 사업 분야에서 최고의 경쟁력을 확보하기 위해 끊임없이 변화하고 혁신하고 있습니다. 또한 모든 경영 활동이 회사의 전략적 비전과 일치하도록 최선을 다하고 있습니다. 더욱 밝고 성공적인 미래를 향해 함께 나아가겠습니다.',
     ],
 
-'values' => [
-        'subtitle'    => '우리의 기반',
-        'title'       => '핵심 <br> 가치',
-        'desc'        => '단합을 통한 탁월함 추구',
-        
-        // Kartu 1: Integrity
-        'integrity_title' => '청렴 (Integrity)',
-        'integrity_sub'   => '최고의 정직',
-        'integrity_desc'  => '모든 비즈니스 측면에서 정직과 투명성을 유지하며 확고한 신뢰를 구축합니다.',
+    'values' => [
+        'subtitle' => '우리의 경영 철학',
+        'title' => '핵심 <br> 가치',
+        'desc' => '협력과 화합을 통한 지속적인 성장과 발전',
 
-        // Kartu 2: Innovation
-        'innovation_title' => '혁신 (Innovation)',
-        'innovation_sub'   => '현대화',
-        'innovation_desc'  => '효율적인 산업 솔루션을 위해 지속적인 개발과 현대화를 추진합니다.',
+        // 카드 1: 정직과 신뢰
+        'integrity_title' => '정직과 신뢰',
+        'integrity_sub' => '투명한 경영',
+        'integrity_desc' => '모든 사업 활동에서 정직과 투명성을 최우선으로 하며, 고객 및 협력사와의 굳건한 신뢰 관계를 구축합니다.',
 
-        // Kartu 3: Collaboration
-        'collaboration_title' => '협력 (Collaboration)',
-        'collaboration_sub'   => '강력한 시너지',
-        'collaboration_desc'  => '내부 팀, 고객 및 이해관계자 간의 강력하고 조화로운 시너지를 구축합니다.',
+        // 카드 2: 혁신
+        'innovation_title' => '혁신',
+        'innovation_sub' => '지속적인 발전',
+        'innovation_desc' => '지속적인 기술 개발과 현대화를 통해 효율적이고 혁신적인 산업 솔루션을 제공합니다.',
 
-        // Kartu 4: Harmony
-        'harmony_title' => '화합 (Harmony)',
-        'harmony_sub'   => '균형 잡힌 협력',
-        'harmony_desc'  => '원활한 프로젝트 수행을 위해 균형 잡히고 상호 지원적인 환경을 조성합니다.',
+        // 카드 3: 협력
+        'collaboration_title' => '협력',
+        'collaboration_sub' => '강력한 시너지',
+        'collaboration_desc' => '임직원, 고객 및 모든 이해관계자 간의 긴밀하고 조화로운 협력을 통해 강력한 시너지를 창출합니다.',
+
+        // 카드 4: 조화
+        'harmony_title' => '조화',
+        'harmony_sub' => '균형 잡힌 협업',
+        'harmony_desc' => '상호 존중과 협력을 바탕으로 조화로운 업무 환경을 조성하여 모든 프로젝트가 원활하게 수행되도록 합니다.',
     ],
-    
+
     'video' => [
-        'heading'           => '최신 프로젝트 영상', // Choesin Peurojekteu Yeongsang
-        'subheading'        => '프로젝트 하이라이트를 통해 우리의 전문성을 확인하세요.',
-        'badge_playing'     => '재생 중', // Jaesaeng Jung
-        'playlist_title'    => '주요 하이라이트', // Juyo Haillaiteu
-        'playlist_subtitle' => 'KPCM 갤러리', // KPCM Gaelleori
+        'heading' => '최신 프로젝트 영상',
+        'subheading' => '프로젝트 영상을 통해 KPCM의 전문 기술력과 시공 역량을 확인해 보세요.',
+        'badge_playing' => '재생 중',
+        'playlist_title' => '다른 프로젝트 영상',
+        'playlist_subtitle' => 'KPCM 영상 갤러리',
 
-        // Item Video
+        // 영상 목록
         'items' => [
             'overview' => [
-                'title' => '전체 서비스 개요', // Jeonche Seobiseu Gaeyo
-                'desc'  => '소요 시간: 02:15'
+                'title' => '사업 분야 소개',
+                'desc' => '재생 시간: 02:15'
             ],
             'team' => [
-                'title' => '우리 팀', // Uri Tim
-                'desc'  => '소요 시간: 00.32'
+                'title' => 'KPCM 팀 소개',
+                'desc' => '재생 시간: 00:32'
             ],
             'structural' => [
-                'title' => '구조용 강철 작업', // Gujoyong Gangcheol Jageop
-                'desc'  => '중량물 인양 공정'
+                'title' => '철골 구조물 공사',
+                'desc' => '중량물 인양 작업'
             ],
             'safety' => [
-                'title' => '안전 표준', // Anjeon Pyojun
-                'desc'  => 'ISO 구현'
+                'title' => '안전 관리 기준',
+                'desc' => 'ISO 표준 적용'
             ],
         ],
     ],
+
     'services' => [
-        'subtitle' => '전문 분야',
-        'title'    => '우리의 서비스',
-        'desc'     => '우리는 최고의 품질과 전문적인 관리로 포괄적인 건설 솔루션을 제공합니다.',
-        'button'   => '모든 서비스 보기',
+        'subtitle' => 'KPCM의 전문 분야',
+        'title' => '사업 분야',
+        'desc' => '최고 수준의 품질과 전문적인 프로젝트 관리를 바탕으로 종합 건설 솔루션을 제공합니다.',
+        'button' => '전체 사업 분야 보기',
 
-        // Item 1: Civil & Mechanical
-        'civil_mech_name' => 'Civil & M.E.P',
-        'civil_mech_sub'  => '통합 엔지니어링',
-        'civil_mech_desc' => '산업 효율성과 구조적 무결성을 위해 설계된 포괄적인 토목 공사 및 기계 설비 서비스.',
+        // 서비스 1
+        'civil_name' => '토목 및 기계·전기·배관 설비',
+        'civil_sub' => '통합 엔지니어링',
+        'civil_desc' => '산업 시설의 효율성을 극대화하기 위한 종합 토목 공사 및 기계·전기·배관 설비 시공 서비스를 제공합니다.',
 
-        // Item 2: Architecture
-        'architecture_name' => 'Architecture',
-        'architecture_sub'  => '혁신적인 디자인',
-        'architecture_desc' => '미학적 감각과 현대적 기능성을 결합한 고급 건축 계획 및 건물 설계.',
+        // 서비스 2
+        'architecture_name' => '건축 설계',
+        'architecture_sub' => '혁신적인 설계',
+        'architecture_desc' => '심미성과 기능성을 조화롭게 결합한 고품질 건축 설계 및 계획 서비스를 제공합니다.',
 
-        // Item 3: Interior (Jika tetap ingin ditampilkan)
-        'interior_name' => 'Interior Design',
-        'interior_sub'  => '현대적인 미학',
-        'interior_desc' => '기능적이고 세련된 인테리어 솔루션으로 실내 공간을 변화시킵니다.',
+        // 서비스 3
+        'interior_name' => '인테리어 디자인',
+        'interior_sub' => '현대적인 공간 미학',
+        'interior_desc' => '기능성과 세련된 디자인을 결합한 공간 솔루션으로 실내 환경의 가치를 높입니다.',
 
-        // Item 4: Construction & Management
-        'mgmt_name' => 'Construction & Management',
-        'mgmt_sub'  => '엔드 투 엔드 감독',
-        'mgmt_desc' => '기획부터 최종 인계까지 완벽한 프로젝트 감독.',
+        // 서비스 4
+        'mgmt_name' => '건설 및 프로젝트 관리',
+        'mgmt_sub' => '종합 프로젝트 관리',
+        'mgmt_desc' => '초기 계획부터 시공, 품질 관리 및 최종 인도까지 프로젝트 전 과정을 체계적으로 관리합니다.',
     ],
 
     'clients' => [
-        'subtitle' => '신뢰받는 파트너', // Bisa juga diterjemahkan: '' (Mitra Terpercaya)
-        'title'    => '산업 고객의 신뢰', // Saneop Gogaek-ui Sinloe
-        'desc'     => '우리는 다양한 산업 분야의 국영 기업들을 위한 여러 프로젝트를 성공적으로 완료했습니다.',
-        'note'     => '그리고 인도네시아 전역의 다양한 산업 시설들.',
+        'subtitle' => '고객사의 신뢰',
+        'title' => '산업 분야 고객사의 신뢰받는 파트너',
+        'desc' => '다양한 산업 분야의 주요 기업들과 협력하여 수많은 프로젝트를 성공적으로 수행해 왔습니다.',
+        'note' => '이 외에도 인도네시아 전역의 다양한 산업 시설 프로젝트를 수행하고 있습니다.',
+    ],
+
+    'journey' => [
+        'subtitle' => 'KPCM의 성장 과정',
+        'title' => '전문 시공 기업에서 <span class="text-primary">종합 건설사</span>로',
+        'content_1' => 'KPCM은 특수 바닥 시공 분야에서 출발하여 다양한 산업 건설 분야로 사업 영역을 지속적으로 확장해 왔습니다. 꾸준한 성장과 축적된 기술력, 품질에 대한 확고한 책임감을 바탕으로 여러 분야의 프로젝트에 통합 솔루션을 제공할 수 있는 종합 건설사로 발전하였습니다.',
+        'content_2' => '콘크리트 폴리싱 및 에폭시 바닥 시공을 시작으로 지붕 공사, 인테리어 공사, 목재칩 야적장 개발에 이르기까지 모든 성장 단계는 당사의 기술 역량을 강화하고 오늘날 KPCM의 기반을 형성하였습니다. 현재 KPCM은 종합 건설사로서 축적된 모든 전문 역량을 통합하여 신뢰성, 효율성 및 높은 품질을 갖춘 프로젝트 수행 서비스를 제공하고 있습니다.',
+
+        'step1_label' => '전문 시공 기술',
+        'step1_desc' => '콘크리트 폴리싱 · 에폭시 바닥 시공',
+        'step2_label' => '사업 역량 확대',
+        'step2_desc' => '지붕 공사 · 인테리어 공사 · 목재칩 야적장 개발',
+        'step3_label' => '종합 건설사',
+        'step3_desc' => '통합 건설 솔루션',
     ],
 ];

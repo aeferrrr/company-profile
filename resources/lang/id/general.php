@@ -11,6 +11,48 @@ return [
     'contact' => 'Kontak',
     'consult' => 'Konsultasi Proyek Anda',
 
+    // ===== KPC INDONESIA =====
+    'kpc_name' => 'KPC Indonesia',
+    'kpc_new' => 'Baru',
+    'kpc_overview' => 'Sekilas KPC Indonesia',
+    'kpc_desc' => 'TENTANG KPC INDONESIA',
+    'kpc_about' => 'Tentang KPC Indonesia',
+    'kpc_services' => 'Layanan Kami',
+    'kpc_training' => 'Pelatihan & Pendidikan',
+    'kpc_history' => 'Sejarah Perusahaan',
+    'kpc_leader' => 'Pimpinan Perusahaan',
+    'kpc_contact' => 'Hubungi KPC Indonesia',
+
+    // ===== LAYANAN KPC INDONESIA =====
+    'kpc_consulting' => 'Konsultasi Manajemen',
+    'kpc_industrial_training' => 'Pelatihan & Pendidikan Industri',
+    'kpc_investment' => 'Layanan Investasi',
+    'kpc_iso' => 'Konsultasi ISO',
+    'kpc_tax' => 'Pajak & Hukum',
+    'kpc_halal' => 'Sertifikasi Halal',
+
+'footer' => [
+    'company_info' => 'Informasi Perusahaan',
+    'address_line1' => 'Gedung AKA Lt.9, Jl. Bangka Raya,',
+    'address_line2' => 'Mampang Prapatan, Jakarta Selatan',
+
+    'quick_links' => 'Tautan Cepat',
+    'about_company' => 'Tentang Perusahaan',
+    'our_services' => 'Layanan Kami',
+    'project_gallery' => 'Galeri Proyek',
+    'organization' => 'Struktur Organisasi',
+    'contact_page' => 'Hubungi Kami',
+
+    'our_location' => 'Lokasi Kami',
+
+    'cta_title' => 'Siap Membangun?',
+    'cta_description' => 'Hubungi kami untuk konsultasi gratis mengenai proyek Anda.',
+    'free_consultation' => 'Konsultasi Gratis',
+
+    'follow_us' => 'Ikuti Kami',
+    'copyright' => 'Seluruh Hak Dilindungi.',
+],
+
 'seo' => [
         'default_title' => 'PT KPCM Industrial Estate | Kontraktor & Manajemen Konstruksi Nasional',
         'default_desc'  => 'PT KPCM Industrial Estate menyediakan solusi konstruksi industri menyeluruh di Indonesia, mulai dari Civil, Architecture, Mechanical, hingga Electrical. Head Office di Jakarta Selatan.',
@@ -29,5 +71,6 @@ return [
                 
         'contact_title' => 'Hubungi PT KPCM Industrial Estate | Head Office Jakarta Selatan',
         'contact_desc'  => 'Konsultasikan proyek Anda di mana pun di Indonesia dengan PT KPCM Industrial Estate. Kantor pusat kami berlokasi di Jakarta Selatan.',
-    ],
+    
+        ],
 ];

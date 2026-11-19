@@ -1,37 +1,48 @@
+
 <?php
 
 return [
+    // HERO
     'hero_title' => 'Tentang Kami',
-    'hero_subtitle' => 'Mendorong Pertumbuhan Industri dengan Integritas dan Keunggulan',
-    
-    'who_we_are' => 'Siapa Kami',
-    'strategic_partner' => 'Mitra Strategis untuk',
-    'industrial_excellence' => 'Keunggulan Industri',
-    
-    'desc_p1' => '<strong>PT. KPCM Industrial Estate</strong> Didirikan pada tahun 2011, PT KPCM telah menjadi kekuatan pendorong dalam meningkatkan produktivitas industri, serta berkontribusi secara signifikan terhadap pertumbuhan pesat ekonomi nasional.',
-    'desc_p2' => 'Kami menghadirkan beragam layanan yang dirancang untuk mendukung globalisasi dan mendorong inovasi manajemen. Tujuan kami adalah memberdayakan berbagai perusahaan agar mampu menghadapi dan mengatasi tantangan dinamis di abad ke-21.',
-    
-    'commitment_title' => 'Komitmen Kami',
-    'commitment_text' => '"Menyediakan infrastruktur berkualitas yang mendorong pertumbuhan ekonomi nasional dengan menjunjung tinggi keselamatan dan keberlanjutan."',
-    
-    'vision_title' => 'Visi Kami',
-    'vision_text' => 'Menjadi perusahaan pengembang terkemuka yang berdedikasi untuk menghadirkan solusi industri yang berkelanjutan, efisien, dan inovatif, guna menciptakan nilai jangka panjang bagi klien, mitra, dan sektor industri yang kami layani.',
-    
-    'mission_title' => 'Misi Kami',
-    'mission_text' => 'Menyediakan solusi bisnis strategis yang kompetitif dan berorientasi pada hasil guna mengoptimalkan efisiensi operasional serta memaksimalkan imbal hasil investasi (return on investment) bagi para pemangku kepentingan melalui integritas dan inovasi.',
-    
-    'foundation' => 'Fondasi Kami',
-    'corp_values' => 'Nilai Perusahaan',
-    
-    'val_integrity' => 'Integritas',
-    'val_integrity_desc' => 'Menjunjung tinggi kejujuran dan transparansi.',
-    
-    'val_innovation' => 'Inovasi',
-    'val_innovation_desc' => 'Melakukan pengembangan dan modernisasi secara berkelanjutan.',
-    
-    'val_collaboration' => 'Kolaborasi',
-    'val_collaboration_desc' => 'Membangun sinergi yang kuat dan harmonis.',
-    
-    'val_excellence' => 'Keunggulan',
-    'val_excellence_desc' => 'Mengutamakan kualitas terbaik dan standar keselamatan yang tinggi.',
+    'hero_subtitle' => 'Membangun Keunggulan Industri untuk Masa Depan',
+
+    // WHO WE ARE
+    'intro_label' => 'SIAPA KAMI',
+    'intro_title' => 'Mitra Strategis untuk Keunggulan Industri',
+    'intro_image_alt' => 'Kantor PT KPCM Industrial Estate',
+    'intro_content_1' => 'didirikan pada tahun 2011, merupakan pelopor pengembangan kawasan industri terpadu yang mendorong kemajuan ekonomi nasional melalui infrastruktur kelas dunia.',
+    'intro_content_2' => 'Kami memberdayakan perusahaan untuk menghadapi tantangan global abad ke-21 melalui inovasi manajemen dan ekosistem bisnis yang dinamis.',
+
+    // VISION & MISSION
+    'vision_title' => 'Visi',
+    'vision_desc' => 'Menjadi pengembang terkemuka solusi industri berkelanjutan dan inovatif untuk menciptakan nilai jangka panjang bagi klien, mitra, dan sektor industri.',
+
+    'mission_title' => 'Misi',
+    'mission_desc' => 'Menyediakan solusi strategis yang kompetitif untuk mengoptimalkan efisiensi operasional dan pengembalian investasi (ROI) melalui integritas dan inovasi.',
+
+    // CORE VALUES
+    'values_label' => 'FONDASI KAMI',
+    'values_title' => 'Nilai-Nilai Inti',
+
+    'integrity_title' => 'Integritas',
+    'integrity_desc' => 'Kami menjunjung tinggi kejujuran dan transparansi dalam setiap aspek bisnis.',
+
+    'collaboration_title' => 'Kolaborasi',
+    'collaboration_desc' => 'Membangun sinergi yang kuat antara tim internal dan seluruh pemangku kepentingan.',
+
+    'innovation_title' => 'Inovasi',
+    'innovation_desc' => 'Modernisasi berkelanjutan untuk menghadirkan solusi industri yang efisien.',
+
+    'harmony_title' => 'Harmoni',
+    'harmony_desc' => 'Menciptakan lingkungan kerja yang seimbang untuk memastikan kelancaran pelaksanaan proyek.',
+
+    // WHO WE SERVE
+    'serve_label' => 'SIAPA YANG KAMI LAYANI',
+    'serve_title' => 'Mitra Industri Nasional',
+    'serve_desc' => 'Melayani sektor manufaktur otomotif, pusat logistik, dan penyedia energi yang berkomitmen membangun rantai pasok yang tangguh.',
+
+    // HOW WE WORK
+    'work_label' => 'CARA KAMI BEKERJA',
+    'work_title' => 'Standar & Ketepatan',
+    'work_desc' => 'Mengintegrasikan infrastruktur modern dengan manajemen proaktif untuk memastikan solusi teknis yang andal dan berkelanjutan.',
 ];

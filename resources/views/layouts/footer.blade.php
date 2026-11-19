@@ -1,15 +1,16 @@
+
 <footer id="footer" class="footer reveal">
     <div class="container">
         <div class="footer-grid">
 
             <div class="footer-col reveal">
-                <h6 class="footer-title">Company Info</h6>
+                <h6 class="footer-title">{{ __('general.footer.company_info') }}</h6>
                 <div class="footer-info">
                     <div class="address-box">
                         <i class="fa-solid fa-location-dot icon-accent"></i>
                         <span>
-                            Gedung AKA Lt.9, Jl. Bangka Raya,<br>
-                            Mampang Prapatan, Jakarta Selatan
+                            {{ __('general.footer.address_line1') }}<br>
+                            {{ __('general.footer.address_line2') }}
                         </span>
                     </div>
 
@@ -33,6 +34,7 @@
                                 <i class="fa-solid fa-envelope icon-accent"></i> adinda.kpcm@gmail.com
                             </a>
                         </div> --}}
+
                         <div class="contact-person mt-3">
                             <strong class="text-white">Admin</strong>
                             <a href="tel:+6285111377112">
@@ -47,18 +49,18 @@
             </div>
 
             <div class="footer-col reveal">
-                <h6 class="footer-title">Quick Links</h6>
+                <h6 class="footer-title">{{ __('general.footer.quick_links') }}</h6>
                 <ul class="footer-links">
-                    <li><a href="{{ route('about') }}">About Company</a></li>
-                    <li><a href="{{ route('services') }}">Our Services</a></li>
-                    <li><a href="{{ route('projects') }}">Project Galery</a></li>
-                    <li><a href="{{ route('organization') }}">Organization</a></li>
-                    <li><a href="{{ route('contact') }}">Contact Page</a></li>
+                    <li><a href="{{ route('about') }}">{{ __('general.footer.about_company') }}</a></li>
+                    <li><a href="{{ route('services') }}">{{ __('general.footer.our_services') }}</a></li>
+                    <li><a href="{{ route('projects') }}">{{ __('general.footer.project_gallery') }}</a></li>
+                    <li><a href="{{ route('organization') }}">{{ __('general.footer.organization') }}</a></li>
+                    <li><a href="{{ route('contact') }}">{{ __('general.footer.contact_page') }}</a></li>
                 </ul>
             </div>
 
             <div class="footer-col reveal">
-                <h6 class="footer-title">Our Location</h6>
+                <h6 class="footer-title">{{ __('general.footer.our_location') }}</h6>
                 <div class="footer-map-wrapper">
                     <iframe
                         src="https://www.google.com/maps?q=PT+KPCM+Industrial+Estate+-6.2404597,106.8175674&output=embed"
@@ -68,17 +70,17 @@
             </div>
 
             <div class="footer-col footer-cta-col reveal">
-                <h6 class="footer-title">Siap Membangun?</h6>
+                <h6 class="footer-title">{{ __('general.footer.cta_title') }}</h6>
                 <p class="footer-text">
-                    Hubungi kami untuk konsultasi gratis mengenai proyek Anda.
+                    {{ __('general.footer.cta_description') }}
                 </p>
 
                 <a href="https://wa.me/6285111377112" class="btn btn-footer" target="_blank">
-                    <i class="fa-brands fa-whatsapp"></i> Konsultasi Gratis
+                    <i class="fa-brands fa-whatsapp"></i> {{ __('general.footer.free_consultation') }}
                 </a>
 
                 <div class="social-section">
-                    <span class="social-label">Follow Us</span>
+                    <span class="social-label">{{ __('general.footer.follow_us') }}</span>
                     <div class="social-icons">
                         <a href="https://www.instagram.com/kpcmindustrial/" target="_blank" aria-label="Instagram">
                             <i class="fa-brands fa-instagram"></i>
@@ -101,7 +103,7 @@
         </div>
 
         <div class="footer-bottom reveal">
-            <p>© {{ date('Y') }} <strong>PT KPCM Industrial Estate</strong>. All Rights Reserved.</p>
+            <p>© {{ date('Y') }} <strong>PT KPCM Industrial Estate</strong>. {{ __('general.footer.copyright') }}</p>
         </div>
     </div>
 </footer>

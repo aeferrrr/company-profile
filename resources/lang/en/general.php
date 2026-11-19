@@ -15,6 +15,48 @@ return [
     'hero_desc'  => 'Providing reliable, efficient, and sustainable industrial construction solutions since 2011.',
     'cta'        => 'Get Free Consultation',
 
+    // ===== KPC INDONESIA =====
+    'kpc_name' => 'KPC Indonesia',
+    'kpc_new' => 'New',
+    'kpc_overview' => 'KPC Indonesia Overview',
+    'kpc_desc' => 'ABOUT KPC INDONESIA',
+    'kpc_about' => 'About KPC Indonesia',
+    'kpc_services' => 'Our Services',
+    'kpc_training' => 'Training & Education',
+    'kpc_history' => 'Company History',
+    'kpc_leader' => 'Company Leadership',
+    'kpc_contact' => 'Contact KPC Indonesia',
+
+    // ===== KPC INDONESIA SERVICES =====
+    'kpc_consulting' => 'Management Consulting',
+    'kpc_industrial_training' => 'Industrial Training & Education',
+    'kpc_investment' => 'Investment Services',
+    'kpc_iso' => 'ISO Consulting',
+    'kpc_tax' => 'Tax & Legal Services',
+    'kpc_halal' => 'Halal Certification',
+
+'footer' => [
+    'company_info' => 'Company Info',
+    'address_line1' => 'AKA Building, 9th Floor, Jl. Bangka Raya,',
+    'address_line2' => 'Mampang Prapatan, South Jakarta',
+
+    'quick_links' => 'Quick Links',
+    'about_company' => 'About Company',
+    'our_services' => 'Our Services',
+    'project_gallery' => 'Project Gallery',
+    'organization' => 'Organization',
+    'contact_page' => 'Contact Page',
+
+    'our_location' => 'Our Location',
+
+    'cta_title' => 'Ready to Build?',
+    'cta_description' => 'Contact us for a free consultation about your project.',
+    'free_consultation' => 'Free Consultation',
+
+    'follow_us' => 'Follow Us',
+    'copyright' => 'All Rights Reserved.',
+],
+
 'seo' => [
         'default_title' => 'PT KPCM Industrial Estate | National Construction & Engineering',
         'default_desc'  => 'PT KPCM Industrial Estate provides comprehensive industrial construction solutions across Indonesia, including Civil, Mechanical, and Electrical engineering. Head Office in South Jakarta.',
@@ -34,4 +76,5 @@ return [
         'contact_title' => 'Contact PT KPCM Industrial Estate | Head Office South Jakarta',
         'contact_desc'  => 'Consult your construction project anywhere in Indonesia with PT KPCM Industrial Estate. Headquartered in South Jakarta.',
     ],
+    
 ];

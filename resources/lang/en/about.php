@@ -1,37 +1,48 @@
+
 <?php
 
 return [
+    // HERO
     'hero_title' => 'About Us',
-    'hero_subtitle' => 'Driving Industrial Growth with Integrity and Excellence',
-    
-    'who_we_are' => 'Who We Are',
-    'strategic_partner' => 'Strategic Partner for',
-    'industrial_excellence' => 'Industrial Excellence',
-    
-    'desc_p1' => '<strong>PT. KPCM Industrial Estate</strong> Established in 2011, PT KPCM has become a driving force in enhancing industrial productivity and significantly contributing to the rapid growth of the national economy.',
-    'desc_p2' => 'We provide a wide range of services designed to support globalization and drive management innovation. Our goal is to empower companies to face and overcome the dynamic challenges of the 21st century.',
-    
-    'commitment_title' => 'Our Commitment',
-    'commitment_text' => '"Providing quality infrastructure that drives national economic growth by upholding high safety and sustainability standards."',
-    
+    'hero_subtitle' => 'Building Industrial Excellence for the Future',
+
+    // WHO WE ARE
+    'intro_label' => 'WHO WE ARE',
+    'intro_title' => 'Strategic Partner for Industrial Excellence',
+    'intro_image_alt' => 'PT KPCM Industrial Estate Office',
+    'intro_content_1' => 'established in 2011, is a pioneer in integrated industrial estate development, driving national economic progress through world-class infrastructure.',
+    'intro_content_2' => 'We empower businesses to navigate the global challenges of the 21st century through innovative management and a dynamic business ecosystem.',
+
+    // VISION & MISSION
     'vision_title' => 'Our Vision',
-    'vision_text' => 'To be a leading developer company dedicated to delivering sustainable, efficient, and innovative industrial solutions to create long-term value for clients, partners, and the industrial sectors we serve.',
-    
+    'vision_desc' => 'To become a leading developer of sustainable and innovative industrial solutions, creating long-term value for clients, partners, and the industrial sector.',
+
     'mission_title' => 'Our Mission',
-    'mission_text' => 'Providing competitive and result-oriented strategic business solutions to optimize operational efficiency and maximize return on investment for stakeholders through integrity and innovation.',
-    
-    'foundation' => 'Our Foundation',
-    'corp_values' => 'Corporate Values',
-    
-    'val_integrity' => 'Integrity',
-    'val_integrity_desc' => 'Upholding honesty and transparency.',
-    
-    'val_innovation' => 'Innovation',
-    'val_innovation_desc' => 'Pursuing continuous development and modernization.',
-    
-    'val_collaboration' => 'Collaboration',
-    'val_collaboration_desc' => 'Building strong and harmonious synergy.',
-    
-    'val_excellence' => 'Excellence',
-    'val_excellence_desc' => 'Prioritizing the best quality and high safety standards.',
+    'mission_desc' => 'To deliver competitive strategic solutions that optimize operational efficiency and return on investment (ROI) through integrity and innovation.',
+
+    // CORE VALUES
+    'values_label' => 'OUR FOUNDATION',
+    'values_title' => 'Core Values',
+
+    'integrity_title' => 'Integrity',
+    'integrity_desc' => 'We uphold honesty and transparency in every aspect of our business.',
+
+    'collaboration_title' => 'Collaboration',
+    'collaboration_desc' => 'Building strong synergy between internal teams and all stakeholders.',
+
+    'innovation_title' => 'Innovation',
+    'innovation_desc' => 'Continuous modernization to deliver efficient industrial solutions.',
+
+    'harmony_title' => 'Harmony',
+    'harmony_desc' => 'Creating a balanced working environment to ensure seamless project delivery.',
+
+    // WHO WE SERVE
+    'serve_label' => 'WHO WE SERVE',
+    'serve_title' => 'National Industrial Partners',
+    'serve_desc' => 'Serving automotive manufacturing, logistics centers, and energy providers committed to building resilient supply chains.',
+
+    // HOW WE WORK
+    'work_label' => 'HOW WE WORK',
+    'work_title' => 'Standards & Precision',
+    'work_desc' => 'Integrating modern infrastructure with proactive management to ensure reliable and sustainable technical solutions.',
 ];
