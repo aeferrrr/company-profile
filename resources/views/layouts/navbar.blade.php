@@ -77,6 +77,117 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('projects') }}">{{ __('general.projects') }}</a>
                 </li>
+
+
+{{-- ===== KPC INDONESIA ===== --}}
+<li class="nav-item dropdown kpc-nav-item">
+
+    <a
+        class="nav-link dropdown-toggle {{ request()->routeIs('kpc') ? 'active' : '' }}"
+        href="{{ route('kpc') }}"
+        id="kpcDropdown"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+    >
+        {{ __('general.kpc') }}
+        <span class="badge badge-new ms-1">
+            {{ __('general.new') }}
+        </span>
+    </a>
+
+    <ul class="dropdown-menu dropdown-menu-kpc shadow-sm"
+        aria-labelledby="kpcDropdown">
+
+        <li>
+            <a class="dropdown-item fw-bold" href="{{ route('kpc') }}">
+                KPC Indonesia Overview
+            </a>
+        </li>
+
+        <li><hr class="dropdown-divider"></li>
+
+        <li>
+            <h6 class="dropdown-header">
+                {{ __('general.kpc_desc') }}
+            </h6>
+        </li>
+
+        <li>
+            <a class="dropdown-item" href="{{ route('kpc') }}#tentang">
+                {{ __('general.kpc_about') }}
+            </a>
+        </li>
+
+        <li class="dropdown-submenu">
+            <a class="dropdown-item d-flex justify-content-between align-items-center"
+               href="{{ route('kpc') }}#layanan">
+                {{ __('general.kpc_services') }}
+                <span aria-hidden="true">&rsaquo;</span>
+            </a>
+
+            <ul class="dropdown-menu shadow-sm">
+                <li>
+                    <a class="dropdown-item" href="{{ route('kpc') }}#svc-consulting">
+                        Management Consulting
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('kpc') }}#svc-training">
+                        Industrial Training & Education
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('kpc') }}#svc-investment">
+                        Investment Service
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('kpc') }}#svc-iso">
+                        ISO Consulting
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('kpc') }}#svc-tax">
+                        Tax & Legal
+                    </a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('kpc') }}#svc-halal">
+                        Halal Certification
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li>
+            <a class="dropdown-item" href="{{ route('kpc') }}#pelatihan">
+                {{ __('general.kpc_training') }}
+            </a>
+        </li>
+
+        <li>
+            <a class="dropdown-item" href="{{ route('kpc') }}#sejarah">
+                {{ __('general.kpc_history') }}
+            </a>
+        </li>
+
+        <li>
+            <a class="dropdown-item" href="{{ route('kpc') }}#pimpinan">
+                {{ __('general.kpc_leader') }}
+            </a>
+        </li>
+
+        <li>
+            <a class="dropdown-item" href="{{ route('kpc') }}#kontak">
+                {{ __('general.kpc_contact') }}
+            </a>
+        </li>
+    </ul>
+</li>
+{{-- ===== END KPC INDONESIA ===== --}}
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contact') }}">{{ __('general.contact') }}</a>
                 </li>
@@ -110,32 +221,93 @@
     </div>
 </nav>
 
+
 <script>
-    let lastScrollTop = 0;
+document.addEventListener('DOMContentLoaded', function () {
+
     const navbar = document.querySelector('.navbar-corporate');
-    const scrollThreshold = 100; // Jarak scroll sebelum efek mulai aktif
 
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (!navbar) return;
 
-        // 1. Logika Hilang/Muncul
-        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
-            // Scroll ke BAWAH -> Sembunyikan Navbar
-            navbar.classList.add('navbar-hidden');
-            // Hapus efek background solid saat disembunyikan (opsional)
-            navbar.classList.remove('navbar-scrolled');
-        } else {
-            // Scroll ke ATAS -> Munculkan Navbar
+    let lastScrollTop = window.scrollY;
+    let ticking = false;
+
+    const scrollThreshold = 100;
+    const scrollTolerance = 6;
+
+    function updateNavbar() {
+
+        const scrollTop = Math.max(0, window.scrollY);
+
+        const dropdownOpen = navbar.querySelector('.dropdown-menu.show');
+        const mobileMenuOpen = navbar.querySelector('.navbar-collapse.show');
+        const navbarFocused = navbar.contains(document.activeElement);
+        const navbarHovered = navbar.matches(':hover');
+
+        const menuIsActive =
+            dropdownOpen ||
+            mobileMenuOpen ||
+            navbarFocused ||
+            navbarHovered;
+
+        // Background solid saat scroll
+        navbar.classList.toggle(
+            'navbar-scrolled',
+            scrollTop > 40
+        );
+
+        // Selalu tampil ketika menu sedang digunakan
+        if (menuIsActive) {
             navbar.classList.remove('navbar-hidden');
+        } else {
 
-            // Tambahkan efek background solid jika tidak di paling atas
-            if (scrollTop > 50) {
-                navbar.classList.add('navbar-scrolled');
-            } else {
-                navbar.classList.remove('navbar-scrolled');
+            const scrollDifference = scrollTop - lastScrollTop;
+
+            if (
+                scrollTop > scrollThreshold &&
+                scrollDifference > scrollTolerance
+            ) {
+                navbar.classList.add('navbar-hidden');
+            }
+
+            if (
+                scrollDifference < -scrollTolerance ||
+                scrollTop <= scrollThreshold
+            ) {
+                navbar.classList.remove('navbar-hidden');
             }
         }
 
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
-    }, false);
+        lastScrollTop = scrollTop;
+        ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+
+        if (!ticking) {
+            window.requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+
+    }, { passive: true });
+
+    // Navbar muncul saat dropdown dibuka
+    navbar.addEventListener('show.bs.dropdown', function () {
+        navbar.classList.remove('navbar-hidden');
+    });
+
+    // Navbar muncul saat mobile menu dibuka
+    navbar.addEventListener('show.bs.collapse', function () {
+        navbar.classList.remove('navbar-hidden');
+    });
+
+    // Tampilkan navbar saat fokus keyboard masuk
+    navbar.addEventListener('focusin', function () {
+        navbar.classList.remove('navbar-hidden');
+    });
+
+    // Initial state
+    updateNavbar();
+
+});
 </script>

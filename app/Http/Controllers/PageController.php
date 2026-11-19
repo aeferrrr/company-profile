@@ -153,6 +153,11 @@ class PageController extends Controller
         ];
     }
 
+        public function kpc()
+    {
+        return view('pages.kpc');
+    }
+
     public function contact()
     {
         return view('pages.contact');
