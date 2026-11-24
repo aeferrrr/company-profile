@@ -44,6 +44,7 @@
     <link rel="stylesheet" href="{{ asset('css/services/services.css') }}">
     {{-- Project --}}
     <link rel="stylesheet" href="{{ asset('css/projects/project.css') }}">
+    {{-- kpc-indonesia --}}
     <link rel="stylesheet" href="{{ asset('css/kpci/kpc-indonesia.css') }}">
     {{-- CONTACT --}}
     <link rel="stylesheet" href="{{ asset('css//contact/contactus.css') }}">

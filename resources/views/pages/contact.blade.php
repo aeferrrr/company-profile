@@ -11,7 +11,7 @@
     ====================== --}}
     {{-- HERO --}}
     <section class="hero-section hero-page">
-        <img src="{{ asset('images/hero/worker-meeting.webp') }}" class="hero-bg" alt="{{ __('contact.hero_title') }}">
+        <img src="{{ asset('images/hero/contact-hero.webp') }}" class="hero-bg" alt="{{ __('contact.hero_title') }}">
 
         <div class="hero-overlay"></div>
 

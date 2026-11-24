@@ -1,9 +1,18 @@
 /* =====================================================
+   PROJECTS PAGE — CLEAN CSS
+   Hero, Filter, Gallery, Pagination, Modal & Viewer
+   ===================================================== */
+
+/* =====================================================
    1. HERO SECTION
-===================================================== */
+   ===================================================== */
 .hero-section {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, var(--bg-broken-white) 0%, var(--bg-surface) 100%);
+    background: linear-gradient(
+        135deg,
+        var(--bg-broken-white) 0%,
+        var(--bg-surface) 100%
+    );
     border-bottom: 1px solid var(--border-soft);
     text-align: center;
 }
@@ -25,8 +34,8 @@
 }
 
 /* =====================================================
-   3. FILTER SECTION
-===================================================== */
+   2. CATEGORY FILTER
+   ===================================================== */
 .filter-section {
     padding: 40px 0;
     position: sticky;
@@ -63,6 +72,19 @@
     border-color: var(--primary);
 }
 
+/* Pertahankan prioritas terhadap style link global */
+.nav-filter .filter-link {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Hindari underline dari gaya link global */
+.nav-filter .filter-link:hover,
+.nav-filter .filter-link:focus,
+.nav-filter .filter-link:active {
+    text-decoration: none;
+}
+
 .filter-link.active {
     color: var(--text-light);
     background: var(--primary);
@@ -91,13 +113,21 @@
     background: rgba(255, 255, 255, 0.25);
 }
 
-
 /* =====================================================
-   4. GALLERY SECTION
-===================================================== */
+   3. GALLERY & PROJECT CARDS
+   ===================================================== */
 .gallery-section {
+    position: relative;
     padding: 80px 0 40px;
     min-height: 400px;
+}
+
+#galleryGrid {
+    transition: opacity 0.4s ease;
+}
+
+#galleryGrid.fade-out {
+    opacity: 0;
 }
 
 .gallery-container {
@@ -118,13 +148,35 @@
     transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+.gallery-item:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+}
+
 .gallery-item img {
+    display: block;
     width: 100%;
     height: auto;
     aspect-ratio: 3 / 2;
     object-fit: cover;
     object-position: center;
-    display: block;
+    opacity: 0;
+    transition:
+        opacity 0.5s ease,
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-item img.loaded {
+    opacity: 1;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.12);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
 }
 
 .gallery-overlay {
@@ -143,16 +195,6 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease;
-}
-
-
-.gallery-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(255, 255, 255, 0.12);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.1);
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -180,10 +222,51 @@
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Jumlah foto dan video pada kartu */
+.media-badges {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    display: flex;
+    gap: 6px;
+}
+
+.media-badges span {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(6px);
+    border-radius: 50px;
+}
+
+/* Skeleton kartu sebelum gambar selesai dimuat */
+.gallery-item:not(.is-ready) {
+    background: linear-gradient(90deg, #ececec 25%, #f6f6f6 50%, #ececec 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.4s linear infinite;
+}
+
+/* Loading indicator ketika gallery diperbarui */
+.gallery-section.is-loading::after {
+    content: "";
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    width: 38px;
+    height: 38px;
+    margin-left: -19px;
+    border: 3px solid var(--border-soft);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
 
 /* =====================================================
-   5. EMPTY STATE
-===================================================== */
+   4. EMPTY STATE
+   ===================================================== */
 .empty-state {
     display: flex;
     flex-direction: column;
@@ -211,28 +294,53 @@
     color: var(--text-grey);
 }
 
-
 /* =====================================================
-   6. LOAD MORE / ACTION SECTION
-===================================================== */
+   5. ACTION & PAGINATION
+   ===================================================== */
 .action-section {
     padding-bottom: 100px;
 }
 
+#projectPagination .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+}
+
+#projectPagination .page-item {
+    list-style: none;
+}
+
+#projectPagination .page-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    min-height: 42px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#gallerySection,
+#filterSection {
+    scroll-margin-top: 100px;
+}
 
 /* =====================================================
-   7. FOOTER SECTION
-===================================================== */
+   6. FOOTER
+   ===================================================== */
 .main-footer {
     padding: 60px 0;
     background: var(--dark-navbar);
     color: rgba(255, 255, 255, 0.7);
 }
 
-
 /* =====================================================
-   8. IMAGE MODAL
-===================================================== */
+   7. IMAGE MODAL & NAVIGATION
+   ===================================================== */
 .image-modal {
     display: none;
     position: fixed;
@@ -248,12 +356,20 @@
     display: flex;
 }
 
+body.viewer-open {
+    overflow: hidden;
+}
+
 .close-modal {
     position: absolute;
     top: 30px;
     right: 40px;
+    z-index: 11;
     font-size: 40px;
+    line-height: 1;
     color: #fff;
+    background: none;
+    border: 0;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -283,13 +399,213 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
-.modal-prev { left: 24px; }
-.modal-next { right: 24px; }
+.modal-prev {
+    left: 24px;
+}
 
+.modal-next {
+    right: 24px;
+}
 
 /* =====================================================
-   9. KEYFRAMES
-===================================================== */
+   8. PROJECT VIEWER
+   ===================================================== */
+.viewer-wrap {
+    width: min(1100px, 94vw);
+    max-height: 94vh;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    animation: zoomIn 0.3s ease;
+}
+
+.viewer-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding-right: 48px; /* Ruang tombol close */
+}
+
+.viewer-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.viewer-counter {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    white-space: nowrap;
+}
+
+/* Chip kategori dalam viewer */
+.viewer-sections {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.viewer-sections::-webkit-scrollbar {
+    display: none;
+}
+
+.viewer-sections:empty {
+    display: none;
+}
+
+.viewer-chip {
+    flex-shrink: 0;
+    padding: 7px 18px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.75);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.viewer-chip:hover {
+    color: #fff;
+    border-color: #fff;
+}
+
+.viewer-chip.active {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.viewer-chip small {
+    margin-left: 6px;
+    opacity: 0.7;
+}
+
+/* Media viewer */
+.viewer-stage-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 0;
+}
+
+.viewer-stage {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.viewer-stage img,
+.viewer-stage video {
+    max-width: 100%;
+    max-height: calc(100vh - 250px); /* Fallback browser lama */
+    max-height: calc(100dvh - 250px);
+    border-radius: 10px;
+    background: #000;
+}
+
+.viewer-stage iframe {
+    width: min(100%, 960px);
+    aspect-ratio: 16 / 9;
+    border: 0;
+    border-radius: 10px;
+    background: #000;
+}
+
+.viewer-stage-wrap .modal-prev {
+    left: 10px;
+}
+
+.viewer-stage-wrap .modal-next {
+    right: 10px;
+}
+
+/* Loading indicator media */
+.viewer-stage.is-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+}
+
+.viewer-stage > * {
+    transition: opacity 0.3s ease;
+}
+
+.viewer-stage.is-loading > * {
+    opacity: 0;
+}
+
+/* Thumbnail strip */
+.viewer-thumbs {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: thin;
+}
+
+.viewer-thumb {
+    position: relative;
+    flex-shrink: 0;
+    width: 90px;
+    height: 60px;
+    padding: 0;
+    overflow: hidden;
+    background: #222;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    opacity: 0.55;
+    cursor: pointer;
+    transition:
+        opacity 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.viewer-thumb:hover {
+    opacity: 0.85;
+}
+
+.viewer-thumb.active {
+    opacity: 1;
+    border-color: var(--primary);
+}
+
+.viewer-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.viewer-thumb .play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* =====================================================
+   9. ANIMATIONS
+   ===================================================== */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -302,14 +618,29 @@
 }
 
 @keyframes zoomIn {
-    from { transform: scale(0.8); }
-    to   { transform: scale(1); }
+    from {
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
+@keyframes shimmer {
+    to {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
 
 /* =====================================================
-   RESPONSIVE — Tablet (≤ 992px)
-===================================================== */
+   10. RESPONSIVE — TABLET (max 992px)
+   ===================================================== */
 @media (max-width: 992px) {
     .hero-section {
         padding: 100px 0 60px;
@@ -325,10 +656,9 @@
     }
 }
 
-
 /* =====================================================
-   RESPONSIVE — Mobile Large (≤ 768px)
-===================================================== */
+   11. RESPONSIVE — MOBILE LARGE (max 768px)
+   ===================================================== */
 @media (max-width: 768px) {
     .hero-section {
         padding: 90px 0 50px;
@@ -364,7 +694,6 @@
     }
 
     .gallery-container {
-        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
 
@@ -389,14 +718,32 @@
         padding: 6px 14px;
     }
 
-    .modal-prev { left: 10px; }
-    .modal-next { right: 10px; }
+    .modal-prev {
+        left: 10px;
+    }
+
+    .modal-next {
+        right: 10px;
+    }
+
+    .viewer-title {
+        font-size: 1.05rem;
+    }
+
+    .viewer-thumb {
+        width: 72px;
+        height: 50px;
+    }
+
+    .viewer-stage img,
+    .viewer-stage video {
+        max-height: calc(100dvh - 230px);
+    }
 }
 
-
 /* =====================================================
-   RESPONSIVE — Mobile Small (≤ 576px)
-===================================================== */
+   12. RESPONSIVE — MOBILE SMALL (max 576px)
+   ===================================================== */
 @media (max-width: 576px) {
     .hero-section {
         padding: 80px 0 40px;
@@ -413,7 +760,6 @@
 
     .gallery-container {
         grid-template-columns: 1fr;
-        gap: 16px;
     }
 
     .gallery-item {
@@ -438,12 +784,16 @@
         font-size: 1.6rem;
         padding: 4px 10px;
     }
+
+    #projectPagination .page-link {
+        min-width: 36px;
+        min-height: 36px;
+    }
 }
 
-
 /* =====================================================
-   RESPONSIVE — iPhone SE (≤ 375px)
-===================================================== */
+   13. RESPONSIVE — SMALL DEVICES (max 375px)
+   ===================================================== */
 @media (max-width: 375px) {
     .nav-filter {
         justify-content: flex-start;
@@ -466,202 +816,70 @@
 }
 
 /* =====================================================
-   TAMBAHKAN DI BAWAH CSS LAMA (hapus .modal-content-img
-   jika tidak dipakai lagi)
-===================================================== */
-
-/* fix: fade-out sebelumnya dipasang di #galleryGrid, bukan .gallery-container */
-#galleryGrid { transition: opacity 0.4s ease; }
-#galleryGrid.fade-out { opacity: 0; }
-
-.gallery-item:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
-
-/* ── Badge jumlah media di card ─────────────────────── */
-.media-badges {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    z-index: 2;
-    display: flex;
-    gap: 6px;
-}
-.media-badges span {
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(6px);
-    border-radius: 50px;
-}
-
-/* ── Viewer ─────────────────────────────────────────── */
-body.viewer-open { overflow: hidden; }
-
-.viewer-wrap {
-    width: min(1100px, 94vw);
-    max-height: 94vh;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    animation: zoomIn 0.3s ease;
-}
-
-.viewer-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    padding-right: 48px; /* ruang untuk tombol close */
-}
-.viewer-title   { margin: 0; font-size: 1.3rem; font-weight: 600; color: #fff; }
-.viewer-counter { font-size: 0.85rem; color: rgba(255, 255, 255, 0.6); white-space: nowrap; }
-
-/* chip sub-bagian */
-.viewer-sections {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    scrollbar-width: none;
-}
-.viewer-sections::-webkit-scrollbar { display: none; }
-.viewer-sections:empty { display: none; }
-
-.viewer-chip {
-    flex-shrink: 0;
-    padding: 7px 18px;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.75);
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-.viewer-chip:hover { color: #fff; border-color: #fff; }
-.viewer-chip.active { color: #fff; background: var(--primary); border-color: var(--primary); }
-.viewer-chip small { margin-left: 6px; opacity: 0.7; }
-
-/* stage */
-.viewer-stage-wrap { position: relative; display: flex; justify-content: center; min-height: 0; }
-.viewer-stage {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.viewer-stage img,
-.viewer-stage video {
-    max-width: 100%;
-    max-height: calc(100vh - 250px);
-    max-height: calc(100dvh - 250px);
-    border-radius: 10px;
-    background: #000;
-}
-.viewer-stage iframe {
-    width: min(100%, 960px);
-    aspect-ratio: 16 / 9;
-    border: 0;
-    border-radius: 10px;
-    background: #000;
-}
-
-.viewer-stage-wrap .modal-prev { left: 10px; }
-.viewer-stage-wrap .modal-next { right: 10px; }
-.close-modal { background: none; border: 0; line-height: 1; z-index: 11; }
-
-/* thumbnail strip */
-.viewer-thumbs {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: thin;
-}
-.viewer-thumb {
-    position: relative;
-    flex-shrink: 0;
-    width: 90px;
-    height: 60px;
-    padding: 0;
-    overflow: hidden;
-    background: #222;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    opacity: 0.55;
-    cursor: pointer;
-    transition: opacity 0.25s ease, border-color 0.25s ease;
-}
-.viewer-thumb:hover { opacity: 0.85; }
-.viewer-thumb.active { opacity: 1; border-color: var(--primary); }
-.viewer-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.viewer-thumb .play {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.35);
-}
-
-@media (max-width: 768px) {
-    .viewer-title { font-size: 1.05rem; }
-    .viewer-thumb { width: 72px; height: 50px; }
-    .viewer-stage img,
-    .viewer-stage video { max-height: calc(100dvh - 230px); }
-}
-
+   14. ACCESSIBILITY — REDUCED MOTION
+   ===================================================== */
 @media (prefers-reduced-motion: reduce) {
-    .viewer-wrap { animation: none; }
+    .viewer-wrap,
+    .gallery-item:not(.is-ready) {
+        animation: none;
+    }
 }
-.gallery-item:not(.is-ready) {
-    background: linear-gradient(90deg, #ececec 25%, #f6f6f6 50%, #ececec 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.4s linear infinite;
+
+/* =========================================
+   SMOOTH PROJECT PAGINATION
+========================================= */
+
+/* Transisi antarhalaman */
+@view-transition {
+    navigation: auto;
 }
-.gallery-item img { opacity: 0; transition: opacity 0.5s ease, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
-.gallery-item img.loaded { opacity: 1; }
 
-@keyframes shimmer { to { background-position: -200% 0; } }
+/* Animasi khusus area gallery */
+#galleryGrid {
+    view-transition-name: project-gallery;
+}
 
+/* Animasi halaman */
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.25s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Gallery lama keluar */
+::view-transition-old(project-gallery) {
+    animation: galleryFadeOut 0.18s ease-in both;
+}
+
+/* Gallery baru masuk */
+::view-transition-new(project-gallery) {
+    animation: galleryFadeIn 0.3s ease-out both;
+}
+
+@keyframes galleryFadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes galleryFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Aksesibilitas */
 @media (prefers-reduced-motion: reduce) {
-    .gallery-item:not(.is-ready) { animation: none; }
+    ::view-transition-old(root),
+    ::view-transition-new(root),
+    ::view-transition-old(project-gallery),
+    ::view-transition-new(project-gallery) {
+        animation: none;
+    }
 }
-
-.gallery-section { position: relative; }
-
-.gallery-section.is-loading::after {
-    content: "";
-    position: absolute;
-    top: 160px;
-    left: 50%;
-    width: 38px;
-    height: 38px;
-    margin-left: -19px;
-    border: 3px solid var(--border-soft);
-    border-top-color: var(--primary);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-.viewer-stage { position: relative; min-height: 200px; }
-
-.viewer-stage.is-loading::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 40px;
-    height: 40px;
-    margin: -20px 0 0 -20px;
-    border: 3px solid rgba(255, 255, 255, 0.25);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-}
-.viewer-stage > * { transition: opacity 0.3s ease; }
-.viewer-stage.is-loading > * { opacity: 0; }

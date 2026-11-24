@@ -23,6 +23,32 @@ return [
     'kpc_leader' => 'Pimpinan Perusahaan',
     'kpc_contact' => 'Hubungi KPC Indonesia',
 
+ 
+'hero' => [
+    'subtitle' => 'PT. KPCM INDUSTRIAL ESTATE',
+
+    'slides' => [
+        'chipyard' => [
+            'title' => 'Membangun Masa Depan yang Lebih Kuat',
+            'description' => 'Menghadirkan Infrastruktur Berkualitas dengan Keselamatan dan Ketepatan',
+            'caption' => 'Proyek Area Chipyard',
+        ],
+
+        'cafe' => [
+            'title' => 'Keunggulan dalam Setiap Proyek',
+            'description' => 'Berkomitmen pada Kualitas, Inovasi, dan Kerja Sama Tim',
+            'caption' => 'Proyek KS Club Cafe',
+        ],
+
+        'construction' => [
+            'title' => 'Digerakkan oleh Dedikasi',
+            'description' => 'Bekerja Melampaui Batas untuk Menghadirkan Hasil Terbaik',
+            'caption' => 'Pekerjaan Konstruksi Malam Hari',
+        ],
+    ],
+],
+
+
     // ===== LAYANAN KPC INDONESIA =====
     'kpc_consulting' => 'Konsultasi Manajemen',
     'kpc_industrial_training' => 'Pelatihan & Pendidikan Industri',

@@ -15,6 +15,34 @@ return [
     'hero_desc'  => 'Providing reliable, efficient, and sustainable industrial construction solutions since 2011.',
     'cta'        => 'Get Free Consultation',
 
+    // Hero
+
+
+'hero' => [
+    'subtitle' => 'PT. KPCM INDUSTRIAL ESTATE',
+
+    'slides' => [
+        'chipyard' => [
+            'title' => 'Building a Stronger Future',
+            'description' => 'Delivering Quality Infrastructure with Safety and Precision',
+            'caption' => 'Chipyard Area Project',
+        ],
+
+        'cafe' => [
+            'title' => 'Excellence in Every Project',
+            'description' => 'Committed to Quality, Innovation and Teamwork',
+            'caption' => 'KS Club Cafe Project',
+        ],
+
+        'construction' => [
+            'title' => 'Driven by Dedication',
+            'description' => 'Working Beyond Limits to Deliver Excellence',
+            'caption' => 'Night Construction Work',
+        ],
+    ],
+],
+
+
     // ===== KPC INDONESIA =====
     'kpc_name' => 'KPC Indonesia',
     'kpc_new' => 'New',

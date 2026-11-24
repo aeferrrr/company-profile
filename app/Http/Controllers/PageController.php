@@ -27,71 +27,114 @@ class PageController extends Controller
         return view('pages.services.index');
     }
 
-    public function projects(Request $request)
-    {
-        $categories = [
-            'all' => 'All',
-            'civil' => 'Civil & Structural',
-            'architecture' => 'Architecture & Interior',
-            'mechanical' => 'Mechanical Engineering',
-            'electrical' => 'Electrical & Instrumentation',
-            'management' => 'Project Management & Construction',
-            'concept' => 'Design Concept',
-            'flooring' => 'Flooring',
-        ];
+public function projects(Request $request)
+{
+    $categories = [
+        'all' => 'All',
+        'civil' => 'Civil & Structural',
+        'architecture' => 'Architecture & Interior',
+        'mechanical' => 'Mechanical Engineering',
+        'electrical' => 'Electrical & Instrumentation',
+        'management' => 'Project Management & Construction',
+        'concept' => 'Design Concept',
+        'flooring' => 'Flooring',
+    ];
 
-        $raw = config('projects');
+    // AMBIL SEMUA PROJECT
+    $raw = config('projects', []);
 
-        $projects = collect($raw)->map(fn($p) => $this->normalize($p));
+    $projects = collect($raw)
+        ->map(fn($p) => $this->normalize($p))
+        ->values();
 
-        // ── Selected Category ───────────────────────────────
-        $selected = $request->get('category', 'all');
-        if (!array_key_exists($selected, $categories)) {
-            $selected = 'all';
+    // SELECTED CATEGORY
+    $selected = $request->query('category', 'all');
+
+    if (!is_string($selected) ||
+        !array_key_exists($selected, $categories)) {
+        $selected = 'all';
+    }
+
+    // FILTER PROJECT
+    $filtered = $selected === 'all'
+        ? $projects
+        : $projects->where('category', $selected);
+
+    // RESET INDEX SETELAH FILTER
+    $filtered = $filtered->values();
+
+    // HITUNG TOTAL PROJECT
+    $totalProjects = $projects->count();
+
+    $categoryCounts = [
+        'all' => $totalProjects
+    ];
+
+    foreach ($categories as $key => $label) {
+        if ($key !== 'all') {
+            $categoryCounts[$key] = $projects
+                ->where('category', $key)
+                ->count();
         }
+    }
 
-        // ── Filter ──────────────────────────────────────────
-        $filtered = $selected === 'all'
-            ? $projects
-            : $projects->where('category', $selected);
 
-        // ── Count ───────────────────────────────────────────
-        $totalProjects = $projects->count();
-        $categoryCounts = ['all' => $totalProjects];
-        foreach ($categories as $key => $label) {
-            if ($key !== 'all') {
-                $categoryCounts[$key] = $projects->where('category', $key)->count();
-            }
-        }
-
-        // ── Pagination ──────────────────────────────────────
+        // ── PAGINATION ───────────────────────────────
         $perPage = 6;
-        $currentPage = max(1, (int) $request->get('page', 1));
 
-        // kalau ada ?open=slug, lompat ke halaman yang berisi project itu
-        if ($open = $request->get('open')) {
-            $index = $filtered->values()->search(fn($p) => $p['slug'] === $open);
+        $filtered = $filtered->values();
+
+        $total = $filtered->count();
+
+        $lastPage = max(1, (int) ceil($total / $perPage));
+
+        $currentPage = $request->integer('page', 1);
+
+        $currentPage = max(1, min($currentPage, $lastPage));
+
+        // Tetap mendukung ?open=slug
+        $open = $request->query('open');
+
+        if (is_string($open) && $open !== '') {
+            $index = $filtered->search(
+                fn($p) => $p['slug'] === $open
+            );
+
             if ($index !== false) {
                 $currentPage = intdiv($index, $perPage) + 1;
             }
         }
 
+        $items = $filtered
+            ->forPage($currentPage, $perPage)
+            ->values();
+
+        $query = $selected === 'all'
+            ? []
+            : ['category' => $selected];
+
         $paginated = new LengthAwarePaginator(
-            $filtered->values()->forPage($currentPage, $perPage)->values(),
-            $filtered->count(),
+            $items,
+            $total,
             $perPage,
             $currentPage,
-            ['path' => $request->url(), 'query' => $request->except('open')]
+            [
+                'path' => $request->url(),
+                'query' => $query,
+                'pageName' => 'page',
+            ]
         );
 
-        return view('pages.projects', compact(
-            'categories',
-            'paginated',
-            'selected',
-            'totalProjects',
-            'categoryCounts'
-        ));
-    }
+
+    return view('pages.projects', compact(
+        'categories',
+        'paginated',
+        'selected',
+        'totalProjects',
+        'categoryCounts'
+    ));
+}
+
 
     /**
      * Ubah Format A / Format B menjadi satu struktur seragam.

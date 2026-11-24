@@ -36,6 +36,34 @@ return [
     'kpc_tax' => '세무 및 법률 자문',
     'kpc_halal' => '할랄 인증 지원',
 
+    
+
+'hero' => [
+    'subtitle' => 'PT. KPCM INDUSTRIAL ESTATE',
+
+    'slides' => [
+        'chipyard' => [
+            'title' => '더욱 튼튼한 미래를 만들어갑니다',
+            'description' => '안전과 정밀함을 바탕으로 고품질 인프라를 구축합니다',
+            'caption' => '칩야드 구역 프로젝트',
+        ],
+
+        'cafe' => [
+            'title' => '모든 프로젝트에서 최고의 가치를 실현합니다',
+            'description' => '품질, 혁신, 그리고 팀워크를 최우선으로 생각합니다',
+            'caption' => 'KS 클럽 카페 프로젝트',
+        ],
+
+        'construction' => [
+            'title' => '헌신으로 만들어가는 성과',
+            'description' => '한계를 넘어 최고의 결과를 실현합니다',
+            'caption' => '야간 건설 작업',
+        ],
+    ],
+],
+
+
+
 'footer' => [
     'company_info' => '회사 정보',
     'address_line1' => 'AKA 빌딩 9층, Jl. Bangka Raya,',
